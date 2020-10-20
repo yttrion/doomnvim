@@ -26,14 +26,14 @@ syntax reset
 if exists('g:colors_name')
   unlet g:colors_name
 endif
-let g:colors_name = 'one'
+let g:colors_name = 'doom'
 
-if !exists('g:one_allow_italics')
-  let g:one_allow_italics = 0
+if !exists('g:doom_allow_italics')
+  let g:doom_allow_italics = 0
 endif
 
 let s:italic = ''
-if g:one_allow_italics == 1
+if g:doom_allow_italics == 1
   let s:italic = 'italic'
 endif
 
@@ -238,7 +238,7 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
   " sets the highlighting for the given group
   fun <SID>XAPI(group, fg, bg, attr)
     let l:attr = a:attr
-    if g:one_allow_italics == 0 && l:attr ==? 'italic'
+    if g:doom_allow_italics == 0 && l:attr ==? 'italic'
       let l:attr= 'none'
     endif
 
@@ -883,7 +883,7 @@ endif
 "}}}
 
 " Public API --------------------------------------------------------------{{{
-function! one#highlight(group, fg, bg, attr)
+function! doom#highlight(group, fg, bg, attr)
   call <sid>XAPI(a:group, a:fg, a:bg, a:attr)
 endfunction
 "}}}
