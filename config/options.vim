@@ -30,11 +30,6 @@ set backspace=indent,eol,start
 set timeoutlen=200
 set clipboard+=unnamedplus
 
-if has('python3')
-	set pyx=3
-elseif has('python')
-	set pyx=2
-endif
 
 "coc.nvim settings
 set updatetime=500
@@ -49,6 +44,6 @@ else
 endif
 autocmd CursorHold * silent call CocActionAsync('highlight')
 inoremap <silent><expr> <Tab>
-	\ pumvisible() ? "\<C-n" :
+	\ pumvisible() ? "\<C-n>" :
 	\ <SID>check_backspace() ? "\<Tab>" :
 	\ coc#refresh()
