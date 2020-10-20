@@ -1,0 +1,26 @@
+doomnvim folder structure
+|_ autoload/ 				# Files loaded at launch
+| 	|_ global_conf.vim 		# Config file for various globals
+|	|_ plug.vim 			# Plug-Vim configuration file (Created after first run)
+|_ colors/ 					# Colorschemes of doomnvim
+|	|_ doomnvim.vim 		# doom colorscheme, inspired by vim-one
+|	|_ gruvbox.vim 			# morhetz gruvbox colorscheme 
+|_ config/ 					# Configuration files
+|	|_ plugins/ 			# Plugins configuration
+|	|	|_ keymap.vim 		# doomnvim keybindings
+|	|	|_ nerdtree.vim 	# NERDTree configuration
+|	|	|_ startify.vim 	# vim-startify configuration
+|	|	|_ tagbar.vim 		# tagbar config
+|	|	|_ workspace.vim 	# workspace config
+| 	|_ functions.vim 		# doomnvim functions
+|	|_ globals.vim 			# Global values
+|	|_ gui.vim 				# doomnvim gui options
+|	|_ main.vim 			# init file, loads vim-plug
+|	|_ options.vim 			# Options of doomnvim
+|_ doc/ 					# Documentation of doomnvim
+|	|_ Layout 				# Layout of the project
+|	|_ doomnvim.txt 		# doomnvim help file
+|_ plugged/ 				# Location of pluggins
+|_ sessions/ 				# Location of vim-workspace saves
+|_ init.vim 				# init.vim file
+|_ install.sh 				# doomnvim managment

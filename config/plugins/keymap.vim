@@ -8,8 +8,7 @@ call which_key#register('<Space>', "g:which_key_map")
 nnoremap <silent><leader> :WhichKey '<Space>'<CR>
 
 
-" File operations
-" {{{
+" File operations----------------------------------------------------{{{
 
 map <silent><space>fs 				:w<CR>
 map <silent><space>fS 				:wa<CR>
@@ -21,8 +20,8 @@ map <silent><space>fr 				:call RenameFile()<CR>
 
 " }}}
 
-" Buffer operations
-" {{{
+
+" Buffer operations -------------------------------------------------{{{
 
 map <silent><space>bp 				:bp<CR> 
 map <silent><space>bn 				:bn<CR>
@@ -38,7 +37,77 @@ map <silent><space>bf 				:call BufSel("<args>")<CR>
 " }}}
 
 
+" Code operations ---------------------------------------------------{{{
 
+map <silent><space>cd 				<Plug>(coc-definition)
+map <silent><space>ci 				<Plug>(coc-implementation)
+map <silent><space>ct 				<Plug>(coc-type-definition)
+map <silent><space>cr 				<Plug>(coc-reference)
+map <silent><space>cs 				<Plug>(coc-format-selected)
+" Format all file
+"map <silent><space>cf
+map <silent><space>cD 				:call <SID>sho<_documentation()<CR>
+map <silent><space>cc 				<Plug>NERDCommenterToggle
+
+" }}}
+
+
+" Git operations ----------------------------------------------------{{{
+" }}}
+
+
+" Help --------------------------------------------------------------{{{
+
+map <silent><space>hh 				:help doomnvim.txt
+
+" }}}
+
+
+" Quit --------------------------------------------------------------{{{
+
+map <silent><space>qq 				:wa<bar>q<CR>
+map <silent><space>qQ 				:q!<CR>
+" }}}
+
+
+" Search ------------------------------------------------------------{{{
+" }}}
+
+
+" Toggle ------------------------------------------------------------{{{
+
+map <silent><space>tl 				:set invnumber<CR>
+map <silent><space>tw 				:set wrap!<CR>
+"Toggle fullscreen
+"map <silent><space>tf
+map <silent><space>th 				:noh<CR>
+map <silent><space>te 				:hi Error NONE<CR>
+map <silent><space>tt 				:TagbarToggle<CR>
+map <silent><space>tf 				:FloatermNew<CR>
+
+" }}}
+
+
+" Window ------------------------------------------------------------{{{
+" }}}
+
+
+" Plugins -----------------------------------------------------------{{{
+
+map <silent><space>pu 				:PlugUpdate<CR>
+map <silent><space>pi 				:PlugInstall<CR>
+map <silent><space>pc 				:PlugClean<CR>
+map <silent><space>pm 				:PlugUpgrade<CR>
+map <silent><space>pr 				:UpdateRemotePlugins<CR>
+map <silent><space>pau 				:CocUpdate<CR>
+map <silent><space>pas 				:CocUpdateSync<CR>
+map <silent><space>par 				:CocRestart<CR>
+
+" }}}
+
+
+" Misc --------------------------------------------------------------{{{
+" }}}
 
 
 "vim:fdl=0:fdm=marker:
