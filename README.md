@@ -1,6 +1,6 @@
 <div align="center">
 
-# doom-nvim
+# doomnvim
 
 [Install](#install) • [Documentation](#documentation) • [FAQ](#faq) • [Screenshots](#screenshots) • [Contribute](#contribute)
 
