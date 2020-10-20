@@ -46,7 +46,7 @@ if has('patch')
 	set signcolumn=number
 else
 	set signcolumn=auto
-fi
+endif
 autocmd CursorHold * silent call CocActionAsync('highlight')
 inoremap <silent><expr> <Tab>
 	\ pumvisible() ? "\<C-n" :

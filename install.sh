@@ -145,13 +145,6 @@ echo_with_color () {
 }
 
 
-nvim_backup(){
-	if test -f "$HOME/.config/nvim/init.vim"; then
-		mkdir $HOME/.nvim_bak
-		mv $HOME/.config/nvim/* $HOME/.nvim_bak
-		info "Your previous neovim configuration is located at $HOME/.nvim_bak"
-	fi
-}
 
 vim_backup(){
 	if test -f "$HOME/.vimrc"; then
@@ -184,18 +177,28 @@ update_repo(){
 
 install_neovim(){
 	if [[ -d "$HOME/.config/nvim" ]]; then
-		if [[ "$(readlink $HOME/.config/nvim)" =~ \.doomnvim ]]; then
+		if [[ "$(readlink $HOME/.config/nvim)" =~ \.doomnvim$ ]]; then
 			success "Installed doomnvim"
 		else
-			nvim_backup
+			mv "$HOME/.config/nvim" "$HOME/.config/nvim_back"
+			success "Neovim backup is in $HOME/.config/nvim_back"
 			ln -s "$HOME/.doomnvim" "$HOME/.config/nvim"
 			success "Installed doomnvim"
 		fi
+	else
+		mkdir -p "$HOME/.config"
+		ln -s "$HOME/.doomnvim" "$HOME/.config/nvim"
+		success "Installed doomnvim"
 	fi
+
 }
 
 install_vimplug(){
- info "Install vim-plug"
+	if [[ ! -d "$HOME/.cache/vimfiles/repos/github.com/junegunn/plug.vim" ]]; then
+		info "Installing vim-plug"
+		git clone -q https://github.com/junegunn/vim-plug $HOME/.cache/vimfiles/repos/github.com/junegunn/vim-plug
+		success "Successfully installed vim-plug"
+	fi
 }
 
 #install_fonts(){}
@@ -217,20 +220,46 @@ welcome(){
 
 
 main(){
+	if [ $# -gt 0 ]
+	then
+		case $1 in
+			--check-requirements|-c)
+				check_requirements
+				exit 0
+				;;
+			--install|-i)
+				welcome
+				need_cmd 'git'
+				update_repo
+				install_neovim
 
-
-
-	#Run normal commands
-	welcome
-	need_cmd 'git'
-	update_repo
-	install_neovim
-	install_vimplug
-	#install_fonts
-	check_requirements
-
+				exit 0
+				;;
+			--help|-h)
+				usage
+				exit 0
+				;;
+			--version|-v)
+				msg "${version}"
+				exit 0
+				;;
+			--uninstall|-u)
+				info "Trying to uninstall doomnvim"
+				exit 0
+				;;
+		esac
+	else
+		#Run normal commands
+		welcome
+		need_cmd 'git'
+		update_repo
+		install_neovim
+		install_vimplug
+		#install_fonts
+		check_requirements
+	fi
 }
 
-main
+main $@
 
 # vim:set nofoldenable foldmethod=marker:
