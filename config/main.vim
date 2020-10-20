@@ -5,9 +5,10 @@
 "============================================
 
 if empty(glob('~/.doomnvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.doomnvim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  	silent !curl -fLo ~/.doomnvim/autoload/plug.vim --create-dirs
+    	\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+	echo "doomvim installed all plugins. Press any key to continue"
 endif
 
 
