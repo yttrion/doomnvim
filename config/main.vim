@@ -9,9 +9,11 @@ if has('nvim')
 endif
 
 
-source ./globals.vim
-source ./options.vim
-source ./functions.vim
-source .plugins/startify.vim
-source .plugins/workspace.vim
-source .plugins/nerdtree.vim
+source $HOME/.doomnvim/config/globals.vim
+source $HOME/.doomnvim/config/options.vim
+source $HOME/.doomnvim/config/functions.vim
+source $HOME/.doomnvim/config/plugins/startify.vim
+source $HOME/.doomnvim/config/plugins/workspace.vim
+source $HOME/.doomnvim/config/plugins/nerdtree.vim
+source $HOME/.doomnvim/config/plugins/tagbar.vim
+
