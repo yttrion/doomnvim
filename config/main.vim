@@ -12,7 +12,6 @@ endif
 
 
 call plug#begin('~/.doomnvim/plugged')
-
 Plug 'neoclide/coc.nvim', {'branch':'release'}
 Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
@@ -24,8 +23,6 @@ Plug 'mhinz/vim-startify'
 Plug 'voldikss/vim-floaterm'
 Plug 'preservim/nerdcommenter'
 Plug 'Yggdroot/indentLine'
-
-
 call plug#end()
 
 
@@ -44,7 +41,6 @@ source $HOME/.doomnvim/config/plugins/workspace.vim
 source $HOME/.doomnvim/config/plugins/nerdtree.vim
 source $HOME/.doomnvim/config/plugins/tagbar.vim
 source $HOME/.doomnvim/config/plugins/keymap.vim
-source $HOME/.doomnvim/config/plugins/vimplug.vim
 
 
 
