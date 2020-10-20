@@ -98,7 +98,25 @@ need_cmd () {
     fi
 }
 
-#check_requirements(){}
+check_requirements(){
+	info "Checking requirements"
+	# Checks if git is installed again
+	if hash "git" &>/dev/null; then
+		git_version=$(git --version)
+		success "Check requirements: ${git_version}"
+	else
+		warn "Check requirements : git"
+	fi
+	# Checks if neovim is installed
+	if hash "nvim" &>/dev/null; then
+		success "Check requirements nvim"
+	else
+		warn "Check requirements nvim"
+	fi
+	info "Checking true colors"
+	bash -c "$(curl -fsSL https://raw.githubusercontent.com/JohnMorales/dotfiles/master/colors/24-bit-color.sh)"
+
+}
 
 
 msg() {
@@ -164,14 +182,37 @@ update_repo(){
 	fi
 }
 
-#install_neovim(){}
+install_neovim(){
+	if [[ -d "$HOME/.config/nvim" ]]; then
+		if [[ "$(readlink $HOME/.config/nvim)" =~ \.doomnvim ]]; then
+			success "Installed doomnvim"
+		else
+			nvim_backup
+			ln -s "$HOME/.doomnvim" "$HOME/.config/nvim"
+			success "Installed doomnvim"
+		fi
+	fi
+}
 
-#install_vimplug(){}
+install_vimplug(){
+ info "Install vim-plug"
+}
 
 #install_fonts(){}
 
 welcome(){
-	echo "Hello world"
+	echo_with_color ${Red} "______    ______    ______  ____  ___"
+	echo_with_color ${Red} "\\   _ \\   /  __  \\  /  __  \\ \\   \\/  |"
+	echo_with_color ${Red} " | | | |  | |  | |  | |  | |  | |\\/| |"
+	echo_with_color ${Red} " | | | |  | |  | |  | |  | |  | |  | |"
+	echo_with_color ${Red} " | |/ /   \\  \\/  /  \\  \\/  /  \\ |  | |"
+	echo_with_color ${Red} " |   /     \\    /    \\    /    \\|  | |"
+	echo_with_color ${Red} " |  /       \\__/      \\__/         | |"
+	echo_with_color ${Red} " | /                               \\ |"
+	echo_with_color ${Red} " |/            NVIM                 \\|"
+	echo_with_color ${Red} " 									  "
+	echo_with_color ${Yellow} "Version:${version} 	By: Pierre-Yves Douault"
+
 }
 
 
@@ -183,6 +224,11 @@ main(){
 	welcome
 	need_cmd 'git'
 	update_repo
+	install_neovim
+	install_vimplug
+	#install_fonts
+	check_requirements
+
 }
 
 main
