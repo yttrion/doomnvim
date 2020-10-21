@@ -1,8 +1,8 @@
-doomnvim.txt help
+doomnvim.txt
 
 
 		______ _____  ________  ___ _   _ _   _ ________  ___ ~
-		|  _  \  _  ||  _  |  \/  || \ | | | | |_   _|  \/  |  
+		|  _  \  _  ||  _  |  \/  || \ | | | | |_   _|  \/  |
 		| | | | | | || | | | .  . ||  \| | | | | | | | .  . |  
 		| | | | | | || | | | |\/| || . ` | | | | | | | |\/| | ~
 		| |/ /\ \_/ /\ \_/ / |  | || |\  \ \_/ /_| |_| |  | | ~
@@ -12,59 +12,117 @@ doomnvim.txt help
 
 
 
-															     doomnvim
+yttrion    							    doomnvim
 
-===========================================================================
-CONTENTS 											    doomnvim-contents
-  1. Introduction..........................................doomnvim-intro
-  2. Options.............................................doomnvim-options
-  3. Configuration.................................doomnvim-configuration
-  4. Commands...........................................doomnvim-commands
-  5. Functions.........................................doomnvim-functions
-  6. Usage.................................................doomnvim-usage
-  7. FAQ.....................................................doomnvim-faq
-  8. Changelog.........................................doomnvim-changelog
+==============================================================================
+CONTENTS 						   doomnvim-contents
+  1. Introduction.............................................doomnvim-intro
+  2. Options................................................doomnvim-options
+    1. Autocomplete............................doomnvim-options-autocomplete
+    2. Colorscheme..............................doomnvim-options-colorscheme
+  3. Configuration....................................doomnvim-configuration
+  	1. Layout..............................doomnvim-configuration-layout
+  4. Commands..............................................doomnvim-commands
+  5. Functions............................................doomnvim-functions
+  6. Usage....................................................doomnvim-usage
+  7. FAQ........................................................doomnvim-faq
+  8. Hacking doomnvim.......................................doomnvim-hacking
+  8. Changelog............................................doomnvim-changelog
 
 
-===========================================================================
-INTRODUCTION 										       doomnvim-intro
+==============================================================================
+INTRODUCTION 						      doomnvim-intro
+
+doomnvim is a neovim framework that includes custom settings and
+plugins. It is inspired by doom-emacs
+
+
+==============================================================================
+OPTIONS 						    doomnvim-options
+
+doomnvim configuration files are located in the $HOME/.doomnvim/config
+directory
+
+==============================================================================
+AUTOCOMPLETE 				       doomnvim-options-autocomplete
+
+doomnvim uses coc.nvim as completion engine
+
+==============================================================================
+COLORSCHEME 					doomnvim-options-colorscheme
+
+The colorscheme of doomnvim. Default is 'doom'.
+
+==============================================================================
+CONFIGURATION 					      doomnvim-configuration
+
+doomnvim configuration files are located in the $HOME/.doomnvim/config/
+directory. You can access the configuration folder of doomnvim by typing
+`config` at the start menu.
+
+==============================================================================
+LAYOUT 					       doomnvim-configuration-layout
 
 
 
-===========================================================================
-OPTIONS 												 doomnvim-options
+==============================================================================
+COMMANDS 					   	   doomnvim-commands
 
 Lorem
 
-===========================================================================
-CONFIGURATION 									   doomnvim-configuration
+==============================================================================
+FUNCTIONS 						  doomnvim-functions
 
 Lorem
 
-===========================================================================
-COMMANDS 										        doomnvim-commands
+==============================================================================
+USAGE 							      doomnvim-usage
 
 Lorem
 
-===========================================================================
-FUNCTIONS 											   doomnvim-functions
+==============================================================================
+FAQ 								doomnvim-faq
 
 Lorem
 
-===========================================================================
-USAGE 													   doomnvim-usage
+==============================================================================
+HACKING 						    doomnvim-hacking
+
+doomnvim aims to be hackable to suit everyone's needs. Therefore
+
+This is the layout of doomnvim:
+
+|_ autoload/ 				# Files loaded at launch
+|	|_ doomnvim/
+|	| 	|-
+| 	|_ doomnvim.vim 		# Config file for various globals
+|	|_ plug.vim 			# Plug-Vim configuration file
+|_ colors/ 				# Colorschemes of doomnvim
+|	|_ doomnvim.vim 		# doom colorscheme
+|	|_ gruvbox.vim 			# morhetz gruvbox colorscheme 
+|_ config/ 				# Configuration files
+|	|_ plugins/ 			# Plugins configuration
+|	|	|_ keymap.vim 		# doomnvim keybindings
+|	|	|_ nerdtree.vim 	# NERDTree configuration
+|	|	|_ startify.vim 	# vim-startify configuration
+|	|	|_ tagbar.vim 		# tagbar config
+|	|	|_ workspace.vim 	# workspace config
+| 	|_ functions.vim 		# doomnvim functions
+|	|_ globals.vim 			# Global values
+|	|_ gui.vim 			# doomnvim gui options
+|	|_ main.vim 			# init file, loads vim-plug
+|	|_ options.vim 			# Options of doomnvim
+|_ doc/ 				# Documentation of doomnvim
+|	|_ doomnvim.txt 		# doomnvim help file
+|_ plugged/ 				# Location of pluggins
+|_ sessions/ 				# Location vim workspaces
+|_ init.vim 				# init.vim file
+|_ install.sh 				# doomnvim managment
+
+==============================================================================
+CHANGELOG 						  doomnvim-changelog
 
 Lorem
 
-===========================================================================
-FAQ 														 doomnvim-faq
 
-Lorem
-
-===========================================================================
-CHANGELOG 											   doomnvim-changelog
-
-Lorem
-
-
-vim:tw=74:ts=4:noet:ft=help:norl:
+vim:tw=78:ts=8:ft=help:norl:

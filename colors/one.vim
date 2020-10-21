@@ -1,12 +1,10 @@
-"======================================================================
-" doom-nvim colorscheme
-" Based on vim-one colorscheme by rakr https://github.com/rakr/vim-one
-" Name: doom-nvim
-" Author: Pierre-Yves Douault
+" Name:    one vim colorscheme
+" Author:  Ramzi Akremi
 " License: MIT
-"======================================================================
+" Version: 1.1.1-pre
 
-" Global setup ========================================================{{{
+" Global setup
+" ============================================================={{{
 
 if exists("*<SID>X")
   delf <SID>X
@@ -26,14 +24,14 @@ syntax reset
 if exists('g:colors_name')
   unlet g:colors_name
 endif
-let g:colors_name = 'doom'
+let g:colors_name = 'one'
 
-if !exists('g:doom_allow_italics')
-  let g:doom_allow_italics = 0
+if !exists('g:one_allow_italics')
+  let g:one_allow_italics = 0
 endif
 
 let s:italic = ''
-if g:doom_allow_italics == 1
+if g:one_allow_italics == 1
   let s:italic = 'italic'
 endif
 
@@ -238,7 +236,7 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
   " sets the highlighting for the given group
   fun <SID>XAPI(group, fg, bg, attr)
     let l:attr = a:attr
-    if g:doom_allow_italics == 0 && l:attr ==? 'italic'
+    if g:one_allow_italics == 0 && l:attr ==? 'italic'
       let l:attr= 'none'
     endif
 
@@ -883,7 +881,7 @@ endif
 "}}}
 
 " Public API --------------------------------------------------------------{{{
-function! doom#highlight(group, fg, bg, attr)
+function! one#highlight(group, fg, bg, attr)
   call <sid>XAPI(a:group, a:fg, a:bg, a:attr)
 endfunction
 "}}}
@@ -893,4 +891,3 @@ if exists('s:dark') && s:dark
 endif
 
 " vim: set fdl=0 fdm=marker:
-
