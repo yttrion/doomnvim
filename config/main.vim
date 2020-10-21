@@ -24,6 +24,7 @@ Plug 'mhinz/vim-startify'
 Plug 'voldikss/vim-floaterm'
 Plug 'preservim/nerdcommenter'
 Plug 'Yggdroot/indentLine'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 
@@ -37,6 +38,7 @@ endif
 source $HOME/.doomnvim/config/globals.vim
 source $HOME/.doomnvim/config/options.vim
 source $HOME/.doomnvim/config/functions.vim
+source $HOME/.doomnvim/config/plugins/coc.vim
 source $HOME/.doomnvim/config/plugins/startify.vim
 source $HOME/.doomnvim/config/plugins/workspace.vim
 source $HOME/.doomnvim/config/plugins/nerdtree.vim

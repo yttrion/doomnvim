@@ -94,7 +94,7 @@ This is the layout of doomnvim:
 
 |_ autoload/ 				# Files loaded at launch
 |	|_ doomnvim/
-|	| 	|-
+|	| 	|-health.vim 		# doomnvim health
 | 	|_ doomnvim.vim 		# Config file for various globals
 |	|_ plug.vim 			# Plug-Vim configuration file
 |_ colors/ 				# Colorschemes of doomnvim
@@ -102,6 +102,7 @@ This is the layout of doomnvim:
 |	|_ gruvbox.vim 			# morhetz gruvbox colorscheme 
 |_ config/ 				# Configuration files
 |	|_ plugins/ 			# Plugins configuration
+| 	| 	|_ coc.vim 		# coc.nvim configuration
 |	|	|_ keymap.vim 		# doomnvim keybindings
 |	|	|_ nerdtree.vim 	# NERDTree configuration
 |	|	|_ startify.vim 	# vim-startify configuration

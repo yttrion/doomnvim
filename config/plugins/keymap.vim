@@ -49,7 +49,6 @@ map <silent><space>ci 				<Plug>(coc-implementation)
 map <silent><space>ct 				<Plug>(coc-type-definition)
 map <silent><space>cr 				<Plug>(coc-reference)
 map <silent><space>cs 				<Plug>(coc-format-selected)
-" Format all file
 map <silent><space>cf 				:gg=G<CR>
 map <silent><space>cD 				:call <SID>sho<_documentation()<CR>
 map <silent><space>cc 				<Plug>NERDCommenterToggle
@@ -58,6 +57,13 @@ map <silent><space>cc 				<Plug>NERDCommenterToggle
 
 
 " Git operations ----------------------------------------------------{{{
+
+map <silent><space>gg 				:GitGutterToggle<CR>
+map <silent><space>ghp 				<Plug>(GitGutterPrevHunk)
+map <silent><space>ghn 				<Plug>(GitGutterNextHunk)
+map <silent><space>gs 				:!git status<CR>
+map <silent><space>gcc 				:call CreateCommit()<CR>
+
 " }}}
 
 

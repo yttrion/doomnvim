@@ -91,3 +91,11 @@ function! BufSel(pattern)
   	  	echo "No matching buffers"
   	endif
 endfunction
+
+
+function! CreateCommit()
+	let commit_msg = input('Commit message: ')
+	if commit_msg != ''
+		exec ':!git commit -m ' . commit_msg
+	endif
+endfunction
