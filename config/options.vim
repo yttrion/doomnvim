@@ -36,7 +36,7 @@ set shortmess+=at
 set updatetime=500
 set nobackup
 set nowritebackup
-set cmdheight=2
+set cmdheight=1
 set shortmess+=c
 if has('patch')
 	set signcolumn=number
