@@ -1,18 +1,17 @@
-#! /bin/sh
-
+#!/usr/bin/bash
 #==============================================
 # install.sh --- install script for doomnvim
 # Author: Pierre-Yves Douault
 # License: MIT
 #==============================================
 
-# Code shamelessly stolen from SpaceVim
+# Code shamelessly stolen from SpaceVim installer
 # check https://spacevim.org for more info
 
-# Init option {{{
+# Init option --------------------------------------------------{{{
 Color_off='\033[0m'       # Text Reset
 
-# terminal color template {{{
+# terminal color template --------------------------------------{{{
 # Regular Colors
 Black='\033[0;30m'        # Black
 Red='\033[0;31m'          # Red
@@ -33,59 +32,10 @@ BPurple='\033[1;35m'      # Purple
 BCyan='\033[1;36m'        # Cyan
 BWhite='\033[1;37m'       # White
 
-# Underline
-UBlack='\033[4;30m'       # Black
-URed='\033[4;31m'         # Red
-UGreen='\033[4;32m'       # Green
-UYellow='\033[4;33m'      # Yellow
-UBlue='\033[4;34m'        # Blue
-UPurple='\033[4;35m'      # Purple
-UCyan='\033[4;36m'        # Cyan
-UWhite='\033[4;37m'       # White
-
-# Background
-On_Black='\033[40m'       # Black
-On_Red='\033[41m'         # Red
-On_Green='\033[42m'       # Green
-On_Yellow='\033[43m'      # Yellow
-On_Blue='\033[44m'        # Blue
-On_Purple='\033[45m'      # Purple
-On_Cyan='\033[46m'        # Cyan
-On_White='\033[47m'       # White
-
-# High Intensity
-IBlack='\033[0;90m'       # Black
-IRed='\033[0;91m'         # Red
-IGreen='\033[0;92m'       # Green
-IYellow='\033[0;93m'      # Yellow
-IBlue='\033[0;94m'        # Blue
-IPurple='\033[0;95m'      # Purple
-ICyan='\033[0;96m'        # Cyan
-IWhite='\033[0;97m'       # White
-
-# Bold High Intensity
-BIBlack='\033[1;90m'      # Black
-BIRed='\033[1;91m'        # Red
-BIGreen='\033[1;92m'      # Green
-BIYellow='\033[1;93m'     # Yellow
-BIBlue='\033[1;94m'       # Blue
-BIPurple='\033[1;95m'     # Purple
-BICyan='\033[1;96m'       # Cyan
-BIWhite='\033[1;97m'      # White
-
-# High Intensity backgrounds
-On_IBlack='\033[0;100m'   # Black
-On_IRed='\033[0;101m'     # Red
-On_IGreen='\033[0;102m'   # Green
-On_IYellow='\033[0;103m'  # Yellow
-On_IBlue='\033[0;104m'    # Blue
-On_IPurple='\033[0;105m'  # Purple
-On_ICyan='\033[0;106m'    # Cyan
-On_IWhite='\033[0;107m'   # White
 # }}}
 
 # version
-Version='0.1.0'
+Version='0.1.1'
 #System name
 System="$(uname -s)"
 
@@ -175,20 +125,41 @@ update_repo(){
 	fi
 }
 
-install_neovim(){
+backup_neovim(){
 	if [[ -d "$HOME/.config/nvim" ]]; then
 		if [[ "$(readlink $HOME/.config/nvim)" =~ \.doomnvim$ ]]; then
 			success "Installed doomnvim"
 		else
-			mv "$HOME/.config/nvim" "$HOME/.config/nvim_back"
-			success "Neovim backup is in $HOME/.config/nvim_back"
+			mv "$HOME/.config/nvim" "$HOME/.config/nvim_bak"
+			success "Neovim backup is in $HOME/.config/nvim_bak"
 			ln -s "$HOME/.doomnvim" "$HOME/.config/nvim"
 			success "Installed doomnvim"
 		fi
 	else
 		mkdir -p "$HOME/.config"
 		ln -s "$HOME/.doomnvim" "$HOME/.config/nvim"
-		success "Installed doomnvim"
+		success "Installed doomnvim for neovim"
+	fi
+
+}
+
+backup_vim(){
+	if [[ -f "$HOME/.vimrc" ]]; then
+		mv "$HOME/.vimrc" "$HOME/.vimrc_bak"
+		success "Vim backup is in $HOME/.vimrc_bak"
+	fi
+	if [[ -d "$HOME/.vim" ]]; then
+		if [[ "$(readlink $HOME/.vim)" =~ \.doomnvim$ ]]; then
+			success "Installed doomnvim for vim"
+		else
+			mv "$HOME/.vim" "$HOME/.vim_bak"
+			success ".vim/ backup is in $HOME/.vim_bak"
+			ln -s "$HOME/.doomnvim" "$HOME/.vim"
+			success "Installed doomnvim for vim"
+		fi
+	else
+		ln -s "$HOME/.doomnvim" "$HOME/.vim"
+		success "Installed doomnvim for vim"
 	fi
 
 }
@@ -201,23 +172,122 @@ install_vimplug(){
 	fi
 }
 
-#install_fonts(){}
+install_fonts(){
+    if [[ ! -d "$HOME/.local/share/fonts" ]]; then
+        mkdir -p $HOME/.local/share/fonts
+    fi
+    download_font "DejaVu Sans Mono Bold Oblique for Powerline.ttf"
+    download_font "DejaVu Sans Mono Bold for Powerline.ttf"
+    download_font "DejaVu Sans Mono Oblique for Powerline.ttf"
+    download_font "DejaVu Sans Mono for Powerline.ttf"
+    download_font "DroidSansMonoForPowerlinePlusNerdFileTypesMono.otf"
+    download_font "Ubuntu Mono derivative Powerline Nerd Font Complete.ttf"
+    download_font "WEBDINGS.TTF"
+    download_font "WINGDNG2.ttf"
+    download_font "WINGDNG3.ttf"
+    download_font "devicons.ttf"
+    download_font "mtextra.ttf"
+    download_font "symbol.ttf"
+    download_font "wingding.ttf"
+    info "Updating font cache, please wait ..."
+    if [ $System == "Darwin" ];then
+        if [ ! -e "$HOME/Library/Fonts" ];then
+            mkdir "$HOME/Library/Fonts"
+        fi
+        cp $HOME/.local/share/fonts/* $HOME/Library/Fonts/
+    else
+        fc-cache -fv > /dev/null
+        mkfontdir "$HOME/.local/share/fonts" > /dev/null
+        mkfontscale "$HOME/.local/share/fonts" > /dev/null
+    fi
+    success "font cache done!"
+}
+download_font(){
+	# TODO
+	# 	- Must use own font manager
+    url="https://raw.githubusercontent.com/wsdjeg/DotFiles/7a75a186c6db9ad6f02cafba8d4c7bc78f47304c/local/share/fonts/${1// /%20}"
+    path="$HOME/.local/share/fonts/$1"
+    # Clean up after https://github.com/SpaceVim/SpaceVim/issues/2532
+    if [[ -f "$path" && ! -s "$path" ]]
+    then
+        rm "$path"
+    fi
+    if [[ -f "$path" ]]
+    then
+        success "Downloaded $1"
+    else
+        info "Downloading $1"
+        curl -s -o "$path" "$url"
+        success "Downloaded $1"
+    fi
+}
+
+uninstall(){
+	
+	#VIM
+	if [[ -d "$HOME/.vim" ]]; then
+        if [[ "$(readlink $HOME/.vim)" =~ \.doomnvim$ ]]; then
+            rm "$HOME/.vim"
+            success "Uninstalled doomnvim for vim"
+            if [[ -d "$HOME/.vim_bak" ]]; then
+                mv "$HOME/.vim_bak" "$HOME/.vim"
+                success "Recovered $HOME/.vim_bak backup"
+            fi
+        fi
+    fi
+    if [[ -f "$HOME/.vimrc_bak" ]]; then
+        mv "$HOME/.vimrc_bak" "$HOME/.vimrc"
+        success "Recovered $HOME/.vimrc_bak backup"
+    fi
+	
+	#NEOVIM
+    if [[ -d "$HOME/.config/nvim" ]]; then
+        if [[ "$(readlink $HOME/.config/nvim)" =~ \.doomnvim$ ]]; then
+            rm "$HOME/.config/nvim"
+            success "Uninstalled doomnvim for neovim"
+            if [[ -d "$HOME/.config/nvim_bak" ]]; then
+                mv "$HOME/.config/nvim_bak" "$HOME/.config/nvim"
+                success "Recovered $HOME/.config/nvim_bak backup"
+            fi
+        fi
+    fi
+
+}
 
 welcome(){
-	echo_with_color ${Red} "______    ______    ______  ____  ___"
-	echo_with_color ${Red} "\\   _ \\   /  __  \\  /  __  \\ \\   \\/  |"
-	echo_with_color ${Red} " | | | |  | |  | |  | |  | |  | |\\/| |"
-	echo_with_color ${Red} " | | | |  | |  | |  | |  | |  | |  | |"
-	echo_with_color ${Red} " | |/ /   \\  \\/  /  \\  \\/  /  \\ |  | |"
-	echo_with_color ${Red} " |   /     \\    /    \\    /    \\|  | |"
-	echo_with_color ${Red} " |  /       \\__/      \\__/         | |"
-	echo_with_color ${Red} " | /                               \\ |"
-	echo_with_color ${Red} " |/            NVIM                 \\|"
-	echo_with_color ${Red} " 									  "
+	echo_with_color ${Red} "______ _____  ________  ___"
+	echo_with_color ${Red} "|  _  \  _  ||  _  |  \/  |"
+	echo_with_color ${Red} "| | | | | | || | | | |\/| |"
+	echo_with_color ${Red} "| |/ /\ \_/ /\ \_/ / |  | |"
+	echo_with_color ${Red} "|___/  \___/  \___/\_|  |_/"
+	echo_with_color ${Red} "           NVIM            "
+	echo_with_color ${Red} " 			               "
 	echo_with_color ${Yellow} "Version:${version} 	By: Pierre-Yves Douault"
 
 }
 
+install_done(){
+	echo ""
+	echo_with_color ${Yellow} 	"================================================="
+	echo_with_color ${Green} 	"You are almost done. Start vim or neovim to install the plugins"
+	echo_with_color ${Green}	"That's all folks. Thanks for installing doomnvim"
+	echo_with_color ${Green} 	"Enjoy."
+	echo_with_color ${Yellow} 	"================================================="
+}
+
+helper(){
+	echo_with_color ${White} "doomnvim ${version} help"
+	echo_with_color ${White} ""
+	echo_with_color ${White} "doomnvim installer"
+	echo_with_color ${White} "Usage ./install.sh [optn]"
+	echo_with_color ${White} "Possible values:"
+	echo_with_color ${White} "-u --update 				Update doomnvim"
+	echo_with_color ${White} "-c --check-requirements 	Check doomnvim requirements"
+	echo_with_color ${White} "-i --install 				Install doomnvim"
+	echo_with_color ${White} "-h --help 				Displays this message"
+	echo_with_color ${White} "-v --version 				Echo doomnvim version"
+	echo_with_color ${White} "-x --uninstall 			Uninstall doomnvim"
+}
 
 main(){
 	if [ $# -gt 0 ]
@@ -227,24 +297,44 @@ main(){
 				check_requirements
 				exit 0
 				;;
+			--update|-u)
+				update_repo
+				exit 0
+				;;
 			--install|-i)
 				welcome
 				need_cmd 'git'
 				update_repo
-				install_neovim
-
+				if [ $# -eq 2 ]
+				then
+					case $2 in
+						neovim)
+							backup_neovim
+							install_done
+							exit 0
+							;;
+						vim)
+							backup_vim
+							install_done
+							exit 0
+					esac
+				fi
+				backup_vim
+				backup_neovim
 				exit 0
 				;;
 			--help|-h)
-				usage
+				helper
 				exit 0
 				;;
 			--version|-v)
 				msg "${version}"
 				exit 0
 				;;
-			--uninstall|-u)
-				info "Trying to uninstall doomnvim"
+			--uninstall|-x)
+				info "Uninstalling doomnvim"
+				uninstall
+				echo_with_color ${Green} "Thanks for using doomnvim!"
 				exit 0
 				;;
 		esac
@@ -253,13 +343,14 @@ main(){
 		welcome
 		need_cmd 'git'
 		update_repo
-		install_neovim
+		backup_neovim
 		install_vimplug
 		#install_fonts
 		check_requirements
+		install_done
 	fi
 }
 
 main $@
 
-# vim:set nofoldenable foldmethod=marker:
+# vim: set fdl=0 fdm=marker:

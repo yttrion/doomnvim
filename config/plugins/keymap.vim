@@ -33,6 +33,11 @@ map <silent><space>bc 				:<C-u>up<bar>%bd<bar>e#<CR>
 map <silent><space>bsv 				:vsp<CR>
 map <silent><space>bsh 				:sp<CR>
 map <silent><space>bf 				:call BufSel("<args>")<CR>
+map <silent><space>br 				<C-w>=<CR>
+map <silent><space>bwi 				10<C-w>><CR>
+map <silent><space>bwd 				10<C-w><<CR>
+map <silent><space>bhi 				10<C-w>+<CR>
+map <silent><space>bhd 				10<C-w>-<CR>
 
 " }}}
 
@@ -45,7 +50,7 @@ map <silent><space>ct 				<Plug>(coc-type-definition)
 map <silent><space>cr 				<Plug>(coc-reference)
 map <silent><space>cs 				<Plug>(coc-format-selected)
 " Format all file
-"map <silent><space>cf
+map <silent><space>cf 				:gg=G<CR>
 map <silent><space>cD 				:call <SID>sho<_documentation()<CR>
 map <silent><space>cc 				<Plug>NERDCommenterToggle
 
@@ -58,7 +63,10 @@ map <silent><space>cc 				<Plug>NERDCommenterToggle
 
 " Help --------------------------------------------------------------{{{
 
-map <silent><space>hh 				:help doomnvim.txt
+map <silent><space>hh 				:helpgrep .<CR>
+map <silent><space>hi 				:!$HOME/.doomnvim/install.sh --help<CR>
+map <silent><space>hu 				:!$HOME/.doomnvim/install.sh --update<CR>
+map <silent><space>hX 				:!$HOME/.doomnvim/install.sh --uninstall<CR>
 
 " }}}
 
@@ -107,6 +115,9 @@ map <silent><space>par 				:CocRestart<CR>
 
 
 " Misc --------------------------------------------------------------{{{
+
+map <silent><space>ms 				:source %<CR>
+
 " }}}
 
 
