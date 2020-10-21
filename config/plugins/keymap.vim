@@ -80,7 +80,7 @@ map <silent><space>hX 				:!$HOME/.doomnvim/install.sh --uninstall<CR>
 " Quit --------------------------------------------------------------{{{
 
 map <silent><space>qq 				:wa<bar>q<CR>
-map <silent><space>qQ 				:q!<CR>
+map <silent><space>qQ 				:qa!<CR>
 " }}}
 
 
