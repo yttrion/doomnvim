@@ -276,17 +276,17 @@ install_done(){
 }
 
 helper(){
-	echo_with_color ${White} "doomnvim ${version} help"
-	echo_with_color ${White} ""
-	echo_with_color ${White} "doomnvim installer"
-	echo_with_color ${White} "Usage ./install.sh [optn]"
-	echo_with_color ${White} "Possible values:"
-	echo_with_color ${White} "-u --update 				Update doomnvim"
-	echo_with_color ${White} "-c --check-requirements 	Check doomnvim requirements"
-	echo_with_color ${White} "-i --install 				Install doomnvim"
-	echo_with_color ${White} "-h --help 				Displays this message"
-	echo_with_color ${White} "-v --version 				Echo doomnvim version"
-	echo_with_color ${White} "-x --uninstall 			Uninstall doomnvim"
+	echo "doomnvim ${version} help"
+	echo ""
+	echo "doomnvim installer"
+	echo "Usage ./install.sh [optn]"
+	echo "Possible values:"
+	echo "-u --update 				Update doomnvim"
+	echo "-c --check-requirements 	Check doomnvim requirements"
+	echo "-i --install 				Install doomnvim"
+	echo "-h --help 				Displays this message"
+	echo "-v --version 				Echo doomnvim version"
+	echo "-x --uninstall 			Uninstall doomnvim"
 }
 
 main(){
