@@ -1,4 +1,4 @@
-doomnvim.txt
+*doomnvim.txt*
 
 
 		______ _____  ________  ___ _   _ _   _ ________  ___ ~
@@ -12,81 +12,129 @@ doomnvim.txt
 
 
 
-yttrion    							    doomnvim
+yttrion    							    						    *doomnvim*
 
 ==============================================================================
-CONTENTS 						   doomnvim-contents
-  1. Introduction.............................................doomnvim-intro
-  2. Options................................................doomnvim-options
-    1. Autocomplete............................doomnvim-options-autocomplete
-    2. Colorscheme..............................doomnvim-options-colorscheme
-  3. Configuration....................................doomnvim-configuration
-  	1. Layout..................................doomnvim-configuration-layout
-  4. Commands..............................................doomnvim-commands
-  5. Functions............................................doomnvim-functions
-  6. Usage....................................................doomnvim-usage
-  7. FAQ........................................................doomnvim-faq
-  8. Hacking doomnvim.......................................doomnvim-hacking
-  8. Changelog............................................doomnvim-changelog
+CONTENTS						   						   *doomnvim-contents*
+  1. Introduction.............................................|doomnvim-intro|
+  2. Options................................................|doomnvim-options|
+    1. Autocomplete............................|doomnvim-options-autocomplete|
+    2. Colorscheme..............................|doomnvim-options-colorscheme|
+  3. Configuration....................................|doomnvim-configuration|
+  	1. Layout..................................|doomnvim-configuration-layout|
+	2. File	Manager................|doomnvim-configuration-layout-filemanager|
+	3. Main Buffer..................|doomnvim-configuration-layout-mainbuffer|
+	4. Tagbar...........................|doomnvim-configuration-layout-tagbar|
+	5. Buffered Terminal..............|doomnvim-configuration-layout-terminal|
+  4. Commands..............................................|doomnvim-commands|
+  5. Functions............................................|doomnvim-functions|
+  6. Usage....................................................|doomnvim-usage|
+  7. FAQ........................................................|doomnvim-faq|
+  8. Hacking doomnvim.......................................|doomnvim-hacking|
+  8. Changelog............................................|doomnvim-changelog|
 
 
 ==============================================================================
-INTRODUCTION 						      					  doomnvim-intro
+INTRODUCTION 						      					  *doomnvim-intro*
 
 doomnvim is a neovim framework that includes custom settings and
 plugins. It is inspired by doom-emacs
 
 
 ==============================================================================
-OPTIONS 						    						doomnvim-options
+OPTIONS 						    						*doomnvim-options*
 
 doomnvim configuration files are located in the $HOME/.doomnvim/config
 directory
 
 ==============================================================================
-AUTOCOMPLETE 				       			   doomnvim-options-autocomplete
+AUTOCOMPLETE 				       			   *doomnvim-options-autocomplete*
 
-doomnvim uses coc.nvim as completion engine
-
-==============================================================================
-COLORSCHEME 									doomnvim-options-colorscheme
-
-The colorscheme of doomnvim. Default is 'doom'.
+doomnvim uses coc.nvim as completion engine. Use <TAB> or <C-n> to select the
+next suggestion.
 
 ==============================================================================
-CONFIGURATION 					      				  doomnvim-configuration
+COLORSCHEME 									*doomnvim-options-colorscheme*
+
+The colorscheme of doomnvim. Default is 'doom'. There are pre-configured 
+colorschemes installed in `$HOME/.doomnvim/colors/`:
+	- gruvbox
+	- vim-one
+	- synthwave
+	- doom (default)
+
+==============================================================================
+CONFIGURATION 					      				  *doomnvim-configuration*
 
 doomnvim configuration files are located in the $HOME/.doomnvim/config/
 directory. You can access the configuration folder of doomnvim by typing
-`config` at the start menu.
+`doomconfig` at the start menu.
 
 ==============================================================================
-LAYOUT 					       				   doomnvim-configuration-layout
+LAYOUT 					       				   *doomnvim-configuration-layout*
+
+Excluding the statusline, doomnvim will mostly have the following layout:
+
+|----------------------------------------|~
+| 		|						|		 |
+| 		|						|		 |
+| 		|						|		 |
+| 		|			B			|		 |
+| 	A	|						|	C	 |
+| 		|						|		 |
+| 		|						|		 |
+| 		|-----------------------|        |~
+| 		|			D			|		 |
+|----------------------------------------|~
 
 
+'A' : The file manager (Plugin: NERDTree)
+'B' : The main buffer
+'C' : The tagbar (Plugin: Tagbar)
+'D' : The buffered terminal
 
 ==============================================================================
-COMMANDS 					   	   						   doomnvim-commands
+FILE MANAGER                       *doomnvim-configuration-layout-filemanager*
 
 Lorem
 
 ==============================================================================
-FUNCTIONS 						  						  doomnvim-functions
+MAIN BUFFER                         *doomnvim-configuration-layout-mainbuffer*
 
 Lorem
 
 ==============================================================================
-USAGE 							      						  doomnvim-usage
+TAGBAR                                  *doomnvim-configuration-layout-tagbar*
 
 Lorem
 
 ==============================================================================
-FAQ 															doomnvim-faq
+BUFFERED TERMINAL                     *doomnvim-configuration-layout-terminal*
 
 Lorem
 
 ==============================================================================
-HACKING 						    						doomnvim-hacking
+COMMANDS 												   *doomnvim-commands*
+
+Lorem
+
+==============================================================================
+FUNCTIONS 						  						  *doomnvim-functions*
+
+Lorem
+
+==============================================================================
+USAGE 							      						  *doomnvim-usage*
+
+Lorem
+
+==============================================================================
+FAQ 															*doomnvim-faq*
+
+Lorem
+
+==============================================================================
+HACKING 						    						*doomnvim-hacking*
 
 doomnvim aims to be hackable to suit everyone's needs. Therefore
 
@@ -94,7 +142,6 @@ This is the layout of doomnvim:
 
 |_ autoload/ 				# Files loaded at launch
 |	|_ doomnvim/ 			# doomnvim core
-| 	|   |_ api.vim    		# doomnvim api
 | 	|   |_ autocmds.vim    	# doomnvim autocmds
 | 	|   |_ commands.vim    	# doomnvim internal commands
 | 	|   |_ default.vim    	# doomnvim default
@@ -126,9 +173,8 @@ This is the layout of doomnvim:
 |_ install.sh 				# doomnvim managment
 
 ==============================================================================
-CHANGELOG 						  doomnvim-changelog
+CHANGELOG 						  						  *doomnvim-changelog*
 
 Lorem
 
-
-vim:tw=78:ft=help:norl:
+" vim:tw=78:ft=help:norl:
