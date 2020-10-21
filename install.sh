@@ -345,7 +345,7 @@ main(){
 		update_repo
 		backup_neovim
 		install_vimplug
-		#install_fonts
+		install_fonts
 		check_requirements
 		install_done
 	fi

@@ -7,9 +7,18 @@
 
 " Checks backspace
 function! s:check_backspace() abort
-	let col = col('.') -1
-	return !col || getline('.')[col -1] =~ '\s'
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1] =~ '\s'
 endfunction
+
+autocmd CursorHold * silent call CocActionAsync('highlight')
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+
+"No NERDTree alone except when startify
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Toggle a terminal in a new buffer
 function! TermToggle(h)

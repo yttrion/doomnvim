@@ -42,8 +42,3 @@ if has('patch')
 else
 	set signcolumn=auto
 endif
-autocmd CursorHold * silent call CocActionAsync('highlight')
-inoremap <silent><expr> <Tab>
-	\ pumvisible() ? "\<C-n>" :
-	\ <SID>check_backspace() ? "\<Tab>" :
-	\ coc#refresh()

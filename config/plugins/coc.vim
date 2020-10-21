@@ -5,7 +5,7 @@
 "================================================================
 
 
-let g:coc_global_extensions = {
+let g:coc_global_extensions = [
 			\ 'coc-actions',
 			\ 'coc-angular',
 			\ 'coc-clangd',
@@ -18,7 +18,6 @@ let g:coc_global_extensions = {
 			\ 'coc-jedi',
 			\ 'coc-json',
 			\ 'coc-perl',
-			\ 'coc-phpactors',
 			\ 'coc-python',
 			\ 'coc-sh',
 			\ 'coc-snippets',
@@ -26,4 +25,4 @@ let g:coc_global_extensions = {
 			\ 'coc-svg',
 			\ 'coc-tsserver',
 			\ 'coc-xml'
-			\}
+			\ ]
