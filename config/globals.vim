@@ -4,6 +4,7 @@
 " License: MIT
 "==========================================
 
+let g:NERDCreateDefaultMappings = 0
 let g:gitgutter_map_keys = 0
 let g:term_buf = 0
 let g:term_win = 0
