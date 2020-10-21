@@ -30,6 +30,7 @@ set backspace=indent,eol,start
 set timeoutlen=200
 set clipboard+=unnamedplus
 
+set shortmess+=at
 
 "coc.nvim settings
 set updatetime=500
