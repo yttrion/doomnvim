@@ -6,13 +6,13 @@
 
 if g:doomnvim_colorscheme != ''
 	try
-		exec 'set background=' . g:doomnvim_colorscheme_bg
-		exec 'set colorscheme=' . g:doomnvim_colorscheme
+		exec 'set background ' . g:doomnvim_colorscheme_bg
+		exec 'colorscheme ' . g:doomnvim_colorscheme
 	catch
-		exec 'set colorscheme default'
+		exec 'colorscheme default'
 	endtry
 else
-	exec 'set colorscheme default'
+	exec 'colorscheme default'
 endif
 
 if g:doomnvim_enable_guicolors == 1

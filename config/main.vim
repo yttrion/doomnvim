@@ -30,10 +30,9 @@ call plug#end()
 
 
 
-if has('nvim')
-	set termguicolors
-endif
 
+" Source main config from autoload
+" Not sure if needed
 source $HOME/.doomnvim/autoload/doomnvim.vim
 
 source $HOME/.doomnvim/config/globals.vim
