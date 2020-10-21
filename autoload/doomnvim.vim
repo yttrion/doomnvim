@@ -29,7 +29,7 @@ let g:doomnvim_max_columns = 100
 
 " Enable guicolors
 " @default = 0
-let g:doomnvim_enable_guicolors = 0
+let g:doomnvim_enable_guicolors = 1
 
 " Sidebar size
 " @default = 30

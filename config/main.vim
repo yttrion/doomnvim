@@ -34,6 +34,7 @@ if has('nvim')
 	set termguicolors
 endif
 
+source $HOME/.doomnvim/autoload/doomnvim.vim
 
 source $HOME/.doomnvim/config/globals.vim
 source $HOME/.doomnvim/config/options.vim

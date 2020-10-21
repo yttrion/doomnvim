@@ -13,15 +13,18 @@ if g:doomnvim_colorscheme != ''
 	endtry
 else
 	exec 'set colorscheme default'
-fi
+endif
 
 if g:doomnvim_enable_guicolors == 1
+	if has('nvim')
+		set termguicolors
+	endif
 	if exists('+termguicolors')
 		set termguicolors
 	elseif exists('+guicolors')
 		set guicolors
 	endif
-fi
+endif
 
 let g:lightline = {
 	\ 'colorscheme' : 'one',
