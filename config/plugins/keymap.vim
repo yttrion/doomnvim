@@ -4,7 +4,11 @@
 " License: MIT
 "===============================================
 
-call which_key#register('<Space>', "g:which_key_map")
+try
+	call which_key#register('<Space>', "g:which_key_map")
+catch
+	echo "..."
+endtry
 nnoremap <silent><leader> :WhichKey '<Space>'<CR>
 
 
