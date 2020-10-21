@@ -252,6 +252,12 @@ uninstall(){
         fi
     fi
 
+	if  [[ -d "$HOME/.doomnvim" ]]; then
+		rm -rf "$HOME/.doomnvim"
+		success "Completely removed doomnvim"
+
+	fi
+
 }
 
 welcome(){
