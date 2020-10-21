@@ -12,10 +12,10 @@
 
 
 
-yttrion    							    						    *doomnvim*
+yttrion                                                             *doomnvim*
 
 ==============================================================================
-CONTENTS						   						   *doomnvim-contents*
+CONTENTS                                                   *doomnvim-contents*
   1. Introduction.............................................|doomnvim-intro|
   2. Options................................................|doomnvim-options|
     1. Autocomplete............................|doomnvim-options-autocomplete|
@@ -35,26 +35,26 @@ CONTENTS						   						   *doomnvim-contents*
 
 
 ==============================================================================
-INTRODUCTION 						      					  *doomnvim-intro*
+INTRODUCTION                                                  *doomnvim-intro*
 
 doomnvim is a neovim framework that includes custom settings and
 plugins. It is inspired by doom-emacs
 
 
 ==============================================================================
-OPTIONS 						    						*doomnvim-options*
+OPTIONS                                                     *doomnvim-options*
 
 doomnvim configuration files are located in the $HOME/.doomnvim/config
 directory
 
 ==============================================================================
-AUTOCOMPLETE 				       			   *doomnvim-options-autocomplete*
+AUTOCOMPLETE                                   *doomnvim-options-autocomplete*
 
 doomnvim uses coc.nvim as completion engine. Use <TAB> or <C-n> to select the
 next suggestion.
 
 ==============================================================================
-COLORSCHEME 									*doomnvim-options-colorscheme*
+COLORSCHEME                                     *doomnvim-options-colorscheme*
 
 The colorscheme of doomnvim. Default is 'doom'. There are pre-configured 
 colorschemes installed in `$HOME/.doomnvim/colors/`:
@@ -64,14 +64,14 @@ colorschemes installed in `$HOME/.doomnvim/colors/`:
 	- doom (default)
 
 ==============================================================================
-CONFIGURATION 					      				  *doomnvim-configuration*
+CONFIGURATION                                         *doomnvim-configuration*
 
 doomnvim configuration files are located in the $HOME/.doomnvim/config/
 directory. You can access the configuration folder of doomnvim by typing
 `doomconfig` at the start menu.
 
 ==============================================================================
-LAYOUT 					       				   *doomnvim-configuration-layout*
+LAYOUT                                         *doomnvim-configuration-layout*
 
 Excluding the statusline, doomnvim will mostly have the following layout:
 
@@ -114,27 +114,27 @@ BUFFERED TERMINAL                     *doomnvim-configuration-layout-terminal*
 Lorem
 
 ==============================================================================
-COMMANDS 												   *doomnvim-commands*
+COMMANDS                                                   *doomnvim-commands*
 
 Lorem
 
 ==============================================================================
-FUNCTIONS 						  						  *doomnvim-functions*
+FUNCTIONS                                                 *doomnvim-functions*
 
 Lorem
 
 ==============================================================================
-USAGE 							      						  *doomnvim-usage*
+USAGE                                                         *doomnvim-usage*
 
 Lorem
 
 ==============================================================================
-FAQ 															*doomnvim-faq*
+FAQ                                                             *doomnvim-faq*
 
 Lorem
 
 ==============================================================================
-HACKING 						    						*doomnvim-hacking*
+HACKING                                                     *doomnvim-hacking*
 
 doomnvim aims to be hackable to suit everyone's needs. Therefore
 
@@ -173,7 +173,7 @@ This is the layout of doomnvim:
 |_ install.sh 				# doomnvim managment
 
 ==============================================================================
-CHANGELOG 						  						  *doomnvim-changelog*
+CHANGELOG                                                 *doomnvim-changelog*
 
 Lorem
 
