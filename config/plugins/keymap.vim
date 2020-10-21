@@ -52,7 +52,7 @@ map <silent><space>ct 				<Plug>(coc-type-definition)
 map <silent><space>cr 				<Plug>(coc-reference)
 map <silent><space>cs 				<Plug>(coc-format-selected)
 map <silent><space>cf 				:gg=G<CR>
-map <silent><space>cD 				:call <SID>sho<_documentation()<CR>
+map <silent><space>cD 				:call <SID>show_documentation()<CR>
 map <silent><space>cc 				<Plug>NERDCommenterToggle
 
 " }}}
@@ -61,8 +61,11 @@ map <silent><space>cc 				<Plug>NERDCommenterToggle
 " Git operations ----------------------------------------------------{{{
 
 map <silent><space>gg 				:GitGutterToggle<CR>
-map <silent><space>ghp 				<Plug>(GitGutterPrevHunk)
-map <silent><space>ghn 				<Plug>(GitGutterNextHunk)
+nmap <silent><space>ghp 			<Plug>(GitGutterPrevHunk)
+nmap <silent><space>ghn 			<Plug>(GitGutterNextHunk)
+nmap <silent><space>ghs 			<Plug>(GitGutterStageHunk)
+nmap <silent><space>ghu 			<Plug>(GitGutterUndoHunk)
+nmap <silent><space>ghP  			<Plug>(GitGutterPreviewHunk)
 map <silent><space>gs 				:!git status<CR>
 map <silent><space>gcc 				:call CreateCommit()<CR>
 
@@ -94,8 +97,6 @@ map <silent><space>qQ 				:qa!<CR>
 
 map <silent><space>tl 				:set invnumber<CR>
 map <silent><space>tw 				:set wrap!<CR>
-"Toggle fullscreen
-"map <silent><space>tf
 map <silent><space>th 				:noh<CR>
 map <silent><space>te 				:hi Error NONE<CR>
 map <silent><space>tt 				:TagbarToggle<CR>
