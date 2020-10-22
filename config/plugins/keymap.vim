@@ -137,6 +137,7 @@ map <silent><space>par 				:CocRestart<CR>
 " Misc --------------------------------------------------------------{{{
 
 map <silent><space>ms 				:source %<CR>
+map <silent><space>mc               :call editColorscheme()
 
 " }}}
 

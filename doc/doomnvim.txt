@@ -97,7 +97,7 @@ FILE EXPLORER                         *doomnvim-configuration-layout-explorer*
 doomnvim uses NERDTree plugin as a file explorer. It can be toggled
 by performing the following command: <Space>fe for `FileExplorer`
 
-To create a new file whithin the file explorer, do <m><a>nameofnode
+To create a new file whithin the file explorer, do <m><a>[nameofnode]
 Append a `/` if you want to create a directory
 
 ==============================================================================
@@ -129,7 +129,7 @@ e.g:
 ==============================================================================
 FUNCTIONS                                                 *doomnvim-functions*
 
-Lorem
+doomnvim comes with custom functions 
 
 ==============================================================================
 USAGE                                                         *doomnvim-usage*

@@ -9,8 +9,6 @@ scriptencoding utf-8
 function! doomnvim#default#options() abort
 
     " Set options
-    syntax on
-    filetype plugin indent on
 
     set wildmenu
     set smartindent
@@ -20,7 +18,6 @@ function! doomnvim#default#options() abort
     set splitright
     set splitbelow
     set noswapfile
-    set expandtab
     set showmode
     set hlsearch
     set nu rnu
@@ -28,8 +25,6 @@ function! doomnvim#default#options() abort
     set mouse=a
     set laststatus=2
     set encoding=UTF-8
-    set tabstop=4
-    set shiftwidth=4
     set backspace=indent,eol,start
     set timeoutlen=200
     set clipboard+=unnamedplus

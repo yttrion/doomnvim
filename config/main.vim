@@ -21,7 +21,12 @@ if has('vim_starting')
 	endif
 endif
 
+" Start implementing doomnvim module
 call doomnvim#begin()
+"Custom config 
+"call doomnvim#config()
+"End
+call doomnvim#end()
 
 
 call plug#begin('~/.doomnvim/plugged')

@@ -64,6 +64,8 @@ let g:doomnvim_lint_onsave = 1
 let g:doomnvim_autocomplete_par = 1
 
 
+
+
 function! doomnvim#loadConfig(file) abort
     if filereadable('$HOME/.doomnvim/config/' . a:file)
         execute 'source $HOME/.doomnvim/config' . a:file
@@ -81,6 +83,28 @@ function! doomnvim#begin() abort
 
 endfunction
 
+
+function! doomnvim#end() abort
+
+    let help = fnamemodify("$HOME/.doomnvim") . '/doc'
+    try
+        exe 'helptags ' . help
+    catch
+        echo "Failed to load doomvim.txt file"
+    endtry
+
+    set smarttab
+    let &expandtab = g:doomnvim_expand_tabs
+    let &tabstop = g:doomnvim_indent
+    let &softtabstop = g:doomnvim_indent
+    let &shiftwidth = g:doomnvim_indent
+
+
+    filetype plugin indent on
+    syntax on
+
+
+endfunction
 
 " vim: cc=100:
 

@@ -108,3 +108,13 @@ function! CreateCommit()
 		exec ':!git commit -m ' . commit_msg
 	endif
 endfunction
+
+
+function! editColorscheme()
+	exec ':!ls $HOME/.doomnvim/colors/'
+	let target_cs = input('Select colorscheme: ')
+	if target_cs != ''
+		" sed -i 's/# autologin=dgod/autologin=ubuntu/' /path/to/file
+		exec ":!sed -i 's/# 'doom'/'" . target_cs ."' $HOME/.doomnvim/autoload/doomnvim.vim"
+	endif
+endfunction
