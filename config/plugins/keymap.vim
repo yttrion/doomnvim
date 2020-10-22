@@ -9,6 +9,7 @@ try
 catch
 	echo "Installing all plugins..."
 endtry
+
 nnoremap <silent><leader> :WhichKey '<Space>'<CR>
 
 

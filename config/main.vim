@@ -8,7 +8,6 @@ if empty(glob('~/.doomnvim/autoload/plug.vim'))
   	silent !curl -fLo ~/.doomnvim/autoload/plug.vim --create-dirs
     	\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-	echo "doomvim installed all plugins. Press any key to continue"
 endif
 
 
@@ -43,8 +42,8 @@ call plug#end()
 source $HOME/.doomnvim/config/gui.vim
 
 source $HOME/.doomnvim/config/plugins/coc.vim
-source $HOME/.doomnvim/config/plugins/keymap.vim
 source $HOME/.doomnvim/config/plugins/dict.vim
+source $HOME/.doomnvim/config/plugins/keymap.vim
 source $HOME/.doomnvim/config/plugins/nerdtree.vim
 source $HOME/.doomnvim/config/plugins/startify.vim
 source $HOME/.doomnvim/config/plugins/tagbar.vim

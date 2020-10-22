@@ -28,8 +28,8 @@ function! doomnvim#default#options() abort
     set mouse=a
     set laststatus=2
     set encoding=UTF-8
-    set tabstop=g:doomnvim_indent
-    set shiftwidth=g:doomnvim_indent
+    set tabstop=4
+    set shiftwidth=4
     set backspace=indent,eol,start
     set timeoutlen=200
     set clipboard+=unnamedplus
