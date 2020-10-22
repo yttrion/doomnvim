@@ -41,13 +41,13 @@ Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 
-source $HOME/.doomnvim/config/plugins/
-source $HOME/.doomnvim/config/plugins/
-source $HOME/.doomnvim/config/plugins/
-source $HOME/.doomnvim/config/plugins/
-source $HOME/.doomnvim/config/plugins/
-source $HOME/.doomnvim/config/plugins/
-source $HOME/.doomnvim/config/plugins/
+source $HOME/.doomnvim/config/plugins/coc.vim
+source $HOME/.doomnvim/config/plugins/keymap.vim
+source $HOME/.doomnvim/config/plugins/dict.vim
+source $HOME/.doomnvim/config/plugins/nerdtree.vim
+source $HOME/.doomnvim/config/plugins/startify.vim
+source $HOME/.doomnvim/config/plugins/tagbar.vim
+source $HOME/.doomnvim/config/plugins/workspace.vim 
 
 
 

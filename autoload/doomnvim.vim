@@ -70,11 +70,6 @@ function! doomnvim#loadConfig(file) abort
     endif
 endfunction
 
-function! doomnvim#loadPlugin(file) abort
-    if filereadable('$HOME/.doomnvim/config/plugins/' . a:file)
-        execute 'source $HOME/.doomnvim/config/plugins' . a:file
-    endif
-endfunction
 
 
 " Functions
@@ -83,15 +78,7 @@ function! doomnvim#begin() abort
     call doomnvim#loadConfig('globals.vim')
     call doomnvim#loadConfig('functions.vim')
     call doomnvim#loadConfig('gui.vim')
-    call doomnvim#default#options()
-    call doomnvim#loadPlugin('coc.vim')
-    call doomnvim#loadPlugin('keymap.vim')
-    call doomnvim#loadPlugin('dict.vim')
-    call doomnvim#loadPlugin('nerdtree.vim')
-    call doomnvim#loadPlugin('startify.vim')
-    call doomnvim#loadPlugin('tagbar.vim') 
-    call doomnvim#loadPlugin('workspace.vim')   
-    
+    call doomnvim#default#options()    
 
 endfunction
 
