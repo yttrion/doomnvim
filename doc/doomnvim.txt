@@ -156,7 +156,7 @@ doomnvim aims to be hackable to suit everyone's needs. Therefore
 
 This is the layout of doomnvim:
 
-|_ autoload/# Files loaded at launch
+|_ autoload/                # Files loaded at launch
 | |_ doomnvim/              # doomnvim core
 |   |  |_ autocmds.vim      # doomnvim autocmds
 |   |  |_ commands.vim      # doomnvim internal commands
