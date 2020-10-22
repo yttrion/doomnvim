@@ -22,7 +22,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " Toggle a terminal in a new buffer
 function! TermToggle(height)
-	if win_gotoid(g:termwin)
+	if win_gotoid(g:term_win)
 		hide
 	else
 		botright new
