@@ -48,6 +48,13 @@ need_cmd () {
     fi
 }
 
+check_bin () {
+	if ! type "$1" &> /dev/null; then
+		error "Need '$1' (command not found)"
+		exit 1
+	fi
+}
+
 check_requirements(){
 	info "Checking requirements"
 	# Checks if git is installed again
@@ -309,7 +316,7 @@ main(){
 				;;
 			--install|-i)
 				welcome
-				need_cmd 'git'
+				check_cmd 'git'
 				update_repo
 				if [ $# -eq 2 ]
 				then
@@ -347,7 +354,7 @@ main(){
 	else
 		#Run normal commands
 		welcome
-		need_cmd 'git'
+		check_cmd 'git'
 		update_repo
 		backup_neovim
 		install_vimplug
