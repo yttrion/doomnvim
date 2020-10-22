@@ -77,7 +77,6 @@ function! doomnvim#begin() abort
 
     call doomnvim#loadConfig('globals.vim')
     call doomnvim#loadConfig('functions.vim')
-    call doomnvim#loadConfig('gui.vim')
     call doomnvim#default#options()    
 
 endfunction

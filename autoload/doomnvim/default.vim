@@ -50,3 +50,4 @@ function! doomnvim#default#options() abort
     else
     	set signcolumn=auto
     endif   
+endfunction
