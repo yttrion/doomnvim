@@ -86,7 +86,7 @@ endfunction
 
 function! doomnvim#end() abort
 
-    let help = fnamemodify("$HOME/.doomnvim") . '/doc'
+    let help = fnamemodify("$HOME/.doomnvim", ':p:h') . '/doc'
     try
         exe 'helptags ' . help
     catch
