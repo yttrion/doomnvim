@@ -156,39 +156,39 @@ doomnvim aims to be hackable to suit everyone's needs. Therefore
 
 This is the layout of doomnvim:
 
-|_ autoload/ 				# Files loaded at launch
-|	|_ doomnvim/ 			# doomnvim core
-| 	|   |_ autocmds.vim    	# doomnvim autocmds
-| 	|   |_ commands.vim    	# doomnvim internal commands
-| 	|   |_ default.vim    	# doomnvim default
-|   |   |_ health.vim 		# doomnvim health
-| 	|   |_ options.vim    	# doomnvim options
-| 	|_ doomnvim.vim 		# Config file for various globals
-|	|_ plug.vim 			# Plug-Vim configuration file
-|_ colors/ 					# doomnvim colorscheme directory
-|	|_ doomnvim.vim 		# doom colorscheme (default)
-|	|_ gruvbox.vim 			# morhetz gruvbox colorscheme
-| 	|_ one.vim 				# vim-one colorscheme
-| 	|_ synthwave.vim 		# aleaw's fsociety theme
-|_ config/ 					# Configuration files of doomnvim
-|	|_ plugins/ 			# Plugin config
-| 	| 	|_ coc.vim 			# coc.nvim configuration
-|   |   |_ dict.vim 		# Dictionnary for vim-which-key
-|	|	|_ keymap.vim 		# doomnvim keybindings
-|	|	|_ nerdtree.vim 	# NERDTree configuration
-|	|	|_ startify.vim 	# vim-startify configuration
-|	|	|_ tagbar.vim 		# tagbar config
-|	|	|_ workspace.vim 	# workspace config
-| 	|_ functions.vim 		# doomnvim functions
-|	|_ globals.vim 			# Global values
-|	|_ gui.vim 				# doomnvim gui options
-|	|_ main.vim 			# init file, loads vim-plug
-|_ doc/ 					# documentation of doomnvim
-|	|_ doomnvim.txt 		# doomnvim help file
-|_ plugged/ 				# Location of pluggins
-|_ sessions/ 				# Location vim workspaces
-|_ init.vim 				# init.vim file
-|_ install.sh 				# doomnvim managment
+|_ autoload/# Files loaded at launch
+|	|_ doomnvim/              # doomnvim core
+| 	|   |_ autocmds.vim     # doomnvim autocmds
+| 	|   |_ commands.vim     # doomnvim internal commands
+| 	|   |_ default.vim      # doomnvim default
+|   |   |_ health.vim       # doomnvim health
+| 	|   |_ options.vim      # doomnvim options
+| 	|_ doomnvim.vim         # Config file for various globals
+|	|_ plug.vim               # Plug-Vim configuration file
+|_ colors/                  # doomnvim colorscheme directory
+|	|_ doomnvim.vim           # doom colorscheme (default)
+|	|_ gruvbox.vim            # morhetz gruvbox colorscheme
+| 	|_ one.vim              # vim-one colorscheme
+| 	|_ synthwave.vim        # aleaw's fsociety theme
+|_ config/                  # Configuration files of doomnvim
+|	|_ plugins/               # Plugin config
+| 	| 	|_ coc.vim          # coc.nvim configuration
+|   |   |_ dict.vim         # Dictionnary for vim-which-key
+|	|	|_ keymap.vim           # doomnvim keybindings
+|	|	|_ nerdtree.vim         # NERDTree configuration
+|	|	|_ startify.vim         # vim-startify configuration
+|	|	|_ tagbar.vim           # tagbar config
+|	|	|_ workspace.vim        # workspace config
+| 	|_ functions.vim        # doomnvim functions
+|	|_ globals.vim            # Global values
+|	|_ gui.vim                # doomnvim gui options
+|	|_ main.vim               # init file, loads vim-plug
+|_ doc/                     # documentation of doomnvim
+|	|_ doomnvim.txt           # doomnvim help file
+|_ plugged/                 # Location of pluggins
+|_ sessions/                # Location vim workspaces
+|_ init.vim                 # init.vim file
+|_ install.sh               # doomnvim managment
 
 ==============================================================================
 CHANGELOG                                                 *doomnvim-changelog*
