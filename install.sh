@@ -48,7 +48,7 @@ need_cmd () {
     fi
 }
 
-check_bin () {
+check_cmd () {
 	if ! type "$1" &> /dev/null; then
 		error "Need '$1' (command not found)"
 		exit 1
