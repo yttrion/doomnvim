@@ -21,7 +21,7 @@ inoremap <silent><expr> <Tab>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Toggle a terminal in a new buffer
-function! TermToggle(h)
+function! TermToggle(height)
 	if win_gotoid(g:termwin)
 		hide
 	else
