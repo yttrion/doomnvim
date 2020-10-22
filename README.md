@@ -27,6 +27,9 @@ doomnvim is a vim-version of the Doom-emacs framework. It aims to add useful fea
 
 # Features
 
+- Curated defaults for vim/neovim
+- Support for *many* languages with [coc.nvim](https://github.com/neoclide/coc.nvim)
+- Mnemonic key binding
 
 # Install
 ## Prerequisites

@@ -121,7 +121,7 @@ COMMANDS                                                   *doomnvim-commands*
 
 doomnvim uses vim-which-key as a command manager. To open whichkey press
 <Space> and wait for the popup to show. Each function has a label and is
-mnemotechnic
+mnemonic
 e.g:
 	`Save File`> <Space>sf 
 	`Buffer split vertically`> <Space>bsv
