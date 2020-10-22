@@ -110,7 +110,7 @@ function! CreateCommit()
 endfunction
 
 
-function! editColorscheme()
+function! EditColorscheme()
 	exec ':!ls $HOME/.doomnvim/colors/'
 	let target_cs = input('Select colorscheme: ')
 	if target_cs != ''
