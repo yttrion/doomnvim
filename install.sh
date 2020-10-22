@@ -115,11 +115,11 @@ vim_backup(){
 #Update repo if alread installed
 update_repo(){
 	if [[ -d "$HOME/.doomnvim" ]]; then
-		info "Updating doomnvim install"
+		echo "[+] Updating doomnvim..."
 		cd "$HOME/.doomnvim"
 		git pull
 		cd - > /dev/null 2>&1
-		success "Successfully updated doomnvim"
+		echo "[*] - Successfully updated doomnvim"
 	else
 		info "Trying to clone doomnvim"
 		git clone -q https://github.com/yttrion/doomnvim "$HOME/.doomnvim"
@@ -131,6 +131,7 @@ update_repo(){
 		fi
 	fi
 }
+
 
 backup_neovim(){
 	if [[ -d "$HOME/.config/nvim" ]]; then
