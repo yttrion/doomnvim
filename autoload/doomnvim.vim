@@ -88,7 +88,7 @@ function! doomnvim#end() abort
 
     let help = fnamemodify("$HOME/.doomnvim", ':p:h') . '/doc'
     try
-        exe 'helptags ' . help
+        exec 'helptags ' . help
     catch
         echo "Failed to load doomvim.txt file"
     endtry
