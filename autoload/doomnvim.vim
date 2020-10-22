@@ -71,7 +71,7 @@ function! doomnvim#loadConfig(file) abort
 endfunction
 
 function! doomnvim#loadPlugin(file) abort
-    if filereadable('$HOME/.doomnvim/config/plugins' . a:file)
+    if filereadable('$HOME/.doomnvim/config/plugins/' . a:file)
         execute 'source $HOME/.doomnvim/config/plugins' . a:file
     endif
 endfunction
