@@ -80,6 +80,7 @@ function! doomnvim#begin() abort
     call doomnvim#loadConfig('globals.vim')
     call doomnvim#loadConfig('functions.vim')
     call doomnvim#default#options()    
+    call doomnvim#autocmds#init()
 
 endfunction
 
