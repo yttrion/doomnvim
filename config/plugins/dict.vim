@@ -11,39 +11,39 @@ let g:which_key_map = {
 
 
 let g:which_key_map.f = {
-			\ 'name' 	: '+file',
-			\ 's' 		: 'Save file',
-			\ 'S' 		: 'Save all',
-			\ 'o' 		: 'Open explorer',
-			\ 'r' 		: 'Rename file',
+			\ 'name' : '+file',
+			\ 's' : 'Save file',
+			\ 'S' : 'Save all',
+			\ 'o' : 'Open explorer',
+			\ 'r' : 'Rename file',
 			\ }
 
 
 let g:which_key_map.b = {
-			\ 'name' 	: '+buffer',
-			\ 'p' 		: 'Previous buffer',
-			\ 'n' 		: 'Next buffer',
-			\ 'k' 		: 'Kill buffer',
-			\ 'l' 		: 'Last buffer',
-			\ 't' 		: 'Open terminal',
-			\ 'e' 		: 'Empty buffer',
-			\ 'c' 		: 'Close all except focused',
-			\ 'f' 		: 'Select buffer',
-			\ 'r' 		: 'Rezise equally',
-			\ 's'       : {
-				\ 'name' 	: '+split',
-				\ 'v' 		: 'Split vertically',
-				\ 'h' 		: 'Split horizontally'
+			\ 'name' : '+buffer',
+			\ 'p' : 'Previous buffer',
+			\ 'n' : 'Next buffer',
+			\ 'k' : 'Kill buffer',
+			\ 'l' : 'Last buffer',
+			\ 't' : 'Open terminal',
+			\ 'e' : 'Empty buffer',
+			\ 'c' : 'Close all except focused',
+			\ 'f' : 'Select buffer',
+			\ 'r' : 'Rezise equally',
+			\ 's' : {
+				\ 'name' : '+split',
+				\ 'v' : 'Split vertically',
+				\ 'h' : 'Split horizontally'
 				\ },
-			\ 'w' 		: {
-				\ 'name' 	: '+width',
-				\ 'i' 		: 'Increase width',
-				\ 'd' 		: 'Decrease width',
+			\ 'w' : {
+				\ 'name' : '+width',
+				\ 'i' : 'Increase width',
+				\ 'd' : 'Decrease width',
 				\ },
-			\ 'h' 		: {
-				\ 'name' 	: '+height',
-				\ 'i' 		: 'Increase height',
-				\ 'd' 		: 'Decrease height',
+			\ 'h' : {
+				\ 'name' : '+height',
+				\ 'i' : 'Increase height',
+				\ 'd' : 'Decrease height',
 				\ },
 			\ }
 
@@ -62,42 +62,41 @@ let g:which_key_map.c = {
 
 
 let g:which_key_map.g = {
-			\ 'name' 	: '+git',
-			\ 'g' 		: 'GitGutterToggle',
-			\ 'h' 		: {
-				\ 'name' 	: '+hunk',
-				\ 'p' 		: 'Previous hunk',
-				\ 'n' 		: 'Next hunk',
-				\ 's' 		: 'Stage hunk',
-				\ 'u' 		: 'Undo hunk',
-				\ 'P' 		: 'Preview hunk',
+			\ 'name' : '+git',
+			\ 'g' : 'GitGutterToggle',
+			\ 'h' : {
+				\ 'name' : '+hunk',
+				\ 'p' : 'Previous hunk',
+				\ 'n' : 'Next hunk',
+				\ 's' : 'Stage hunk',
+				\ 'u' : 'Undo hunk',
+				\ 'P' : 'Preview hunk',
+				\ } ,
+			\ 's' : 'Status',
+			\ 'c' : {
+				\ 'name' : '+create',
+				\ 'c' : 'Create commit',
+				\ 'p' : 'Create pull request',
+				\ 'i' : 'Create issue',
+				\ 'b' : 'Create branch',
 				\ },
-
-			\ 's' 		: 'Status',
-			\ 'c' 		: {
-				\ 'name' 	: '+create',
-				\ 'c' 		: 'Create commit',
-				\ 'p' 		: 'Create pull request',
-				\ 'i' 		: 'Create issue',
-				\ 'b' 		: 'Create branch',
-				\ },
-			\ 'C' 		: 'Checkout',
+			\ 'C' : 'Checkout',
 			\ }
 
 
 let g:which_key_map.h = {
-			\ 'name' 	: '+help',
-			\ 'h' 		: 'doomnvim help',
-			\ 'i' 		: 'doomnvim info',
-			\ 'u' 		: 'doomnvim update',
-			\ 'X' 		: 'doomnvim uninstall',
+			\ 'name' : '+help',
+			\ 'h' : 'doomnvim help',
+			\ 'i' : 'doomnvim info',
+			\ 'u' : 'doomnvim update',
+			\ 'X' : 'doomnvim uninstall',
 			\ }
 
 
 let g:which_key_map.q = {
-			\ 'name' 	: '+quit',
-			\ 'q' 		: 'Quit',
-			\ 'Q' 		: 'Quit all',
+			\ 'name' : '+quit',
+			\ 'q' : 'Quit',
+			\ 'Q' : 'Quit all',
 			\ }
 
 
@@ -107,13 +106,13 @@ let g:which_key_map.s = {
 
 
 let g:which_key_map.t = {
-			\ 'name' 	: '+toggle',
-			\ 'l' 		: 'Line number',
-			\ 'w' 		: 'Word wrap',
-			\ 'h' 		: 'Toggle highlights',
-			\ 'e' 		: 'Toggle errors',
-			\ 't' 		: 'Toggle tagbar',
-			\ 'f' 		: 'Toggle floating terminal',
+			\ 'name' : '+toggle',
+			\ 'l' : 'Line number',
+			\ 'w' : 'Word wrap',
+			\ 'h' : 'Toggle highlights',
+			\ 'e' : 'Toggle errors',
+			\ 't' : 'Toggle tagbar',
+			\ 'f' : 'Toggle floating terminal',
 			\ }
 
 
@@ -125,20 +124,20 @@ let g:which_key_map.w = {
 
 let g:which_key_map.p = {
 			\ 'name' : '+plugin',
-			\ 'u' 		: 'Update plugins',
-			\ 'i' 		: 'Install plugins',
-			\ 'c' 		: 'Clean plugins',
-			\ 'm' 		: 'Upgrade plugin manager',
-			\ 'r' 		: 'Update Remote Plugins',
-			\ 'a' 		: {
-				\ 'name' 	: '+autocompleter',
-				\ 'u' 		: 'Update',
-				\ 's' 		: 'Sync Update',
-				\ 'r' 		: 'Restart',
+			\ 'u' : 'Update plugins',
+			\ 'i' : 'Install plugins',
+			\ 'c' : 'Clean plugins',
+			\ 'm' : 'Upgrade plugin manager',
+			\ 'r' : 'Update Remote Plugins',
+			\ 'a' : {
+				\ 'name' : '+autocompleter',
+				\ 'u' : 'Update',
+				\ 's' : 'Sync Update',
+				\ 'r' : 'Restart',
 				\ },
 			\ }
 
 let g:which_key_map.m = {
-			\ 'name' 	: '+misc',
-			\ 's' 		: 'Source file',
+			\ 'name' : '+misc',
+			\ 's' : 'Source file',
 			\ }
