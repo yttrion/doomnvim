@@ -20,7 +20,7 @@ function! doomnvim#default#options() abort
     set splitright
     set splitbelow
     set noswapfile
-    set noexpandtab
+    set expandtab
     set showmode
     set hlsearch
     set nu rnu

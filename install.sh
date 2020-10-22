@@ -306,7 +306,6 @@ helper(){
 check_all(){
 	check_cmd 'git'
 	check_cmd 'ctags'
-	check_cmd 'node'
 	check_cmd 'npm'
 	check_cmd 'nodejs'
 	check_cmd 'curl'
