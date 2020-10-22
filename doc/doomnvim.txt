@@ -1,16 +1,10 @@
 *doomnvim.txt*
-
-
             ______ _____  ________  ___ _   _ _   _ ________  ___ ~
             |  _  \  _  ||  _  |  \/  || \ | | | | |_   _|  \/  |
             | | | | | | || | | | .  . ||  \| | | | | | | | .  . |  
             | | | | | | || | | | |\/| || . ` | | | | | | | |\/| | ~
             | |/ /\ \_/ /\ \_/ / |  | || |\  \ \_/ /_| |_| |  | | ~
             |___/  \___/  \___/\_|  |_/\_| \_/\___/ \___/\_|  |_/ ~
-
-
-
-
 
 yttrion                                                             *doomnvim*
 
@@ -22,16 +16,17 @@ CONTENTS                                                   *doomnvim-contents*
     2. Colorscheme..............................|doomnvim-options-colorscheme|
   3. Configuration....................................|doomnvim-configuration|
   	1. Layout..................................|doomnvim-configuration-layout|
-	2. File	Manager................|doomnvim-configuration-layout-filemanager|
-	3. Main Buffer..................|doomnvim-configuration-layout-mainbuffer|
-	4. Tagbar...........................|doomnvim-configuration-layout-tagbar|
-	5. Buffered Terminal..............|doomnvim-configuration-layout-terminal|
+	  2. File Explorer................|doomnvim-configuration-layout-explorer|
+	  3. Main Buffer................|doomnvim-configuration-layout-mainbuffer|
+	  4. Tagbar.........................|doomnvim-configuration-layout-tagbar|
+	  5. Buffered Terminal............|doomnvim-configuration-layout-terminal|
   4. Commands..............................................|doomnvim-commands|
   5. Functions............................................|doomnvim-functions|
   6. Usage....................................................|doomnvim-usage|
-  7. FAQ........................................................|doomnvim-faq|
-  8. Hacking doomnvim.......................................|doomnvim-hacking|
-  8. Changelog............................................|doomnvim-changelog|
+  7. Known issues............................................|doomnvim-issues|
+  8. FAQ........................................................|doomnvim-faq|
+  9. Hacking doomnvim.......................................|doomnvim-hacking|
+  10. Changelog...........................................|doomnvim-changelog|
 
 
 ==============================================================================
@@ -58,17 +53,17 @@ COLORSCHEME                                     *doomnvim-options-colorscheme*
 
 The colorscheme of doomnvim. Default is 'doom'. There are pre-configured 
 colorschemes installed in `$HOME/.doomnvim/colors/`:
-	- gruvbox
-	- vim-one
-	- synthwave
-	- doom (default)
+	- `gruvbox`
+	- `vim-one`
+	- `synthwave`
+	- `doom` (default)
 
 ==============================================================================
 CONFIGURATION                                         *doomnvim-configuration*
 
 doomnvim configuration files are located in the $HOME/.doomnvim/config/
 directory. You can access the configuration folder of doomnvim by typing
-`doomconfig` at the start menu.
+`doomconfig` at the start menu. See *doomnvim-hacking* for more info.
 
 ==============================================================================
 LAYOUT                                         *doomnvim-configuration-layout*
@@ -80,28 +75,36 @@ Excluding the statusline, doomnvim will mostly have the following layout:
 | 		|						|		 |
 | 		|						|		 |
 | 		|			B			|		 |
-| 	A	|						|	C	 |
+| 	A*	|						|	C*	 |
 | 		|						|		 |
 | 		|						|		 |
 | 		|-----------------------|        |~
-| 		|			D			|		 |
+| 		|			D*			|		 |
 |----------------------------------------|~
 
 
-'A' : The file manager (Plugin: NERDTree)
+'A' : The file explorer (Plugin: NERDTree)
 'B' : The main buffer
 'C' : The tagbar (Plugin: Tagbar)
 'D' : The buffered terminal
 
-==============================================================================
-FILE MANAGER                       *doomnvim-configuration-layout-filemanager*
+Sections with `*` are not opened by default but can be toggled.
+See *doomnvim-commands* for more informations
 
-Lorem
+==============================================================================
+FILE EXPLORER                         *doomnvim-configuration-layout-explorer*
+
+doomnvim uses NERDTree plugin as a file explorer. It can be toggled
+by performing the following command: <Space>fe for `FileExplorer`
+
+To create a new file whithin the file explorer, do <m><a>nameofnode
+Append a `/` if you want to create a directory
 
 ==============================================================================
 MAIN BUFFER                         *doomnvim-configuration-layout-mainbuffer*
 
-Lorem
+The main buffer is the buffer where the code is opened. It can be split 
+into multiple buffers which can be resized individually.
 
 ==============================================================================
 TAGBAR                                  *doomnvim-configuration-layout-tagbar*
@@ -116,7 +119,12 @@ Lorem
 ==============================================================================
 COMMANDS                                                   *doomnvim-commands*
 
-Lorem
+doomnvim uses vim-which-key as a command manager. To open whichkey press
+<Space> and wait for the popup to show. Each function has a label and is
+mnemotechnic
+e.g:
+	`Save File`> <Space>sf 
+	`Buffer split vertically`> <Space>bsv
 
 ==============================================================================
 FUNCTIONS                                                 *doomnvim-functions*
@@ -127,6 +135,14 @@ Lorem
 USAGE                                                         *doomnvim-usage*
 
 Lorem
+
+==============================================================================
+KNOWN ISSUES                                                  *doomvim-issues*
+
+When installing doomvim for the first time, event if plugins are configured
+there might be some error messages. The most common one is
+	`E117: unknown command whichkey#register()`
+due to vim-which-key loading whithout being installed.
 
 ==============================================================================
 FAQ                                                             *doomnvim-faq*
@@ -150,11 +166,14 @@ This is the layout of doomnvim:
 | 	|_ doomnvim.vim 		# Config file for various globals
 |	|_ plug.vim 			# Plug-Vim configuration file
 |_ colors/ 					# doomnvim colorscheme directory
-|	|_ doomnvim.vim 		# doom colorscheme
-|	|_ gruvbox.vim 			# morhetz gruvbox colorscheme 
+|	|_ doomnvim.vim 		# doom colorscheme (default)
+|	|_ gruvbox.vim 			# morhetz gruvbox colorscheme
+|   |_ one.vim 				# vim-one colorscheme
+|   |_ synthwave.vim 		# aleaw's fsociety theme
 |_ config/ 					# Configuration files of doomnvim
 |	|_ plugins/ 			# Plugin config
 | 	| 	|_ coc.vim 			# coc.nvim configuration
+|   |   |_ dict.vim 		# Dictionnary for vim-which-key
 |	|	|_ keymap.vim 		# doomnvim keybindings
 |	|	|_ nerdtree.vim 	# NERDTree configuration
 |	|	|_ startify.vim 	# vim-startify configuration
@@ -164,7 +183,6 @@ This is the layout of doomnvim:
 |	|_ globals.vim 			# Global values
 |	|_ gui.vim 				# doomnvim gui options
 |	|_ main.vim 			# init file, loads vim-plug
-|	|_ options.vim 			# Options of doomnvim
 |_ doc/ 					# documentation of doomnvim
 |	|_ doomnvim.txt 		# doomnvim help file
 |_ plugged/ 				# Location of pluggins
@@ -175,6 +193,8 @@ This is the layout of doomnvim:
 ==============================================================================
 CHANGELOG                                                 *doomnvim-changelog*
 
-Lorem
+v0.1.2
+First "stable" version of doomnvim
+
 
 " vim:tw=78:ft=help:norl:

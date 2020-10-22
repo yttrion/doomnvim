@@ -110,6 +110,13 @@ map <silent><space>tf 				:FloatermNew<CR>
 
 
 " Window ------------------------------------------------------------{{{
+
+map <silent><space>wh 				:wincmd h<CR>
+map <silent><space>wj               :wincmd j<CR>
+map <silent><space>wk               :wincmd k<CR>
+map <silent><space>wl 				:wincmd l<CR>
+map <silent><space>wt               :call LayoutToggle()<CR>
+
 " }}}
 
 

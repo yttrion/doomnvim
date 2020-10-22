@@ -119,6 +119,11 @@ let g:which_key_map.t = {
 
 let g:which_key_map.w = {
 			\ 'name' : '+window',
+			\ 'h' : 'Focus left',
+			\ 'j' : 'Focus down',
+			\ 'k' : 'Focus up',
+			\ 'l' : 'Focus right',
+			\ 't' : 'Toggle vertical/horizontal layout'
 			\ }
 
 

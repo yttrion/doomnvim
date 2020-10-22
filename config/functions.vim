@@ -44,10 +44,10 @@ endfunction
 "Toggle layout
 function! LayoutToggle()
 	if g:vert_layout ==1
-		:exe "normal \<C-w>K<CR>"
+		exe "normal \<C-w>K<CR>"
 		let g:vert_layout = 0
 	else
-		:exe "normal \<C-w>H<CR>"
+		exe "normal \<C-w>H<CR>"
 		let g:vert_layout = 1
 	endif
 endfunction
