@@ -52,5 +52,7 @@ After doomnvim is installed, run `vim` and doomnvim will automatically install p
 
 # Screenshots
 
+![doomnvim Screenshot](./doomnvim.png)
+
 # Contribute
 
