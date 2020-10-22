@@ -4,11 +4,13 @@
 " License: MIT
 "===============================================
 
-try
-	call which_key#register('<Space>', "g:which_key_map")
-catch
-	echo "Installing all plugins..."
-endtry
+let mapleader = " "
+call which_key#register('<Space>', "g:which_key_map")
+"try
+"	call which_key#register('<Space>', "g:which_key_map")
+"catch
+"	echo "Installing all plugins..."
+"endtry
 
 nnoremap <silent><leader> :WhichKey '<Space>'<CR>
 
