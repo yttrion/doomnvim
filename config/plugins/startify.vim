@@ -36,7 +36,7 @@ let g:startify_custom_header = [
 let g:startify_lists = [
           \ { 'type': 'files',     'header': ['   Files']                        },
 		  \ { 'type': 'dir',       'header': ['   Current directory'. getcwd()]  },
-		  \ { 'type': function('s:nerdtreeBookmarks'), 'header': ['   Bookmarks'] }
+		  \ { 'type': function('s:nerdtreeBookmarks'), 'header': ['   Bookmarks']},
 		  \ { 'type': function('s:gitModified'),  'header': ['   git modified']  },
           \ { 'type': function('s:gitUntracked'), 'header': ['   git untracked'] },
 
