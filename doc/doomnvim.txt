@@ -15,7 +15,7 @@ CONTENTS                                                   *doomnvim-contents*
     1. Autocomplete............................|doomnvim-options-autocomplete|
     2. Colorscheme..............................|doomnvim-options-colorscheme|
   3. Configuration....................................|doomnvim-configuration|
-  	1. Layout..................................|doomnvim-configuration-layout|
+    1. Layout..................................|doomnvim-configuration-layout|
     2. File Explorer..................|doomnvim-configuration-layout-explorer|
     3. Main Buffer..................|doomnvim-configuration-layout-mainbuffer|
     4. Tagbar...........................|doomnvim-configuration-layout-tagbar|
