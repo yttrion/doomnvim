@@ -33,7 +33,7 @@ doomnvim is a vim-version of the Doom-emacs framework. It aims to add useful fea
 
 doomnvim requires `nodejs`>=10.12 and `npm` in order to work properly
 
-`curl` and `git` are also needed
+`curl`, `ctags` and `git` are also needed
 
 ## Install doomnvim
 Simply run the following command:
