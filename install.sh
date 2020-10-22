@@ -306,15 +306,12 @@ helper(){
 check_all(){
 	check_cmd 'git'
 	check_cmd 'ctags'
-<<<<<<< HEAD
 	check_cmd 'node'
 	check_cmd 'npm'
 	check_cmd 'nodejs'
 	check_cmd 'curl'
-=======
 	check_cmd 'nodejs'
 	check_cmd 'npm'
->>>>>>> 4752451180ea1c15b97c1c43ea8f762a37d09809
 }
 
 main(){
