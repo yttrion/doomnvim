@@ -63,7 +63,7 @@ CONFIGURATION                                         *doomnvim-configuration*
 
 doomnvim configuration files are located in the $HOME/.doomnvim/config/
 directory. You can access the configuration folder of doomnvim by typing
-`doomconfig` at the start menu. See *doomnvim-hacking* for more info.
+`doomconfig` at the start menu. See |doomnvim-hacking| for more info.
 
 ==============================================================================
 LAYOUT                                         *doomnvim-configuration-layout*
@@ -89,7 +89,7 @@ Excluding the statusline, doomnvim will mostly have the following layout:
 'D' : The buffered terminal
 
 Sections with `*` are not opened by default but can be toggled.
-See *doomnvim-commands* for more informations
+See |doomnvim-commands| for more informations
 
 ==============================================================================
 FILE EXPLORER                         *doomnvim-configuration-layout-explorer*
