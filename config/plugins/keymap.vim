@@ -33,7 +33,7 @@ map <silent><space>bp 				:bp<CR>
 map <silent><space>bn 				:bn<CR>
 map <silent><space>bk 				:q!<CR>
 map <silent><space>bl 				:blast<CR>
-map <silent><space>bt 				:call TermToggle(10)<CR>
+map <silent><space>bt 				:call TermToggle(7)<CR>
 map <silent><space>be 				:enew<CR>
 map <silent><space>bc 				:<C-u>up<bar>%bd<bar>e#<CR>
 map <silent><space>bsv 				:vsp<CR>
