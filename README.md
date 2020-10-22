@@ -42,7 +42,7 @@ doomnvim requires `nodejs`>=10.12 and `npm` in order to work properly
 Simply run the following command:
 
 ```bash
-curls -sLf https://raw.githubusercontent.com/yttrion/doomnvim/main/install.sh | bash
+curl -sLf https://raw.githubusercontent.com/yttrion/doomnvim/main/install.sh | bash
 ```
 
 After doomnvim is installed, run `vim` and doomnvim will automatically install plugins
