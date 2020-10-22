@@ -35,7 +35,7 @@ BWhite='\033[1;37m'       # White
 # }}}
 
 # version
-Version='0.1.1'
+Version='0.1.2'
 #System name
 System="$(uname -s)"
 
