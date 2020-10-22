@@ -4,6 +4,24 @@
 " License: MIT
 "====================================================================
 
+function! s:gitModified()
+    let files = systemlist('git ls-files -m 2>/dev/null')
+    return map(files, "{'line': v:val, 'path': v:val}")
+endfunction
+
+" same as above, but show untracked files, honouring .gitignore
+function! s:gitUntracked()
+    let files = systemlist('git ls-files -o --exclude-standard 2>/dev/null')
+    return map(files, "{'line': v:val, 'path': v:val}")
+endfunction
+
+function! s:nerdtreeBookmarks()
+    let bookmarks = systemlist("cut -d' ' -f 2 ~/.NERDTreeBookmarks")
+    let bookmarks = bookmarks[0:-2] " Slices an empty last line
+    return map(bookmarks, "{'line': v:val, 'path': v:val}")
+endfunction
+
+
 let g:startify_custom_header = [
 			\ '______ _____  ________  ___',
 			\ '|  _  \  _  ||  _  |  \/  |',
@@ -17,7 +35,11 @@ let g:startify_custom_header = [
 
 let g:startify_lists = [
           \ { 'type': 'files',     'header': ['   Files']                        },
-          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']                    },
+		  \ { 'type': 'dir',       'header': ['   Current directory'. getcwd()]  },
+		  \ { 'type': function('s:nerdtreeBookmarks'), 'header': ['   Bookmarks'] }
+		  \ { 'type': function('s:gitModified'),  'header': ['   git modified']  },
+          \ { 'type': function('s:gitUntracked'), 'header': ['   git untracked'] },
+
           \ ]
 
 
