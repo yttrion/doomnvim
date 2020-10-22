@@ -303,6 +303,13 @@ helper(){
 	echo "-x --uninstall 			Uninstall doomnvim"
 }
 
+check_all(){
+	check_cmd 'git'
+	check_cmd 'ctags'
+	check_cmd 'nodejs'
+	check_cmd 'npm'
+}
+
 main(){
 	if [ $# -gt 0 ]
 	then
@@ -317,7 +324,7 @@ main(){
 				;;
 			--install|-i)
 				welcome
-				check_cmd 'git'
+				check_all
 				update_repo
 				if [ $# -eq 2 ]
 				then
@@ -355,7 +362,7 @@ main(){
 	else
 		#Run normal commands
 		welcome
-		check_cmd 'git'
+		check_all
 		update_repo
 		backup_neovim
 		install_vimplug
