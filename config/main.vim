@@ -12,6 +12,19 @@ if empty(glob('~/.doomnvim/autoload/plug.vim'))
 endif
 
 
+" On load
+if has('vim_starting')
+	" Force utf-8
+	exe 'set encoding=utf-8'
+	" Force nocompatible
+	if &compatible
+		set nocompatible
+	endif
+endif
+
+call doomnvim#begin()
+
+
 call plug#begin('~/.doomnvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch':'release'}
 Plug 'itchyny/lightline.vim'
@@ -32,9 +45,9 @@ call plug#end()
 
 
 source $HOME/.doomnvim/config/gui.vim
-source $HOME/.doomnvim/config/globals.vim
-source $HOME/.doomnvim/config/options.vim
-source $HOME/.doomnvim/config/functions.vim
+"source $HOME/.doomnvim/config/globals.vim
+"source $HOME/.doomnvim/config/options.vim
+"source $HOME/.doomnvim/config/functions.vim
 source $HOME/.doomnvim/config/plugins/coc.vim
 source $HOME/.doomnvim/config/plugins/startify.vim
 source $HOME/.doomnvim/config/plugins/workspace.vim

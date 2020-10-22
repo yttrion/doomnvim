@@ -13,7 +13,7 @@ lockvar g:doomnvim_version
 
 " Default indent size
 " @default = 2
-let g:doomnvim_indent = 2
+let g:doomnvim_indent = 4
 
 " Expand tabs
 " @default = 0
@@ -64,10 +64,26 @@ let g:doomnvim_lint_onsave = 1
 let g:doomnvim_autocomplete_par = 1
 
 
+function! doomnvim#loadConfig(file) abort
+    if filereadable('$HOME/.doomnvim/config/' . a:file)
+        execute 'source $HOME/.doomnvim/config' . a:file
+    endif
+    if
+endfunction
 
 
 " Functions
+function! doomnvim#begin() abort
 
+    call doomnvim#loadConfig('globals.vim')
+    "call doomnvim#loadConfig('options.vim')
+    call doomnvim#loadConfig('functions.vim')
+
+    call doomnvim#default#options()
+    call doomnvim#loadConfig('globals.vim')
+    
+
+endfunction
 
 
 " vim: cc=100:
