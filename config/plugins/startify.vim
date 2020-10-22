@@ -39,7 +39,6 @@ let g:startify_lists = [
 		  \ { 'type': function('s:nerdtreeBookmarks'), 'header': ['   Bookmarks']},
 		  \ { 'type': function('s:gitModified'),  'header': ['   git modified']  },
           \ { 'type': function('s:gitUntracked'), 'header': ['   git untracked'] },
-
           \ ]
 
 
