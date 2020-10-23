@@ -30,7 +30,8 @@ endfunction
 function! doomnvim#logging#init()
 
     if g:doomnvim_logging != 0
-        let boot_msg = "[*] - Starting doomnvim"
+        let today = strftime('%c')
+        let boot_msg = "[".today."] - Starting doomnvim"
         try
             exec ':silent !echo '.boot_msg.'>> $HOME/.doomnvim/logs/doomnvim.log'
         catch
