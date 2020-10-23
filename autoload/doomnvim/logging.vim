@@ -7,7 +7,8 @@
 let s:path = expand('<sfile>:p')
 
 function! doomnvim#logging#message(type, msg)
-    
+   
+    echo "Logger[message]"
     if g:doomnvim_logging == 1
         if type == "!"
             let output = "[!] - " . msg
