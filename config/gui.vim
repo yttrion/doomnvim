@@ -5,12 +5,16 @@
 "====================================================
 
 if g:doomnvim_colorscheme !=# ''
-	try
-		exec 'set background=' . g:doomnvim_colorscheme_bg
-		exec 'colorscheme ' . g:doomnvim_colorscheme
-	catch
-		exec 'colorscheme default'
-	endtry
+    if !filereadable("$HOME/.doomnvim/autoload/colorscheme")
+	    try
+	    	exec 'set background=' . g:doomnvim_colorscheme_bg
+	    	exec 'colorscheme ' . g:doomnvim_colorscheme
+	    catch
+	    	exec 'colorscheme default'
+	    endtry
+    else
+        exec 'call readfile($HOME/.doomnvim/autoload/colorscheme)'
+    endif
 else
 	exec 'colorscheme default'
 endif
