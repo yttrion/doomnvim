@@ -89,6 +89,7 @@ function! doomnvim#begin() abort
     "call doomnvim#loadConfig('gui.vim')
     call doomnvim#default#options()    
     call doomnvim#autocmds#init()
+    call doomnvim#logging#init()
 
 endfunction
 

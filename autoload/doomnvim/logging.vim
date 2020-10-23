@@ -27,6 +27,18 @@ function! doomnvim#logging#message(type, msg)
 
 endfunction
 
+function! doomnvim#logging#init()
+
+    if g:doomnvim_logging != 0
+        try
+            exec ':silent !echo "[###] - Starting doomnvim" >> $HOME/.doomnvim/logs/doomnvim.log'
+        catch
+            echo "Cannot write on_start log message"
+        endtry
+    endif
+
+endfunction
+
 
 function! doomnvim#logging#error()
 
