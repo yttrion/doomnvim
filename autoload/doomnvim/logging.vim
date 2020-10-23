@@ -20,10 +20,9 @@ function! doomnvim#logging#message(type, msg)
             let output = "[?] - " . msg
         endif
         try
-            echo output
+            "echo output
             exec ':! echo "' . output . '" >> ' . path . '/../../logs/doomnvim.log'
         catch
-            "exec ':! echo "[!] - Failed to echo message" >> $HOME/.doomnvim/logs/doomnvim.log'
             echo "Failed to echo log"
         endtry
     endif

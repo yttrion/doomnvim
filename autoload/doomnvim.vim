@@ -63,8 +63,12 @@ let g:doomnvim_lint_onsave = 1
 " @default = 1
 let g:doomnvim_autocomplete_par = 1
 
-" Logging
-" @default = 0
+" Logging level
+" 0 : No logging
+" 1 : All errors and messages, no echo (default)
+" 2 : All errors and messages, echo
+" 3 : All errors and messages, echo, silent
+" @default = 1
 let g:doomnvim_logging = 1
 
 
