@@ -10,14 +10,14 @@ function! doomnvim#logging#message(type, msg)
    
     echo "Logger[message]"
     if g:doomnvim_logging == 1
-        if type == "!"
-            let output = "[!] - " . msg
-        elseif type == "+"
-            let output = "[+] - " . msg
-        elseif type == "*"
-            let output = "[*] - " . msg
-        elseif type == "?"
-            let output = "[?] - " . msg
+        if a:type == "!"
+            let output = "[!] - " . a:msg
+        elseif a:type == "+"
+            let output = "[+] - " . a:msg
+        elseif a:type == "*"
+            let output = "[*] - " . a:msg
+        elseif a:type == "?"
+            let output = "[?] - " . a:msg
         endif
         try
             "echo output
