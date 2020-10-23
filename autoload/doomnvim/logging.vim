@@ -6,7 +6,7 @@
 
 let s:path = expand('<sfile>:p')
 
-function! doomnvim#logging#message(type, msg) abort
+function! doomnvim#logging#message(type, msg)
     
     if g:doomnvim_logging == 1
         if type == "!"

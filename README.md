@@ -24,6 +24,7 @@
 # Introduction
 doomnvim is a vim-version of the Doom-emacs framework. It aims to add useful features to stock vim/neovim
 
+**doomnvim is still under development. Expect missing features and lots of bug**
 
 # Features
 
