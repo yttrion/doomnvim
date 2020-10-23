@@ -113,8 +113,9 @@ endfunction
 function! EditColorscheme()
 	exec ':!ls $HOME/.doomnvim/colors/'
 	let target_cs = input('Select colorscheme: ')
+    let current_cs = g:colors_name
 	if target_cs != ''
 		" sed -i 's/# autologin=dgod/autologin=ubuntu/' /path/to/file
-		" exec ":!sed -i 's/'doom'/'" . target_cs ."' $HOME/.doomnvim/autoload/doomnvim.vim"
+        exec ":! sed -i '40s/" . current_cs . "\"/\"" . target_cs . "\"/g' " . "$HOME/.doomnvim/autoload/doomnvim.vim"
 	endif
 endfunction
