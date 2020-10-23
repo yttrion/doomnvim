@@ -68,7 +68,7 @@ let g:doomnvim_autocomplete_par = 1
 
 function! doomnvim#loadConfig(file) abort
     if filereadable(glob('~/.doomnvim/config/') . a:file)
-        execute 'source ' . glob('$HOME/.doomnvim/config') . a:file
+        execute 'source ' . glob('$HOME/.doomnvim/config/') . a:file
     endif
 endfunction
 
