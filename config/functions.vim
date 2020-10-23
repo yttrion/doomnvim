@@ -110,21 +110,10 @@ function! CreateCommit()
 endfunction
 
 
-"function! EditColorscheme()
-"	exec ':!ls $HOME/.doomnvim/colors/'
-"	let target_cs = input('Select colorscheme: ')
-"	if target_cs != ''
-"		" sed -i 's/# autologin=dgod/autologin=ubuntu/' /path/to/file
-"        " Bug ==> it displays the command and doesn't load the colorscheme
-"        "exe ":! sed -i '40s/" . current_cs . "\"/\"" . target_cs . "\"/g' " . "$HOME/.doomnvim/autoload/doomnvim.vim"
-"	endif
-"endfunction
-
-
 function! ChangeColors()
 
-    exec ':!ls $HOME/.doomnvim/colors/'
-    let target = input('Select colorscheme')
+    exec ":!ls $HOME/.doomnvim/colors/ | sed -e 's/\.vim$//'"
+    let target = input('Select colorscheme: ')
     exec 'colorscheme ' . target
     exec ':! echo "' . target '" > $HOME/.doomnvim/autoload/colorscheme'
 
