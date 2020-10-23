@@ -20,7 +20,7 @@ function! doomnvim#logging#message(type, msg)
         endif
         try
             echo output
-            exec ':! echo "' . output . '" >> ' . path . '../../logs/doomnvim.log'
+            exec ':! echo "' . output . '" >> ' . path . '/../../logs/doomnvim.log'
         catch
             "exec ':! echo "[!] - Failed to echo message" >> $HOME/.doomnvim/logs/doomnvim.log'
             echo "Failed to echo log"
