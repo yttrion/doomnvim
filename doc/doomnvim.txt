@@ -127,7 +127,7 @@ Lorem
 BUFFERED TERMINAL                     *doomnvim-configuration-layout-terminal*
 
 The buffered terminal is placed like in visual studio code. The buffer 
-is automatically set to `input` mode. Ath the moment, the only way to close
+is automatically set to `NORMAL` mode. At the moment, the only way to close
 it is to enter `exit` to close the shell session.
 
 ==============================================================================
