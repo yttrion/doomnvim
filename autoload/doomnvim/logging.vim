@@ -30,8 +30,9 @@ endfunction
 function! doomnvim#logging#init()
 
     if g:doomnvim_logging != 0
+        let boot_msg = "[*] - Starting doomnvim"
         try
-            exec ':silent !echo "[###] - Starting doomnvim" >> $HOME/.doomnvim/logs/doomnvim.log'
+            exec ':silent !echo '.boot_msg.'>> $HOME/.doomnvim/logs/doomnvim.log'
         catch
             echo "Cannot write on_start log message"
             exec ":!touch $HOME/.doomnvim/logs/doomnvim.log"
