@@ -14,7 +14,7 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
+      \ <SID>check_backspace() ? "\<Tab>" :
       \ coc#refresh()
 
 "No NERDTree alone except when startify

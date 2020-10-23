@@ -6,6 +6,8 @@
 
 function! doomnvim#health() abort
 
+
+
 endfunction
 
-" vim: set et sw=2:
+" vim:cc=100:
