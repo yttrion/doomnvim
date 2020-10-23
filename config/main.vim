@@ -8,8 +8,6 @@ if empty(glob('~/.doomnvim/autoload/plug.vim'))
   	silent !curl -fLo ~/.doomnvim/autoload/plug.vim --create-dirs
     	\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-    "I don't know how to quit vim
-    exec ":!ps axuw | grep vim | grep -v grep | awk '{print $2}' | xargs kill -9"
 
 endif
 
