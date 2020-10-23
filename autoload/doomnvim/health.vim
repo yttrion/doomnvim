@@ -6,8 +6,6 @@
 
 function! doomnvim#health() abort
 
-
-
 endfunction
 
-" vim:cc=100:
+" vim:cc=80:

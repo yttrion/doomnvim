@@ -29,7 +29,7 @@ map <silent><space>fr 				:call RenameFile()<CR>
 
 " Buffer operations -------------------------------------------------{{{
 
-map <silent><space>bp 				:bp<CR> 
+map <silent><space>bp 				:bp<CR>
 map <silent><space>bn 				:bn<CR>
 map <silent><space>bk 				:q!<CR>
 map <silent><space>bl 				:blast<CR>
@@ -58,6 +58,7 @@ map <silent><space>cs 				<Plug>(coc-format-selected)
 map <silent><space>cf 				:gg=G<CR>
 map <silent><space>cD 				:call <SID>show_documentation()<CR>
 map <silent><space>cc 				<Plug>NERDCommenterToggle
+map <silent><space>cC               <C-v>
 
 " }}}
 

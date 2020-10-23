@@ -58,6 +58,7 @@ let g:which_key_map.c = {
 			\ 'f' 		: 'Format file',
 			\ 'D' 		: 'Show documentation',
 			\ 'c' 		: 'Toggle comment',
+            \ 'C'       : 'Column edition',
 			\ }
 
 
