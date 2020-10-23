@@ -63,6 +63,9 @@ let g:doomnvim_lint_onsave = 1
 " @default = 1
 let g:doomnvim_autocomplete_par = 1
 
+" Logging
+" @default = 0
+let g:doomnvim_logging = 0
 
 
 
