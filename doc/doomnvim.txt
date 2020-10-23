@@ -153,14 +153,17 @@ Lorem
 ==============================================================================
 KNOWN ISSUES                                                  *doomvim-issues*
 
+`E#1`
 When installing doomvim for the first time, event if plugins are configured
 there might be some error messages. The most common one is
 	`E117: unknown command whichkey#register()`
 due to vim-which-key loading whithout being installed.
 
+`E#2`
 The *doomvim-configuration-layout-terminal* cannot be closed unless 
 the `exit` command is performed.
 
+`E#3`
 The `LayoutToggle()`function might move the NERDTree and buffered terminal
 buffers.
 
@@ -228,6 +231,11 @@ First "stable" version of doomnvim
 
 v0.1.3
 
-    - Added persistent colorscheme change command
+- Added persistent colorscheme change command
+- Added colorschemes (see :|doomnvim-hacking|)
+- Added log handler on boot and for some commands
+- Fixed colorscheme not loading on boot
+- Fixed some commands not working
+
 
 " vim:tw=78:ft=help:norl:
