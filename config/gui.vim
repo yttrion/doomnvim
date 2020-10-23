@@ -14,7 +14,7 @@ if g:doomnvim_colorscheme !=# ''
             exec 'colorscheme ' . scheme[0]
         else
             exec 'colorscheme ' . g:doomnvim_colorscheme
-        fi
+        endif
     else
         call doomnvim#logging#message("+","Colorscheme file not found")
         try
