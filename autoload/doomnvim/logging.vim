@@ -23,6 +23,7 @@ function! doomnvim#logging#message(type, msg) abort
         catch
             exec ':! echo "[!] - Failed to echo message" >> $HOME/.doomnvim/logs/doomnvim.log'
         endtry
+    endif
 
 endfunction
 
