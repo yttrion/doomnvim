@@ -24,7 +24,7 @@
 # Introduction
 doomnvim is a vim-version of the Doom-emacs framework. It aims to add useful features to stock vim/neovim
 
-**doomnvim is still under development. Expect missing features and lots of bug**
+**doomnvim is still under development. Expect missing features and bugs**
 
 # Features
 
@@ -43,7 +43,7 @@ doomnvim requires `nodejs`>=10.12 and `npm` in order to work properly
 Simply run the following command:
 
 ```bash
-curls -sLf https://raw.githubusercontent.com/yttrion/doomnvim/main/install.sh | bash
+curl -sLf https://raw.githubusercontent.com/yttrion/doomnvim/main/install.sh | bash
 ```
 
 After doomnvim is installed, run `vim` and doomnvim will automatically install plugins
