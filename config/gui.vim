@@ -13,7 +13,8 @@ if g:doomnvim_colorscheme !=# ''
 	    	exec 'colorscheme default'
 	    endtry
     else
-        exec 'call readfile($HOME/.doomnvim/autoload/colorscheme)'
+        "exec 'call readfile($HOME/.doomnvim/autoload/colorscheme)'
+        echo "COLORSCHEME FILE FOUND"
     endif
 else
 	exec 'colorscheme default'
