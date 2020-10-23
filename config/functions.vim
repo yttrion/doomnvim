@@ -125,7 +125,7 @@ function! ChangeColors()
 
     exec ':!ls $HOME/.doomnvim/colors/'
     let target = input('Select colorscheme')
-    exec ':colorscheme ' . target
-    exec ':! echo "' . target '" >> $HOME/.doomnvim/autoload/colorscheme'
+    exec 'colorscheme ' . target
+    exec ':! echo "' . target '" > $HOME/.doomnvim/autoload/colorscheme'
 
 endfunction

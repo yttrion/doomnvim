@@ -11,6 +11,7 @@ if g:doomnvim_colorscheme !=# ''
         let scheme = readfile(glob("~/.doomnvim/autoconfig/colorscheme"))
         exec 'colorscheme ' . scheme[0]
     else
+        echo "File not found"
         try
 	    	exec 'set background=' . g:doomnvim_colorscheme_bg
 	    	exec 'colorscheme ' . g:doomnvim_colorscheme
