@@ -146,4 +146,5 @@ let g:which_key_map.p = {
 let g:which_key_map.m = {
 			\ 'name' : '+misc',
 			\ 's' : 'Source file',
+            \ 'c' : 'Change colorscheme',
 			\ }
