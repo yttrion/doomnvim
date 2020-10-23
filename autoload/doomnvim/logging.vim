@@ -4,12 +4,10 @@
 " License: MIT
 "============================================
 
-let s:path = expand('<sfile>:p')
 
 function! doomnvim#logging#message(type, msg)
    
-    echo "Logger[message]"
-    if g:doomnvim_logging == 1
+    if g:doomnvim_logging != 0
         if a:type == "!"
             let output = "[!] - " . a:msg
         elseif a:type == "+"
@@ -20,10 +18,10 @@ function! doomnvim#logging#message(type, msg)
             let output = "[?] - " . a:msg
         endif
         try
-            "echo output
-            exec ':! echo "' . output . '" >> ' . path . '/../../logs/doomnvim.log'
+            exec ':silent !echo '.output.' >> $HOME/.doomnvim/logs/doomnvim.log'
         catch
-            echo "Failed to echo log"
+            let err_msg = "[!] - Cannot save: [" . a:msg . ']'
+            exec ':silent !echo '.err_msg.' >> $HOME/.doomnvim/logs/doomnvim.log'
         endtry
     endif
 
