@@ -34,6 +34,7 @@ function! doomnvim#logging#init()
             exec ':silent !echo "[###] - Starting doomnvim" >> $HOME/.doomnvim/logs/doomnvim.log'
         catch
             echo "Cannot write on_start log message"
+            exec ":!touch $HOME/.doomnvim/logs/doomnvim.log"
         endtry
     endif
 
