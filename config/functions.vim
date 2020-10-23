@@ -36,7 +36,7 @@ function! TermToggle(height)
 			set norelativenumber
 			set signcolumn=no
 		endtry
-		startinsert!
+		"startinsert!
 		let g:term_win = win_getid()
 	endif
     call doomnvim#logging#message("*", "Toggled terminal")

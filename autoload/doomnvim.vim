@@ -8,7 +8,7 @@
 scriptencoding utf-8
 
 " Version
-let g:doomnvim_version = '0.1.3'
+let g:doomnvim_version = '0.1.4'
 "lockvar g:doomnvim_version
 
 " Default indent size
