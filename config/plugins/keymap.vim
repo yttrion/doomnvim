@@ -146,7 +146,7 @@ map <silent><space>mc               :call ChangeColors()<CR>
 
 " Allows FZF keymap if FZF is present
 if doomnvim#functions#checkbin('fzf') == 1
-    map <silent><space>mf           :FZF<CR>
+    map <silent><space>mf           :FloatermNew fzf<CR>
 endif
 " }}}
 
