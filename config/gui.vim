@@ -10,7 +10,11 @@ if g:doomnvim_colorscheme !=# ''
     if glob("~/.doomnvim/autoload/colorscheme") !=# ''
         call doomnvim#logging#message("+","Found colorscheme file")
         let scheme = readfile(glob("~/.doomnvim/autoload/colorscheme"))
-        exec 'colorscheme ' . scheme[0]
+        if scheme[0] != ''
+            exec 'colorscheme ' . scheme[0]
+        else
+            exec 'colorscheme ' . g:doomnvim_colorscheme
+        fi
     else
         call doomnvim#logging#message("+","Colorscheme file not found")
         try
