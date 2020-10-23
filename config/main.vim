@@ -44,9 +44,9 @@ Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 call plug#end()
 
-"source $HOME/.doomnvim/config/gui.vim
-"source $HOME/.doomnvim/config/functions.vim
-"source $HOME/.doomnvim/config/globals.vim
+source $HOME/.doomnvim/config/gui.vim
+source $HOME/.doomnvim/config/functions.vim
+source $HOME/.doomnvim/config/globals.vim
 
 
 source $HOME/.doomnvim/config/plugins/coc.vim
