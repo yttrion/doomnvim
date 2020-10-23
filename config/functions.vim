@@ -14,7 +14,7 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
+      \ <SID>check_backspace() ? "\<Tab>" :
       \ coc#refresh()
 
 "No NERDTree alone except when startify
@@ -39,6 +39,7 @@ function! TermToggle(height)
 		startinsert!
 		let g:term_win = win_getid()
 	endif
+    call doomnvim#logging#message("*", "Toggled terminal")
 endfunction
 
 "Toggle layout
@@ -50,6 +51,7 @@ function! LayoutToggle()
 		exe "normal \<C-w>H<CR>"
 		let g:vert_layout = 1
 	endif
+	call doomnvim#logging#message("*", "Switched layout")
 endfunction
 
 function! s:show_documentation()
@@ -70,10 +72,12 @@ function! RenameFile()
 		exec 'bd ' . old
 		redraw!
 	endif
+	call doomnvim#logging#message("*", "Renamed file")
 endfunction
 
 
 function! BufSel(pattern)
+    call doomnvim#logging#message("*", "Called BufSel")
   	let bufcount = bufnr("$")
   	let currbufnr = 1
   	let nummatches = 0
@@ -96,15 +100,27 @@ function! BufSel(pattern)
   	  	if(strlen(desiredbufnr) != 0)
   	    	execute ":buffer ". desiredbufnr
   	  	endif
-  		else
+  	else
+	    call doomnvim#logging#message("!", "No matching buffers")
   	  	echo "No matching buffers"
   	endif
 endfunction
 
 
 function! CreateCommit()
+	call doomnvim#logging#message("*", "Created commit")
 	let commit_msg = input('Commit message: ')
 	if commit_msg != ''
 		exec ':!git commit -m ' . commit_msg
 	endif
+endfunction
+
+
+function! ChangeColors()
+
+    exec ":!ls $HOME/.doomnvim/colors/ | sed -e 's/\.vim$//'"
+    let target = input('Select colorscheme: ')
+    exec 'colorscheme ' . target
+    exec ':! echo "' . target '" > $HOME/.doomnvim/autoload/colorscheme'
+	call doomnvim#logging#message("*", "Changed default colorscheme")
 endfunction

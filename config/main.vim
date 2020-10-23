@@ -21,7 +21,12 @@ if has('vim_starting')
 	endif
 endif
 
+" Start implementing doomnvim module
 call doomnvim#begin()
+"Custom config 
+"call doomnvim#config()
+"End
+call doomnvim#end()
 
 
 call plug#begin('~/.doomnvim/plugged')
@@ -39,6 +44,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 call plug#end()
 
+call doomnvim#logging#message("+", "Loading config/ files")
 source $HOME/.doomnvim/config/gui.vim
 source $HOME/.doomnvim/config/functions.vim
 source $HOME/.doomnvim/config/globals.vim

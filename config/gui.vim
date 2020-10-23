@@ -4,14 +4,29 @@
 " License: MIT
 "====================================================
 
+
 if g:doomnvim_colorscheme !=# ''
-	try
-		exec 'set background=' . g:doomnvim_colorscheme_bg
-		exec 'colorscheme ' . g:doomnvim_colorscheme
-	catch
-		exec 'colorscheme default'
-	endtry
+    "if !filereadable("$HOME/.doomnvim/autoload/colorscheme")
+    if glob("~/.doomnvim/autoload/colorscheme") !=# ''
+        call doomnvim#logging#message("+", "Found colorscheme file")
+        let scheme = readfile(glob("~/.doomnvim/autoload/colorscheme"))
+        if scheme[0] != ''
+            exec 'colorscheme ' . scheme[0]
+        else
+            exec 'colorscheme ' . g:doomnvim_colorscheme
+        endif
+    else
+        call doomnvim#logging#message("+", "Colorscheme file not found")
+        try
+	    	exec 'set background=' . g:doomnvim_colorscheme_bg
+	    	exec 'colorscheme ' . g:doomnvim_colorscheme
+	    catch
+            call doomnvim#logging#message("!", "Unable to set colorscheme globals")
+	    	exec 'colorscheme default'
+        endtry
+    endif
 else
+    call doomnvim#logging#message("!!", "Forced default colorscheme")
 	exec 'colorscheme default'
 endif
 

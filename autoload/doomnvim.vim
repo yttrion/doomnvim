@@ -8,8 +8,8 @@
 scriptencoding utf-8
 
 " Version
-let g:doomnvim_version = '0.1.2'
-lockvar g:doomnvim_version
+let g:doomnvim_version = '0.1.3'
+"lockvar g:doomnvim_version
 
 " Default indent size
 " @default = 2
@@ -63,10 +63,19 @@ let g:doomnvim_lint_onsave = 1
 " @default = 1
 let g:doomnvim_autocomplete_par = 1
 
+" Logging level
+" 0 : No logging
+" 1 : All errors and messages, no echo (default)
+" 2 : All errors and messages, echo
+" 3 : All errors and messages, echo, silent
+" @default = 1
+let g:doomnvim_logging = 1
+
+
 
 function! doomnvim#loadConfig(file) abort
-    if filereadable('$HOME/.doomnvim/config/' . a:file)
-        execute 'source $HOME/.doomnvim/config' . a:file
+    if filereadable(glob('~/.doomnvim/config/') . a:file)
+        execute 'source ' . glob('$HOME/.doomnvim/config/') . a:file
     endif
 endfunction
 
@@ -75,12 +84,37 @@ endfunction
 " Functions
 function! doomnvim#begin() abort
 
-    call doomnvim#loadConfig('globals.vim')
-    call doomnvim#loadConfig('functions.vim')
+    "call doomnvim#loadConfig('globals.vim')
+    "call doomnvim#loadConfig('functions.vim')
+    "call doomnvim#loadConfig('gui.vim')
     call doomnvim#default#options()    
+    call doomnvim#autocmds#init()
+    call doomnvim#logging#init()
 
 endfunction
 
+
+function! doomnvim#end() abort
+    
+    " Load help tags
+    try
+        exe ':helptags $HOME/.doomnvim/doc/'
+    catch
+        echo "Failed to load doomvim.txt file"
+    endtry
+
+    set smarttab
+    let &expandtab = g:doomnvim_expand_tabs
+    let &tabstop = g:doomnvim_indent
+    let &softtabstop = g:doomnvim_indent
+    let &shiftwidth = g:doomnvim_indent
+
+
+    filetype plugin indent on
+    syntax on
+
+
+endfunction
 
 " vim: cc=100:
 

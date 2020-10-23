@@ -58,6 +58,7 @@ let g:which_key_map.c = {
 			\ 'f' 		: 'Format file',
 			\ 'D' 		: 'Show documentation',
 			\ 'c' 		: 'Toggle comment',
+            \ 'C'       : 'Column edition',
 			\ }
 
 
@@ -145,4 +146,5 @@ let g:which_key_map.p = {
 let g:which_key_map.m = {
 			\ 'name' : '+misc',
 			\ 's' : 'Source file',
+            \ 'c' : 'Change colorscheme',
 			\ }
