@@ -9,7 +9,7 @@ scriptencoding utf-8
 
 " Version
 let g:doomnvim_version = '0.1.2'
-lockvar g:doomnvim_version
+"lockvar g:doomnvim_version
 
 " Default indent size
 " @default = 2
@@ -79,6 +79,7 @@ function! doomnvim#begin() abort
 
     call doomnvim#loadConfig('globals.vim')
     call doomnvim#loadConfig('functions.vim')
+    call doomnvim#loadConfig('gui.vim')
     call doomnvim#default#options()    
     call doomnvim#autocmds#init()
 
@@ -86,10 +87,10 @@ endfunction
 
 
 function! doomnvim#end() abort
-
-    let help = fnamemodify("$HOME/.doomnvim", ':p:h') . '/doc/'
+    
+    " Load help tags
     try
-        exe ':helptags ' . help
+        exe ':helptags $HOME/.doomnvim/doc/'
     catch
         echo "Failed to load doomvim.txt file"
     endtry
