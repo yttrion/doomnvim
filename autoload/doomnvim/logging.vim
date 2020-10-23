@@ -4,6 +4,7 @@
 " License: MIT
 "============================================
 
+let s:path = expand('<sfile>:p')
 
 function! doomnvim#logging#message(type, msg) abort
     
@@ -19,9 +20,10 @@ function! doomnvim#logging#message(type, msg) abort
         endif
         try
             echo output
-            exec ':! echo "' . output . '" >> $HOME/.doomnvim/logs/doomnvim.log'
+            exec ':! echo "' . output . '" >> ' . path . '../../logs/doomnvim.log'
         catch
-            exec ':! echo "[!] - Failed to echo message" >> $HOME/.doomnvim/logs/doomnvim.log'
+            "exec ':! echo "[!] - Failed to echo message" >> $HOME/.doomnvim/logs/doomnvim.log'
+            echo "Failed to echo log"
         endtry
     endif
 
