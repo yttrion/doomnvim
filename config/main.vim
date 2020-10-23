@@ -49,9 +49,6 @@ source $HOME/.doomnvim/config/gui.vim
 source $HOME/.doomnvim/config/functions.vim
 source $HOME/.doomnvim/config/globals.vim
 
-try
-    exec ':ToggleWorkspace'
-endtry
 
 source $HOME/.doomnvim/config/plugins/coc.vim
 source $HOME/.doomnvim/config/plugins/dict.vim
