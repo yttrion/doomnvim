@@ -5,18 +5,18 @@
 "====================================================
 
 if g:doomnvim_colorscheme !=# ''
-    if !filereadable("$HOME/.doomnvim/autoload/colorscheme")
-	    try
+    "if !filereadable("$HOME/.doomnvim/autoload/colorscheme")
+    if glob("~/.doomnvim/autoconfig/colorscheme") !=# ''
+        echo "File found"
+        let scheme = readfile(glob("~/.doomnvim/autoconfig/colorscheme"))
+        exec 'colorscheme ' . scheme[0]
+    else
+        try
 	    	exec 'set background=' . g:doomnvim_colorscheme_bg
 	    	exec 'colorscheme ' . g:doomnvim_colorscheme
 	    catch
 	    	exec 'colorscheme default'
 	    endtry
-    else
-        let color = readfile('$HOME/.doomnvim/autoload/colorscheme')
-        exec ':colorscheme ' . color[0]
-        "exec 'call readfile($HOME/.doomnvim/autoload/colorscheme)'
-        echo "COLORSCHEME FILE FOUND"
     endif
 else
 	exec 'colorscheme default'

@@ -67,8 +67,8 @@ let g:doomnvim_autocomplete_par = 1
 
 
 function! doomnvim#loadConfig(file) abort
-    if filereadable('$HOME/.doomnvim/config/' . a:file)
-        execute 'source $HOME/.doomnvim/config' . a:file
+    if filereadable(glob('~/.doomnvim/config/') . a:file)
+        execute 'source ' . glob('$HOME/.doomnvim/config') . a:file
     endif
 endfunction
 
@@ -77,9 +77,9 @@ endfunction
 " Functions
 function! doomnvim#begin() abort
 
-    "call doomnvim#loadConfig('globals.vim')
-    "call doomnvim#loadConfig('functions.vim')
-    "call doomnvim#loadConfig('gui.vim')
+    call doomnvim#loadConfig('globals.vim')
+    call doomnvim#loadConfig('functions.vim')
+    call doomnvim#loadConfig('gui.vim')
     call doomnvim#default#options()    
     call doomnvim#autocmds#init()
 
