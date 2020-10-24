@@ -35,7 +35,7 @@ BWhite='\033[1;37m'       # White
 # }}}
 
 # version
-Version='0.1.4'
+Version='0.1.4-1'
 #System name
 System="$(uname -s)"
 
@@ -290,17 +290,17 @@ install_done(){
 }
 
 helper(){
-	echo "doomnvim ${version} help"
-	echo ""
-	echo "doomnvim installer"
-	echo "Usage ./install.sh [optn]"
-	echo "Possible values:"
-	echo "-u --update 				Update doomnvim"
-	echo "-c --check-requirements 	Check doomnvim requirements"
-	echo "-i --install 				Install doomnvim"
-	echo "-h --help 				Displays this message"
-	echo "-v --version 				Echo doomnvim version"
-	echo "-x --uninstall 			Uninstall doomnvim"
+	echo_with_color ${Green} "doomnvim ${version} help"
+	echo_with_color ${Green} ""
+	echo_with_color ${Green} "doomnvim installer"
+	echo_with_color ${Green} "Usage ./install.sh [optn]"
+	echo_with_color ${Green} "Possible values:"
+	echo_with_color ${Green} "-u --update 				Update doomnvim"
+	echo_with_color ${Green} "-c --check-requirements 	Check doomnvim requirements"
+	echo_with_color ${Green} "-i --install 				Install doomnvim"
+	echo_with_color ${Green} "-h --help 				Displays this message"
+	echo_with_color ${Green} "-v --version 				Echo doomnvim version"
+	echo_with_color ${Green} "-x --uninstall 			Uninstall doomnvim"
 }
 
 check_all(){

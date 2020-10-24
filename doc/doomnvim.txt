@@ -155,7 +155,7 @@ e.g:
 ==============================================================================
 FUNCTIONS                                                 *doomnvim-functions*
 
-doomnvim comes with custom functions
+doomnvim comes with custom functions. 
 
 
 
@@ -251,7 +251,14 @@ This is the layout of doomnvim:
 ==============================================================================
 AUTOLOAD                                           *doomnvim-hacking-autoload*
 
-Lorem
+The autoload folder content is loaded by vim on_start. It is the location
+of the doomnvim plugin which is loaded everytime.
+
+The `doomnvim.vim` file is contain most of the global variables used by 
+doomnvim and executes the init functions of doomnvim.
+
+The files inside the `doomnvim/` folder have core functions for doomnvim.
+
 
 ==============================================================================
 CHANGELOG                                                 *doomnvim-changelog*
@@ -273,5 +280,10 @@ v0.1.4
     1: Errors
     2: Errors and messages
     3: Errors and messages with echo
+
+v0.1.4-1
+- Added complete log
+- Dump vim internal error messages to logfile
+
 
 " vim:tw=78:ft=help:norl:

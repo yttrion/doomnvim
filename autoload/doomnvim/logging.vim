@@ -46,7 +46,7 @@ function! doomnvim#logging#init()
 
     if g:doomnvim_logging != 0
         let today = strftime('%c')
-        let boot_msg = "[".today."] - Starting doomnvim"
+        let boot_msg = "[".today."] - Starting doomnvim ".g:doomnvim_version
         try
             exec ':silent !echo " " >> $HOME/.doomnvim/logs/doomnvim.log'
             exec ':silent !echo '.boot_msg.' >> $HOME/.doomnvim/logs/doomnvim.log'
