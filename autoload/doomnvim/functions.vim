@@ -39,6 +39,14 @@ function! doomnvim#functions#getroot() abort
 endfunction
 
 
+function! doomnvim#functions#quitdoom() abort
+    exec "redir >> $HOME/.doomnvim/logs/doomnvim.log"
+    exec ":silent messages"
+    exec ":redir END"
+    exec ":wa | q!"
+endfunction
+
+
 function! doomnvim#functions#createReport() abort
     " Creates a markdown report to use when bugs occurs
 

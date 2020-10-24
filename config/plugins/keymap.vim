@@ -92,6 +92,7 @@ map <silent><space>hX 			:call OpenInFloat("$HOME/.doomnvim/install.sh --uninsta
 
 map <silent><space>qq 			:wa<bar>q<CR>
 map <silent><space>qQ 			:qa!<CR>
+map <silent><space>Q            :call doomnvim#functions#quitdoom()<CR>
 " }}}
 
 
