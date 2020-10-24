@@ -90,9 +90,9 @@ map <silent><space>hX 			:call OpenInFloat("$HOME/.doomnvim/install.sh --uninsta
 
 " Quit --------------------------------------------------------------{{{
 
-map <silent><space>qq 			:wa<bar>q<CR>
-map <silent><space>qQ 			:qa!<CR>
-map <silent><space>Q            :call doomnvim#functions#quitdoom()<CR>
+map <silent><space>qq 			:call doomnvim#functions#quitdoom(0,0)<CR>
+map <silent><space>qQ 			:call doomnvim#functions#quitdoom(1,1)<CR>
+
 " }}}
 
 

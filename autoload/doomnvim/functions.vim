@@ -39,11 +39,24 @@ function! doomnvim#functions#getroot() abort
 endfunction
 
 
-function! doomnvim#functions#quitdoom() abort
+function! doomnvim#functions#quitdoom(force) abort
+
     exec "redir >> $HOME/.doomnvim/logs/doomnvim.log"
     exec ":silent messages"
     exec ":redir END"
-    exec ":wa | q!"
+
+    let quit_cmd = ""
+
+    if a:write == 1
+        let quit_cmd .= "wa | "
+    endif
+
+    if a:force == 0
+        exec quit_cmd."q!"
+    elseif a:force == 1
+        exec quit_cmd."qa!"
+    endif
+
 endfunction
 
 
