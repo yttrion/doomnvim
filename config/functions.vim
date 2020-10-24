@@ -159,9 +159,8 @@ function! OpenInFloat(cmd)
         call doomnvim#logging#message('!', 'No Floating term to close', 1)
     endtry
 
-    exec ':FloatermNew'
     try
-        exec ':FloatermSend ' . a:cmd
+        exec ':FloatermNew ' . a:cmd
     catch
         call doomnvim#logging#message('!', 'Unable to execute the command', 1)
     endtry
