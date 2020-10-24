@@ -39,12 +39,12 @@ map <silent><space>bc 				:<C-u>up<bar>%bd<bar>e#<CR>
 map <silent><space>bsv 				:vsp<CR>
 map <silent><space>bsh 				:sp<CR>
 map <silent><space>bf 				:call BufSel("")<CR>
-map <silent><space>br 				<C-w>=<CR>
+map <silent><space>bR 				<C-w>=<CR>
 map <silent><space>bwi 				10<C-w>><CR>
 map <silent><space>bwd 				10<C-w><<CR>
 map <silent><space>bhi 				10<C-w>+<CR>
 map <silent><space>bhd 				10<C-w>-<CR>
-map <silent><space>bS               :call SwitchBuf()<CR>
+map <silent><space>br               :call SwitchBuf()<CR>
 
 " }}}
 

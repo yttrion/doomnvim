@@ -29,7 +29,8 @@ let g:which_key_map.b = {
 			\ 'e' : 'Empty buffer',
 			\ 'c' : 'Close all except focused',
 			\ 'f' : 'Select buffer',
-			\ 'r' : 'Rezise equally',
+			\ 'R' : 'Rezise equally',
+            \ 'r' : 'Rotate buffers'
 			\ 's' : {
 				\ 'name' : '+split',
 				\ 'v' : 'Split vertically',
