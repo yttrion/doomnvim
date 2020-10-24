@@ -5,9 +5,10 @@
 "============================================
 
 
-function! doomnvim#logging#message(type, msg)
+function! doomnvim#logging#message(type, msg, level)
    
     if g:doomnvim_logging != 0
+        " Generate log message
         if a:type == "!"
             let output = "[!] - " . a:msg
         elseif a:type == "+"
@@ -17,12 +18,17 @@ function! doomnvim#logging#message(type, msg)
         elseif a:type == "?"
             let output = "[?] - " . a:msg
         endif
+
         try
-            exec ':silent !echo '.output.' >> $HOME/.doomnvim/logs/doomnvim.log'
+            if g:doomnvim_logging >= a:level
+                echo output
+                exec ':silent !echo '.output.' >> $HOME/.doomnvim/logs/doomnvim.log'
+            endif
         catch
             let err_msg = "[!] - Cannot save: [" . a:msg . ']'
             exec ':silent !echo '.err_msg.' >> $HOME/.doomnvim/logs/doomnvim.log'
         endtry
+
     endif
 
 endfunction

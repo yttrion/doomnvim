@@ -8,7 +8,7 @@
 if g:doomnvim_colorscheme !=# ''
     "if !filereadable("$HOME/.doomnvim/autoload/colorscheme")
     if glob("~/.doomnvim/autoload/colorscheme") !=# ''
-        call doomnvim#logging#message("+", "Found colorscheme file")
+        call doomnvim#logging#message("+", "Found colorscheme file", 2)
         let scheme = readfile(glob("~/.doomnvim/autoload/colorscheme"))
         if scheme[0] != ''
             exec 'colorscheme ' . scheme[0]
@@ -16,17 +16,17 @@ if g:doomnvim_colorscheme !=# ''
             exec 'colorscheme ' . g:doomnvim_colorscheme
         endif
     else
-        call doomnvim#logging#message("+", "Colorscheme file not found")
+        call doomnvim#logging#message("+", "Colorscheme file not found", 1)
         try
 	    	exec 'set background=' . g:doomnvim_colorscheme_bg
 	    	exec 'colorscheme ' . g:doomnvim_colorscheme
 	    catch
-            call doomnvim#logging#message("!", "Unable to set colorscheme globals")
+            call doomnvim#logging#message("!", "Unable to set colorscheme globals", 1)
 	    	exec 'colorscheme default'
         endtry
     endif
 else
-    call doomnvim#logging#message("!!", "Forced default colorscheme")
+    call doomnvim#logging#message("!!", "Forced default colorscheme", 1)
 	exec 'colorscheme default'
 endif
 

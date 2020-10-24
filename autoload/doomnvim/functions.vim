@@ -8,10 +8,10 @@
 
 function! doomnvim#functions#checkbin(bin)  abort
     if executable(a:bin)
-        call doomnvim#logging#message("+", a:bin . " found")
+        call doomnvim#logging#message("+", a:bin . " found", 2)
         return 1
     else
-        call doomnvim#logging#message("+", a:bin . " not found")
+        call doomnvim#logging#message("+", a:bin . " not found", 1)
         return 0
     endif
 endfunction

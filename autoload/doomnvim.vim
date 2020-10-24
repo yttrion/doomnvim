@@ -65,9 +65,9 @@ let g:doomnvim_autocomplete_par = 1
 
 " Logging level
 " 0 : No logging
-" 1 : All errors and messages, no echo (default)
-" 2 : All errors and messages, echo
-" 3 : All errors and messages, echo, silent
+" 1 : All errors, no echo (default)
+" 2 : All errors and messages, no echo
+" 3 : All errors and messages, echo
 " @default = 1
 let g:doomnvim_logging = 1
 
@@ -90,10 +90,7 @@ endfunction
 " Functions
 function! doomnvim#begin() abort
 
-    "call doomnvim#loadConfig('globals.vim')
-    "call doomnvim#loadConfig('functions.vim')
-    "call doomnvim#loadConfig('gui.vim')
-    call doomnvim#default#options()    
+    call doomnvim#default#options()
     call doomnvim#autocmds#init()
     call doomnvim#logging#init()
 
