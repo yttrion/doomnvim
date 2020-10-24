@@ -30,7 +30,7 @@ let g:which_key_map.b = {
 			\ 'c' : 'Close all except focused',
 			\ 'f' : 'Select buffer',
 			\ 'R' : 'Rezise equally',
-            \ 'r' : 'Rotate buffers'
+            \ 'r' : 'Rotate buffers',
 			\ 's' : {
 				\ 'name' : '+split',
 				\ 'v' : 'Split vertically',
