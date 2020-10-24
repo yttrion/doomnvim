@@ -32,7 +32,9 @@ call doomnvim#end()
 
 call plug#begin('~/.doomnvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch':'release'}
-Plug 'itchyny/lightline.vim'
+"Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdtree'
 Plug 'liuchengxu/vim-which-key'
