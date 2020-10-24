@@ -145,7 +145,8 @@ let g:which_key_map.p = {
 
 let g:which_key_map.m = {
 			\ 'name' : '+misc',
-			\ 's' : 'Source file',
+			\ 's' : 'Start menu',
+            \ 'S' : 'Source file',
             \ 'c' : 'Change colorscheme',
             \ 'f' : 'Open FZF',
 			\ }

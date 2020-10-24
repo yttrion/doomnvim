@@ -122,7 +122,10 @@ you want to use horizontally, `h`, or vertically, `v`
 ==============================================================================
 TAGBAR                                  *doomnvim-configuration-layout-tagbar*
 
-Lorem
+Tagbar is a plugin that can show the tags and structure of the opened
+file, ordered by scope.
+
+See https://github.com/preservim/tagbar for more informations.
 
 ==============================================================================
 BUFFERED TERMINAL                     *doomnvim-configuration-layout-terminal*
@@ -138,18 +141,27 @@ doomnvim uses vim-which-key as a command manager. To open whichkey press
 <Space> and wait for the popup to show. Each function has a label and is
 mnemonic
 e.g:
-	`Save File`> <Space>sf 
+	`Save File`> <Space>sf
 	`Buffer split vertically`> <Space>bsv
 
 ==============================================================================
 FUNCTIONS                                                 *doomnvim-functions*
 
-doomnvim comes with custom functions 
+doomnvim comes with custom functions
+
+
 
 ==============================================================================
 USAGE                                                         *doomnvim-usage*
 
-Lorem
+Start doomnvim by typing `vim` or `nvim` in a terminal emulator.
+
+By default doomnvim will show the start menu `vim-startify` where you can
+select files to edit.
+
+Once you've selected some files to work on `vim-workspace` will save 
+the workspace you're working on. If you reopen doomvim without parsing
+any file as argument, the previous workspace will be loaded.
 
 ==============================================================================
 KNOWN ISSUES                                                  *doomvim-issues*
