@@ -151,3 +151,18 @@ function! SwitchBuf()
     endif
     call doomnvim#logging#message('*', 'Called switchbuf()', 2)
 endfunction
+
+function! OpenInFloat(cmd)
+    try
+        exec ':FloatermKill'
+    catch
+        call doomnvim#logging#message('!', 'No Floating term to close', 1)
+    endtry
+
+    exec ':FloatermNew'
+    try
+        exec ':FloatermSend ' . a:cmd
+    catch
+        call doomnvim#logging#message('!', 'Unable to execute the command', 1)
+    endtry
+endfunction

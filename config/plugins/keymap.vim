@@ -81,9 +81,9 @@ map <silent><space>gcc 				:call CreateCommit()<CR>
 " Help --------------------------------------------------------------{{{
 
 map <silent><space>hh 				:helpgrep .<CR>
-map <silent><space>hi 				:!$HOME/.doomnvim/install.sh --help<CR>
-map <silent><space>hu 				:!$HOME/.doomnvim/install.sh --update<CR>
-map <silent><space>hX 				:!$HOME/.doomnvim/install.sh --uninstall<CR>
+map <silent><space>hi 				:call OpenInFloat("$HOME/.doomnvim/install.sh --help")<CR>
+map <silent><space>hu 				:call OpenInFloat("$HOME/.doomnvim/install.sh --update")<CR>
+map <silent><space>hX 				:call OpenInFloat("$HOME/.doomnvim/install.sh --uninstall")<CR>
 
 " }}}
 
