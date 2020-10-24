@@ -35,7 +35,7 @@ BWhite='\033[1;37m'       # White
 # }}}
 
 # version
-Version='0.1.3'
+Version='0.1.4'
 #System name
 System="$(uname -s)"
 
@@ -307,8 +307,9 @@ check_all(){
 	check_cmd 'git'
 	check_cmd 'ctags'
 	check_cmd 'npm'
-	check_cmd 'curl'
 	check_cmd 'node'
+	check_cmd 'curl'
+	check_cmd 'curl'
 	check_cmd 'npm'
 }
 

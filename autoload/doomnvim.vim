@@ -8,7 +8,7 @@
 scriptencoding utf-8
 
 " Version
-let g:doomnvim_version = '0.1.3'
+let g:doomnvim_version = '0.1.4'
 "lockvar g:doomnvim_version
 
 " Default indent size
@@ -65,17 +65,23 @@ let g:doomnvim_autocomplete_par = 1
 
 " Logging level
 " 0 : No logging
-" 1 : All errors and messages, no echo (default)
-" 2 : All errors and messages, echo
-" 3 : All errors and messages, echo, silent
+" 1 : All errors, no echo (default)
+" 2 : All errors and messages, no echo
+" 3 : All errors and messages, echo
 " @default = 1
 let g:doomnvim_logging = 1
 
 
+" doomnvim path
+" @default = $HOME/.doomnvim
+let g:doomnvim_root = expand('<sfile>:p')[:-22]
 
 function! doomnvim#loadConfig(file) abort
-    if filereadable(glob('~/.doomnvim/config/') . a:file)
-        execute 'source ' . glob('$HOME/.doomnvim/config/') . a:file
+    if filereadable(g:doomnvim_root . 'config/' . a:file)
+    "if filereadable(glob('~/.doomnvim/config/') . a:file)
+    "    execute 'source ' . glob('$HOME/.doomnvim/config/') . a:file
+        execute 'source ' . g:doomnvim_root . 'config/' . a:file
+        call doomnvim#logging#message('+', 'Sourced file '.a:file, 2)
     endif
 endfunction
 
@@ -84,10 +90,7 @@ endfunction
 " Functions
 function! doomnvim#begin() abort
 
-    "call doomnvim#loadConfig('globals.vim')
-    "call doomnvim#loadConfig('functions.vim')
-    "call doomnvim#loadConfig('gui.vim')
-    call doomnvim#default#options()    
+    call doomnvim#default#options()
     call doomnvim#autocmds#init()
     call doomnvim#logging#init()
 
@@ -95,12 +98,12 @@ endfunction
 
 
 function! doomnvim#end() abort
-    
+
     " Load help tags
     try
         exe ':helptags $HOME/.doomnvim/doc/'
     catch
-        echo "Failed to load doomvim.txt file"
+        call doomnvim#logging#message('!', "Failed to load doomvim.txt file", 1)
     endtry
 
     set smarttab

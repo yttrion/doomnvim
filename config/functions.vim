@@ -36,10 +36,10 @@ function! TermToggle(height)
 			set norelativenumber
 			set signcolumn=no
 		endtry
-		startinsert!
+		"startinsert!
 		let g:term_win = win_getid()
 	endif
-    call doomnvim#logging#message("*", "Toggled terminal")
+    call doomnvim#logging#message("*", "Toggled terminal", 2)
 endfunction
 
 "Toggle layout
@@ -51,7 +51,7 @@ function! LayoutToggle()
 		exe "normal \<C-w>H<CR>"
 		let g:vert_layout = 1
 	endif
-	call doomnvim#logging#message("*", "Switched layout")
+	call doomnvim#logging#message("*", "Switched layout", 2)
 endfunction
 
 function! s:show_documentation()
@@ -72,12 +72,12 @@ function! RenameFile()
 		exec 'bd ' . old
 		redraw!
 	endif
-	call doomnvim#logging#message("*", "Renamed file")
+	call doomnvim#logging#message("*", "Renamed file", 2)
 endfunction
 
 
 function! BufSel(pattern)
-    call doomnvim#logging#message("*", "Called BufSel")
+    call doomnvim#logging#message("*", "Called BufSel", 2)
   	let bufcount = bufnr("$")
   	let currbufnr = 1
   	let nummatches = 0
@@ -101,14 +101,14 @@ function! BufSel(pattern)
   	    	execute ":buffer ". desiredbufnr
   	  	endif
   	else
-	    call doomnvim#logging#message("!", "No matching buffers")
+	    call doomnvim#logging#message("!", "No matching buffers", 1)
   	  	echo "No matching buffers"
   	endif
 endfunction
 
 
 function! CreateCommit()
-	call doomnvim#logging#message("*", "Created commit")
+	call doomnvim#logging#message("*", "Created commit", 2)
 	let commit_msg = input('Commit message: ')
 	if commit_msg != ''
 		exec ':!git commit -m ' . commit_msg
@@ -119,8 +119,9 @@ endfunction
 function! ChangeColors()
 
     exec ":!ls $HOME/.doomnvim/colors/ | sed -e 's/\.vim$//'"
+    call doomnvim#logging#message('?', 'Asking for colorscheme', 2)
     let target = input('Select colorscheme: ')
     exec 'colorscheme ' . target
     exec ':! echo "' . target '" > $HOME/.doomnvim/autoload/colorscheme'
-	call doomnvim#logging#message("*", "Changed default colorscheme")
+	call doomnvim#logging#message("*", "Changed default colorscheme", 2)
 endfunction

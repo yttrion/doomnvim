@@ -8,7 +8,7 @@
 ![Release](https://img.shields.io/github/v/release/yttrion/doomnvim?include_prereleases&style=flat-square)
 ![Neovim version](https://img.shields.io/badge/Neovim-0.4.3_--_0.x-57A143?style=flat-square&logo=neovim)
 ![Vim version](https://img.shields.io/badge/Vim-8-019733?style=flat-square&logo=vim)
-
+![Latest commit](https://img.shields.io/github/last-commit/yttrion/doomnvim/dev?style=flat-square)
 ---
 
 </div>
@@ -56,7 +56,7 @@ After doomnvim is installed, run `vim` and doomnvim will automatically install p
 
 # Screenshots
 
-![doomnvim Screenshot](https://github.com/yttrion/doomnvim/blob/main/doomnvim.png?raw=true)
+![doomnvim Screenshot](https://github.com/yttrion/doomnvim/blob/dev/doom.png?raw=true)
 
 # Contribute
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

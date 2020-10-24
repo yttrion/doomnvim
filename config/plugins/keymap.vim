@@ -137,9 +137,18 @@ map <silent><space>par 				:CocRestart<CR>
 
 " Misc --------------------------------------------------------------{{{
 
-map <silent><space>ms 				:source %<CR>
+map <silent><space>mS 				:source %<CR>
+map <silent><space>ms 				:Startify<CR>
 map <silent><space>mc               :call ChangeColors()<CR>
 
+" }}}
+
+" Conditional keymaps -----------------------------------------------{{{
+
+" Allows FZF keymap if FZF is present
+if doomnvim#functions#checkbin('fzf') == 1
+    map <silent><space>mf           :FloatermNew fzf<CR>
+endif
 " }}}
 
 
