@@ -313,7 +313,7 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
 
     let s:syntax_bg     = ['#23272E', '16']
     let s:syntax_gutter = ['#737E96', '60']
-    let s:syntax_cursor = ['#173243', '16']
+    let s:syntax_cursor = ['#2C313A', '16']
 
     let s:syntax_accent = ['#528bff', '69']
 
