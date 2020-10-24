@@ -72,6 +72,9 @@ let g:doomnvim_autocomplete_par = 1
 let g:doomnvim_logging = 1
 
 
+" doomnvim path
+" @default = $HOME/.doomnvim
+let g:doomnvim_root = expand('<sfile>:p') . '/../'
 
 function! doomnvim#loadConfig(file) abort
     if filereadable(glob('~/.doomnvim/config/') . a:file)

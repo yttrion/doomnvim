@@ -15,3 +15,12 @@ function! doomnvim#functions#checkbin(bin)  abort
         return 0
     endif
 endfunction
+
+
+function! doomnvim#functions#checkplugin(plugin) abort
+    if isdirectory(g:doomnvim_root.'plugged/'.a:plugin)
+        echo "Plugin found"
+    else
+        echo "Plugin not found"
+    endif
+endfunction
