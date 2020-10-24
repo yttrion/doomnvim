@@ -311,8 +311,8 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
     let s:hue_6   = ['#D99F58', '173'] " orange 1
     let s:hue_6_2 = ['#EAC76F', '180'] " orange 2
 
-    let s:syntax_bg     = ['#282c34', '16']
-    let s:syntax_gutter = ['#636d83', '60']
+    let s:syntax_bg     = ['#23272E', '16']
+    let s:syntax_gutter = ['#737E96', '60']
     let s:syntax_cursor = ['#173243', '16']
 
     let s:syntax_accent = ['#528bff', '69']
@@ -321,6 +321,9 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
     let s:special_grey = ['#3b4048', '16']
     let s:visual_grey  = ['#3e4452', '17']
     let s:pmenu        = ['#333841', '16']
+
+
+
   else
     let s:mono_1 = ['#494b53', '23']
     let s:mono_2 = ['#696c77', '60']
@@ -862,8 +865,8 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
     let g:terminal_color_13 = "#CF6CE3"
     let g:terminal_color_6  = "#65c2cd"
     let g:terminal_color_14 = "#65c2cd"
-    let g:terminal_color_7  = "#e3e5e9"
-    let g:terminal_color_15 = "#e3e5e9"
+    let g:terminal_color_7  = "#F4F4F6"
+    let g:terminal_color_15 = "#F4F4F6"
   endif
 
   " Delete functions =========================================================={{{
