@@ -147,4 +147,5 @@ let g:which_key_map.m = {
 			\ 'name' : '+misc',
 			\ 's' : 'Source file',
             \ 'c' : 'Change colorscheme',
+            \ 'f' : 'Open FZF',
 			\ }
