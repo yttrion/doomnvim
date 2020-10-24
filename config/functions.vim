@@ -44,6 +44,12 @@ endfunction
 
 "Toggle layout
 function! LayoutToggle()
+    try
+        exec ':NERDTreeClose'
+    catch
+        call doomnvim#logging#message('!', 'No NERDTree buffer to close', 1)
+    endtry
+
 	if g:vert_layout ==1
 		exe "normal \<C-w>K<CR>"
 		let g:vert_layout = 0
