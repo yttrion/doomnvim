@@ -7,9 +7,10 @@
 
 if g:doomnvim_colorscheme !=# ''
     "if !filereadable("$HOME/.doomnvim/autoload/colorscheme")
-    if glob("~/.doomnvim/autoload/colorscheme") !=# ''
+    "if glob("~/.doomnvim/autoload/colorscheme") !=# ''
+    if filereadable(g:doomnvim_root."autoload/colorscheme") !=# ''
         call doomnvim#logging#message("*", "Found colorscheme file", 2)
-        let scheme = readfile(glob("~/.doomnvim/autoload/colorscheme"))
+        let scheme = readfile(g:doomnvim_root."/autoload/colorscheme")
         if scheme[0] != ''
             exec 'colorscheme ' . scheme[0]
         else
@@ -41,14 +42,3 @@ if g:doomnvim_enable_guicolors == 1
 	endif
 endif
 
-
-" TODO
-" Find workaround to read globals var
-"colorscheme doom
-"set background=dark
-"set termguicolors
-
-
-"let g:lightline = {
-"	\ 'colorscheme' : 'one',
-"	\ }

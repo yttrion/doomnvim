@@ -36,5 +36,10 @@ function! doomnvim#functions#getroot() abort
     " Returns
     " /home/username/.doomnvim/autoload/functions.vim
     " Trim for 18 char from the end
+endfunction
+
+
+function! doomnvim#functions#createReport() abort
+    " Creates a markdown report to use when bugs occurs
 
 endfunction

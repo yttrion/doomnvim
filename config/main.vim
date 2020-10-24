@@ -4,7 +4,7 @@
 " License: MIT
 "============================================
 
-if empty(glob('~/.doomnvim/autoload/plug.vim'))
+if empty(g.doomnvim_root.'autoload/plug.vim')
   	silent !curl -fLo ~/.doomnvim/autoload/plug.vim --create-dirs
     	\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
@@ -32,7 +32,6 @@ call doomnvim#end()
 
 call plug#begin('~/.doomnvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch':'release'}
-"Plug 'itchyny/lightline.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
