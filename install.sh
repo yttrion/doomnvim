@@ -309,6 +309,7 @@ check_all(){
 	check_cmd 'npm'
 	check_cmd 'node'
 	check_cmd 'curl'
+	check_cmd 'curl'
 	check_cmd 'npm'
 }
 
