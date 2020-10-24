@@ -62,7 +62,7 @@ The colorscheme of doomnvim. Default is 'doom'. There are pre-configured
 colorschemes installed in `$HOME/.doomnvim/colors/`:
     - `alduin`
     - `deus`
-	- `doom` (default)
+    - `doom` (default)
     - `github`
     - `gotham256`
     - `gruvbox`
