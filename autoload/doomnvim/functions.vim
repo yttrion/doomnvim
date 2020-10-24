@@ -30,10 +30,10 @@ endfunction
 function! doomnvim#functions#getroot() abort
 
     let full_root =  expand('<sfile>:p')
-    let root = full_root[:-18]
+    let root = full_root[:-22]
     return root
     " Returns
-    " /home/username/.doomnvim/autoload/
+    " /home/username/.doomnvim/autoload/functions.vim
     " Trim for 18 char from the end
 
 endfunction

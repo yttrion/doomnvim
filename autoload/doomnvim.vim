@@ -78,8 +78,10 @@ let g:doomnvim_root = expand('<sfile>:p')[:-22]
 " /home/user/.doomnvim/autoload/doomnvim.vim
 
 function! doomnvim#loadConfig(file) abort
-    if filereadable(glob('~/.doomnvim/config/') . a:file)
-        execute 'source ' . glob('$HOME/.doomnvim/config/') . a:file
+    if filereadable(g:doomnvim_root . 'config/' . a:file)
+    "if filereadable(glob('~/.doomnvim/config/') . a:file)
+    "    execute 'source ' . glob('$HOME/.doomnvim/config/') . a:file
+        execute 'source ' . g:doomnvim_root . 'config/' . a:file
     endif
 endfunction
 
