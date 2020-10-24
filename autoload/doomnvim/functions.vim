@@ -29,6 +29,7 @@ endfunction
 
 function! doomnvim#functions#getroot() abort
 
+    call doomnvim#logging#message('+', 'doomnvim#functions#getroot called', 2)
     let full_root =  expand('<sfile>:p')
     let root = full_root[:-22]
     return root

@@ -7,6 +7,8 @@
 
 scriptencoding utf-8
 
+call doomnvim#logging#message('+', 'Checking OS', 2)
+
 let s:system = ""
 
 if has('win32') || has('win64')

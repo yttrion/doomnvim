@@ -6,7 +6,12 @@
 
 
 function! doomnvim#logging#message(type, msg, level)
-   
+    " + : doomnvim internal
+    " * : external command
+    " ? : Prompt
+    " ! : Error
+    " !!! : CRITICAL
+
     if g:doomnvim_logging != 0
         " Generate log message
         if a:type == "!"
@@ -17,6 +22,8 @@ function! doomnvim#logging#message(type, msg, level)
             let output = "[*] - " . a:msg
         elseif a:type == "?"
             let output = "[?] - " . a:msg
+        elseif a:type == "!!!"
+            let output = '[!!!] = ' . a:msg
         endif
 
         try
@@ -50,9 +57,3 @@ function! doomnvim#logging#init()
 
 endfunction
 
-
-function! doomnvim#logging#error()
-
-    echo "[!!!] - An error occurred"
-
-endfunction

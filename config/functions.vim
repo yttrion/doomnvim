@@ -119,6 +119,7 @@ endfunction
 function! ChangeColors()
 
     exec ":!ls $HOME/.doomnvim/colors/ | sed -e 's/\.vim$//'"
+    call doomnvim#logging#message('?', 'Asking for colorscheme', 2)
     let target = input('Select colorscheme: ')
     exec 'colorscheme ' . target
     exec ':! echo "' . target '" > $HOME/.doomnvim/autoload/colorscheme'

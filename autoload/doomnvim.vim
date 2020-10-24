@@ -82,6 +82,7 @@ function! doomnvim#loadConfig(file) abort
     "if filereadable(glob('~/.doomnvim/config/') . a:file)
     "    execute 'source ' . glob('$HOME/.doomnvim/config/') . a:file
         execute 'source ' . g:doomnvim_root . 'config/' . a:file
+        call doomnvim#logging#message('+', 'Sourced file '.a:file, 2)
     endif
 endfunction
 
@@ -98,12 +99,12 @@ endfunction
 
 
 function! doomnvim#end() abort
-    
+
     " Load help tags
     try
         exe ':helptags $HOME/.doomnvim/doc/'
     catch
-        echo "Failed to load doomvim.txt file"
+        call doomnvim#logging#message('!', "Failed to load doomvim.txt file", 1)
     endtry
 
     set smarttab

@@ -26,6 +26,7 @@ CONTENTS                                                   *doomnvim-contents*
   7. Known issues............................................|doomnvim-issues|
   8. FAQ........................................................|doomnvim-faq|
   9. Hacking doomnvim.......................................|doomnvim-hacking|
+    1. Autoload....................................|doomnvim-hacking-autoload|
   10. Changelog...........................................|doomnvim-changelog|
 
 
@@ -226,6 +227,12 @@ This is the layout of doomnvim:
 |_ init.vim                             # init.vim file
 |_ install.sh                           # doomnvim managment
 
+
+==============================================================================
+AUTOLOAD                                           *doomnvim-hacking-autoload*
+
+Lorem
+
 ==============================================================================
 CHANGELOG                                                 *doomnvim-changelog*
 
@@ -241,5 +248,10 @@ v0.1.3
 
 v0.1.4
 - Added workspaces
+- Added log levels 
+    0: Nothing
+    1: Errors
+    2: Errors and messages
+    3: Errors and messages with echo
 
 " vim:tw=78:ft=help:norl:
