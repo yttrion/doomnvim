@@ -14,4 +14,3 @@ let g:workspace_autosave_ignore = ['gitcommit']
 "let g:workspace_autosave_ignore = ['gitcommit', 'nerdtree', 'tagbar', 'term://*', 'NERD_tree_*', '__Tagbar__*']
 set sessionoptions-=blank
 
-au VimEnter * NERDTree
