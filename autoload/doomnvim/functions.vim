@@ -33,7 +33,7 @@ function! doomnvim#functions#getroot() abort
     let root = full_root[:-18]
     return root
     " Returns
-    " /home/username/.doomnvim/autoload/doomnvim/
+    " /home/username/.doomnvim/autoload/
     " Trim for 18 char from the end
 
 endfunction
