@@ -41,16 +41,17 @@ endfunction
 
 function! doomnvim#functions#quitdoom(write, force) abort
 
+    exec ':silent !echo "[###] - Dumping :messages" >> $HOME/.doomnvim/logs/doomnvim.log'
     exec "redir >> $HOME/.doomnvim/logs/doomnvim.log"
     exec ":silent messages"
     exec ":redir END"
+    exec ':silent !echo "[###] - End of dump" >> $HOME/.doomnvim/logs/doomnvim.log'
 
     let quit_cmd = ""
 
     if a:write == 1
         let quit_cmd .= "wa | "
     endif
-
     if a:force == 0
         exec quit_cmd."q!"
     elseif a:force == 1
