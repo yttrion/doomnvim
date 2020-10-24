@@ -21,7 +21,9 @@ function! doomnvim#logging#message(type, msg, level)
 
         try
             if g:doomnvim_logging >= a:level
-                echo output
+                if g:doomnvim_logging == 3
+                    echo output
+                endif
                 exec ':silent !echo '.output.' >> $HOME/.doomnvim/logs/doomnvim.log'
             endif
         catch
