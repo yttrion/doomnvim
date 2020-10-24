@@ -1,6 +1,6 @@
 "======================================================================
 " doom-nvim colorscheme
-" Based on vim-one colorscheme by rakr https://github.com/rakr/vim-one
+" Heavily based on vim-one colorscheme by rakr https://github.com/rakr/vim-one
 " Name: doom-nvim
 " Author: Pierre-Yves Douault
 " License: MIT
@@ -300,20 +300,20 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
     let s:mono_3 = ['#5c6370', '59']
     let s:mono_4 = ['#4b5263', '59']
 
-    let s:hue_1  = ['#56b6c2', '73'] " cyan
-    let s:hue_2  = ['#61afef', '75'] " blue
-    let s:hue_3  = ['#c678dd', '176'] " purple
-    let s:hue_4  = ['#98c379', '114'] " green
+    let s:hue_1  = ['#46B4CC', '73'] " cyan
+    let s:hue_2  = ['#57A2F2', '75'] " blue
+    let s:hue_3  = ['#CF6CE3', '176'] " purple
+    let s:hue_4  = ['#8CCC6A', '114'] " green
 
-    let s:hue_5   = ['#e06c75', '168'] " red 1
-    let s:hue_5_2 = ['#be5046', '130'] " red 2
+    let s:hue_5   = ['#E56062', '168'] " red 1
+    let s:hue_5_2 = ['#C94C36', '130'] " red 2
 
-    let s:hue_6   = ['#d19a66', '173'] " orange 1
-    let s:hue_6_2 = ['#e5c07b', '180'] " orange 2
+    let s:hue_6   = ['#D99F58', '173'] " orange 1
+    let s:hue_6_2 = ['#EAC76F', '180'] " orange 2
 
     let s:syntax_bg     = ['#282c34', '16']
     let s:syntax_gutter = ['#636d83', '60']
-    let s:syntax_cursor = ['#2c323c', '16']
+    let s:syntax_cursor = ['#173243', '16']
 
     let s:syntax_accent = ['#528bff', '69']
 
