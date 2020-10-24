@@ -39,7 +39,7 @@ function! doomnvim#functions#getroot() abort
 endfunction
 
 
-function! doomnvim#functions#quitdoom(force) abort
+function! doomnvim#functions#quitdoom(write, force) abort
 
     exec "redir >> $HOME/.doomnvim/logs/doomnvim.log"
     exec ":silent messages"
