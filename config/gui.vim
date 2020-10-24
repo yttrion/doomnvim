@@ -7,8 +7,7 @@
 
 if g:doomnvim_colorscheme !=# ''
     "if !filereadable("$HOME/.doomnvim/autoload/colorscheme")
-    "if glob("~/.doomnvim/autoload/colorscheme") !=# ''
-    if filereadable(g:doomnvim_root."autoload/colorscheme") !=# ''
+    if glob("~/.doomnvim/autoload/colorscheme") !=# ''
         call doomnvim#logging#message("*", "Found colorscheme file", 2)
         let scheme = readfile(g:doomnvim_root."/autoload/colorscheme")
         if scheme[0] != ''
