@@ -7,7 +7,7 @@
 
 function! doomnvim#autocmds#init() abort
     " Load config
-    call doomnvim#logging#message('+', "doomnvim.autocmds.init() called", 2)
+    call doomnvim#logging#message('+', "doomnvim.autocmds.init called", 2)
     if g:doomnvim_relative_num
         autocmd BufEnter,WinEnter * if &nu | set rnu | endif
         autocmd BufLeave,WinLeave * if &nu | set nornu | endif

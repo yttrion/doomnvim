@@ -7,7 +7,7 @@
 scriptencoding utf-8
 
 function! doomnvim#default#options() abort
-    call doomnvim#logging#message('+', 'doomnvim.default.options() called', 2)
+    call doomnvim#logging#message('+', 'doomnvim.default.options called', 2)
     " Set options
 
     set wildmenu
