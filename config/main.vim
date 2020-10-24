@@ -4,7 +4,7 @@
 " License: MIT
 "============================================
 
-if empty(g:doomnvim_root . 'autoload/plug.vim')
+if empty(glob('~/.doomnvim/autoload/plug.vim'))
   	silent !curl -fLo ~/.doomnvim/autoload/plug.vim --create-dirs
     	\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
