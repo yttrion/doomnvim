@@ -60,10 +60,18 @@ COLORSCHEME                                     *doomnvim-options-colorscheme*
 
 The colorscheme of doomnvim. Default is 'doom'. There are pre-configured
 colorschemes installed in `$HOME/.doomnvim/colors/`:
-	- `gruvbox`
-	- `vim-one`
-	- `synthwave`
+    - `alduin`
+    - `deus`
 	- `doom` (default)
+    - `github`
+    - `gotham256`
+    - `gruvbox`
+    - `iceberg`
+    - `molokai`
+    - `nord`
+    - `one`
+    - `space-vim-dark`
+    - `vim-material`
 
 You can switch between colorschemes by doing <Space>mc and then type the name 
 of the colorscheme you want to use.
