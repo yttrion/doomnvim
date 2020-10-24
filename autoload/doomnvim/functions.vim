@@ -45,8 +45,8 @@ function! doomnvim#functions#quitdoom(write, force) abort
     exec "redir >> $HOME/.doomnvim/logs/doomnvim.log"
     exec ":silent messages"
     exec ":redir END"
-    exec ':silent !echo "[---] - End of dump" >> $HOME/.doomnvim/logs/doomnvim.log'
     exec ':silent !echo " " >> $HOME/.doomnvim/logs/doomnvim.log'
+    exec ':silent !echo "[---] - End of dump" >> $HOME/.doomnvim/logs/doomnvim.log'
 
     let quit_cmd = ""
 
