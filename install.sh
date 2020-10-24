@@ -307,9 +307,8 @@ check_all(){
 	check_cmd 'git'
 	check_cmd 'ctags'
 	check_cmd 'npm'
-	check_cmd 'nodejs'
+	check_cmd 'node'
 	check_cmd 'curl'
-	check_cmd 'nodejs'
 	check_cmd 'npm'
 }
 

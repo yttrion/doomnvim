@@ -74,7 +74,7 @@ let g:doomnvim_logging = 1
 
 " doomnvim path
 " @default = $HOME/.doomnvim
-let g:doomnvim_root = expand('<sfile>:p') . '/../'
+let g:doomnvim_root = call doomnvim#functions#getroot()
 
 function! doomnvim#loadConfig(file) abort
     if filereadable(glob('~/.doomnvim/config/') . a:file)

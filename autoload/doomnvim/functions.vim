@@ -24,3 +24,16 @@ function! doomnvim#functions#checkplugin(plugin) abort
         echo "Plugin not found"
     endif
 endfunction
+
+
+
+function! doomnvim#functions#getroot() abort
+
+    let full_root =  expand('<sfile>:p')
+    let root = full_root[:-18]
+    return root
+    " Returns
+    " /home/username/.doomnvim/autoload/doomnvim/
+    " Trim for 18 char from the end
+
+endfunction
