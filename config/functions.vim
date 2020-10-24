@@ -123,7 +123,6 @@ endfunction
 
 
 function! ChangeColors()
-
     exec ":!ls $HOME/.doomnvim/colors/ | sed -e 's/\.vim$//'"
     call doomnvim#logging#message('?', 'Asking for colorscheme', 2)
     let target = input('Select colorscheme: ')
@@ -131,8 +130,6 @@ function! ChangeColors()
     exec ':! echo "' . target '" > $HOME/.doomnvim/autoload/colorscheme'
 	call doomnvim#logging#message("*", "Changed default colorscheme", 2)
 endfunction
-
-
 
 function! SwitchBuf()
     " <C-w>H/J/K/L function
