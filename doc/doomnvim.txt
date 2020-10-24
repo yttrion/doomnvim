@@ -155,7 +155,7 @@ e.g:
 ==============================================================================
 FUNCTIONS                                                 *doomnvim-functions*
 
-doomnvim comes with custom functions. 
+doomnvim comes with custom functions.
 
 
 
