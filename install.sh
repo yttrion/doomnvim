@@ -115,11 +115,11 @@ vim_backup(){
 #Update repo if alread installed
 update_repo(){
 	if [[ -d "$HOME/.doomnvim" ]]; then
-		echo "[+] Updating doomnvim..."
+		info "[+] Updating doomnvim..."
 		cd "$HOME/.doomnvim"
 		git pull
 		cd - > /dev/null 2>&1
-		echo "[*] - Successfully updated doomnvim"
+		success "[*] - Successfully updated doomnvim"
 	else
 		info "Trying to clone doomnvim"
 		git clone -q https://github.com/yttrion/doomnvim "$HOME/.doomnvim"
@@ -290,17 +290,17 @@ install_done(){
 }
 
 helper(){
-	echo_with_color ${Green} "doomnvim ${version} help"
+	info "doomnvim ${version} help"
 	echo_with_color ${Green} ""
 	echo_with_color ${Green} "doomnvim installer"
 	echo_with_color ${Green} "Usage ./install.sh [optn]"
 	echo_with_color ${Green} "Possible values:"
-	echo_with_color ${Green} "-u --update 				Update doomnvim"
-	echo_with_color ${Green} "-c --check-requirements 	Check doomnvim requirements"
-	echo_with_color ${Green} "-i --install 				Install doomnvim"
-	echo_with_color ${Green} "-h --help 				Displays this message"
-	echo_with_color ${Green} "-v --version 				Echo doomnvim version"
-	echo_with_color ${Green} "-x --uninstall 			Uninstall doomnvim"
+	echo_with_color ${Yellow} "-u --update 				Update doomnvim"
+	echo_with_color ${Yellow} "-c --check-requirements 	Check doomnvim requirements"
+	echo_with_color ${Yellow} "-i --install 				Install doomnvim"
+	echo_with_color ${Yellow} "-h --help 				Displays this message"
+	echo_with_color ${Yellow} "-v --version 				Echo doomnvim version"
+	echo_with_color ${Yellow} "-x --uninstall 			Uninstall doomnvim"
 }
 
 check_all(){
