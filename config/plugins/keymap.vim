@@ -44,6 +44,7 @@ map <silent><space>bwi 				10<C-w>><CR>
 map <silent><space>bwd 				10<C-w><<CR>
 map <silent><space>bhi 				10<C-w>+<CR>
 map <silent><space>bhd 				10<C-w>-<CR>
+map <silent><space>bS               :call SwitchBuf()<CR>
 
 " }}}
 

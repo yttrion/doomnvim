@@ -125,3 +125,23 @@ function! ChangeColors()
     exec ':! echo "' . target '" > $HOME/.doomnvim/autoload/colorscheme'
 	call doomnvim#logging#message("*", "Changed default colorscheme", 2)
 endfunction
+
+
+
+function! SwitchBuf()
+    " <C-w>H/J/K/L function
+    try
+        exec ':NERDTreeClose'
+    catch
+        call doomnvim#logging#message('!', 'No NERDTree buffer to close', 1)
+    endtry
+    
+    if g:buf_left == 1
+        exe "normal \<C-w>L<CR>"
+        let g:buf_left = 0
+    else
+        exe "normal\<C-w>H<CR>"
+        let g:buf_left = 1
+    endif
+    call doomnvim#logging#message('*', 'Called switchbuf()', 2)
+endfunction
