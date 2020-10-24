@@ -7,23 +7,27 @@
 
 scriptencoding utf-8
 
-call doomnvim#logging#message('+', 'Checking OS', 2)
+function! doomnvim#system#whichos()
 
-let s:system = ""
-let g:doomvim_separator = ""
+    call doomnvim#logging#message('+', 'Checking OS', 2)
 
-if has('win32') || has('win64')
-    let s:system = 'windows'
-    let g:doomvim_separator = "\\"
-elseif has('unix') && !has('macunix') && !has('win32unix')
-    let s:system = 'linux'
-    let g:doomvim_separator = "/"
-elseif has('macunix')
-    let s:system = 'mac'
-    let g:doomvim_separator = "/"
-elseif has('win32unix')
-    let s:system = 'cygwin'
-    let g:doomvim_separator = "\\"
-else
-    echo "OS not recognized"
-endif
+    let s:system = ""
+    let g:doomvim_separator = ""
+    
+    if has('win32') || has('win64')
+        let s:system = 'windows'
+        let g:doomvim_separator = "\\"
+    elseif has('unix') && !has('macunix') && !has('win32unix')
+        let s:system = 'linux'
+        let g:doomvim_separator = "/"
+    elseif has('macunix')
+        let s:system = 'mac'
+        let g:doomvim_separator = "/"
+    elseif has('win32unix')
+        let s:system = 'cygwin'
+        let g:doomvim_separator = "\\"
+    else
+        echo "OS not recognized"
+    endif
+
+endfunction

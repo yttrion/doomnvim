@@ -90,6 +90,7 @@ endfunction
 " Functions
 function! doomnvim#begin() abort
 
+    call doomnvim#system#whichos()
     call doomnvim#default#options()
     call doomnvim#autocmds#init()
     call doomnvim#logging#init()
