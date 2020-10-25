@@ -171,15 +171,15 @@ function! ResizeWin(width,inc)
     echo perc
     if a:width ==# 1
         if a:inc ==# 1
-            exe 'normal '.perc.'\<C-w>><CR>'
+            exec ':res +'.perc
         else
-            exe 'normal '.perc.'\<C-w><<CR>'
+            exe ':res -'.perc
         endif
     else
         if a:inc ==# 1
-            exe 'normal '.perc.'\<C-w>+<CR>'
+            exe ':vertical res +'.perc
         else
-            exe 'normal '.perc.'\<C-w>-<CR>'
+            exe ':vertical res -'.perc
         endif
     endif
 
