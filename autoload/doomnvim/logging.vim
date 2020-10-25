@@ -50,6 +50,7 @@ function! doomnvim#logging#init()
         try
             exec ':silent !echo " " >> $HOME/.doomnvim/logs/doomnvim.log'
             exec ':silent !echo '.boot_msg.' >> $HOME/.doomnvim/logs/doomnvim.log'
+            exec ':silent !echo " " >> $HOME/.doomnvim/logs/doomnvim.log'
         catch
             echo 'Cannot write on_start log message'
             exec ':!touch $HOME/.doomnvim/logs/doomnvim.log'
