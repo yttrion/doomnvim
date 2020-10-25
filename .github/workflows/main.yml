@@ -25,6 +25,6 @@ jobs:
       - name: vint-action
         uses: LudvigHz/vint-action@v1
         with:
-          path: autoload/doomnvim.vim
+          path: ./autoload/doomnvim.vim
 
 
