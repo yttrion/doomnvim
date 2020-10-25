@@ -21,7 +21,7 @@ nnoremap <silent><leader> :WhichKey '<Space>'<CR>
 map <silent><space>fs 			:w<CR>
 map <silent><space>fS 			:wa<CR>
 map <silent><space>fe 			:NERDTreeToggle<CR>
-map <silent><space>fo 			:Ex<CR>
+map <silent><space>fo 			:sp <bar>buffer<bar>call bufnr("")<bar>Ex<CR>
 map <silent><space>fr 			:call RenameFile()<CR>
 
 " }}}

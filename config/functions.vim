@@ -165,10 +165,7 @@ endfunction
 
 " Experimental
 function! ExplorerToggle(height)
-
-    botright new
     exec 'resize ' . a:height
     exec ':sp | buffer | call bufnr("") | Ex'
-    let g:explo_win = win_getid()
     call doomnvim#logging#message('*', 'Toggled explorer', 2)
 endfunction
