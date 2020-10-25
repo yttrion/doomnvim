@@ -170,14 +170,15 @@ function! ResizeWin(width,inc)
     let perc = float2nr(0.2*win_width)
     if a:width ==# 1
         if a:inc ==# 1
-            exec 'normal \'.perc.'<C-w>><CR>'
+            exec 'normal '.perc.'\<C-w>><CR>'
         else
-            exec 'normal \'.perc.'<C-w><<CR>'
+            exec 'normal '.perc.'\<C-w><<CR>'
+        endif
     else
         if a:inc ==# 1
-            exec 'normal \'.perc.'<C-w>+<CR>'
+            exec 'normal '.perc.'\<C-w>+<CR>'
         else
-            exec 'normal \'.perc.'<C-w>-<CR>'
+            exec 'normal '.perc.'\<C-w>-<CR>'
         endif
     endif
 
