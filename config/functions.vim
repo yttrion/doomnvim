@@ -163,9 +163,3 @@ function! OpenInFloat(cmd)
     endtry
 endfunction
 
-" Experimental
-function! ExplorerToggle(height)
-    exec 'resize ' . a:height
-    exec ':sp | buffer | call bufnr("") | Ex'
-    call doomnvim#logging#message('*', 'Toggled explorer', 2)
-endfunction
