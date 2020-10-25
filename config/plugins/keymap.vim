@@ -46,6 +46,8 @@ map <silent><space>bhi 			10<C-w>+<CR>
 map <silent><space>bhd 			10<C-w>-<CR>
 map <silent><space>br           :call SwitchBuf()<CR>
 
+map <silent><space>bWR          :call ResizeWin(1,1)<CR>
+
 " }}}
 
 
