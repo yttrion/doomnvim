@@ -178,6 +178,7 @@ function! ResizeWin(width,inc)
             exec 'normal \'.perc.'<C-w>+<CR>'
         else
             exec 'normal \'.perc.'<C-w>-<CR>'
+        endif
     endif
 
 endfunction
