@@ -11,19 +11,19 @@ function! doomnvim#logging#message(type, msg, level)
     " ? : Prompt
     " ! : Error
     " !!! : CRITICAL
-
+    let output = ''
     if g:doomnvim_logging != 0
         " Generate log message
         if a:type ==# '!'
-            let output = '[!] - ' . a:msg
+            let output .= '[!] - ' . a:msg
         elseif a:type ==# '+'
-            let output = '[+] - ' . a:msg
+            let output .= '[+] - ' . a:msg
         elseif a:type ==# '*'
-            let output = '[*] - ' . a:msg
+            let output .= '[*] - ' . a:msg
         elseif a:type ==# '?'
-            let output = '[?] - ' . a:msg
+            let output .= '[?] - ' . a:msg
         elseif a:type ==# '!!!'
-            let output = '[!!!] = ' . a:msg
+            let output .= '[!!!] = ' . a:msg
         endif
 
         try
