@@ -163,7 +163,7 @@ function! OpenInFloat(cmd)
     endtry
 endfunction
 
-
+" Experimental
 function! ExplorerToggle(height)
     if win_gotoid(g:explo_win)
         hide
@@ -173,11 +173,8 @@ function! ExplorerToggle(height)
         try
             exec 'buffer ' . g:explo_buf
         catch
-            exec ':Ex'
             let g:explo_buf = bufnr("")
-            set nonumber
-            set norelativenumber
-            set signcolumn=no
+            exec ':sp | buffer ' . g:explo_buf . ' | Ex'
         endtry
         let g:explo_win = win_getid()
     endif
