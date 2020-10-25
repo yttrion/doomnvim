@@ -104,7 +104,7 @@ function! doomnvim#end() abort
     try
         exe ':helptags $HOME/.doomnvim/doc/'
     catch
-        call doomnvim#logging#message('!', "Failed to load doomvim.txt file", 1)
+        call doomnvim#logging#message('!', 'Failed to load doomvim.txt file', 1)
     endtry
 
     set smarttab

@@ -4,8 +4,6 @@
 " License: MIT
 "====================================================================
 
-scriptencoding utf-8
-
 function! doomnvim#default#options() abort
     call doomnvim#logging#message('+', 'doomnvim.default.options called', 2)
     " Set options
@@ -20,7 +18,7 @@ function! doomnvim#default#options() abort
     set noswapfile
     set showmode
     set hlsearch
-    set nu rnu
+    set number rnu
 
     set mouse=a
     set laststatus=2

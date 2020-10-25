@@ -8,7 +8,6 @@ if empty(glob('~/.doomnvim/autoload/plug.vim'))
   	silent !curl -fLo ~/.doomnvim/autoload/plug.vim --create-dirs
     	\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-
 endif
 
 
@@ -16,10 +15,6 @@ endif
 if has('vim_starting')
 	" Force utf-8
 	exe 'set encoding=utf-8'
-	" Force nocompatible
-	if &compatible
-		set nocompatible
-	endif
 endif
 
 " Start implementing doomnvim module
@@ -46,13 +41,13 @@ Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 call plug#end()
 
-call doomnvim#logging#message("*", "Loading config/ files", 2)
+call doomnvim#logging#message('*', 'Loading config/ files', 2)
 source $HOME/.doomnvim/config/gui.vim
 source $HOME/.doomnvim/config/functions.vim
 source $HOME/.doomnvim/config/globals.vim
 
 
-call doomnvim#logging#message("*", "Loading config/plugins/ files", 2)
+call doomnvim#logging#message('*', 'Loading config/plugins/ files', 2)
 source $HOME/.doomnvim/config/plugins/coc.vim
 source $HOME/.doomnvim/config/plugins/dict.vim
 source $HOME/.doomnvim/config/plugins/keymap.vim

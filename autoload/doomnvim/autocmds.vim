@@ -6,14 +6,15 @@
 
 
 function! doomnvim#autocmds#init() abort
-    " Load config
-    call doomnvim#logging#message('+', "doomnvim.autocmds.init called", 2)
-    if g:doomnvim_relative_num
-        autocmd BufEnter,WinEnter * if &nu | set rnu | endif
-        autocmd BufLeave,WinLeave * if &nu | set nornu | endif
-    endif
-    
-    autocmd BufNewFile,BufEnter * set cpoptions+=d
-    autocmd BufEnter * :syntax sync fromstart " ensure every file does syntax highlighting (full)
-
+    augroup doomnvim_core
+        " Load config
+        call doomnvim#logging#message('+', 'doomnvim.autocmds.init called', 2)
+        if g:doomnvim_relative_num
+            autocmd BufEnter,WinEnter * if &nu | set rnu | endif
+            autocmd BufLeave,WinLeave * if &nu | set nornu | endif
+        endif
+        
+        autocmd BufNewFile,BufEnter * set cpoptions+=d
+        autocmd BufEnter * :syntax sync fromstart " ensure every file does syntax highlighting (full)
+    augroup END
 endfunction

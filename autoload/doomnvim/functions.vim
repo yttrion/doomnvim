@@ -8,10 +8,10 @@
 
 function! doomnvim#functions#checkbin(bin)  abort
     if executable(a:bin)
-        call doomnvim#logging#message("+", a:bin . " found", 2)
+        call doomnvim#logging#message('+', a:bin . ' found', 2)
         return 1
     else
-        call doomnvim#logging#message("+", a:bin . " not found", 1)
+        call doomnvim#logging#message('+', a:bin . ' not found', 1)
         return 0
     endif
 endfunction
@@ -19,9 +19,9 @@ endfunction
 
 function! doomnvim#functions#checkplugin(plugin) abort
     if isdirectory(g:doomnvim_root.'plugged/'.a:plugin)
-        echo "Plugin found"
+        echo 'Plugin found'
     else
-        echo "Plugin not found"
+        echo 'Plugin not found'
     endif
 endfunction
 
@@ -42,21 +42,21 @@ endfunction
 function! doomnvim#functions#quitdoom(write, force) abort
 
     exec ':silent !echo "[---] - Dumping :messages" >> $HOME/.doomnvim/logs/doomnvim.log'
-    exec "redir >> $HOME/.doomnvim/logs/doomnvim.log"
-    exec ":silent messages"
-    exec ":redir END"
+    exec 'redir >> $HOME/.doomnvim/logs/doomnvim.log'
+    exec ':silent messages'
+    exec ':redir END'
     exec ':silent !echo " " >> $HOME/.doomnvim/logs/doomnvim.log'
     exec ':silent !echo "[---] - End of dump" >> $HOME/.doomnvim/logs/doomnvim.log'
 
-    let quit_cmd = ""
+    let quit_cmd = ''
 
     if a:write == 1
-        let quit_cmd .= "wa | "
+        let quit_cmd .= 'wa | '
     endif
     if a:force == 0
-        exec quit_cmd."q!"
+        exec quit_cmd.'q!'
     elseif a:force == 1
-        exec quit_cmd."qa!"
+        exec quit_cmd.'qa!'
     endif
 
 endfunction

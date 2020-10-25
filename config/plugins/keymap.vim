@@ -4,8 +4,8 @@
 " License: MIT
 "===============================================
 
-let mapleader = " "
-call which_key#register('<Space>', "g:which_key_map")
+let mapleader = ' '
+call which_key#register('<Space>', 'g:which_key_map')
 " Try catch causes which key not to show when installed
 "try
 "	call which_key#register('<Space>', "g:which_key_map")
