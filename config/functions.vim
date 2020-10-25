@@ -165,18 +165,15 @@ endfunction
 
 " Experimental
 function! ExplorerToggle(height)
-    if win_gotoid(g:explo_win)
-        hide
-    else
-        botright new
-        exec 'resize ' . a:height
-        try
-            exec 'buffer ' . g:explo_buf
-        catch
-            let g:explo_buf = bufnr("")
-            exec ':sp | buffer ' . g:explo_buf . ' | Ex'
-        endtry
-        let g:explo_win = win_getid()
-    endif
+
+    let g:explo_buf = bufnr("")
+    botright new
+    exec 'resize ' . a:height
+    try
+        exec 'buffer ' . g:explo_buf
+    catch
+        exec ':sp | buffer ' . g:explo_buf . ' | Ex'
+    endtry
+    let g:explo_win = win_getid()
     call doomnvim#logging#message('*', 'Toggled explorer', 2)
 endfunction
