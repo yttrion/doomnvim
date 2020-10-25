@@ -31,7 +31,7 @@ function! doomnvim#logging#message(type, msg, level)
                 if g:doomnvim_logging == 3
                     echo output
                 endif
-                exec ":silent !echo ".output." >> $HOME/.doomnvim/logs/doomnvim.log"
+                exec ":silent !echo '".output."' >> $HOME/.doomnvim/logs/doomnvim.log"
             endif
         catch
             let err_msg = '[!] - Cannot save: ' . a:msg . ''
