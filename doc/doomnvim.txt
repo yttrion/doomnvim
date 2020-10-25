@@ -149,8 +149,8 @@ doomnvim uses vim-which-key as a command manager. To open whichkey press
 <Space> and wait for the popup to show. Each function has a label and is
 mnemonic
 e.g:
-	`Save File`> <Space>sf
-	`Buffer split vertically`> <Space>bsv
+	`Save File` > <Space>sf
+	`Buffer split vertically` > <Space>bsv
 
 ==============================================================================
 FUNCTIONS                                                 *doomnvim-functions*
@@ -291,4 +291,7 @@ v0.1.4-1
   the window instead of an arbitrary value
 - functions.vim, gui.vim and globals.vim are now loaded by the doomnvim
   plugin instead of the init.vim file
+
+
+
 " vim:tw=78:ft=help:norl:

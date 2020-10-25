@@ -18,7 +18,7 @@ function! doomnvim#default#options() abort
     set noswapfile
     set showmode
     set hlsearch
-    set number rnu
+    "set number rnu
 
     set mouse=a
     set laststatus=2

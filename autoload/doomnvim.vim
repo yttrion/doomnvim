@@ -33,7 +33,7 @@ let g:doomnvim_enable_guicolors = 1
 
 " Sidebar size
 " @default = 30
-let g:doomnvim_sidebar_width = 30
+let g:doomnvim_sidebar_width = 20
 
 " Default colorscheme
 " @default = doom
@@ -112,7 +112,12 @@ function! doomnvim#end() abort
     let &tabstop = g:doomnvim_indent
     let &softtabstop = g:doomnvim_indent
     let &shiftwidth = g:doomnvim_indent
-
+    let &colorcolumn = g:doomnvim_max_columns
+    if g:doomnvim_relative_num ==# 1
+        set rnu
+    else
+        set nu
+    endif
 
     filetype plugin indent on
     syntax on
