@@ -29,7 +29,6 @@ function! doomnvim#default#options() abort
 
     set shortmess+=at
 
-    set tabs
 
     "coc.nvim settings
     set updatetime=500
