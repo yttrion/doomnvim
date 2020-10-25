@@ -122,15 +122,6 @@ function! doomnvim#end() abort
     call doomnvim#loadConfig('functions.vim')
     call doomnvim#loadConfig('globals.vim')
     
-    call doomnvim#loadConfig('/plugins/coc.vim')
-    call doomnvim#loadConfig('/plugins/dict.vim')
-    call doomnvim#loadConfig('/plugins/keymap.vim')
-    call doomnvim#loadConfig('/plugins/nerdtre.vim')
-    call doomnvim#loadConfig('/plugins/startify.vim')
-    call doomnvim#loadConfig('/plugins/tagbar.vim')
-    call doomnvim#loadConfig('/plugins/workspace.vim')
-
-
 endfunction
 
 " vim: cc=100:

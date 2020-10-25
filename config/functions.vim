@@ -168,17 +168,18 @@ function! ResizeWin(width,inc)
 
     let win_width = winwidth(0)
     let perc = float2nr(0.2*win_width)
+    echo perc
     if a:width ==# 1
         if a:inc ==# 1
-            exec 'normal '.perc.'\<C-w>><CR>'
+            exe 'normal '.perc.'\<C-w>><CR>'
         else
-            exec 'normal '.perc.'\<C-w><<CR>'
+            exe 'normal '.perc.'\<C-w><<CR>'
         endif
     else
         if a:inc ==# 1
-            exec 'normal '.perc.'\<C-w>+<CR>'
+            exe 'normal '.perc.'\<C-w>+<CR>'
         else
-            exec 'normal '.perc.'\<C-w>-<CR>'
+            exe 'normal '.perc.'\<C-w>-<CR>'
         endif
     endif
 
