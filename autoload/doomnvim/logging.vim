@@ -15,7 +15,7 @@ function! doomnvim#logging#message(type, msg, level)
     if g:doomnvim_logging != 0
         " Generate log message
         if a:type ==# '!'
-            let output .= '[!] - ' . a:msg
+            let output .= '[\!] - ' . a:msg
         elseif a:type ==# '+'
             let output .= '[+] - ' . a:msg
         elseif a:type ==# '*'
