@@ -29,6 +29,8 @@ function! doomnvim#default#options() abort
 
     set shortmess+=at
 
+    set tabs
+
     "coc.nvim settings
     set updatetime=500
     set nobackup
@@ -42,5 +44,5 @@ function! doomnvim#default#options() abort
     	set signcolumn=number
     else
     	set signcolumn=auto
-    endif   
+    endif
 endfunction

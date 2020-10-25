@@ -117,6 +117,11 @@ function! doomnvim#end() abort
     filetype plugin indent on
     syntax on
 
+    call doomnvim#loadConfig('gui.vim')
+    call doomnvim#loadConfig('functions.vim')
+    call doomnvim#loadConfig('globals.vim')
+
+
 
 endfunction
 
