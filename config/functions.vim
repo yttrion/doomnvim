@@ -143,7 +143,7 @@ function! SwitchBuf()
         exe "normal \<C-w>L<CR>"
         let g:buf_left = 0
     else
-        exe "normal\<C-w>H<CR>"
+        exe "normal \<C-w>H<CR>"
         let g:buf_left = 1
     endif
     call doomnvim#logging#message('*', 'Called switchbuf()', 2)
@@ -163,3 +163,21 @@ function! OpenInFloat(cmd)
     endtry
 endfunction
 
+
+function! ResizeWin(width,inc)
+
+    let win_width = winwidth(0)
+    let perc = float2nr(0.2*win_width)
+    if a:width ==# 1
+        if a:inc ==# 1
+            exec 'normal \'.perc.'<C-w>><CR>'
+        else
+            exec 'normal \'.perc.'<C-w><<CR>'
+    else
+        if a:inc ==# 1
+            exec 'normal \'.perc.'<C-w>+<CR>'
+        else
+            exec 'normal \'.perc.'<C-w>-<CR>'
+    endif
+
+endfunction
