@@ -284,6 +284,8 @@ v0.1.4
 v0.1.4-1
 - Added complete log
 - Dump vim internal error messages to logfile
-
+- Fixed vimscript linting errors and dagerous operators
+- Added netrwc as file explorer in a new buffer
+- Fixed colors in install.sh
 
 " vim:tw=78:ft=help:norl:

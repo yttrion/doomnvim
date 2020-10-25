@@ -115,11 +115,11 @@ vim_backup(){
 #Update repo if alread installed
 update_repo(){
 	if [[ -d "$HOME/.doomnvim" ]]; then
-		info "[+] Updating doomnvim..."
+		info "Updating doomnvim..."
 		cd "$HOME/.doomnvim"
 		git pull
 		cd - > /dev/null 2>&1
-		success "[*] - Successfully updated doomnvim"
+		success "Successfully updated doomnvim"
 	else
 		info "Trying to clone doomnvim"
 		git clone -q https://github.com/yttrion/doomnvim "$HOME/.doomnvim"
@@ -282,16 +282,15 @@ welcome(){
 
 install_done(){
 	echo ""
-	echo_with_color ${Yellow} 	"================================================="
+	echo_with_color ${Green} 	"================================================="
 	echo_with_color ${Green} 	"You are almost done. Start vim or neovim to install the plugins"
 	echo_with_color ${Green}	"That's all folks. Thanks for installing doomnvim"
 	echo_with_color ${Green} 	"Enjoy."
-	echo_with_color ${Yellow} 	"================================================="
+	echo_with_color ${Green} 	"================================================="
 }
 
 helper(){
 	info "doomnvim ${version} help"
-	echo_with_color ${Green} ""
 	echo_with_color ${Green} "doomnvim installer"
 	echo_with_color ${Green} "Usage ./install.sh [optn]"
 	echo_with_color ${Green} "Possible values:"
