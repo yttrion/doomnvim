@@ -40,13 +40,12 @@ map <silent><space>bsv 			:vsp<CR>
 map <silent><space>bsh 			:sp<CR>
 map <silent><space>bf 			:call BufSel("")<CR>
 map <silent><space>bR 			<C-w>=<CR>
-map <silent><space>bwi 			10<C-w>><CR>
-map <silent><space>bwd 			10<C-w><<CR>
-map <silent><space>bhi 			10<C-w>+<CR>
-map <silent><space>bhd 			10<C-w>-<CR>
+map <silent><space>bwi 			:call ResizeWin(1,1)<CR>
+map <silent><space>bwd 			:call ResizeWin(1,0)<CR>
+map <silent><space>bhi 			:call ResizeWin(0,1)<CR>
+map <silent><space>bhd 			:call ResizeWin(0,0)<CR>
 map <silent><space>br           :call SwitchBuf()<CR>
 
-map <silent><space>bWR          :call ResizeWin(1,1)<CR>
 
 " }}}
 
