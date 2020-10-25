@@ -14,8 +14,9 @@ let g:which_key_map.f = {
 			\ 'name' : '+file',
 			\ 's' : 'Save file',
 			\ 'S' : 'Save all',
-			\ 'o' : 'Open explorer',
+			\ 'o' : 'Open file',
 			\ 'r' : 'Rename file',
+            \ 'e' : 'Open file explorer',
 			\ }
 
 

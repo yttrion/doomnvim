@@ -162,3 +162,24 @@ function! OpenInFloat(cmd)
         call doomnvim#logging#message('!', 'Unable to execute the command', 1)
     endtry
 endfunction
+
+
+function! ExplorerToggle(height)
+    if win_gotoid(g:explo_win)
+        hide
+    else
+        botright new
+        exec 'resize ' . a:height
+        try
+            exec 'buffer ' . g:explo_buf
+        catch
+            exec ':Ex'
+            let g:explo_buf = bufnr("")
+            set nonumber
+            set norelativenumber
+            set signcolumn=no
+        endtry
+        let g:explo_win = win_getid()
+    endif
+    call doomnvim#logging#message('*', 'Toggled explorer', 2)
+endfunction
