@@ -72,7 +72,8 @@ nmap <silent><space>ghn 		<Plug>(GitGutterNextHunk)
 nmap <silent><space>ghs 		<Plug>(GitGutterStageHunk)
 nmap <silent><space>ghu 		<Plug>(GitGutterUndoHunk)
 nmap <silent><space>ghP  		<Plug>(GitGutterPreviewHunk)
-map <silent><space>gs 			:!git status<CR>
+map <silent><space>gs 			:call OpenInFloat("git status")<CR>
+map <silent><space>gC           :git checkout
 map <silent><space>gcc 			:call CreateCommit()<CR>
 
 " }}}
