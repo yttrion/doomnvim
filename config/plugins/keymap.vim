@@ -147,7 +147,7 @@ map <silent><space>mS 			:source %<CR>
 map <silent><space>ms 			:Startify<CR>
 map <silent><space>mc           :call EditColorscheme()<CR>
 
-map <silent><space><Tab>        :tabNext<CR>
+map <silent><space><TAB>        :tabNext<CR>
 
 " }}}
 
