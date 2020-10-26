@@ -16,6 +16,9 @@ if g:doomnvim_colorscheme !=# ''
 else
     call doomnvim#logging#message('!', 'Forced default colorscheme', 1)
 	exec 'colorscheme default'
+
+    set termguicolors
+
 endif
 
 if g:doomnvim_enable_guicolors == 1
