@@ -44,4 +44,20 @@ function! doomnvim#default#options() abort
     else
     	set signcolumn=auto
     endif
+
+    set smarttab
+    let &expandtab = g:doomnvim_expand_tabs
+    let &tabstop = g:doomnvim_indent
+    let &softtabstop = g:doomnvim_indent
+    let &shiftwidth = g:doomnvim_indent
+    let &colorcolumn = g:doomnvim_max_columns
+    if g:doomnvim_relative_num ==# 1
+        set rnu
+    else
+        set nu
+    endif
+    filetype plugin indent on
+    syntax on
+
+
 endfunction

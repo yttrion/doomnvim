@@ -94,6 +94,7 @@ function! doomnvim#begin() abort
     call doomnvim#default#options()
     call doomnvim#autocmds#init()
     call doomnvim#logging#init()
+    call doomnvim#commands#init()
 
 endfunction
 
@@ -107,20 +108,20 @@ function! doomnvim#end() abort
         call doomnvim#logging#message('!', 'Failed to load doomvim.txt file', 1)
     endtry
 
-    set smarttab
-    let &expandtab = g:doomnvim_expand_tabs
-    let &tabstop = g:doomnvim_indent
-    let &softtabstop = g:doomnvim_indent
-    let &shiftwidth = g:doomnvim_indent
-    let &colorcolumn = g:doomnvim_max_columns
-    if g:doomnvim_relative_num ==# 1
-        set rnu
-    else
-        set nu
-    endif
+    ""set smarttab
+    ""let &expandtab = g:doomnvim_expand_tabs
+    ""let &tabstop = g:doomnvim_indent
+    ""let &softtabstop = g:doomnvim_indent
+    ""let &shiftwidth = g:doomnvim_indent
+    ""let &colorcolumn = g:doomnvim_max_columns
+    ""if g:doomnvim_relative_num ==# 1
+    ""    set rnu
+    ""else
+    ""    set nu
+    ""endif
 
-    filetype plugin indent on
-    syntax on
+    ""filetype plugin indent on
+    ""syntax on
 
     " Finally works
     call doomnvim#loadConfig('gui.vim')
