@@ -18,7 +18,7 @@ nnoremap <silent><leader> :WhichKey '<Space>'<CR>
 
 " File operations----------------------------------------------------{{{
 
-map <silent><space>fs 			:w<CR>
+map <silent><space>fs 			:call SaveFile()<CR>
 map <silent><space>fS 			:wa<CR>
 map <silent><space>fe 			:NERDTreeToggle<CR>
 map <silent><space>fo 			:sp <bar>buffer<bar>call bufnr("")<bar>Ex<CR>

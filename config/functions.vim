@@ -205,3 +205,15 @@ function! ResizeWin(width,inc)
     endif
 
 endfunction
+
+
+function! SaveFile()
+    try
+        exec ":w"
+    catch
+        call doomnvim#logging#message('!', 'No filename parsed', 1)
+        let filename = input('Save as: ')
+        exec ":w " . filename
+    endtry
+
+endfunction
