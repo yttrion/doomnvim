@@ -18,6 +18,7 @@ endfunction
 
 function! doomnvim#config#loadBGC()
 
+    call doomnvim#config#checkBGC()
     au BufNewFile,BufRead .doom set filetype=vim
     if filereadable(g:doomnvim_root . '../.doom')
         try
