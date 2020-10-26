@@ -276,7 +276,6 @@ This is the layout of doomnvim:
 |   |_ alduin.vim                       # `Alessandro Yorba` theme
 |   |_ deus.vim                         # `ajmwagar` theme
 |   |_ doom.vim                         # doom colorscheme (`default`)
-|   |_ github.vim                       # `Anthony Carapetis` theme
 |   |_ gotham256.vim                    # `Andrea Leopardi` theme
 |   |_ gruvbox.vim                      # `morhetz` theme
 |   |_ iceberg.vim                      # `cocopon` theme
