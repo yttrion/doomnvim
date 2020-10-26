@@ -450,7 +450,7 @@ v0.1.5
 - Created the BFC
 - Colorscheme now loaded by the BFC
 - Added tabs support
-
+- Moved globals to a single file
 
 
 

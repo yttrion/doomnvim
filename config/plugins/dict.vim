@@ -57,6 +57,7 @@ let g:which_key_map.c = {
 			\ 't' 		: 'Goto type definiton',
 			\ 'r' 		: 'Goto reference',
 			\ 's' 		: 'Format selected',
+			\ 'I' 		: 'Indent file',
 			\ 'f' 		: 'Format file',
 			\ 'D' 		: 'Show documentation',
 			\ 'c' 		: 'Toggle comment',

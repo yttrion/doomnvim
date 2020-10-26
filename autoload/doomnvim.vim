@@ -35,6 +35,10 @@ let g:doomnvim_enable_guicolors = 1
 " @default = 25
 let g:doomnvim_sidebar_width = 25
 
+" Tagbar left 
+" @default 0
+let g:doomnvim_tagbar_left = 0
+
 " Show hidden files
 " @default = 1
 let g:doomnvim_show_hidden = 1
@@ -71,6 +75,10 @@ let g:doomnvim_autocomplete_par = 1
 " Values : 0 - 1
 " @default = 0.2
 let g:doomnvim_resize_percent = 0.2
+
+" Enable startify
+" @default = 1
+let g:doomnvim_enable_startmenu = 1
 
 " Logging level
 " 0 : No logging

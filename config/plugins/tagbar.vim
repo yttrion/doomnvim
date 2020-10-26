@@ -6,4 +6,4 @@
 
 
 let g:tagbar_width = g:doomnvim_sidebar_width
-let g:tagbar_left = 0
+let g:tagbar_left = g:doomnvim_tagbar_left

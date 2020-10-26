@@ -57,10 +57,11 @@ map <silent><space>ci 			<Plug>(coc-implementation)
 map <silent><space>ct 			<Plug>(coc-type-definition)
 map <silent><space>cr 			<Plug>(coc-reference)
 map <silent><space>cs 			<Plug>(coc-format-selected)
-map <silent><space>cf 			:gg=G<CR>
+map <silent><space>cI 			:gg=G<CR>
 map <silent><space>cD 			:call <SID>show_documentation()<CR>
 map <silent><space>cc 			<Plug>NERDCommenterToggle
 map <silent><space>cC           <C-v>
+map <silent><space>cf           :call CocAction('format')<CR>
 
 " }}}
 
