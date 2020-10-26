@@ -198,15 +198,6 @@ function! ResizeWin(width,inc)
     call doomnvim#logging#message('*', 'Resized window', 2)
 endfunction
 
-function! SaveWorkspace()
-    try
-        exec ":silent ToggleWorkspace"
-        call doomnvim#logging#message('*', 'Saved Workspace', 2)
-    catch
-        call doomnvim#logging#message('!', 'Unable to save workspace', 1)
-    endtry
-endfunction
-
 function! SaveFile()
     try
         exec ":w"
