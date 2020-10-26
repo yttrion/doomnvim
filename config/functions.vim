@@ -144,7 +144,7 @@ function! EditColorscheme()
     try
         call doomnvim#logging#message('*', 'Changing colorscheme sed -i')
         " command ==> sed -i "s/'value'/'value'" .doomrc
-        exec "sed -i \"s/'".g:doomnvim_colorscheme."'/'".target."'\" $HOME/.doomrc'
+        exec "sed -i \"s/'".g:doomnvim_colorscheme."'/'".target."'/\" $HOME/.doomrc'
         exec 'colorscheme ' . target
     catch
         call doomnvim#logging#message('!', 'Unable to edit colorscheme', 1)
