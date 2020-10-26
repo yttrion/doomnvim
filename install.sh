@@ -35,7 +35,7 @@ BWhite='\033[1;37m'       # White
 # }}}
 
 # version
-Version='0.1.4'
+Version='0.1.4-1'
 #System name
 System="$(uname -s)"
 
@@ -115,11 +115,11 @@ vim_backup(){
 #Update repo if alread installed
 update_repo(){
 	if [[ -d "$HOME/.doomnvim" ]]; then
-		echo "[+] Updating doomnvim..."
+		info "Updating doomnvim..."
 		cd "$HOME/.doomnvim"
 		git pull
 		cd - > /dev/null 2>&1
-		echo "[*] - Successfully updated doomnvim"
+		success "Successfully updated doomnvim"
 	else
 		info "Trying to clone doomnvim"
 		git clone -q https://github.com/yttrion/doomnvim "$HOME/.doomnvim"
@@ -282,25 +282,24 @@ welcome(){
 
 install_done(){
 	echo ""
-	echo_with_color ${Yellow} 	"================================================="
+	echo_with_color ${Green} 	"================================================="
 	echo_with_color ${Green} 	"You are almost done. Start vim or neovim to install the plugins"
 	echo_with_color ${Green}	"That's all folks. Thanks for installing doomnvim"
 	echo_with_color ${Green} 	"Enjoy."
-	echo_with_color ${Yellow} 	"================================================="
+	echo_with_color ${Green} 	"================================================="
 }
 
 helper(){
-	echo "doomnvim ${version} help"
-	echo ""
-	echo "doomnvim installer"
-	echo "Usage ./install.sh [optn]"
-	echo "Possible values:"
-	echo "-u --update 				Update doomnvim"
-	echo "-c --check-requirements 	Check doomnvim requirements"
-	echo "-i --install 				Install doomnvim"
-	echo "-h --help 				Displays this message"
-	echo "-v --version 				Echo doomnvim version"
-	echo "-x --uninstall 			Uninstall doomnvim"
+	info "doomnvim ${version} help"
+	echo_with_color ${Green} "doomnvim installer"
+	echo_with_color ${Green} "Usage ./install.sh [optn]"
+	echo_with_color ${Green} "Possible values:"
+	echo_with_color ${Yellow} "-u --update 				Update doomnvim"
+	echo_with_color ${Yellow} "-c --check-requirements 	Check doomnvim requirements"
+	echo_with_color ${Yellow} "-i --install 				Install doomnvim"
+	echo_with_color ${Yellow} "-h --help 				Displays this message"
+	echo_with_color ${Yellow} "-v --version 				Echo doomnvim version"
+	echo_with_color ${Yellow} "-x --uninstall 			Uninstall doomnvim"
 }
 
 check_all(){

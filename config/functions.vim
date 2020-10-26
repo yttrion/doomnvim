@@ -44,6 +44,12 @@ endfunction
 
 "Toggle layout
 function! LayoutToggle()
+    try
+        exec ':NERDTreeClose'
+    catch
+        call doomnvim#logging#message('!', 'No NERDTree buffer to close', 1)
+    endtry
+
 	if g:vert_layout ==1
 		exe "normal \<C-w>K<CR>"
 		let g:vert_layout = 0
@@ -117,11 +123,63 @@ endfunction
 
 
 function! ChangeColors()
-
     exec ":!ls $HOME/.doomnvim/colors/ | sed -e 's/\.vim$//'"
     call doomnvim#logging#message('?', 'Asking for colorscheme', 2)
     let target = input('Select colorscheme: ')
     exec 'colorscheme ' . target
     exec ':! echo "' . target '" > $HOME/.doomnvim/autoload/colorscheme'
 	call doomnvim#logging#message("*", "Changed default colorscheme", 2)
+endfunction
+
+function! SwitchBuf()
+    " <C-w>H/J/K/L function
+    try
+        exec ':NERDTreeClose'
+    catch
+        call doomnvim#logging#message('!', 'No NERDTree buffer to close', 1)
+    endtry
+    
+    if g:buf_left == 1
+        exe "normal \<C-w>L<CR>"
+        let g:buf_left = 0
+    else
+        exe "normal \<C-w>H<CR>"
+        let g:buf_left = 1
+    endif
+    call doomnvim#logging#message('*', 'Called switchbuf()', 2)
+endfunction
+
+function! OpenInFloat(cmd)
+    try
+        exec ':FloatermKill'
+    catch
+        call doomnvim#logging#message('!', 'No Floating term to close', 1)
+    endtry
+
+    try
+        exec ':FloatermNew ' . a:cmd
+    catch
+        call doomnvim#logging#message('!', 'Unable to execute the command', 1)
+    endtry
+endfunction
+
+
+function! ResizeWin(width,inc)
+
+    let win_width = winwidth(0)
+    let perc = float2nr(0.2*win_width)
+    if a:width ==# 1
+        if a:inc ==# 1
+            exec ':vertical res +'.perc
+        else
+            exec ':vertical res -'.perc
+        endif
+    else
+        if a:inc ==# 1
+            exec ':res +'.perc
+        else
+            exec ':res -'.perc
+        endif
+    endif
+
 endfunction

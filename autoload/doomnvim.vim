@@ -8,7 +8,7 @@
 scriptencoding utf-8
 
 " Version
-let g:doomnvim_version = '0.1.4'
+let g:doomnvim_version = '0.1.4-1'
 "lockvar g:doomnvim_version
 
 " Default indent size
@@ -33,7 +33,7 @@ let g:doomnvim_enable_guicolors = 1
 
 " Sidebar size
 " @default = 30
-let g:doomnvim_sidebar_width = 30
+let g:doomnvim_sidebar_width = 20
 
 " Default colorscheme
 " @default = doom
@@ -90,9 +90,11 @@ endfunction
 " Functions
 function! doomnvim#begin() abort
 
+    call doomnvim#system#whichos()
     call doomnvim#default#options()
     call doomnvim#autocmds#init()
     call doomnvim#logging#init()
+    call doomnvim#commands#init()
 
 endfunction
 
@@ -103,20 +105,14 @@ function! doomnvim#end() abort
     try
         exe ':helptags $HOME/.doomnvim/doc/'
     catch
-        call doomnvim#logging#message('!', "Failed to load doomvim.txt file", 1)
+        call doomnvim#logging#message('!', 'Failed to load doomvim.txt file', 1)
     endtry
 
-    set smarttab
-    let &expandtab = g:doomnvim_expand_tabs
-    let &tabstop = g:doomnvim_indent
-    let &softtabstop = g:doomnvim_indent
-    let &shiftwidth = g:doomnvim_indent
-
-
-    filetype plugin indent on
-    syntax on
-
-
+    " Finally works
+    call doomnvim#loadConfig('gui.vim')
+    call doomnvim#loadConfig('functions.vim')
+    call doomnvim#loadConfig('globals.vim')
+    
 endfunction
 
 " vim: cc=100:

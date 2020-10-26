@@ -4,10 +4,8 @@
 " License: MIT
 "====================================================================
 
-scriptencoding utf-8
-
 function! doomnvim#default#options() abort
-    call doomnvim#logging#message('+', 'doomnvim.default.options() called', 2)
+    call doomnvim#logging#message('+', 'doomnvim.default.options called', 2)
     " Set options
 
     set wildmenu
@@ -20,7 +18,7 @@ function! doomnvim#default#options() abort
     set noswapfile
     set showmode
     set hlsearch
-    set nu rnu
+    "set number rnu
 
     set mouse=a
     set laststatus=2
@@ -30,6 +28,7 @@ function! doomnvim#default#options() abort
     set clipboard+=unnamedplus
 
     set shortmess+=at
+
 
     "coc.nvim settings
     set updatetime=500
@@ -44,5 +43,21 @@ function! doomnvim#default#options() abort
     	set signcolumn=number
     else
     	set signcolumn=auto
-    endif   
+    endif
+
+    set smarttab
+    let &expandtab = g:doomnvim_expand_tabs
+    let &tabstop = g:doomnvim_indent
+    let &softtabstop = g:doomnvim_indent
+    let &shiftwidth = g:doomnvim_indent
+    let &colorcolumn = g:doomnvim_max_columns
+    if g:doomnvim_relative_num ==# 1
+        set rnu
+    else
+        set nu
+    endif
+    filetype plugin indent on
+    syntax on
+
+
 endfunction

@@ -14,8 +14,9 @@ let g:which_key_map.f = {
 			\ 'name' : '+file',
 			\ 's' : 'Save file',
 			\ 'S' : 'Save all',
-			\ 'o' : 'Open explorer',
+			\ 'o' : 'Open file',
 			\ 'r' : 'Rename file',
+            \ 'e' : 'Open file explorer',
 			\ }
 
 
@@ -29,7 +30,8 @@ let g:which_key_map.b = {
 			\ 'e' : 'Empty buffer',
 			\ 'c' : 'Close all except focused',
 			\ 'f' : 'Select buffer',
-			\ 'r' : 'Rezise equally',
+			\ 'R' : 'Rezise equally',
+            \ 'r' : 'Rotate buffers',
 			\ 's' : {
 				\ 'name' : '+split',
 				\ 'v' : 'Split vertically',

@@ -22,7 +22,9 @@
 - [Contribute](#contribute)
 
 # Introduction
-doomnvim is a vim-version of the Doom-emacs framework. It aims to add useful features to stock vim/neovim
+doomnvim is a vim-version of the [doom-emacs](https://github.com/hlissner/doom-emacs) framework.
+It aims to add useful features to stock vim/neovim
+
 
 **doomnvim is still under development. Expect missing features and bugs**
 
@@ -53,6 +55,8 @@ After doomnvim is installed, run `vim` and doomnvim will automatically install p
 # Known issues
 
 - On first launch, vim-which-key throws an error `E117: unknown function whichkey#register()`
+
+
 
 # Screenshots
 

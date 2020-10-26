@@ -1,10 +1,27 @@
 *doomnvim.txt*
-            ______ _____  ________  ___ _   _ _   _ ________  ___~
-            |  _  \  _  ||  _  |  \/  || \ | | | | |_   _|  \/  |
-            | | | | | | || | | | .  . ||  \| | | | | | | | .  . |  
-            | | | | | | || | | | |\/| || . ` | | | | | | | |\/| |~
-            | |/ /\ \_/ /\ \_/ / |  | || |\  \ \_/ /_| |_| |  | |~
-            |___/  \___/  \___/\_|  |_/\_| \_/\___/ \___/\_|  |_/~
+
+=================     ===============     ===============   ========  ========~
+\\ . . . . . . .\\   //. . . . . . .\\   //. . . . . . .\\  \\. . .\\// . . //~
+||. . ._____. . .|| ||. . ._____. . .|| ||. . ._____. . .|| || . . .\/ . . .||~
+|| . .||   ||. . || || . .||   ||. . || || . .||   ||. . || ||. . . . . . . ||~
+||. . ||   || . .|| ||. . ||   || . .|| ||. . ||   || . .|| || . | . . . . .||~
+|| . .||   ||. _-|| ||-_ .||   ||. . || || . .||   ||. _-|| ||-_.|\ . . . . ||~
+||. . ||   ||-'  || ||  `-||   || . .|| ||. . ||   ||-'  || ||  `|\_ . .|. .||~
+|| . _||   ||    || ||    ||   ||_ . || || . _||   ||    || ||   |\ `-_/| . ||~
+||_-' ||  .|/    || ||    \|.  || `-_|| ||_-' ||  .|/    || ||   | \  / |-_.||~
+||    ||_-'      || ||      `-_||    || ||    ||_-'      || ||   | \  / |  `||~
+||    `'         || ||         `'    || ||    `'         || ||   | \  / |   ||~
+||            .===' `===.         .==='.`===.         .===' /==. |  \/  |   ||~
+||         .=='   \_|-_ `===. .==='   _|_   `===. .===' _-|/   `==  \/  |   ||~
+||      .=='    _-'    `-_  `='    _-'   `-_    `='  _-'   `-_  /|  \/  |   ||~
+||   .=='    _-'          `-__\._-'         `-_./__-'         `' |. /|  |   ||~
+||.=='    _-'                                                     `' |  /==.||~
+=='    _-'                 _   _ _   _ ________  ___                  \/   `==~
+\   _-'                   | \ | | | | |_   _|  \/  |                   `-_   /~
+ `''                      |  \| | | | | | | | .  . |                      ``'~
+                          | . ` | | | | | | | |\/| |~
+                          | |\  \ \_/ /_| |_| |  | | ~
+                          \_| \_/\___/ \___/\_|  |_/
 
 yttrion                                                             *doomnvim*
 
@@ -149,13 +166,13 @@ doomnvim uses vim-which-key as a command manager. To open whichkey press
 <Space> and wait for the popup to show. Each function has a label and is
 mnemonic
 e.g:
-	`Save File`> <Space>sf
-	`Buffer split vertically`> <Space>bsv
+	`Save File` > <Space>sf
+	`Buffer split vertically` > <Space>bsv
 
 ==============================================================================
 FUNCTIONS                                                 *doomnvim-functions*
 
-doomnvim comes with custom functions
+doomnvim comes with custom functions.
 
 
 
@@ -251,7 +268,14 @@ This is the layout of doomnvim:
 ==============================================================================
 AUTOLOAD                                           *doomnvim-hacking-autoload*
 
-Lorem
+The autoload folder content is loaded by vim on_start. It is the location
+of the doomnvim plugin which is loaded everytime.
+
+The `doomnvim.vim` file is contain most of the global variables used by 
+doomnvim and executes the init functions of doomnvim.
+
+The files inside the `doomnvim/` folder have core functions for doomnvim.
+
 
 ==============================================================================
 CHANGELOG                                                 *doomnvim-changelog*
@@ -274,4 +298,19 @@ v0.1.4
     2: Errors and messages
     3: Errors and messages with echo
 
-" vim:tw=78:ft=help:norl:
+v0.1.4-1
+- Added complete log
+- Dump vim internal error messages to logfile
+- Fixed vimscript linting errors and dagerous operators
+- Added netrwc as file explorer in a new buffer
+- Fixed colors in install.sh
+- Buffer resize in width/height are now done by 20% of width/height of
+  the window instead of an arbitrary value
+- functions.vim, gui.vim and globals.vim are now loaded by the doomnvim
+  plugin instead of the init.vim file
+
+
+v0.1.5
+- Implemented autoclose parenthesis, brackets, quotes
+
+" vim:tw=80:ft=help:norl:

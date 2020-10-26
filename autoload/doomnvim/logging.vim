@@ -11,19 +11,19 @@ function! doomnvim#logging#message(type, msg, level)
     " ? : Prompt
     " ! : Error
     " !!! : CRITICAL
-
+    let output = ''
     if g:doomnvim_logging != 0
         " Generate log message
-        if a:type == "!"
-            let output = "[!] - " . a:msg
-        elseif a:type == "+"
-            let output = "[+] - " . a:msg
-        elseif a:type == "*"
-            let output = "[*] - " . a:msg
-        elseif a:type == "?"
-            let output = "[?] - " . a:msg
-        elseif a:type == "!!!"
-            let output = '[!!!] = ' . a:msg
+        if a:type ==# '!'
+            let output .= '[\!] - ' . a:msg
+        elseif a:type ==# '+'
+            let output .= '[+] - ' . a:msg
+        elseif a:type ==# '*'
+            let output .= '[*] - ' . a:msg
+        elseif a:type ==# '?'
+            let output .= '[?] - ' . a:msg
+        elseif a:type ==# '!!!'
+            let output .= '[\!\!\!] = ' . a:msg
         endif
 
         try
@@ -31,11 +31,11 @@ function! doomnvim#logging#message(type, msg, level)
                 if g:doomnvim_logging == 3
                     echo output
                 endif
-                exec ':silent !echo '.output.' >> $HOME/.doomnvim/logs/doomnvim.log'
+                exec ":silent !echo '".output."' >> $HOME/.doomnvim/logs/doomnvim.log"
             endif
         catch
-            let err_msg = "[!] - Cannot save: [" . a:msg . ']'
-            exec ':silent !echo '.err_msg.' >> $HOME/.doomnvim/logs/doomnvim.log'
+            let err_msg = '[!] - Cannot save: ' . a:msg . ''
+            exec ":silent !echo ".err_msg." >> $HOME/.doomnvim/logs/doomnvim.log"
         endtry
 
     endif
@@ -46,12 +46,13 @@ function! doomnvim#logging#init()
 
     if g:doomnvim_logging != 0
         let today = strftime('%c')
-        let boot_msg = "[".today."] - Starting doomnvim"
+        let boot_msg = '['.today.'] - Starting doomnvim '.g:doomnvim_version
         try
-            exec ':silent !echo '.boot_msg.'>> $HOME/.doomnvim/logs/doomnvim.log'
+            exec ':silent !echo " " >> $HOME/.doomnvim/logs/doomnvim.log'
+            exec ':silent !echo '.boot_msg.' >> $HOME/.doomnvim/logs/doomnvim.log'
         catch
-            echo "Cannot write on_start log message"
-            exec ":!touch $HOME/.doomnvim/logs/doomnvim.log"
+            echo 'Cannot write on_start log message'
+            exec ':!touch $HOME/.doomnvim/logs/doomnvim.log'
         endtry
     endif
 
