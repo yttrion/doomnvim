@@ -1,8 +1,8 @@
-"================================================================
-" DoomNvim.vim -- Init and core config
+"=================================================
+" BFC
 " Author: Pierre-Yves Douault
 " License: MIT
-"================================================================
+"=================================================
 
 " Force utf-8
 scriptencoding utf-8
@@ -80,44 +80,6 @@ let g:doomnvim_resize_percent = 0.2
 " @default = 1
 let g:doomnvim_logging = 1
 
-
 " doomnvim path
 " @default = $HOME/.doomnvim
 let g:doomnvim_root = expand('<sfile>:p')[:-22]
-
-function! doomnvim#loadConfig(file) abort
-    if filereadable(g:doomnvim_root . 'config/' . a:file)
-    "if filereadable(glob('~/.doomnvim/config/') . a:file)
-    "    execute 'source ' . glob('$HOME/.doomnvim/config/') . a:file
-        execute 'source ' . g:doomnvim_root . 'config/' . a:file
-        call doomnvim#logging#message('+', 'Sourced file '.a:file, 2)
-    endif
-endfunction
-
-
-
-" Functions
-function! doomnvim#begin() abort
-
-    call doomnvim#system#whichos()
-    call doomnvim#config#loadBGC()
-    call doomnvim#default#options()
-    call doomnvim#autocmds#init()
-    call doomnvim#autocmds#helptags()
-    call doomnvim#logging#init()
-    call doomnvim#commands#init()
-
-endfunction
-
-
-function! doomnvim#end() abort
-
-    " Finally works
-    call doomnvim#loadConfig('gui.vim')
-    call doomnvim#loadConfig('functions.vim')
-    call doomnvim#loadConfig('globals.vim')
-    
-endfunction
-
-" vim: cc=100:
-
