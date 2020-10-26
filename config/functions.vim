@@ -137,7 +137,13 @@ function! EditColorscheme()
         call doomnvim#logging#message('*', 'Changing colorscheme sed -i', 2)
         exec 'colorscheme ' . target
         " command ==> sed -i "s/'value'/'value'" .doomrc
-        exec ":!sed -i \"s/'".g:doomnvim_colorscheme."'/'".target."'/\" $HOME/.doomrc"
+        try
+            exec ":!sed -i \"s/'".g:doomnvim_colorscheme."'/'".target."'/\" $HOME/.doomrc"
+        catch
+            call doomnvim#logging#message('!', 'No element to sed', 1)
+            exec "echo let g:doomnvim_colorscheme = '".target."' >> $HOME/.doomrc"
+            call doomnvim#logging#message('*', 'Created the BFC', 2)
+        endtry
     catch
         call doomnvim#logging#message('!', 'Unable to edit colorscheme', 1)
     endtry
