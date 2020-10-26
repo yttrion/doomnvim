@@ -9,7 +9,7 @@ scriptencoding utf-8
 
 " Version
 let g:doomnvim_version = '0.1.4-1'
-"lockvar g:doomnvim_version
+lockvar g:doomnvim_version
 
 " Default indent size
 " @default = 2
@@ -62,6 +62,11 @@ let g:doomnvim_lint_onsave = 1
 " Autocomplete paranthesis
 " @default = 1
 let g:doomnvim_autocomplete_par = 1
+
+" Doomnvim resize percentage
+" Values : 1 - 100
+" @default = 20
+let g:doomnvim_resize_percent = 20
 
 " Logging level
 " 0 : No logging
