@@ -66,3 +66,17 @@ function! doomnvim#functions#createReport() abort
     " Creates a markdown report to use when bugs occurs
 
 endfunction
+
+
+function! doomnvim#functions#changeColor() abort
+
+    exec ":!ls $HOME/.doomnvim/colors/ | sed -e 's/\.vim$//'"
+    call doomnvim#logging#message('?', 'Asking for colorscheme', 2)
+    let target = input('Select colorscheme: ')
+    exec 'colorscheme ' . target
+    "Redraw
+    redraw!
+    echo ':!echo "' . target . '"> $HOME/.doomnvim/autoload/colorscheme'
+    call doomnvim#logging#message('*', 'Changed colorscheme', 2)
+
+endfunction

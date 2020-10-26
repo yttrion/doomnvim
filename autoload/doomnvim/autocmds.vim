@@ -15,6 +15,6 @@ function! doomnvim#autocmds#init() abort
         endif
         
         autocmd BufNewFile,BufEnter * set cpoptions+=d
-        autocmd BufEnter * :syntax sync fromstart " ensure every file does syntax highlighting (full)
+        autocmd BufEnter * :syntax sync fromstart " ensure every file does full syntax highlight
     augroup END
 endfunction
