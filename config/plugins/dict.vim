@@ -156,4 +156,5 @@ let g:which_key_map.m = {
             \ 'S' : 'Source file',
             \ 'c' : 'Change colorscheme',
             \ 'f' : 'Open FZF',
+            \ 'W' : 'Save workspace',
 			\ }

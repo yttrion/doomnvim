@@ -149,6 +149,7 @@ map <silent><space>par 			:CocRestart<CR>
 map <silent><space>mS 			:source %<CR>
 map <silent><space>ms 			:Startify<CR>
 map <silent><space>mc           :call EditColorscheme()<CR>
+map <silent><space>mW           :call SaveWorkspace()<CR>
 
 " }}}
 

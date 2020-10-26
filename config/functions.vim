@@ -49,7 +49,6 @@ function! LayoutToggle()
     catch
         call doomnvim#logging#message('!', 'No NERDTree buffer to close', 1)
     endtry
-
 	if g:vert_layout ==1
 		exe "normal \<C-w>K<CR>"
 		let g:vert_layout = 0
@@ -108,7 +107,6 @@ function! BufSel(pattern)
   	  	endif
   	else
 	    call doomnvim#logging#message("!", "No matching buffers", 1)
-  	  	echo "No matching buffers"
   	endif
 endfunction
 
@@ -122,7 +120,6 @@ function! CreateCommit()
 endfunction
 
 function! EditColorscheme()
-
     if g:doomnvim_bfc ==# 0
         exec ':!cp $HOME/.doomnvim/autoload/doomnvim/default/.doomrc $HOME/'
         call doomnvim#logging#message('*', 'Created the BFC', 2)
@@ -147,8 +144,6 @@ function! EditColorscheme()
     catch
         call doomnvim#logging#message('!', 'Unable to edit colorscheme', 1)
     endtry
-
-
 endfunction
 
 
@@ -159,7 +154,6 @@ function! SwitchBuf()
     catch
         call doomnvim#logging#message('!', 'No NERDTree buffer to close', 1)
     endtry
-    
     if g:buf_left == 1
         exe "normal \<C-w>L<CR>"
         let g:buf_left = 0
@@ -167,7 +161,7 @@ function! SwitchBuf()
         exe "normal \<C-w>H<CR>"
         let g:buf_left = 1
     endif
-    call doomnvim#logging#message('*', 'Called switchbuf()', 2)
+    call doomnvim#logging#message('*', 'Called switchbuf', 2)
 endfunction
 
 function! OpenInFloat(cmd)
@@ -176,7 +170,6 @@ function! OpenInFloat(cmd)
     catch
         call doomnvim#logging#message('!', 'No Floating term to close', 1)
     endtry
-
     try
         exec ':FloatermNew ' . a:cmd
     catch
@@ -186,7 +179,6 @@ endfunction
 
 
 function! ResizeWin(width,inc)
-
     let win_width = winwidth(0)
     let res = g:doomnvim_resize_percent
     let perc = float2nr(res*win_width)
@@ -203,9 +195,18 @@ function! ResizeWin(width,inc)
             exec ':res -'.perc
         endif
     endif
-
+    call doomnvim#logging#message('*', 'Resized window', 2)
 endfunction
 
+function! SaveWorkspace()
+    try
+        exec ":silent ToggleWorkspace"
+        exec ":silent ToggleWorkspace"
+        call doomnvim#logging#message('*', 'Saved Workspace', 2)
+    catch
+        call doomnvim#logging#message('!', 'Unable to save workspace', 1)
+    endtry
+endfunction
 
 function! SaveFile()
     try
@@ -215,5 +216,5 @@ function! SaveFile()
         let filename = input('Save as: ')
         exec ":silent  w " . filename
     endtry
-
+    call doomnvim#logging#message('*', 'Saved file', 2)
 endfunction
