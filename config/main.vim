@@ -21,7 +21,7 @@ endif
 
 call plug#begin('~/.doomnvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch':'release'}
-Plug 'itchyny/lightline'
+Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdtree'
 Plug 'liuchengxu/vim-which-key'
