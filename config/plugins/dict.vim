@@ -4,7 +4,6 @@
 " License: MIT
 "==============================================
 
-let g:which_key_map.['TAB'] = 'which_key_ignore'
 
 let g:which_key_map = {
 			\ 'name' : 'doomnvim',
