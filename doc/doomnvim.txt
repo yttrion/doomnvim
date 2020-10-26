@@ -305,8 +305,6 @@ doomnvim uses the vim keybindings to move around:  `h` `j` `k` `l`
 To move around buffers execute <Space>w to select the `window selection` menu
 and then press the key corresponding to the buffer you want to select.
 
-You can switch tabs by executing <Space><Tab>
-
 ==============================================================================
 KNOWN ISSUES                                                  *doomvim-issues*
 
@@ -402,6 +400,15 @@ doomnvim and executes the init functions of doomnvim.
 
 The files inside the `doomnvim/` folder have core functions for doomnvim.
 
+    * autocmds.vim : Autocommands needed.
+    * commands.vim : Custom commands
+    * config.vim   : Manages the BFC
+    * function.vim : Util functions
+    * health.vim   : Used to check the health of install (WIP)
+    * logging.vim  : Logging handler
+    * options.vim  : Sets the common options for doomnvim
+    * sysem.vim    : Multi-os support (WIP)
+
 
 ==============================================================================
 CHANGELOG                                                 *doomnvim-changelog*
@@ -443,4 +450,9 @@ v0.1.5
 - Created the BFC
 - Colorscheme now loaded by the BFC
 - Added tabs support
+
+
+
+
+
 " vim:tw=80:ft=help:norl:

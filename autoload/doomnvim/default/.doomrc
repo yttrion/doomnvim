@@ -7,7 +7,6 @@
 " Force utf-8
 scriptencoding utf-8
 
-
 " Default indent size
 " @default = 4
 let g:doomnvim_indent = 4
