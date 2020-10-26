@@ -59,5 +59,6 @@ function! doomnvim#default#options() abort
     filetype plugin indent on
     syntax on
 
+    nnoremap Q <Nop>
 
 endfunction
