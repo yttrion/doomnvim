@@ -19,7 +19,7 @@ function! doomnvim#autocmds#init() abort
     augroup END
 endfunction
 
-function! doomnvim#auocmds#helptags() abort
+function! doomnvim#autocmds#helptags() abort
     try
         exe ':helptags $HOME/.doomnvim/doc'
     catch
