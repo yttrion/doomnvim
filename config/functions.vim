@@ -121,16 +121,6 @@ function! CreateCommit()
 	endif
 endfunction
 
-
-function! ChangeColors()
-    exec ":!ls $HOME/.doomnvim/colors/ | sed -e 's/\.vim$//'"
-    call doomnvim#logging#message('?', 'Asking for colorscheme', 2)
-    let target = input('Select colorscheme: ')
-    exec 'colorscheme ' . target
-    exec ':! echo "' . target '" > $HOME/.doomnvim/autoload/colorscheme'
-	call doomnvim#logging#message("*", "Changed default colorscheme", 2)
-endfunction
-
 function! EditColorscheme()
 
     if g:doomnvim_bfc ==# 0
