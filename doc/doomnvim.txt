@@ -40,6 +40,7 @@ CONTENTS                                                   *doomnvim-contents*
   4. Commands..............................................|doomnvim-commands|
   5. Functions............................................|doomnvim-functions|
   6. Usage....................................................|doomnvim-usage|
+    1. Moving around...................................|doomnvim-usage-moving|
   7. Known issues............................................|doomnvim-issues|
   8. FAQ........................................................|doomnvim-faq|
   9. Hacking doomnvim.......................................|doomnvim-hacking|
@@ -167,7 +168,25 @@ doomnvim uses vim-which-key as a command manager. To open whichkey press
 mnemonic
 e.g:
 	`Save File` > <Space>sf
-	`Buffer split vertically` > <Space>bsv
+
+There are multiple menus for doomnvim commands. Those menus create a path
+in the decision tree that identifies any command.
+
+Let's say you want to split the buffer you are working on in two. You'll
+need to perform the following keystrokes:
+
+<Space>b 
+
+in order to open the `buffer` menu. There we want to `s`plit the current
+buffer to we append `s` to the command.
+
+<Space>bs
+
+Finally we just have to choose between a vertical split or an horizontal
+split. If we want a horizontal split the whole command is
+
+<Space>bsh
+
 
 ==============================================================================
 FUNCTIONS                                                 *doomnvim-functions*
@@ -187,6 +206,26 @@ select files to edit.
 Once you've selected some files to work on `vim-workspace` will save 
 the workspace you're working on. If you reopen doomvim without parsing
 any file as argument, the previous workspace will be loaded.
+
+You can disable workspace saves by changing the value of 
+`g:doomnvim_save_workspace` to 0 in the doomnvim.vim file 
+(see |doomnvim-hacking|)
+
+==============================================================================
+MOVING AROUND                                          *doomnvim-usage-moving*
+
+doomnvim uses the vim keybindings to move around:  `h` `j` `k` `l`
+
+         ^
+         k
+   < h       l >  
+         j        
+         v
+
+To move around buffers execute <Space>w to select the `window selection` menu
+and then press the key corresponding to the buffer you want to select.
+
+
 
 ==============================================================================
 KNOWN ISSUES                                                  *doomvim-issues*
@@ -214,7 +253,7 @@ FAQ                                                             *doomnvim-faq*
 Lorem
 
 ==============================================================================
-HACKING                                                     *doomnvim-hacking*
+HACKING DOOMNVIM                                            *doomnvim-hacking*
 
 doomnvim aims to be hackable to suit everyone's needs. Therefore
 
@@ -224,16 +263,19 @@ This is the layout of doomnvim:
 |   |_ doomnvim/                        # doomnvim core
 |   |  |_ autocmds.vim                  # doomnvim autocmds
 |   |  |_ commands.vim                  # doomnvim internal commands
+|   |  |_ config.vim                    # doomnvim custom config file loader
 |   |  |_ default.vim                   # doomnvim default
+|   |  |_ functions.vim                 # core functions of doomnvim
 |   |  |_ health.vim                    # doomnvim health
 |   |  |_ logging.vim                   # The logging manager of doomnvim
 |   |  |_ options.vim                   # doomnvim options
+|   |  |_ system.vim                    # doomnvim system detection
 |   |_ doomnvim.vim                     # Config file for various globals
 |   |_ plug.vim                         # Plug-Vim configuration file
 |_ colors/                              # doomnvim colorscheme directory
 |   |_ alduin.vim                       # `Alessandro Yorba` theme
 |   |_ deus.vim                         # `ajmwagar` theme
-|   |_ doomnvim.vim                     # doom colorscheme (`default`)
+|   |_ doom.vim                         # doom colorscheme (`default`)
 |   |_ github.vim                       # `Anthony Carapetis` theme
 |   |_ gotham256.vim                    # `Andrea Leopardi` theme
 |   |_ gruvbox.vim                      # `morhetz` theme
@@ -257,13 +299,13 @@ This is the layout of doomnvim:
 |   |_ gui.vim                          # doomnvim gui options
 |   |_ main.vim                         # init file, loads vim-plug
 |   |_ doc/                             # documentation of doomnvim
-|   |_ doomnvim.txt                     # doomnvim help file
+|   |   |_ doomnvim.txt                 # doomnvim help file
 |_ plugged/                             # Location of pluggins
 |_ sessions/                            # Location vim workspaces
+|_ undodirs/                            # .undodirs/ folders location
 |_ logs/                                # Location of the doomnvim log file
 |_ init.vim                             # init.vim file
 |_ install.sh                           # doomnvim managment
-
 
 ==============================================================================
 AUTOLOAD                                           *doomnvim-hacking-autoload*
@@ -285,7 +327,7 @@ First "stable" version of doomnvim
 
 v0.1.3
 - Added persistent colorscheme change command
-- Added colorschemes (see :|doomnvim-hacking|)
+- Added colorschemes (see |doomnvim-hacking|)
 - Added log handler on boot and for some commands
 - Fixed colorscheme not loading on boot
 - Fixed some commands not working
@@ -312,5 +354,7 @@ v0.1.4-1
 
 v0.1.5
 - Implemented autoclose parenthesis, brackets, quotes
+- Updated the documentation
+- Moved the .undodirs of `vim-workspace`
 
 " vim:tw=80:ft=help:norl:
