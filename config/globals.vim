@@ -14,5 +14,5 @@ let g:buf_left = 0
 let mapleader = ' '
 
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'deus',
       \ }
