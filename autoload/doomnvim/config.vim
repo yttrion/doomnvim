@@ -7,7 +7,7 @@
 "au BufNewFile,BufRead .doomrc set filetype=doomconfig
 
 function! doomnvim#config#checkBGC()
-    if glob('~/.doom') ==# ''
+    if glob('~/.doomrc') ==# ''
         let g:doomnvim_bgc = 1
     else
         let g:doomnvim_bgc = 0
@@ -20,10 +20,10 @@ function! doomnvim#config#loadBGC()
 
     call doomnvim#config#checkBGC()
     au BufNewFile,BufRead .doom set filetype=vim
-    if filereadable(g:doomnvim_root . '../.doom')
+    if filereadable(g:doomnvim_root . '../.doomrc')
         try
             call doomnvim#logging#message('+', 'Loading the BFC')
-            execute 'source ' . g:doomnvim_root . '../.doom'
+            execute 'source ' . g:doomnvim_root . '../.doomrc'
         catch
             call doomnvim#logging#message('!', 'Error while loading the BFC')
         endtry
