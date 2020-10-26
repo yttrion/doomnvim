@@ -59,9 +59,88 @@ plugins. It is inspired by doom-emacs
 OPTIONS                                                     *doomnvim-options*
 
 doomnvim configuration files are located in the `$HOME/.doomnvim/config`
-directory.
-Global variables for doomnvim are located in
+directory. Global variables for doomnvim are located in
 `$HOME/.doomnvim/autoload/doomnvim.vim`
+
+All the options available in the `doomnvim.vim` file are global varibles.
+They all start with `g:doomnvim_` followed by a description of their 
+nature: `g:doomnvim_save_workspace` followed by their values.
+
+
+`g:doomnvim_indent`
+default value = 4
+Specifies the width of tabs and shifttabs
+
+`g:doomnvim_expand_tabs`
+default value = 0
+Specifies if spaces or tabs must be used
+0 : spaces
+1 : tabs
+
+`g:doomnvim_relative_num`
+default value = 1
+Shows relative number lines on 1
+Shows absolute number lines on 0
+
+`g:doomnvim_max_columns`
+default value = 100
+Defines the column to show a vertical marker
+
+`g:doomnvim_enable_guicolors`
+default value = 1
+Enables gui colors on GUI versions of vim/nvim
+
+`g:doomnvim_sidebar_width`
+default value = 25
+Specifies the default width of nerdtree and tagbar
+
+`g:doomnvim_show_hidden`
+default value = 1
+Show hidden files with nerdtree
+
+`g:doomnvim_colorscheme`
+default value = 'doom'
+Specifies the colorscheme to use
+
+`g:doomnvim_colorscheme_bg`
+default value = 'dark'
+Specifies the background
+Allowed values: 'dark', 'light'
+
+`g:doomnvim_check_updates`
+default value = 1
+Check updates on start
+
+`g:doomnvim_disabled_plugins`
+default value = []
+Dictionnary of user disabled plugins
+
+`g:doomnvim_custom_plugins`
+default value = []
+List of user custom plugins
+
+`g:doomnvim_lint_onsave`
+default value = 1
+Enables linting on save : 1
+Disable linting on save : 0
+
+`g:doomnvim_autocomplete_par`
+default value = 1
+Enable the automatic closing of (, ', ", {, [, <, `~
+
+`g:doomnvim_resize_percent`
+default value = 0.2
+Specifies the percentage of the buffer width/size to increase/decrease
+
+`g:doomnvim_logging`
+default value = 1
+Select the logging level of doomnvim
+0: Disables the logging
+1: Logs all errors in the `doomnvim.log` file
+2: Logs all errors and messages in the `doomnvim.log` file
+3: Logs all errors and messages in the `doomnvim.log` file and echoes 
+them
+
 
 ==============================================================================
 AUTOCOMPLETE                                   *doomnvim-options-autocomplete*
@@ -70,7 +149,7 @@ doomnvim uses coc.nvim as completion engine. Use <TAB> or <C-n> to select the
 next suggestion.
 
 Autocompletion for parenthesis can be disabled by changing the value of
-`g:doomnvim_autocomplete_paren` in the doomnvim global configuration
+`g:doomnvim_autocomplete_par` in the doomnvim global configuration
 file
 
 ==============================================================================
@@ -363,5 +442,5 @@ v0.1.5
 - Disabled the .undodirs of `vim-workspace`
 - Created the BFC
 - Colorscheme now loaded by the BFC
-
+- Added tabs support
 " vim:tw=80:ft=help:norl:
