@@ -136,6 +136,8 @@ function! EditColorscheme()
     if g:doomnvim_bfc ==# 0
         exec ':!cp $HOME/.doomnvim/autoload/doomnvim/default/.doomrc $HOME/'
         call doomnvim#logging#message('*', 'Created the BFC', 2)
+    else
+        call doomnvim#logging#message('*', 'BFC already in directory', 2)
     endif
     exec ":!ls $HOME/.doomnvim/colors | sed -e 's/\.vim$//'"
     call doomnvim#logging#message('?', 'Asking for colorscheme', 2)
@@ -143,9 +145,9 @@ function! EditColorscheme()
     " Find the '${oldcolor}' string in .doomrc and change its value
     try
         call doomnvim#logging#message('*', 'Changing colorscheme sed -i')
+        exec 'colorscheme ' . target
         " command ==> sed -i "s/'value'/'value'" .doomrc
         exec "sed -i \"s/'".g:doomnvim_colorscheme."'/'".target."'/\" $HOME/.doomrc'
-        exec 'colorscheme ' . target
     catch
         call doomnvim#logging#message('!', 'Unable to edit colorscheme', 1)
     endtry
