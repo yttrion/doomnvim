@@ -18,3 +18,12 @@ function! doomnvim#autocmds#init() abort
         autocmd BufEnter * :syntax sync fromstart " ensure every file does full syntax highlight
     augroup END
 endfunction
+
+function! doomnvim#auocmds#helptags() abort
+    try
+        exe ':helptags $HOME/.doomnvim/doc'
+    catch
+        call doomnvim#logging#message('!', 'Failed to load doomnvim.txt file', 1)
+    endtry
+
+endfunction

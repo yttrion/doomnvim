@@ -12,7 +12,7 @@ let g:doomnvim_version = '0.1.4-1'
 lockvar g:doomnvim_version
 
 " Default indent size
-" @default = 2
+" @default = 4
 let g:doomnvim_indent = 4
 
 " Expand tabs
@@ -102,6 +102,7 @@ function! doomnvim#begin() abort
     call doomnvim#system#whichos()
     call doomnvim#default#options()
     call doomnvim#autocmds#init()
+    call doomnvim#autocmds#helptags()
     call doomnvim#logging#init()
     call doomnvim#commands#init()
 
@@ -109,13 +110,6 @@ endfunction
 
 
 function! doomnvim#end() abort
-
-    " Load help tags
-    try
-        exe ':helptags $HOME/.doomnvim/doc/'
-    catch
-        call doomnvim#logging#message('!', 'Failed to load doomvim.txt file', 1)
-    endtry
 
     " Finally works
     call doomnvim#loadConfig('gui.vim')
