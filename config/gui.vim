@@ -17,7 +17,6 @@ else
     call doomnvim#logging#message('!', 'Forced default colorscheme', 1)
 	exec 'colorscheme default'
 
-    set termguicolors
 
 endif
 

@@ -105,13 +105,12 @@ function! doomnvim#loadConfig(file) abort
 endfunction
 
 
+" doomnvim path
+" @default = $HOME/.doomnvim
+let g:doomnvim_root = expand('<sfile>:p')[:-22]
 
 " Functions
 function! doomnvim#begin() abort
-
-    " doomnvim path
-    " @default = $HOME/.doomnvim
-    let g:doomnvim_root = expand('<sfile>:p')[:-22]
 
     call doomnvim#system#whichos()
     call doomnvim#config#loadBFC()
