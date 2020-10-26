@@ -131,6 +131,29 @@ function! ChangeColors()
 	call doomnvim#logging#message("*", "Changed default colorscheme", 2)
 endfunction
 
+function! EditColorscheme()
+
+    if g:doomnvim_bfc ==# 0
+        exec ':!cp $HOME/.doomnvim/autoload/doomnvim/default/.doomrc $HOME/'
+        call doomnvim#logging#message('*', 'Created the BFC', 2)
+    endif
+    exec ":!ls $HOME/.doomnvim/colors | sed -e 's/\.vim$//'"
+    call doomnvim#logging#message('?', 'Asking for colorscheme', 2)
+    let target = input('Select colorscheme')
+    " Find the '${oldcolor}' string in .doomrc and change its value
+    try
+        call doomnvim#logging#message('*', 'Changing colorscheme sed -i')
+        " command ==> sed -i "s/'value'/'value'" .doomrc
+        exec "sed -i \"s/'".g:doomnvim_colorscheme."'/'".target."'\" $HOME/.doomrc'
+        exec 'colorscheme ' . target
+    catch
+        call doomnvim#logging#message('!', 'Unable to edit colorscheme', 1)
+    endtry
+
+
+endfunction
+
+
 function! SwitchBuf()
     " <C-w>H/J/K/L function
     try
