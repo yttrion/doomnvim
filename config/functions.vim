@@ -144,10 +144,10 @@ function! EditColorscheme()
     let target = input('Select colorscheme')
     " Find the '${oldcolor}' string in .doomrc and change its value
     try
-        call doomnvim#logging#message('*', 'Changing colorscheme sed -i')
+        call doomnvim#logging#message('*', 'Changing colorscheme sed -i', 2)
         exec 'colorscheme ' . target
         " command ==> sed -i "s/'value'/'value'" .doomrc
-        exec "sed -i \"s/'".g:doomnvim_colorscheme."'/'".target."'/\" $HOME/.doomrc'
+        exec "sed -i \"s/'".g:doomnvim_colorscheme."'/'".target."'/\" $HOME/.doomrc"
     catch
         call doomnvim#logging#message('!', 'Unable to edit colorscheme', 1)
     endtry
