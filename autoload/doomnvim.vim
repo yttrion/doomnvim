@@ -95,7 +95,7 @@ let g:doomnvim_logging = 1
 
 " doomnvim path
 " @default = $HOME/.doomnvim
-let g:doomnvim_root = expand('<sfile>:p')[:-22]
+"let g:doomnvim_root = expand('<sfile>:p')[:-22]
 
 function! doomnvim#loadConfig(file) abort
     if filereadable(g:doomnvim_root . 'config/' . a:file)
@@ -108,6 +108,10 @@ endfunction
 
 " Functions
 function! doomnvim#begin() abort
+
+    " doomnvim path
+    " @default = $HOME/.doomnvim
+    let g:doomnvim_root = expand('<sfile>:p')[:-22]
 
     call doomnvim#system#whichos()
     call doomnvim#config#loadBFC()
