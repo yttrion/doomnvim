@@ -310,5 +310,7 @@ v0.1.4-1
   plugin instead of the init.vim file
 
 
+v0.1.5
+- Implemented autoclose parenthesis, brackets, quotes
 
 " vim:tw=80:ft=help:norl:
