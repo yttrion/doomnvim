@@ -92,7 +92,8 @@ colorschemes installed in `$HOME/.doomnvim/colors/`:
     - `vim-material`
 
 You can switch between colorschemes by doing <Space>mc and then type the name 
-of the colorscheme you want to use.
+of the colorscheme you want to use. You can also edit the `BFC` file located 
+at: `$HOME/.doomrc` (see |doomnvim-hacking|)
 
 ==============================================================================
 CONFIGURATION                                         *doomnvim-configuration*
@@ -225,7 +226,7 @@ doomnvim uses the vim keybindings to move around:  `h` `j` `k` `l`
 To move around buffers execute <Space>w to select the `window selection` menu
 and then press the key corresponding to the buffer you want to select.
 
-
+You can switch tabs by executing <Space><Tab>
 
 ==============================================================================
 KNOWN ISSUES                                                  *doomvim-issues*
@@ -306,6 +307,11 @@ This is the layout of doomnvim:
 |_ init.vim                             # init.vim file
 |_ install.sh                           # doomnvim managment
 
+
+doomnvim also creates the `BFC` if not present. It allows a fine control
+over the core functions of doomnvim. It is a copy of the doomnvim.vim
+
+
 ==============================================================================
 AUTOLOAD                                           *doomnvim-hacking-autoload*
 
@@ -354,6 +360,8 @@ v0.1.4-1
 v0.1.5
 - Implemented autoclose parenthesis, brackets, quotes
 - Updated the documentation
-- Moved the .undodirs of `vim-workspace`
+- Disabled the .undodirs of `vim-workspace`
+- Created the BFC
+- Colorscheme now loaded by the BFC
 
 " vim:tw=80:ft=help:norl:

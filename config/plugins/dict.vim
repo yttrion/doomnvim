@@ -6,7 +6,8 @@
 
 
 let g:which_key_map = {
-			\ 'name' : 'doomnvim'
+			\ 'name' : 'doomnvim',
+            \ 'TAB' : 'Next tab',
 			\ }
 
 
@@ -126,7 +127,9 @@ let g:which_key_map.w = {
 			\ 'j' : 'Focus down',
 			\ 'k' : 'Focus up',
 			\ 'l' : 'Focus right',
-			\ 't' : 'Toggle vertical/horizontal layout'
+			\ 't' : 'Toggle vertical/horizontal layout',
+            \ 'n' : 'New window',
+            \ 'c' : 'Close window',
 			\ }
 
 

@@ -121,6 +121,8 @@ map <silent><space>wj           :wincmd j<CR>
 map <silent><space>wk           :wincmd k<CR>
 map <silent><space>wl 			:wincmd l<CR>
 map <silent><space>wt           :call LayoutToggle()<CR>
+map <silent><space>wn           :tabnew<CR>
+map <silent><space>wc           :tabclose<CR>
 
 " }}}
 
@@ -144,6 +146,8 @@ map <silent><space>par 			:CocRestart<CR>
 map <silent><space>mS 			:source %<CR>
 map <silent><space>ms 			:Startify<CR>
 map <silent><space>mc           :call EditColorscheme()<CR>
+
+map <silent><space><Tab>        :tabNext<CR>
 
 " }}}
 
