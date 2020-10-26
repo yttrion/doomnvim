@@ -40,12 +40,12 @@ let g:startify_lists = [
           \ ]
 
 
-let g:startify_session_autoload = 1
+let g:startify_session_autoload = g:doomnvim_enable_startmenu
 let g:startify_session_delete_buffers = 1
 let g:startify_change_to_vcs_root = 1
 let g:startify_fortune_use_unicode = 1
 let g:startify_session_persistence = 1
-let g:webdevicons_enable_startify = g:doomnvim_enable_startmenu
+let g:webdevicons_enable_startify = 1 
 
 let g:startify_bookmarks = [
 	\ {'doomconfig' : '~/.doomnvim/'},

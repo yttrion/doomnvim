@@ -213,7 +213,7 @@ function! SaveFile()
     catch
         call doomnvim#logging#message('!', 'No filename parsed', 1)
         let filename = input('Save as: ')
-        exec ":w " . filename
+        exec ":silent  w " . filename
     endtry
 
 endfunction
