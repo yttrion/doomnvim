@@ -22,10 +22,10 @@ function! doomnvim#config#loadBGC()
     au BufNewFile,BufRead .doom set filetype=vim
     if filereadable(g:doomnvim_root . '../.doomrc')
         try
-            call doomnvim#logging#message('+', 'Loading the BFC')
+            call doomnvim#logging#message('+', 'Loading the BFC', 2)
             execute 'source ' . g:doomnvim_root . '../.doomrc'
         catch
-            call doomnvim#logging#message('!', 'Error while loading the BFC')
+            call doomnvim#logging#message('!', 'Error while loading the BFC', 1)
         endtry
     
     endif
