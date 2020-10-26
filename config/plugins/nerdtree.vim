@@ -4,5 +4,5 @@
 " License: MIT
 "===============================================================
 
-let NERDTreeShowHidden = 1
-let g:NERDTreeWinSize = 23
+let NERDTreeShowHidden = g:doomnvim_show_hidden
+let g:NERDTreeWinSize = g:doomnvim_sidebar_width

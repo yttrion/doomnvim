@@ -167,7 +167,8 @@ endfunction
 function! ResizeWin(width,inc)
 
     let win_width = winwidth(0)
-    let perc = float2nr(0.2*win_width)
+    let res = g:doomnvim_resize_percent
+    let perc = float2nr(res*win_width)
     if a:width ==# 1
         if a:inc ==# 1
             exec ':vertical res +'.perc

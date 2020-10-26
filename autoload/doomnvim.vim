@@ -33,7 +33,11 @@ let g:doomnvim_enable_guicolors = 1
 
 " Sidebar size
 " @default = 30
-let g:doomnvim_sidebar_width = 20
+let g:doomnvim_sidebar_width = 23
+
+" Show hidden files
+" @default = 1
+let g:doomnvim_show_hidden = 1
 
 " Default colorscheme
 " @default = doom
@@ -64,9 +68,9 @@ let g:doomnvim_lint_onsave = 1
 let g:doomnvim_autocomplete_par = 1
 
 " Doomnvim resize percentage
-" Values : 1 - 100
-" @default = 20
-let g:doomnvim_resize_percent = 20
+" Values : 0 - 1
+" @default = 0.2
+let g:doomnvim_resize_percent = 0.2
 
 " Logging level
 " 0 : No logging

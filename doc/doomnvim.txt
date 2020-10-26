@@ -237,7 +237,7 @@ there might be some error messages. The most common one is
 due to vim-which-key loading whithout being installed.
 
 `E#2`
-The *doomvim-configuration-layout-terminal* cannot be closed unless 
+The |doomvim-configuration-layout-terminal| cannot be closed unless
 the `exit` command is performed.
 
 `E#3`
