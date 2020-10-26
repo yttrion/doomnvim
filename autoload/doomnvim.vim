@@ -100,7 +100,7 @@ endfunction
 function! doomnvim#begin() abort
 
     call doomnvim#system#whichos()
-    call doomnvim#config#loadBGC()
+    call doomnvim#config#loadBFC()
     call doomnvim#default#options()
     call doomnvim#autocmds#init()
     call doomnvim#autocmds#helptags()

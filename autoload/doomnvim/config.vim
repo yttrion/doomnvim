@@ -6,19 +6,19 @@
 
 "au BufNewFile,BufRead .doomrc set filetype=doomconfig
 
-function! doomnvim#config#checkBGC()
+function! doomnvim#config#checkBFC()
     if filereadable(g:doomnvim_root . '../.doomrc')
-        let g:doomnvim_bgc = 1
+        let g:doomnvim_bfc = 1
     else
-        let g:doomnvim_bgc = 0
+        let g:doomnvim_bfc = 0
     endif
 endfunction
 
 
 
-function! doomnvim#config#loadBGC()
+function! doomnvim#config#loadBFC()
 
-    call doomnvim#config#checkBGC()
+    call doomnvim#config#checkBFC()
     au BufNewFile,BufRead .doomrc set filetype=vim
     if filereadable(g:doomnvim_root . '../.doomrc')
         try
