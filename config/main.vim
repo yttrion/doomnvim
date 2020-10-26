@@ -21,8 +21,7 @@ endif
 
 call plug#begin('~/.doomnvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch':'release'}
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline'
 Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdtree'
 Plug 'liuchengxu/vim-which-key'
@@ -53,7 +52,7 @@ source $HOME/.doomnvim/config/plugins/keymap.vim
 source $HOME/.doomnvim/config/plugins/nerdtree.vim
 source $HOME/.doomnvim/config/plugins/startify.vim
 source $HOME/.doomnvim/config/plugins/tagbar.vim
-source $HOME/.doomnvim/config/plugins/workspace.vim 
+source $HOME/.doomnvim/config/plugins/workspace.vim
 
 
 
