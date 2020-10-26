@@ -12,6 +12,7 @@ if g:doomnvim_colorscheme !=# ''
     catch
         call doomnvim#logging#message('!', 'Colorscheme not found', 1)
         exec 'colorscheme ' . g:doomnvim_colorscheme
+    endtry
 else
     call doomnvim#logging#message('!', 'Forced default colorscheme', 1)
 	exec 'colorscheme default'
