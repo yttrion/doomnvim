@@ -94,6 +94,10 @@ Enables gui colors on GUI versions of vim/nvim
 default value = 25
 Specifies the default width of nerdtree and tagbar
 
+`g:doomnvim_tagbar_left`
+default value = 0
+Sets tagbar buffer to the left when enabled
+
 `g:doomnvim_show_hidden`
 default value = 1
 Show hidden files with nerdtree
@@ -131,6 +135,14 @@ Enable the automatic closing of (, ', ", {, [, <, `~
 `g:doomnvim_resize_percent`
 default value = 0.2
 Specifies the percentage of the buffer width/size to increase/decrease
+
+`g:doomnvim_enable_startmenu`
+default value = 1
+Enable `startify` plugin
+
+`g:doomnvim_autocreate_session`
+default value = 1
+Enables vim-workspace
 
 `g:doomnvim_logging`
 default value = 1
