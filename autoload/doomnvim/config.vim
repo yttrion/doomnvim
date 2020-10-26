@@ -7,7 +7,7 @@
 "au BufNewFile,BufRead .doomrc set filetype=doomconfig
 
 function! doomnvim#config#checkBGC()
-    if glob('~/.doomrc') ==# ''
+    if filereadable(g:doomnvim_root . '.doomrc') ==# ''
         let g:doomnvim_bgc = 1
     else
         let g:doomnvim_bgc = 0
