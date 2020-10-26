@@ -80,6 +80,10 @@ let g:doomnvim_resize_percent = 0.2
 " @default = 1
 let g:doomnvim_enable_startmenu = 1
 
+" Autocreate session
+" @default = 1
+let g:doomnvim_autocreate_session = 1
+
 " Logging level
 " 0 : No logging
 " 1 : All errors, no echo (default)

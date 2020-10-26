@@ -4,7 +4,7 @@
 " License: MIT
 "========================================================
 
-let g:workspace_autocreate = 1
+let g:workspace_autocreate = g:doomnvim_autocreate_session
 let g:workspace_persist_undo_history = 1
 
 
