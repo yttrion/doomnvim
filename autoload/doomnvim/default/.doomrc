@@ -77,6 +77,3 @@ let g:doomnvim_resize_percent = 0.2
 " @default = 1
 let g:doomnvim_logging = 1
 
-" doomnvim path
-" @default = $HOME/.doomnvim
-let g:doomnvim_root = expand('<sfile>:p')[:-22]
