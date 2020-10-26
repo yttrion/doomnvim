@@ -8,7 +8,6 @@ let g:which_key_map.['TAB'] = 'which_key_ignore'
 
 let g:which_key_map = {
 			\ 'name' : 'doomnvim',
-            \ 'TAB' : 'Next tab',
 			\ }
 
 
@@ -129,7 +128,9 @@ let g:which_key_map.w = {
 			\ 'k' : 'Focus up',
 			\ 'l' : 'Focus right',
 			\ 't' : 'Toggle vertical/horizontal layout',
-            \ 'n' : 'New window',
+            \ 'N' : 'New window',
+            \ 'n' : 'Next window',
+            \ 'p' : 'Previous window',
             \ 'c' : 'Close window',
 			\ }
 
