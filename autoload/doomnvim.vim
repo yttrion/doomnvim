@@ -108,6 +108,7 @@ endfunction
 " doomnvim path
 " @default = $HOME/.doomnvim
 let g:doomnvim_root = expand('<sfile>:p')[:-22]
+lockvar g:doomnvim_root
 
 " Functions
 function! doomnvim#begin() abort

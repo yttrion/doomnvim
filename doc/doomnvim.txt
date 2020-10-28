@@ -154,6 +154,8 @@ Select the logging level of doomnvim
 them
 
 
+DO NOT EDIT THE VALUE OF `g:doomnvim_root` !
+
 ==============================================================================
 AUTOCOMPLETE                                   *doomnvim-options-autocomplete*
 
