@@ -3,11 +3,11 @@
 " Author: Pierre-Yves Douault
 " License: MIT
 "====================================================================
+scriptencoding utf-8
 
 function! doomnvim#default#options() abort
     call doomnvim#logging#message('+', 'doomnvim.default.options called', 2)
     " Set options
-
     set wildmenu
     set smartindent
     set smarttab
@@ -22,7 +22,7 @@ function! doomnvim#default#options() abort
 
     set mouse=a
     set laststatus=2
-    set encoding=UTF-8
+    set encoding=utf-8
     set backspace=indent,eol,start
     set timeoutlen=200
     set clipboard+=unnamedplus
@@ -52,9 +52,9 @@ function! doomnvim#default#options() abort
     let &shiftwidth = g:doomnvim_indent
     let &colorcolumn = g:doomnvim_max_columns
     if g:doomnvim_relative_num ==# 1
-        set rnu
+        set relativenumber
     else
-        set nu
+        set number
     endif
     filetype plugin indent on
     syntax on

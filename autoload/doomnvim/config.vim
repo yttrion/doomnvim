@@ -19,7 +19,6 @@ endfunction
 function! doomnvim#config#loadBFC()
 
     call doomnvim#config#checkBFC()
-    au BufNewFile,BufRead .doomrc set filetype=vim
     if filereadable(g:doomnvim_root . '../.doomrc')
         try
             call doomnvim#logging#message('+', 'Loading the BFC', 2)
