@@ -30,7 +30,7 @@ Plug 'thaerkh/vim-workspace'
 Plug 'mhinz/vim-startify'
 Plug 'voldikss/vim-floaterm'
 Plug 'preservim/nerdcommenter'
-Plug 'Yggdroot/indentLine'
+"Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 call plug#end()
 
