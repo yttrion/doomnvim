@@ -30,16 +30,3 @@ function! doomnvim#config#loadBFC() abort
     endif
 
 endfunction
-
-
-
-
-function! doomnvim#config#loadCustomPlugins()
-    if g:doomnvim_bfc ==# 1
-        " Not sure if it works
-        let custom_plugs = g:doomnvim_custom_plugins
-        call plug#begin('~/.doomnvim/plugged')
-        g:doomnvim_custom_plugins
-        call plug#end()
-    endif
-endfunction
