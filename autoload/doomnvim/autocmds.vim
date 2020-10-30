@@ -13,7 +13,6 @@ function! doomnvim#autocmds#init() abort
             autocmd BufEnter,WinEnter * if &nu | set rnu | endif
             autocmd BufLeave,WinLeave * if &nu | set nornu | endif
         endif
-        
         autocmd BufNewFile,BufRead .doomrc set filetype=vim
         autocmd BufNewFile,BufEnter * set cpoptions+=d
         autocmd BufEnter * :syntax sync fromstart " ensure every file does full syntax highlight

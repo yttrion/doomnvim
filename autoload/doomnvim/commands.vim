@@ -5,7 +5,7 @@
 "====================================================================
 
 
-function! doomnvim#commands#init()
+function! doomnvim#commands#init() abort
     if g:doomnvim_autocomplete_par ==# 1
         inoremap " ""<left>
         inoremap ' ''<left>
