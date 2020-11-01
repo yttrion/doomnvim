@@ -126,6 +126,7 @@ endfunction
 
 function! doomnvim#end() abort
 
+    call doomnvim#default#loadGlob()
     " Finally works
     call doomnvim#loadConfig('gui.vim')
     call doomnvim#loadConfig('functions.vim')
