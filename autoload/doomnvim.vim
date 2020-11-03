@@ -93,10 +93,6 @@ let g:doomnvim_autocreate_session = 0
 let g:doomnvim_logging = 1
 
 
-" doomnvim path
-" @default = $HOME/.doomnvim
-"let g:doomnvim_root = expand('<sfile>:p')[:-22]
-
 function! doomnvim#loadConfig(file) abort
     if filereadable(g:doomnvim_root . 'config/' . a:file)
         execute 'source ' . g:doomnvim_root . 'config/' . a:file
@@ -135,4 +131,3 @@ function! doomnvim#end() abort
 endfunction
 
 " vim: cc=100:
-

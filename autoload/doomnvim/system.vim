@@ -31,3 +31,19 @@ function! doomnvim#system#whichos()
     endif
 
 endfunction
+
+
+function! doomnvim#system#grepconfig(folder, config, source) abort
+
+    let fullpath = g:doomnvim_root . a:folder . g:doomnvim_separator . a:file
+
+    if filereadable(fullpath)
+        if a:source ==# 1
+            execute 'source ' fullpath
+            call doomnvim#logging#message('+', 'Sourced file :'.a:file, 2)
+        else
+            return fullpath
+        endif
+    endif
+
+endfunction

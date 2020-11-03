@@ -283,8 +283,6 @@ split. If we want a horizontal split the whole command is
 ==============================================================================
 FUNCTIONS                                                 *doomnvim-functions*
 
-doomnvim comes with custom functions.
-
 
 
 ==============================================================================
