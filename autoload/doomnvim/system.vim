@@ -10,10 +10,8 @@ scriptencoding utf-8
 function! doomnvim#system#whichos()
 
     call doomnvim#logging#message('+', 'Checking OS', 2)
-
     let g:doomnvim_os = ''
     let g:doomnvim_separator = ''
-    
     if has('win32') || has('win64')
         let g:doomnvim_os = 'windows'
         let g:doomnvim_separator = '\\'
@@ -30,18 +28,21 @@ function! doomnvim#system#whichos()
         echo 'OS not recognized'
     endif
 
+    call doomnvim#logging#message('+', 'Current OS: '.g:doomnvim_os, 2)
+
 endfunction
 
 
-function! doomnvim#system#grepconfig(folder, config, source) abort
+function! doomnvim#system#grepconfig(folder, filename, source) abort
 
-    let fullpath = g:doomnvim_root . a:folder . g:doomnvim_separator . a:file
-
+    let fullpath = g:doomnvim_root . a:folder . g:doomnvim_separator . a:filename
     if filereadable(fullpath)
         if a:source ==# 1
             execute 'source ' fullpath
             call doomnvim#logging#message('+', 'Sourced file :'.a:file, 2)
+            echo 'Sourced file without issues'
         else
+            echo 'Error while parsing file'
             return fullpath
         endif
     endif

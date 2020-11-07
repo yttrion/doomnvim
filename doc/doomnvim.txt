@@ -36,6 +36,7 @@ CONTENTS                                                   *doomnvim-contents*
     4. Tagbar...........................|doomnvim-configuration-layout-tagbar|
     5. Buffered Terminal..............|doomnvim-configuration-layout-terminal|
   4. Commands..............................................|doomnvim-commands|
+    1. Keybindings.............................|doomnvim-commands-keybindings|
   5. Functions............................................|doomnvim-functions|
   6. Usage....................................................|doomnvim-usage|
     1. Moving around...................................|doomnvim-usage-moving|
@@ -279,11 +280,68 @@ split. If we want a horizontal split the whole command is
 
 <Space>bsh
 
+==============================================================================
+KEYBINDINGS                                    *doomnvim-commands-keybindings*
+
+<Space>
+
+| <b>uffer
+|           | <p>revious
+|           | <n>ext
+|           | <k>ill current
+|           | <l>ast
+|           | <t>oggle terminal
+|           | <e>mpty buffer
+|           | <f>ocus specific
+|           | <R>esize equally
+|           | <r>otate
+|           | <c>lose all except focused
+|           | <s>plit
+|           |           | <v>ertical
+|           |           | <h>orizontal
+|           | <w>idth
+|           |           | <i>ncrease
+|           |           | <d>ecrease
+| <c>ode
+|           | <d>efinition
+|           | <i>mplementation
+| <f>ile
+| <g>it
+| <h>elp
+| <m>isc
+| <p>lugins
+| <q>uit
+| <s>earch
+| <t>oggle
+| <w>indow
+|
 
 ==============================================================================
 FUNCTIONS                                                 *doomnvim-functions*
 
+`TermToggle`: Toggles a buffered terminal on the bottom part of the windows
+(see |doomnvim-configuration-layout-terminal|)
 
+`LayoutToggle`: Toggles the layout between Vertical Layout and Horizontal
+Layout.
+
+`RenameFile`: Creates a prompt to rename a file 
+
+`BufSel`: Show a list of open buffers in doomnvim. Blank buffers are internal
+buffers.
+
+`CreateCommit`: Create a commit message in a floating terminal
+
+`EditColorscheme`: Dynamically changes the colorscheme of doomnvim and creates
+the BFC file if it doesn't exist
+
+`SwitchBuf`: Switches buffer positions
+
+`OpenInFloat`: Open a command in a floating terminal
+
+`ResizeWin`: Changes the width or height of the selected buffer
+
+`SaveFile`: Saves the current file. If the file was created, prompts for a name
 
 ==============================================================================
 USAGE                                                         *doomnvim-usage*

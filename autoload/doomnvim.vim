@@ -128,6 +128,9 @@ function! doomnvim#end() abort
     call doomnvim#loadConfig('functions.vim')
     call doomnvim#loadConfig('globals.vim')
     
+    "Test source system-based
+    call doomnvim#system#grepconfig('config/', 'gui.vim', 1)
+
 endfunction
 
 " vim: cc=100:
