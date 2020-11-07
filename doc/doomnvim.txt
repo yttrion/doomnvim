@@ -268,7 +268,7 @@ in the decision tree that identifies any command.
 Let's say you want to split the buffer you are working on in two. You'll
 need to perform the following keystrokes:
 
-<Space>b 
+<Space>b
 
 in order to open the `buffer` menu. There we want to `s`plit the current
 buffer to we append `s` to the command.
@@ -305,16 +305,72 @@ KEYBINDINGS                                    *doomnvim-commands-keybindings*
 | <c>ode
 |           | <d>efinition
 |           | <i>mplementation
+|           | <t>ype definition
+|           | <r>eference
+|           | <s>election format
+|           | <I>ndent automatically
+|           | <D>ocumentation
+|           | <c>omment line
+|           | <C>olumn edition
+|           | <f>ormat document
 | <f>ile
+|           | <s>ave file
+|           | <S>ave all
+|           | <e>xplorer
+|           | <o>pen
+|           | <r>ename file
 | <g>it
+|           | <g>itgutter toggle
+|           | <h>unk
+|           |           | <p>revious
+|           |           | <n>ext
+|           |           | <s>tage
+|           |           | <u>ndo
+|           |           | <P>review
+|           | <s>tatus
+|           | <C>heckout
+|           | <c>reate commit
 | <h>elp
+|           | <h>elp of doomnvim
+|           | <i>nstaller usage
+|           | <u>pdate doomnvim
+|           | <X> uninstall doomnvim
 | <m>isc
-| <p>lugins
+|           | <S>ource file
+|           | <s>tart menu
+|           | <c>olorscheme switch
+|           | <W>orkspace save
+| <p>lugin
+|           | <u>pdate
+|           | <i>nstall
+|           | <c>lean
+|           | <m>anager update
+|           | <r>emote plugin update
+|           | <a>utocompleter
+|           |           | <u>pdate
+|           |           | <s>ync update
+|           |           | <r>estart
 | <q>uit
+|           | <q>uit
+|           | <Q>uit doomnvim
 | <s>earch
 | <t>oggle
+|           | <l>ine number
+|           | <w>ord wrap
+|           | <h>ighlight
+|           | <e>rror
+|           | <t>agbar
+|           | <f>loating terminal
 | <w>indow
-|
+|           | <h> focus left
+|           | <j> focus down
+|           | <k> focus up
+|           | <l> focus right
+|           | <t>oggle layout
+|           | <N>ew
+|           | <p>revious
+|           | <n>ext
+|           | <c>lose
 
 ==============================================================================
 FUNCTIONS                                                 *doomnvim-functions*
@@ -369,6 +425,8 @@ doomnvim uses the vim keybindings to move around:  `h` `j` `k` `l`
    < h       l >  
          j        
          v
+
+see `vimtutor` to know how to use vim
 
 To move around buffers execute <Space>w to select the `window selection` menu
 and then press the key corresponding to the buffer you want to select.
