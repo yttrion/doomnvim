@@ -39,7 +39,7 @@ function! doomnvim#system#grepconfig(folder, filename, source) abort
     if filereadable(fullpath)
         if a:source ==# 1
             execute 'source ' fullpath
-            call doomnvim#logging#message('+', 'Sourced file :'.a:file, 2)
+            call doomnvim#logging#message('+', 'Sourced file :'.a:filename, 2)
             echo 'Sourced file without issues'
         else
             echo 'Error while parsing file'
