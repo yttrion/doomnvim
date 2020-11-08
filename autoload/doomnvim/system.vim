@@ -50,3 +50,13 @@ function! doomnvim#system#grepconfig(folder, filename, source) abort
         endif
     endif
 endfunction
+
+
+function! doomnvim#system#grepdoc() abort
+    let fullpath = g:doomnvim_root . 'doc'
+    try
+        exe ':helptags ' . fullpath
+    catch
+        call doomnvim#logging#message('!', 'Unable to create helptags', 1)
+    endtry
+endfunction
