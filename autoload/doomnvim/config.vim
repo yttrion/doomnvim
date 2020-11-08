@@ -27,7 +27,8 @@ function! doomnvim#config#loadBFC() abort
         catch
             call doomnvim#logging#message('!', 'Error while loading the BFC', 1)
         endtry
-
+    else
+        call doomnvim#logging#message('+', 'No BFC file', 2)
     endif
 
 endfunction

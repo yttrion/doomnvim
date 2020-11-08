@@ -51,6 +51,15 @@ function! doomnvim#system#grepconfig(folder, filename, source) abort
     endif
 endfunction
 
+function doomnvim#system#grepfolder(folder) abort
+    let fullpath = g:doomnvim_root . a:folder
+    try
+        call doomnvim#logging#message('+', 'Returned '.a:folder.' path', 2)
+        return fullpath
+    catch
+        call doomnvim#logging#message('!', 'Unable to return folder path', 1)
+    endtry
+endfunction
 
 function! doomnvim#system#grepdoc() abort
     let fullpath = g:doomnvim_root . 'doc'

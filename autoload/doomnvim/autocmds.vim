@@ -20,12 +20,5 @@ function! doomnvim#autocmds#init() abort
 endfunction
 
 function! doomnvim#autocmds#helptags() abort
-    "try
-    "    let doc_dir = doomnvim#system#grepconfig('doc','',0)
-    "    "exe ':helptags $HOME/.doomnvim/doc'
-    "    exe ':helptags' . doc_dir
-    "catch
-    "    call doomnvim#logging#message('!', 'Failed to load doomnvim.txt file', 1)
-    "endtry
     call doomnvim#system#grepdoc()
 endfunction
