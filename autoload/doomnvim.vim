@@ -125,9 +125,9 @@ function! doomnvim#end() abort
     call doomnvim#default#loadGlob()
 
     "Test source system-based
-    call doomnvim#system#grepconfig('config/', 'gui.vim', 1)
-    call doomnvim#system#grepconfig('config/', 'functions.vim', 1)
-    call doomnvim#system#grepconfig('config/', 'globals.vim', 1)
+    call doomnvim#system#grepconfig('config', 'gui.vim', 1)
+    call doomnvim#system#grepconfig('config', 'functions.vim', 1)
+    call doomnvim#system#grepconfig('config', 'globals.vim', 1)
 
 endfunction
 

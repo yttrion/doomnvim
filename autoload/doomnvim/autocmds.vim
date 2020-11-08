@@ -21,7 +21,7 @@ endfunction
 
 function! doomnvim#autocmds#helptags() abort
     try
-        let doc_dir = call doomnvim#system#grepconfig('doc','',0)
+        let g:doc_dir = call doomnvim#system#grepconfig('doc','',0)
         "exe ':helptags $HOME/.doomnvim/doc'
         exe ':helptags' . doc_dir
     catch
