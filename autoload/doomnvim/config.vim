@@ -17,7 +17,7 @@ endfunction
 
 
 
-function! doomnvim#config#loadBFC() abort
+function! doomnvim#config#loadBFC() 
 
     call doomnvim#config#checkBFC()
     if filereadable(g:doomnvim_root . '../.doomrc')
