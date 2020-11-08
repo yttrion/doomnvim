@@ -8,7 +8,7 @@
 
 function! doomnvim#config#checkBFC()
     " /home/username/.doomnvim/
-    if filereadable(g:doomnvim_root[:-10] . '.doomrc')
+    if filereadable(g:doomnvim_root . '../.doomrc')
         let g:doomnvim_bfc = 1
     else
         let g:doomnvim_bfc = 0
@@ -17,7 +17,7 @@ endfunction
 
 
 
-function! doomnvim#config#loadBFC() 
+function! doomnvim#config#loadBFC()
 
     call doomnvim#config#checkBFC()
     if filereadable(g:doomnvim_root . '../.doomrc')
