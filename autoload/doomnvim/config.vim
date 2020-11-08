@@ -7,7 +7,8 @@
 "au BufNewFile,BufRead .doomrc set filetype=doomconfig
 
 function! doomnvim#config#checkBFC()
-    if filereadable(g:doomnvim_root . '../.doomrc')
+    " /home/username/.doomnvim/
+    if filereadable(g:doomnvim_root[:-10] . '.doomrc')
         let g:doomnvim_bfc = 1
     else
         let g:doomnvim_bfc = 0
