@@ -105,7 +105,7 @@ map <silent><space>qQ 			:call doomnvim#functions#quitdoom(1,1)<CR>
 
 " Toggle ------------------------------------------------------------{{{
 
-map <silent><space>tl 			:set invnumber<CR>
+map <silent><space>tl 			:set invnumber<bar>set invrelativenumber<CR>
 map <silent><space>tw 			:set wrap!<CR>
 map <silent><space>th 			:noh<CR>
 map <silent><space>te 			:hi Error NONE<CR>
