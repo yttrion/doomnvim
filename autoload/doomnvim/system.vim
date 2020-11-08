@@ -1,8 +1,8 @@
-"====================================================
-" Retrieve name, separator of current os
+"=======================================================
+" Retrieve name, separator of current os and filepath
 " Author: Pierre-Yves Douault
 " License: MIT
-"====================================================
+"=======================================================
 
 
 scriptencoding utf-8
@@ -34,7 +34,7 @@ endfunction
 
 
 function! doomnvim#system#grepconfig(folder, filename, source) abort
-
+    " Source file or returns the full path
     let fullpath = g:doomnvim_root . a:folder . g:doomnvim_separator . a:filename
     if filereadable(fullpath)
         if a:source ==# 1
@@ -45,8 +45,8 @@ function! doomnvim#system#grepconfig(folder, filename, source) abort
                 call doomnvim#logging#message('!', 'Failed sourcing '.a:filename, 1)
             endtry
         else
+            call doomnvim#logging#message('+', 'Returned '.a:filename.' path', 2)
             return fullpath
         endif
     endif
-
 endfunction
