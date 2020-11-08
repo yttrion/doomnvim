@@ -117,7 +117,7 @@ function! doomnvim#begin() abort
     call doomnvim#default#options()
     call doomnvim#autocmds#init()
     call doomnvim#autocmds#helptags()
-    call doomnvim#logging#init()
+
     call doomnvim#commands#init()
 
 endfunction
@@ -131,6 +131,7 @@ function! doomnvim#end() abort
     call doomnvim#system#grepconfig('config', 'gui.vim', 1)
     call doomnvim#system#grepconfig('config', 'functions.vim', 1)
     call doomnvim#system#grepconfig('config', 'globals.vim', 1)
+    call doomnvim#logging#init()
 
 endfunction
 

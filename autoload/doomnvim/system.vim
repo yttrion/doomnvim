@@ -40,7 +40,7 @@ function! doomnvim#system#grepconfig(folder, filename, source) abort
         if a:source ==# 1
             try
                 execute 'source ' fullpath
-                call doomnvim#logging#message('+', 'Sourced file :'.a:filename, 2)
+                call doomnvim#logging#message('+', 'Sourced file : '.a:filename, 2)
             catch
                 call doomnvim#logging#message('!', 'Failed sourcing '.a:filename, 1)
             endtry
