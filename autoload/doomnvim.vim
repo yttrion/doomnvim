@@ -129,6 +129,13 @@ function! doomnvim#end() abort
     call doomnvim#system#grepconfig('config', 'gui.vim', 1)
     call doomnvim#system#grepconfig('config', 'functions.vim', 1)
     call doomnvim#system#grepconfig('config', 'globals.vim', 1)
+
+    "Plugins 
+    call doomnvim#system#grepconfig('config/plugins/', 'coc.vim', 1)
+    call doomnvim#system#grepconfig('config/plugins/', 'dict.vim', 1)
+    call doomnvim#system#grepconfig('config/plugins/', 'keymap.vim', 1)
+    call doomnvim#system#grepconfig('config/plugins/', 'startify.vim', 1)
+
     call doomnvim#logging#init()
 
 endfunction
