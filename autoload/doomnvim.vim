@@ -124,12 +124,14 @@ function! doomnvim#end() abort
 
     call doomnvim#default#loadGlob()
     " Finally works
-    call doomnvim#loadConfig('gui.vim')
-    call doomnvim#loadConfig('functions.vim')
-    call doomnvim#loadConfig('globals.vim')
+    "call doomnvim#system#grepconfig('','gui.vim',1)
+    "call doomnvim#loadConfig('functions.vim')
+    "call doomnvim#loadConfig('globals.vim')
     
     "Test source system-based
     call doomnvim#system#grepconfig('config/', 'gui.vim', 1)
+    call doomnvim#system#grepconfig('config/', 'functions.vim', 1)
+    call doomnvim#system#grepconfig('config/', 'globals.vim', 1)
 
 endfunction
 
