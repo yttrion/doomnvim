@@ -21,7 +21,7 @@ function! doomnvim#config#loadBFC()
 
     if filereadable(g:doomnvim_root . '../.doomrc')
         try
-            call doomnvim#logging#message('+', 'Loading the BFC', 2)
+            call doomnvim#logging#message('++', 'Loading the BFC', 1)
             execute 'source ' . g:doomnvim_root . '../.doomrc'
         catch
             call doomnvim#logging#message('!', 'Error while loading the BFC', 1)
