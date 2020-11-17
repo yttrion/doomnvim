@@ -32,10 +32,6 @@ Plug 'voldikss/vim-floaterm'
 Plug 'preservim/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
 
-if g:doomnvim_neovim ==# 1
-    Plug 'akinsho/nvim-bufferline.lua'
-endif
-
 call plug#end()
 
 
