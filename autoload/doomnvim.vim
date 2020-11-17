@@ -93,6 +93,15 @@ let g:doomnvim_autocreate_session = 0
 let g:doomnvim_logging = 1
 
 
+" Vim type
+" 0 : vim
+" 1 : neovim
+if has('neovim')
+    let g:doomnvim_neovim = 1
+else
+    let g:doomnvim_neovim = 0
+endif
+
 function! doomnvim#loadConfig(file) abort
     if filereadable(g:doomnvim_root . 'config/' . a:file)
         execute 'source ' . g:doomnvim_root . 'config/' . a:file
@@ -118,6 +127,10 @@ function! doomnvim#begin() abort
     call doomnvim#default#options()
     call doomnvim#autocmds#helptags()
     call doomnvim#commands#init()
+    if g:doomnvim_neovim ==# 1
+        lua require'bufferline'.setup()
+        call doomnvim#system#grepconfig('config/plugins', 'bufferline.vim', 1)
+    endif
 
 endfunction
 
