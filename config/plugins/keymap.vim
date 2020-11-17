@@ -18,7 +18,7 @@ nnoremap <silent><leader> :WhichKey '<Space>'<CR>
 
 " File operations----------------------------------------------------{{{
 
-map <silent><space>fs 			:w<CR>
+map <silent><space>fs 			:call SaveFile()<CR>
 map <silent><space>fS 			:wa<CR>
 map <silent><space>fe 			:NERDTreeToggle<CR>
 map <silent><space>fo 			:sp <bar>buffer<bar>call bufnr("")<bar>Ex<CR>
@@ -57,10 +57,11 @@ map <silent><space>ci 			<Plug>(coc-implementation)
 map <silent><space>ct 			<Plug>(coc-type-definition)
 map <silent><space>cr 			<Plug>(coc-reference)
 map <silent><space>cs 			<Plug>(coc-format-selected)
-map <silent><space>cf 			:gg=G<CR>
+map <silent><space>cI 			:gg=G<CR>
 map <silent><space>cD 			:call <SID>show_documentation()<CR>
 map <silent><space>cc 			<Plug>NERDCommenterToggle
 map <silent><space>cC           <C-v>
+map <silent><space>cf           :call CocAction('format')<CR>
 
 " }}}
 
@@ -104,7 +105,7 @@ map <silent><space>qQ 			:call doomnvim#functions#quitdoom(1,1)<CR>
 
 " Toggle ------------------------------------------------------------{{{
 
-map <silent><space>tl 			:set invnumber<CR>
+map <silent><space>tl 			:set invnumber<bar>set invrelativenumber<CR>
 map <silent><space>tw 			:set wrap!<CR>
 map <silent><space>th 			:noh<CR>
 map <silent><space>te 			:hi Error NONE<CR>
@@ -121,6 +122,10 @@ map <silent><space>wj           :wincmd j<CR>
 map <silent><space>wk           :wincmd k<CR>
 map <silent><space>wl 			:wincmd l<CR>
 map <silent><space>wt           :call LayoutToggle()<CR>
+map <silent><space>wN           :tabnew<CR>
+map <silent><space>wn           :tabnext<CR>
+map <silent><space>wp           :tabprevious<CR>
+map <silent><space>wc           :tabclose<CR>
 
 " }}}
 
@@ -143,7 +148,8 @@ map <silent><space>par 			:CocRestart<CR>
 
 map <silent><space>mS 			:source %<CR>
 map <silent><space>ms 			:Startify<CR>
-map <silent><space>mc           :call ChangeColors()<CR>
+map <silent><space>mc           :call EditColorscheme()<CR>
+map <silent><space>mW           :silent ToggleWorkspace<CR>
 
 " }}}
 

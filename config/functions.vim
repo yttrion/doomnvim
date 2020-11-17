@@ -49,7 +49,6 @@ function! LayoutToggle()
     catch
         call doomnvim#logging#message('!', 'No NERDTree buffer to close', 1)
     endtry
-
 	if g:vert_layout ==1
 		exe "normal \<C-w>K<CR>"
 		let g:vert_layout = 0
@@ -108,7 +107,6 @@ function! BufSel(pattern)
   	  	endif
   	else
 	    call doomnvim#logging#message("!", "No matching buffers", 1)
-  	  	echo "No matching buffers"
   	endif
 endfunction
 
@@ -121,15 +119,33 @@ function! CreateCommit()
 	endif
 endfunction
 
-
-function! ChangeColors()
-    exec ":!ls $HOME/.doomnvim/colors/ | sed -e 's/\.vim$//'"
+function! EditColorscheme()
+    if g:doomnvim_bfc ==# 0
+        exec ':!cp $HOME/.doomnvim/autoload/doomnvim/default/.doomrc $HOME/'
+        call doomnvim#logging#message('*', 'Created the BFC', 2)
+    else
+        call doomnvim#logging#message('*', 'BFC already in directory', 2)
+    endif
+    exec ":!ls $HOME/.doomnvim/colors | sed -e 's/\.vim$//'"
     call doomnvim#logging#message('?', 'Asking for colorscheme', 2)
     let target = input('Select colorscheme: ')
-    exec 'colorscheme ' . target
-    exec ':! echo "' . target '" > $HOME/.doomnvim/autoload/colorscheme'
-	call doomnvim#logging#message("*", "Changed default colorscheme", 2)
+    " Find the '${oldcolor}' string in .doomrc and change its value
+    try
+        call doomnvim#logging#message('*', 'Changing colorscheme sed -i', 2)
+        exec 'colorscheme ' . target
+        " command ==> sed -i "s/'value'/'value'" .doomrc
+        try
+            exec ":!sed -i \"s/'".g:doomnvim_colorscheme."'/'".target."'/\" $HOME/.doomrc"
+        catch
+            call doomnvim#logging#message('!', 'No element to sed', 1)
+            exec "echo let g:doomnvim_colorscheme = '".target."' >> $HOME/.doomrc"
+            call doomnvim#logging#message('*', 'Created the BFC', 2)
+        endtry
+    catch
+        call doomnvim#logging#message('!', 'Unable to edit colorscheme', 1)
+    endtry
 endfunction
+
 
 function! SwitchBuf()
     " <C-w>H/J/K/L function
@@ -138,7 +154,6 @@ function! SwitchBuf()
     catch
         call doomnvim#logging#message('!', 'No NERDTree buffer to close', 1)
     endtry
-    
     if g:buf_left == 1
         exe "normal \<C-w>L<CR>"
         let g:buf_left = 0
@@ -146,7 +161,7 @@ function! SwitchBuf()
         exe "normal \<C-w>H<CR>"
         let g:buf_left = 1
     endif
-    call doomnvim#logging#message('*', 'Called switchbuf()', 2)
+    call doomnvim#logging#message('*', 'Called switchbuf', 2)
 endfunction
 
 function! OpenInFloat(cmd)
@@ -155,7 +170,6 @@ function! OpenInFloat(cmd)
     catch
         call doomnvim#logging#message('!', 'No Floating term to close', 1)
     endtry
-
     try
         exec ':FloatermNew ' . a:cmd
     catch
@@ -165,9 +179,9 @@ endfunction
 
 
 function! ResizeWin(width,inc)
-
     let win_width = winwidth(0)
-    let perc = float2nr(0.2*win_width)
+    let res = g:doomnvim_resize_percent
+    let perc = float2nr(res*win_width)
     if a:width ==# 1
         if a:inc ==# 1
             exec ':vertical res +'.perc
@@ -181,5 +195,16 @@ function! ResizeWin(width,inc)
             exec ':res -'.perc
         endif
     endif
+    call doomnvim#logging#message('*', 'Resized window', 2)
+endfunction
 
+function! SaveFile()
+    try
+        exec ":w"
+    catch
+        call doomnvim#logging#message('!', 'No filename parsed', 1)
+        let filename = input('Save as: ')
+        exec ":silent  w " . filename
+    endtry
+    call doomnvim#logging#message('*', 'Saved file', 2)
 endfunction

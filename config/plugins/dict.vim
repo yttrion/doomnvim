@@ -6,7 +6,7 @@
 
 
 let g:which_key_map = {
-			\ 'name' : 'doomnvim'
+			\ 'name' : 'doomnvim',
 			\ }
 
 
@@ -57,6 +57,7 @@ let g:which_key_map.c = {
 			\ 't' 		: 'Goto type definiton',
 			\ 'r' 		: 'Goto reference',
 			\ 's' 		: 'Format selected',
+			\ 'I' 		: 'Indent file',
 			\ 'f' 		: 'Format file',
 			\ 'D' 		: 'Show documentation',
 			\ 'c' 		: 'Toggle comment',
@@ -126,7 +127,11 @@ let g:which_key_map.w = {
 			\ 'j' : 'Focus down',
 			\ 'k' : 'Focus up',
 			\ 'l' : 'Focus right',
-			\ 't' : 'Toggle vertical/horizontal layout'
+			\ 't' : 'Toggle vertical/horizontal layout',
+            \ 'N' : 'New window',
+            \ 'n' : 'Next window',
+            \ 'p' : 'Previous window',
+            \ 'c' : 'Close window',
 			\ }
 
 
@@ -151,4 +156,5 @@ let g:which_key_map.m = {
             \ 'S' : 'Source file',
             \ 'c' : 'Change colorscheme',
             \ 'f' : 'Open FZF',
+            \ 'W' : 'Save workspace',
 			\ }
