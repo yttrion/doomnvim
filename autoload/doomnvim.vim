@@ -8,7 +8,7 @@
 scriptencoding utf-8
 
 " Version
-let g:doomnvim_version = '0.1.5'
+let g:doomnvim_version = '0.1.5.1'
 lockvar g:doomnvim_version
 
 " Default indent size
@@ -93,6 +93,20 @@ let g:doomnvim_autocreate_session = 0
 let g:doomnvim_logging = 1
 
 
+" Vim type
+" 0 : vim
+" 1 : neovim
+if has('nvim')
+    let g:doomnvim_neovim = 1
+    if has('nvim-0.5')
+        let g:doomnvim_nightly = 1
+    else
+        let g:doomnvim_nightly = 0
+    endif
+else
+    let g:doomnvim_neovim = 0
+endif
+
 function! doomnvim#loadConfig(file) abort
     if filereadable(g:doomnvim_root . 'config/' . a:file)
         execute 'source ' . g:doomnvim_root . 'config/' . a:file
@@ -118,12 +132,13 @@ function! doomnvim#begin() abort
     call doomnvim#default#options()
     call doomnvim#autocmds#helptags()
     call doomnvim#commands#init()
-
 endfunction
 
 
 function! doomnvim#end() abort
-
+    if g:doomnvim_nightly ==# 1
+        lua require'bufferline'.setup()
+    endif
     call doomnvim#default#loadGlob()
     "Test source system-based
     call doomnvim#system#grepconfig('config', 'gui.vim', 1)

@@ -70,6 +70,7 @@ function doomnvim#default#loadGlob()
     "NERDTREE
     let g:NERDTreeShowHidden = g:doomnvim_show_hidden
     let g:NERDTreeWinSize = g:doomnvim_sidebar_width
+    let g:NERDTreeCustomOpenArgs = { 'file': { 'where': 'v' } }
 
     "NERDCommenter
     let g:NERDCreateDefaultMappings = 0
@@ -77,6 +78,9 @@ function doomnvim#default#loadGlob()
 
     "Lightline
     let g:lightline = {
+                \ 'enable' : {
+                \ 'tabline' : 0
+                \ },
                 \ 'colorscheme': 'deus',
                 \ }
 

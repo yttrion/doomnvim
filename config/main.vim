@@ -18,6 +18,7 @@ if has('vim_starting')
 endif
 
 
+call doomnvim#begin()
 
 call plug#begin('~/.doomnvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch':'release'}
@@ -31,10 +32,13 @@ Plug 'mhinz/vim-startify'
 Plug 'voldikss/vim-floaterm'
 Plug 'preservim/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
+
+if g:doomnvim_nightly ==# 1
+    Plug 'akinsho/nvim-bufferline.lua'
+endif
+
 call plug#end()
 
-
-call doomnvim#begin()
 call doomnvim#end()
 
 
