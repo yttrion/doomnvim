@@ -23,10 +23,11 @@
 
 # Introduction
 doomnvim is a vim-version of the [doom-emacs](https://github.com/hlissner/doom-emacs) framework.
-It aims to add useful features to stock vim/neovim
+It aims to add useful features to stock neovim
 
 
-**doomnvim is still under development. Expect missing features and bugs**
+## NOTE
+**doomnvim was made for neovim, it may not work as intended on vim**
 
 # Features
 
