@@ -98,6 +98,11 @@ let g:doomnvim_logging = 1
 " 1 : neovim
 if has('nvim')
     let g:doomnvim_neovim = 1
+    if has('nvim-0.5')
+        let g:doomnvim_nightly = 1
+    else
+        let g:doomnvim_nightly = 0
+    endif
 else
     let g:doomnvim_neovim = 0
 endif
@@ -127,6 +132,11 @@ function! doomnvim#begin() abort
     call doomnvim#default#options()
     call doomnvim#autocmds#helptags()
     call doomnvim#commands#init()
+
+    if g:doomnvim_nightly ==# 1
+        lua require'bufferline'.setup()
+    endif
+
 
 endfunction
 
