@@ -132,17 +132,13 @@ function! doomnvim#begin() abort
     call doomnvim#default#options()
     call doomnvim#autocmds#helptags()
     call doomnvim#commands#init()
-
-    if g:doomnvim_nightly ==# 1
-        lua require'bufferline'.setup()
-    endif
-
-
 endfunction
 
 
 function! doomnvim#end() abort
-
+    if g:doomnvim_nightly ==# 1
+        lua require'bufferline'.setup()
+    endif
     call doomnvim#default#loadGlob()
     "Test source system-based
     call doomnvim#system#grepconfig('config', 'gui.vim', 1)
