@@ -78,7 +78,7 @@ function doomnvim#default#loadGlob()
     "Lightline
     let g:lightline = {
                 \ 'enable' : {
-                \ 'bufferline' : 0
+                \ 'tabline' : 0
                 \ },
                 \ 'colorscheme': 'deus',
                 \ }
