@@ -70,8 +70,9 @@ function doomnvim#default#loadGlob()
     "NERDTREE
     let g:NERDTreeShowHidden = g:doomnvim_show_hidden
     let g:NERDTreeWinSize = g:doomnvim_sidebar_width
-    let g:NERDTreeCustomOpenArgs = { 'file': { 'where': 'v' } }
-
+    if g:doomnvim_open_in_vsplit ==# 1
+        let g:NERDTreeCustomOpenArgs = { 'file': { 'where': 'v' } }
+    endif
     "NERDCommenter
     let g:NERDCreateDefaultMappings = 0
     "coc.nvim
@@ -79,13 +80,16 @@ function doomnvim#default#loadGlob()
     "Lightline
     let g:lightline = {
                 \ 'enable' : {
-                \ 'tabline' : 0
+                    \ 'tabline' : 0
                 \ },
+                \ 'separator': { 'left': '', 'right': '' },
+                \ 'subseparator': { 'left': '', 'right': '' },
                 \ 'colorscheme': 'deus',
                 \ }
 
     "vim-which-key
     let mapleader = ' '
+
 
     "Tagbar
     let g:tagbar_width = g:doomnvim_sidebar_width
