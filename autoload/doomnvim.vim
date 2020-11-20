@@ -85,8 +85,8 @@ let g:doomnvim_enable_startmenu = 1
 let g:doomnvim_autocreate_session = 0
 
 " Automatically open new files in a vertical split
-" @default = 1
-let g:doomnvim_open_in_vsplit = 1
+" @default = 0
+let g:doomnvim_open_in_vsplit = 0
 
 
 " Logging level

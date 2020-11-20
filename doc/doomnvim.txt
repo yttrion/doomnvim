@@ -155,6 +155,9 @@ them
 
 DO NOT EDIT THE VALUE OF `g:doomnvim_root` !
 
+`g:doomnvim_neovim` and `g:doomnvim_nightly` are util variables that enable some
+plugins when using neovim>=0.5
+
 ==============================================================================
 AUTOCOMPLETE                                   *doomnvim-options-autocomplete*
 

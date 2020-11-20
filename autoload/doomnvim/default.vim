@@ -73,8 +73,10 @@ function doomnvim#default#loadGlob()
     if g:doomnvim_open_in_vsplit ==# 1
         let g:NERDTreeCustomOpenArgs = { 'file': { 'where': 'v' } }
     endif
+
     "NERDCommenter
     let g:NERDCreateDefaultMappings = 0
+    
     "coc.nvim
 
     "Lightline
