@@ -176,7 +176,9 @@ install_neovim_nightly(){
     curl -LO https://github.com/neovim/neovim/releases/tag/nightly/download/nvim.appimage
     chmod u+x nvim.appimage
     mv nvim.appimage $HOME/.config/
-    sucess "Successfully installed neovim nightly"
+    echo "alias 'nvim'=$HOME/.config/nvim.appimage" >> $HOME/.bashrc
+    echo "alias 'nvim'=$HOME/.config/nvim.appimage" >> $HOME/.zshrc
+    success "Successfully installed neovim nightly"
 }
 
 
