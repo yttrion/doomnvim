@@ -173,7 +173,7 @@ backup_vim(){
 }
 
 install_neovim_nightly(){
-    curl -LO https://github.com/neovim/neovim/releases/tag/nightly/download/nvim.appimage
+    curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
     chmod u+x nvim.appimage
     mv nvim.appimage $HOME/.config/
     echo "alias 'nvim'=$HOME/.config/nvim.appimage" >> $HOME/.bashrc
