@@ -40,7 +40,7 @@ It aims to add useful features to stock neovim
 
 doomnvim requires `nodejs`>=10.12 and `npm` in order to work properly
 
-`curl`, `ctags` and `git` are also needed
+`curl`, `ctags`, `pynvim` and `git` are also needed
 
 ## Install doomnvim
 Simply run the following command:
