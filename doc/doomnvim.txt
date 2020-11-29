@@ -318,6 +318,7 @@ KEYBINDINGS                                    *doomnvim-commands-keybindings*
 |           | <e>xplorer
 |           | <o>pen
 |           | <r>ename file
+|           | <n>ew file
 | <g>it
 |           | <g>itgutter toggle
 |           | <h>unk
@@ -336,9 +337,11 @@ KEYBINDINGS                                    *doomnvim-commands-keybindings*
 |           | <X> uninstall doomnvim
 | <m>isc
 |           | <S>ource file
-|           | <s>tart menu
+|           | <s>ession
+|           |           | <s>ave
+|           |           | <l>oad
 |           | <c>olorscheme switch
-|           | <W>orkspace save
+|           | <j>ump to bookmarks
 | <p>lugin
 |           | <u>pdate
 |           | <i>nstall
@@ -353,6 +356,9 @@ KEYBINDINGS                                    *doomnvim-commands-keybindings*
 |           | <q>uit
 |           | <Q>uit doomnvim
 | <s>earch
+|           | <h>istory search
+|           | <f>ile search
+|           | <w>ord search
 | <t>oggle
 |           | <l>ine number
 |           | <w>ord wrap
