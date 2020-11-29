@@ -172,6 +172,14 @@ backup_vim(){
 
 }
 
+install_neovim_nightly(){
+    curl -LO https://github.com/neovim/neovim/releases/tag/nightly/download/nvim.appimage
+    chmod u+x nvim.appimage
+    mv nvim.appimage $HOME/.config/
+    sucess "Successfully installed neovim nightly"
+}
+
+
 install_vimplug(){
 	if [[ ! -d "$HOME/.cache/vimfiles/repos/github.com/junegunn/plug.vim" ]]; then
 		info "Installing vim-plug"
@@ -370,6 +378,7 @@ main(){
 		install_vimplug
 		install_fonts
 		check_requirements
+        install_neovim_nightly
 		install_done
 	fi
 }
