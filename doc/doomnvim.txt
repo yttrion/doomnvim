@@ -412,7 +412,7 @@ Start doomnvim by typing `vim` or `nvim` in a terminal emulator.
 By default doomnvim will show the start menu `vim-startify` where you can
 select files to edit.
 
-Once you've selected some files to work on `vim-workspace` will save 
+Once you've selected some files to work on `vim-workspace` will save
 the workspace you're working on. If you reopen doomvim without parsing
 any file as argument, the previous workspace will be loaded.
 

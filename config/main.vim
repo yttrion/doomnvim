@@ -27,11 +27,9 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdtree'
 Plug 'liuchengxu/vim-which-key'
 Plug 'majutsushi/tagbar'
-Plug 'thaerkh/vim-workspace'
 Plug 'voldikss/vim-floaterm'
 Plug 'preservim/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
-
 Plug 'glepnir/dashboard-nvim'
 Plug 'liuchengxu/vim-clap'
 
