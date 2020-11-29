@@ -583,7 +583,22 @@ v0.1.5
 - Added tabs support
 - Moved globals to a single file
 
+v0.1.5-1
+- Use of indentline instead of vim-airline
+- Added full log support
+- Improved the documentation
+- Added keybindings
+- Added nvim-bufferline.lua for neovim>=0.5 users
+- All files opened with NERDTree now open in a new vertial split
+- Fixed toggle line number
+- Cleaned the config/plugin/ directory
+- Most configuration files are now loaded by autoload
 
-
+v0.1.5-2
+- Force install neovim>=0.5.X
+- Removed `vim-workspace` and `vim-startify` to use `dashboard-nvim`
+- Disabled vsplit by default
+- Constant header for doomnvim
+- Updated documentation
 
 " vim:tw=80:ft=help:norl:
