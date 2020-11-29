@@ -64,6 +64,11 @@ endfunction
 
 function! doomnvim#functions#createReport() abort
     " Creates a markdown report to use when bugs occurs
+    exec ':silent !echo "# doomnvim crash report" >> $HOME/.doomnvim/logs/report.md'
+    exec ':silent !echo "## Begin log dump" >> $HOME/.doomnvim/logs/report.md'
+    exec ':silent !echo | cat $HOME/.doomnvim/logs/doomnvim.log >> $HOME/.doomnvim/logs/report.md'
+    exec ':silent !echo "## End log dump" >> $HOME/.doomnvim/logs/report.md'
+    exec ':silent echo "Report created at $HOME/.doomnvim/logs/report.md"'
 
 endfunction
 

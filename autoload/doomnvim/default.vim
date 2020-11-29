@@ -76,7 +76,7 @@ function doomnvim#default#loadGlob()
 
     "NERDCommenter
     let g:NERDCreateDefaultMappings = 0
-    
+
     "coc.nvim
 
     "Lightline
@@ -98,11 +98,11 @@ function doomnvim#default#loadGlob()
     let g:tagbar_left = g:doomnvim_tagbar_left
 
     "vim-workspace
-    let g:workspace_autocreate = g:doomnvim_autocreate_session
-    let g:workspace_persist_undo_history = 0
-    let g:workspace_session_directory = g:doomnvim_root . 'sessions/'
-    let g:workspace_autosave_always = 1
-    let g:workspace_autosave_ignore = ['gitcommit']
+    "let g:workspace_autocreate = g:doomnvim_autocreate_session
+    "let g:workspace_persist_undo_history = 0
+    "let g:workspace_session_directory = g:doomnvim_root . 'sessions/'
+    "let g:workspace_autosave_always = 1
+    "let g:workspace_autosave_ignore = ['gitcommit']
 
     "vim-floaterm
     
@@ -110,7 +110,35 @@ function doomnvim#default#loadGlob()
     let g:gitgutter_map_keys = 0
 
     "vim-startify
-    let g:startify_session_autoload = g:doomnvim_enable_startmenu
+    "let g:startify_session_autoload = g:doomnvim_enable_startmenu
+
+
+    "Dashboard
+    let g:dashboard_custom_header = [
+                \ "=================     ===============     ===============   ========  ========",
+                \ "\\ . . . . . . .\\   //. . . . . . .\\   //. . . . . . .\\  \\. . .\\// . . //",
+                \ "||. . ._____. . .|| ||. . ._____. . .|| ||. . ._____. . .|| || . . .\/ . . .||",
+                \ "|| . .||   ||. . || || . .||   ||. . || || . .||   ||. . || ||. . . . . . . ||",
+                \ "||. . ||   || . .|| ||. . ||   || . .|| ||. . ||   || . .|| || . | . . . . .||",
+                \ "|| . .||   ||. _-|| ||-_ .||   ||. . || || . .||   ||. _-|| ||-_.|\ . . . . ||",
+                \ "||. . ||   ||-'  || ||  `-||   || . .|| ||. . ||   ||-'  || ||  `|\_ . .|. .||",
+                \ "|| . _||   ||    || ||    ||   ||_ . || || . _||   ||    || ||   |\ `-_/| . ||",
+                \ "||_-' ||  .|/    || ||    \\|.  || `-_|| ||_-' ||  .|/    || ||   | \  / |-_.||",
+                \ "||    ||_-'      || ||      `-_||    || ||    ||_-'      || ||   | \  / |  `||",
+                \ "||    `'         || ||         `'    || ||    `'         || ||   | \  / |   ||",
+                \ "||            .===' `===.         .==='.`===.         .===' /==. |  \/  |   ||",
+                \ "||         .=='   \_|-_ `===. .==='   _|_   `===. .===' _-|/   `==  \/  |   ||",
+                \ "||      .=='    _-'    `-_  `='    _-'   `-_    `='  _-'   `-_  /|  \/  |   ||",
+                \ "||   .=='    _-'          `-__\._-'         `-_./__-'         `' |. /|  |   ||",
+                \ "||.=='    _-'                                                     `' |  /==.||",
+                \ "=='    _-'                 _   _ _   _ ________  ___                  \/   `==",
+                \ "\   _-'                   | \ | | | | |_   _|  \/  |                   `-_   /",
+                \ " `''                      |  \\| | | | | | | | .  . |                      ``' ",
+                \ "                          | . ` | | | | | | | |\/| |                          ",   
+                \ "                          | |\  \ \_/ /_| |_| |  | |                          ",  
+                \ "                          \_| \_/\___/ \___/\_|  |_/                          ",
+                \ ]
+
 
     "Internals
     let g:term_buf = 0

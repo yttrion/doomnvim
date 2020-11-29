@@ -135,10 +135,6 @@ Enable the automatic closing of (, ', ", {, [, <, `~
 default value = 0.2
 Specifies the percentage of the buffer width/size to increase/decrease
 
-`g:doomnvim_enable_startmenu`
-default value = 1
-Enable `startify` plugin
-
 `g:doomnvim_autocreate_session`
 default value = 0
 Enables vim-workspace when equals to 1

@@ -28,10 +28,13 @@ Plug 'preservim/nerdtree'
 Plug 'liuchengxu/vim-which-key'
 Plug 'majutsushi/tagbar'
 Plug 'thaerkh/vim-workspace'
-Plug 'mhinz/vim-startify'
+"Plug 'mhinz/vim-startify'
 Plug 'voldikss/vim-floaterm'
 Plug 'preservim/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
+
+Plug 'glepnir/dashboard-nvim'
+Plug 'luichengxu/vim-clap'
 
 if g:doomnvim_nightly ==# 1
     Plug 'akinsho/nvim-bufferline.lua'
