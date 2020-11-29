@@ -33,7 +33,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
 
 Plug 'glepnir/dashboard-nvim'
-Plug 'luichengxu/vim-clap'
+Plug 'liuchengxu/vim-clap'
 
 if g:doomnvim_nightly ==# 1
     Plug 'akinsho/nvim-bufferline.lua'
