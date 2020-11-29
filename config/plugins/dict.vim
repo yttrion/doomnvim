@@ -17,6 +17,7 @@ let g:which_key_map.f = {
 			\ 'o' : 'Open file',
 			\ 'r' : 'Rename file',
             \ 'e' : 'Open file explorer',
+            \ 'n' : 'New file',
 			\ }
 
 
@@ -106,6 +107,9 @@ let g:which_key_map.q = {
 
 let g:which_key_map.s = {
 			\ 'name' : '+search',
+            \ 'h' : 'Search History',
+            \ 'f' : 'Search File',
+            \ 'w' : 'Search word',
 			\ }
 
 
@@ -152,9 +156,12 @@ let g:which_key_map.p = {
 
 let g:which_key_map.m = {
 			\ 'name' : '+misc',
-			\ 's' : 'Start menu',
             \ 'S' : 'Source file',
             \ 'c' : 'Change colorscheme',
             \ 'f' : 'Open FZF',
-            \ 'W' : 'Save workspace',
+            \ 's' : {
+                \ 'name' : '+Session',
+                \ 's' : 'Save',
+                \ 'l' : 'Load',
+                \ },
 			\ }
