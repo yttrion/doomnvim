@@ -208,6 +208,3 @@ function! SaveFile()
     endtry
     call doomnvim#logging#message('*', 'Saved file', 2)
 endfunction
-
-
-function! GetOutput()
