@@ -157,9 +157,8 @@ function! ChangeColorscheme()
 
     call doomnvim#logging#message('*', 'Running Clap colors', 2)
     let old_cols = g:doomnvim_colorscheme
-    exec ':Clap colors'
+    let new_colors = execute(":Clap colors")
     call doomnvim#logging#message('*', 'Done Clapping colorscheme', 2)
-    let new_colors = g:colors_name
     
     try
         call doomnvim#logging#message('*', 'Changing colorscheme sed -i', 2)
