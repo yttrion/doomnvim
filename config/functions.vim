@@ -147,32 +147,6 @@ function! EditColorscheme()
 endfunction
 
 
-function! ChangeColorscheme()
-    if g:doomnvim_bfc ==# 0
-        exec ":!echo let g:doomnvim_colorscheme = 'doom' >> $HOME/.doomrc"
-        call doomnvim#logging#message('*', 'Created the BFC', 2)
-    else
-        call doomnvim#logging#message('*', 'BFC already in directory', 2)
-    endif
-
-    call doomnvim#logging#message('*', 'Running Clap colors', 2)
-    let old_cols = g:doomnvim_colorscheme
-    exec let g:new_colors = execute(":Clap colors")
-    call doomnvim#logging#message('*', 'Done Clapping colorscheme', 2)
-    
-    try
-        call doomnvim#logging#message('*', 'Changing colorscheme sed -i', 2)
-        exec ":!sed -i \"s/'".old_cols."'/'".new_colors."'/\" $HOME/.doomrc"
-        call doomnvim#logging#message('*', 'Changed '.old_cols.' to '.new_colors, 2)
-    catch
-        call doomnvim#logging#message('!', 'No element to sed', 1)
-        exec "echo let g:doomnvim_colorscheme = '".new_colors."' >> $HOME/.doomrc"
-        call doomnvim#logging#message('*', 'Created the BFC', 2)
-    endtry
-
-
-endfunction
-
 function! SwitchBuf()
     " <C-w>H/J/K/L function
     try
