@@ -156,11 +156,12 @@ function! ChangeColorscheme()
     endif
 
     call doomnvim#logging#message('*', 'Running Clap colors', 2)
+    let old_cols = g:colors_name
     exec ':Clap colors'
     try
         call doomnvim#logging#message('*', 'Changing colorscheme sed -i', 2)
         let new_colors = g:colors_name
-        exec ":!sed -i \"s/'".g:doomnvim_colorscheme."'/'".new_colors."'/\" $HOME/.doomrc"
+        exec ":!sed -i \"s/'".old_cols."'/'".new_colors."'/\" $HOME/.doomrc"
     catch
         let new_colors = g:colors_name
         call doomnvim#logging#message('!', 'No element to sed', 1)
