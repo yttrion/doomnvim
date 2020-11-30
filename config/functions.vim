@@ -163,7 +163,7 @@ function! ChangeColorscheme()
         exec ":!sed -i \"s/'".g:doomnvim_colorscheme."'/'".new_cols."'/\" $HOME/.doomrc"
     catch
         call doomnvim#logging#message('!', 'No element to sed', 1)
-        exec "echo let g:doomnvim_colorscheme = '".target."' >> $HOME/.doomrc"
+        exec "echo let g:doomnvim_colorscheme = '".new_cols."' >> $HOME/.doomrc"
         call doomnvim#logging#message('*', 'Created the BFC', 2)
     endtry
 
