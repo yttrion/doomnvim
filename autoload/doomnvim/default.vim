@@ -60,6 +60,7 @@ function! doomnvim#default#options() abort
     syntax on
 
     nnoremap Q <Nop>
+    nnoremap ZZ :call doomnvim#functions#quitdoom(1,1)
 
 endfunction
 

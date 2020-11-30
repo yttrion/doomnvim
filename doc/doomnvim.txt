@@ -600,5 +600,6 @@ v0.1.5-2
 - Disabled vsplit by default
 - Constant header for doomnvim
 - Updated documentation
+- New colorscheme switcher (colors are saved on quit)
 
 " vim:tw=80:ft=help:norl:
