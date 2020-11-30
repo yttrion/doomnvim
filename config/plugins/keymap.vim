@@ -156,7 +156,8 @@ map <silent><space>mS 			:source %<CR>
 "Dashboard
 map <Leader>mss                 :<C-u>SessionSave<CR>
 map <Leader>msl                 :<C-u>SessionLoad<CR>
-map <silent><Leader>mc          :call ChangeColorscheme()<CR>
+"map <silent><Leader>mc          :call ChangeColorscheme()<CR>
+map <silent><Leader>mc          :call EditColorscheme()<CR>
 map <silent><Leader>mj          :DashboardJumpMark<CR>
 
 

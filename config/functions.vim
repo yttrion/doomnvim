@@ -157,7 +157,7 @@ function! ChangeColorscheme()
 
     call doomnvim#logging#message('*', 'Running Clap colors', 2)
     let old_cols = g:doomnvim_colorscheme
-    exec 'let g:new_colors = execute(":Clap colors")'
+    exec let g:new_colors = execute(":Clap colors")
     call doomnvim#logging#message('*', 'Done Clapping colorscheme', 2)
     
     try
@@ -234,3 +234,6 @@ function! SaveFile()
     endtry
     call doomnvim#logging#message('*', 'Saved file', 2)
 endfunction
+
+
+function! GetOutput()
