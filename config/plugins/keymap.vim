@@ -152,13 +152,11 @@ map <silent><space>par 			:CocRestart<CR>
 " Misc --------------------------------------------------------------{{{
 
 map <silent><space>mS 			:source %<CR>
-"map <silent><space>ms 			:Startify<CR>
-"map <silent><space>mc           :call EditColorscheme()<CR>
 
 "Dashboard
 map <Leader>mss                 :<C-u>SessionSave<CR>
 map <Leader>msl                 :<C-u>SessionLoad<CR>
-map <silent><Leader>mc          :DashboardChangeColoscheme<CR>
+map <silent><Leader>mc          :call ChangeColorscheme<CR>
 map <silent><Leader>mj          :DashboardJumpMark<CR>
 
 
