@@ -41,6 +41,14 @@ endfunction
 
 function! doomnvim#functions#quitdoom(write, force) abort
 
+    exec ':silent !echo "[*] - Saving colorscheme" >> $HOME/.doomnvim/logs/doomnvim.log'
+    try
+        let target = g:colors_name
+        exec ":!sed -i \"s/'".g:doomnvim_colorscheme."'/'".target."'/\" $HOME/.doomrc"
+    catch
+        call doomnvim#logging#message('!', 'Unable to write to the BFC', 1)
+    endtry
+
     exec ':silent !echo "[---] - Dumping :messages" >> $HOME/.doomnvim/logs/doomnvim.log'
     exec 'redir >> $HOME/.doomnvim/logs/doomnvim.log'
     exec ':silent messages'
