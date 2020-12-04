@@ -360,23 +360,11 @@ main(){
                 welcome
                 check_all
                 update_repo
-                if [ $# -eq 2 ]
-                then
-                    case $2 in
-                        neovim)
-                            backup_neovim
-                            install_neovim_nightly
-                            install_done
-                            exit 0
-                            ;;
-                        vim)
-                            backup_vim
-                            install_neovim_nightly
-                            install_done
-                            exit 0
-                            ;;
-                    esac
-                fi
+                backup_neovim
+                backup_vim
+                install_neovim_nightly
+                install_done
+                exit 0
                 ;;
 			--help|-h)
 				helper
