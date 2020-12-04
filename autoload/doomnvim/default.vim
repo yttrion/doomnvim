@@ -94,7 +94,7 @@ function doomnvim#default#loadGlob()
     let g:indentLine_conceallevel=1
 
     "vim-floaterm
-    hi FloatermNC guibg=gray
+    "hi FloatermNC guibg=gray
 
     "vim-gitgutter
     let g:gitgutter_map_keys = 0
