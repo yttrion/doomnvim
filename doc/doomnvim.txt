@@ -129,15 +129,15 @@ Disable linting on save : 0
 
 `g:doomnvim_autocomplete_par`
 default value = 1
-Enable the automatic closing of (, ', ", {, [, <, `~
+Enable the automatic closing of (, ', ", {, [, <
 
 `g:doomnvim_resize_percent`
 default value = 0.2
 Specifies the percentage of the buffer width/size to increase/decrease
 
-`g:doomnvim_autocreate_session`
+g:doomnvim_onen_in_vsplit`
 default value = 0
-Enables vim-workspace when equals to 1
+Automatically open new files in a vertical split
 
 `g:doomnvim_logging`
 default value = 1
@@ -393,9 +393,6 @@ buffers.
 
 `CreateCommit`: Create a commit message in a floating terminal
 
-`EditColorscheme`: Dynamically changes the colorscheme of doomnvim and creates
-the BFC file if it doesn't exist
-
 `SwitchBuf`: Switches buffer positions
 
 `OpenInFloat`: Open a command in a floating terminal
@@ -409,16 +406,12 @@ USAGE                                                         *doomnvim-usage*
 
 Start doomnvim by typing `vim` or `nvim` in a terminal emulator.
 
-By default doomnvim will show the start menu `vim-startify` where you can
+By default doomnvim will show the start menu `dashboard-nvim` where you can
 select files to edit.
 
-Once you've selected some files to work on `vim-workspace` will save
+Once you've selected some files to work, you will be able to save
 the workspace you're working on. If you reopen doomvim without parsing
 any file as argument, the previous workspace will be loaded.
-
-You can disable workspace saves by changing the value of 
-`g:doomnvim_save_workspace` to 0 in the doomnvim.vim file 
-(see |doomnvim-hacking|)
 
 ==============================================================================
 MOVING AROUND                                          *doomnvim-usage-moving*
@@ -453,8 +446,6 @@ the `exit` command is performed.
 The `LayoutToggle()`function might move the NERDTree and buffered terminal
 buffers.
 
-`E#4`
-`vim-workspace` saves the buffered terminal and displays it in a weird way
 
 ==============================================================================
 FAQ                                                             *doomnvim-faq*
@@ -498,16 +489,12 @@ This is the layout of doomnvim:
 |   |   |_ coc.vim                      # coc.nvim configuration
 |   |   |_ dict.vim                     # Dictionnary for vim-which-key
 |   |   |_ keymap.vim                   # doomnvim keybindings
-|   |   |_ nerdtree.vim                 # NERDTree configuration
 |   |   |_ startify.vim                 # vim-startify configuration
-|   |   |_ tagbar.vim                   # tagbar config
-|   |   |_ workspace.vim                # workspace config
 |   |_ functions.vim                    # doomnvim functions
-|   |_ globals.vim                      # Global values
 |   |_ gui.vim                          # doomnvim gui options
 |   |_ main.vim                         # init file, loads vim-plug
-|   |_ doc/                             # documentation of doomnvim
-|   |   |_ doomnvim.txt                 # doomnvim help file
+|_ doc/                                 # documentation of doomnvim
+|   |_ doomnvim.txt                     # doomnvim help file
 |_ plugged/                             # Location of pluggins
 |_ sessions/                            # Location vim workspaces
 |_ undodirs/                            # .undodirs/ folders location
@@ -538,7 +525,7 @@ The files inside the `doomnvim/` folder have core functions for doomnvim.
     * health.vim   : Used to check the health of install (WIP)
     * logging.vim  : Logging handler
     * options.vim  : Sets the common options for doomnvim
-    * sysem.vim    : Multi-os support (WIP)
+    * system.vim   : Multi-os support (WIP)
 
 
 ==============================================================================
