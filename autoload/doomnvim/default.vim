@@ -52,7 +52,7 @@ function! doomnvim#default#options() abort
     let &shiftwidth = g:doomnvim_indent
     let &colorcolumn = g:doomnvim_max_columns
     if g:doomnvim_relative_num ==# 1
-        set relativenumber
+        set number relativenumber
     else
         set number
     endif
