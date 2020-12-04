@@ -80,15 +80,9 @@ function doomnvim#default#loadGlob()
 
     "coc.nvim
 
-    "Lightline
-    let g:lightline = {
-                \ 'enable' : {
-                    \ 'tabline' : 0
-                \ },
-                \ 'separator': { 'left': '', 'right': '' },
-                \ 'subseparator': { 'left': '', 'right': '' },
-                \ 'colorscheme': 'deus',
-                \ }
+    "spaceline.vim
+    let g:spaceline_seperate_style = 'slant-fade'
+    let g:spaceline_colorscheme = 'space'
 
     "vim-which-key
     let mapleader = ' '
