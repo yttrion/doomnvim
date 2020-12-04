@@ -92,14 +92,19 @@ function doomnvim#default#loadGlob()
     let g:tagbar_width = g:doomnvim_sidebar_width
     let g:tagbar_left = g:doomnvim_tagbar_left
 
+    "IndentLine
+    let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
 
     "vim-floaterm
     
     "vim-gitgutter
     let g:gitgutter_map_keys = 0
-
+    let g:indentLine_enabled = g:doomnvim_show_indent
+    let g:indentLine_fileTypeExclude = ['dashboard']
 
     "Dashboard
+    let g:dashboard_session_directory = '~/.doomnvim/sessions'
     let g:dashboard_custom_shortcut={
       \ 'last_session'       : 'SPC m s l',
       \ 'find_history'       : 'SPC s h',

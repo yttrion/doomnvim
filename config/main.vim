@@ -32,6 +32,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'glepnir/dashboard-nvim'
 Plug 'liuchengxu/vim-clap'
 Plug 'glepnir/spaceline.vim'
+Plug 'Yggdroot/indentLine'
 
 if g:doomnvim_nightly ==# 1
     Plug 'akinsho/nvim-bufferline.lua'

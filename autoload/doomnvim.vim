@@ -15,6 +15,10 @@ lockvar g:doomnvim_version
 " @default = 4
 let g:doomnvim_indent = 4
 
+" Show IndentLines
+" @default = 1
+let g:doomnvim_show_indent = 1
+
 " Expand tabs
 " @default = 0
 let g:doomnvim_expand_tabs = 0
