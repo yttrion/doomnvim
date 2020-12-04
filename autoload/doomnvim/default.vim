@@ -18,7 +18,6 @@ function! doomnvim#default#options() abort
     set noswapfile
     set showmode
     set hlsearch
-    "set number rnu
 
     set mouse=a
     set laststatus=2
@@ -28,22 +27,7 @@ function! doomnvim#default#options() abort
     set clipboard+=unnamedplus
 
     set shortmess+=at
-
-
-    "coc.nvim settings
-    set updatetime=500
-    set nobackup
-    set nowritebackup
-    set cmdheight=1
-    if has('patch-7.4.314')
-        set shortmess+=s
-    endif
-    set shortmess+=c
-    if has('patch-8.1.1564')
-    	set signcolumn=number
-    else
-    	set signcolumn=auto
-    endif
+    set conceallevel=1
 
     set smarttab
     let &expandtab = g:doomnvim_expand_tabs
@@ -78,7 +62,20 @@ function doomnvim#default#loadGlob()
     "NERDCommenter
     let g:NERDCreateDefaultMappings = 0
 
-    "coc.nvim
+    "coc
+    set updatetime=500
+    set nobackup
+    set nowritebackup
+    set cmdheight=1
+    if has('patch-7.4.314')
+        set shortmess+=s
+    endif
+    set shortmess+=c
+    if has('patch-8.1.1564')
+    	set signcolumn=number
+    else
+    	set signcolumn=auto
+    endif.nvim
 
     "spaceline.vim
     let g:spaceline_seperate_style = 'slant-fade'
@@ -94,10 +91,11 @@ function doomnvim#default#loadGlob()
 
     "IndentLine
     let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-
+    let g:indentLine_conceallevel=1
 
     "vim-floaterm
-    
+    hi FloatermNC guibg=gray
+
     "vim-gitgutter
     let g:gitgutter_map_keys = 0
     let g:indentLine_enabled = g:doomnvim_show_indent
