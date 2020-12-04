@@ -92,20 +92,11 @@ function doomnvim#default#loadGlob()
     let g:tagbar_width = g:doomnvim_sidebar_width
     let g:tagbar_left = g:doomnvim_tagbar_left
 
-    "vim-workspace
-    "let g:workspace_autocreate = g:doomnvim_autocreate_session
-    "let g:workspace_persist_undo_history = 0
-    "let g:workspace_session_directory = g:doomnvim_root . 'sessions/'
-    "let g:workspace_autosave_always = 1
-    "let g:workspace_autosave_ignore = ['gitcommit']
 
     "vim-floaterm
     
     "vim-gitgutter
     let g:gitgutter_map_keys = 0
-
-    "vim-startify
-    "let g:startify_session_autoload = g:doomnvim_enable_startmenu
 
 
     "Dashboard
