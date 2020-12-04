@@ -356,6 +356,28 @@ main(){
 				backup_neovim
 				exit 0
 				;;
+            --nightly|-n)
+                welcome
+                check_all
+                update_repo
+                if [ $# -eq 2 ]
+                then
+                    case $2 in
+                        neovim)
+                            backup_neovim
+                            install_neovim_nightly
+                            install_done
+                            exit 0
+                            ;;
+                        vim)
+                            backup_vim
+                            install_neovim_nightly
+                            install_done
+                            exit 0
+                            ;;
+                    esac
+                fi
+                ;;
 			--help|-h)
 				helper
 				exit 0
@@ -380,7 +402,6 @@ main(){
 		install_vimplug
 		install_fonts
 		check_requirements
-        install_neovim_nightly
 		install_done
 	fi
 }
