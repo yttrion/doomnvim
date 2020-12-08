@@ -8,7 +8,7 @@
 scriptencoding utf-8
 
 " Version
-let g:doomnvim_version = '0.1.5.2'
+let g:doomnvim_version = '0.1.5-2'
 lockvar g:doomnvim_version
 
 " Default indent size
@@ -84,9 +84,6 @@ let g:doomnvim_resize_percent = 0.2
 " @default = 1
 let g:doomnvim_enable_startmenu = 1
 
-" Autocreate session
-" @default = 0
-"let g:doomnvim_autocreate_session = 0
 
 " Automatically open new files in a vertical split
 " @default = 0
