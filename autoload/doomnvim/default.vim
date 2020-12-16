@@ -75,7 +75,8 @@ function doomnvim#default#loadGlob()
     	set signcolumn=number
     else
     	set signcolumn=auto
-    endif.nvim
+    endif
+
 
     "spaceline.vim
     let g:spaceline_seperate_style = 'slant-fade'
