@@ -5,6 +5,7 @@
 "===============================================
 
 let mapleader = ' '
+let g:mapleader = ' '
 call which_key#register('<Space>', 'g:which_key_map')
 " Try catch causes which key not to show when installed
 "try
@@ -23,6 +24,7 @@ map <silent><space>fS 			:wa<CR>
 map <silent><space>fe 			:NERDTreeToggle<CR>
 map <silent><space>fo 			:sp <bar>buffer<bar>call bufnr("")<bar>Ex<CR>
 map <silent><space>fr 			:call RenameFile()<CR>
+map <silent><space>fn           :DashboardNewFile<CR>
 
 " }}}
 
@@ -100,6 +102,9 @@ map <silent><space>qQ 			:call doomnvim#functions#quitdoom(1,1)<CR>
 
 
 " Search ------------------------------------------------------------{{{
+map <silent><space>sh           :DashboardFindHistory<CR>
+map <silent><space>sf           :DashboardFindFile<CR>
+map <silent><space>sw           :DashboardFindWord<CR>
 " }}}
 
 
@@ -147,9 +152,14 @@ map <silent><space>par 			:CocRestart<CR>
 " Misc --------------------------------------------------------------{{{
 
 map <silent><space>mS 			:source %<CR>
-map <silent><space>ms 			:Startify<CR>
-map <silent><space>mc           :call EditColorscheme()<CR>
-map <silent><space>mW           :silent ToggleWorkspace<CR>
+
+"Dashboard
+map <Leader>mss                 :<C-u>SessionSave<CR>
+map <Leader>msl                 :<C-u>SessionLoad<CR>
+"map <silent><Leader>mc          :call EditColorscheme()<CR>
+map <silent><Leader>mc          :Clap colors<CR>
+map <silent><Leader>mj          :DashboardJumpMark<CR>
+
 
 " }}}
 

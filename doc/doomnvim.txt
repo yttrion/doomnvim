@@ -62,13 +62,17 @@ directory. Global variables for doomnvim are located in
 `$HOME/.doomnvim/autoload/doomnvim.vim`
 
 All the options available in the `doomnvim.vim` file are global varibles.
-They all start with `g:doomnvim_` followed by a description of their 
+They all start with `g:doomnvim_` followed by a description of their
 nature: `g:doomnvim_save_workspace` followed by their values.
 
 
 `g:doomnvim_indent`
 default value = 4
 Specifies the width of tabs and shifttabs
+
+`g:doomnvim_show_indent`
+default value = 1
+Enables the indent display
 
 `g:doomnvim_expand_tabs`
 default value = 0
@@ -129,19 +133,15 @@ Disable linting on save : 0
 
 `g:doomnvim_autocomplete_par`
 default value = 1
-Enable the automatic closing of (, ', ", {, [, <, `~
+Enable the automatic closing of (, ', ", {, [, <
 
 `g:doomnvim_resize_percent`
 default value = 0.2
 Specifies the percentage of the buffer width/size to increase/decrease
 
-`g:doomnvim_enable_startmenu`
-default value = 1
-Enable `startify` plugin
-
-`g:doomnvim_autocreate_session`
+g:doomnvim_onen_in_vsplit`
 default value = 0
-Enables vim-workspace when equals to 1
+Automatically open new files in a vertical split
 
 `g:doomnvim_logging`
 default value = 1
@@ -154,6 +154,9 @@ them
 
 
 DO NOT EDIT THE VALUE OF `g:doomnvim_root` !
+
+`g:doomnvim_neovim` and `g:doomnvim_nightly` are util variables that enable some
+plugins when using neovim>=0.5
 
 ==============================================================================
 AUTOCOMPLETE                                   *doomnvim-options-autocomplete*
@@ -173,7 +176,6 @@ colorschemes installed in `$HOME/.doomnvim/colors/`:
     - `alduin`
     - `deus`
     - `doom` (default)
-    - `github`
     - `gotham256`
     - `gruvbox`
     - `iceberg`
@@ -319,6 +321,7 @@ KEYBINDINGS                                    *doomnvim-commands-keybindings*
 |           | <e>xplorer
 |           | <o>pen
 |           | <r>ename file
+|           | <n>ew file
 | <g>it
 |           | <g>itgutter toggle
 |           | <h>unk
@@ -337,9 +340,11 @@ KEYBINDINGS                                    *doomnvim-commands-keybindings*
 |           | <X> uninstall doomnvim
 | <m>isc
 |           | <S>ource file
-|           | <s>tart menu
+|           | <s>ession
+|           |           | <s>ave
+|           |           | <l>oad
 |           | <c>olorscheme switch
-|           | <W>orkspace save
+|           | <j>ump to bookmarks
 | <p>lugin
 |           | <u>pdate
 |           | <i>nstall
@@ -354,6 +359,9 @@ KEYBINDINGS                                    *doomnvim-commands-keybindings*
 |           | <q>uit
 |           | <Q>uit doomnvim
 | <s>earch
+|           | <h>istory search
+|           | <f>ile search
+|           | <w>ord search
 | <t>oggle
 |           | <l>ine number
 |           | <w>ord wrap
@@ -388,9 +396,6 @@ buffers.
 
 `CreateCommit`: Create a commit message in a floating terminal
 
-`EditColorscheme`: Dynamically changes the colorscheme of doomnvim and creates
-the BFC file if it doesn't exist
-
 `SwitchBuf`: Switches buffer positions
 
 `OpenInFloat`: Open a command in a floating terminal
@@ -404,16 +409,12 @@ USAGE                                                         *doomnvim-usage*
 
 Start doomnvim by typing `vim` or `nvim` in a terminal emulator.
 
-By default doomnvim will show the start menu `vim-startify` where you can
+By default doomnvim will show the start menu `dashboard-nvim` where you can
 select files to edit.
 
-Once you've selected some files to work on `vim-workspace` will save 
+Once you've selected some files to work, you will be able to save
 the workspace you're working on. If you reopen doomvim without parsing
 any file as argument, the previous workspace will be loaded.
-
-You can disable workspace saves by changing the value of 
-`g:doomnvim_save_workspace` to 0 in the doomnvim.vim file 
-(see |doomnvim-hacking|)
 
 ==============================================================================
 MOVING AROUND                                          *doomnvim-usage-moving*
@@ -448,8 +449,6 @@ the `exit` command is performed.
 The `LayoutToggle()`function might move the NERDTree and buffered terminal
 buffers.
 
-`E#4`
-`vim-workspace` saves the buffered terminal and displays it in a weird way
 
 ==============================================================================
 FAQ                                                             *doomnvim-faq*
@@ -493,16 +492,12 @@ This is the layout of doomnvim:
 |   |   |_ coc.vim                      # coc.nvim configuration
 |   |   |_ dict.vim                     # Dictionnary for vim-which-key
 |   |   |_ keymap.vim                   # doomnvim keybindings
-|   |   |_ nerdtree.vim                 # NERDTree configuration
 |   |   |_ startify.vim                 # vim-startify configuration
-|   |   |_ tagbar.vim                   # tagbar config
-|   |   |_ workspace.vim                # workspace config
 |   |_ functions.vim                    # doomnvim functions
-|   |_ globals.vim                      # Global values
 |   |_ gui.vim                          # doomnvim gui options
 |   |_ main.vim                         # init file, loads vim-plug
-|   |_ doc/                             # documentation of doomnvim
-|   |   |_ doomnvim.txt                 # doomnvim help file
+|_ doc/                                 # documentation of doomnvim
+|   |_ doomnvim.txt                     # doomnvim help file
 |_ plugged/                             # Location of pluggins
 |_ sessions/                            # Location vim workspaces
 |_ undodirs/                            # .undodirs/ folders location
@@ -533,7 +528,7 @@ The files inside the `doomnvim/` folder have core functions for doomnvim.
     * health.vim   : Used to check the health of install (WIP)
     * logging.vim  : Logging handler
     * options.vim  : Sets the common options for doomnvim
-    * sysem.vim    : Multi-os support (WIP)
+    * system.vim   : Multi-os support (WIP)
 
 
 ==============================================================================
@@ -578,7 +573,23 @@ v0.1.5
 - Added tabs support
 - Moved globals to a single file
 
+v0.1.5-1
+- Use of indentline instead of vim-airline
+- Added full log support
+- Improved the documentation
+- Added keybindings
+- Added nvim-bufferline.lua for neovim>=0.5 users
+- All files opened with NERDTree now open in a new vertial split
+- Fixed toggle line number
+- Cleaned the config/plugin/ directory
+- Most configuration files are now loaded by autoload
 
-
+v0.1.5-2
+- Force install neovim>=0.5.X
+- Removed `vim-workspace` and `vim-startify` to use `dashboard-nvim`
+- Disabled vsplit by default
+- Constant header for doomnvim
+- Updated documentation
+- New colorscheme switcher (colors are saved on quit)
 
 " vim:tw=80:ft=help:norl:

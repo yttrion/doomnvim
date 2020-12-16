@@ -35,7 +35,7 @@ BWhite='\033[1;37m'       # White
 # }}}
 
 # version
-Version='0.1.5.1'
+Version='0.1.5.2'
 #System name
 System="$(uname -s)"
 
@@ -171,6 +171,16 @@ backup_vim(){
 	fi
 
 }
+
+install_neovim_nightly(){
+    curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+    chmod u+x nvim.appimage
+    mv nvim.appimage $HOME/.config/
+    echo "alias 'nvim'=$HOME/.config/nvim.appimage" >> $HOME/.bashrc
+    echo "alias 'nvim'=$HOME/.config/nvim.appimage" >> $HOME/.zshrc
+    success "Successfully installed neovim nightly"
+}
+
 
 install_vimplug(){
 	if [[ ! -d "$HOME/.cache/vimfiles/repos/github.com/junegunn/plug.vim" ]]; then
@@ -346,6 +356,16 @@ main(){
 				backup_neovim
 				exit 0
 				;;
+            --nightly|-n)
+                welcome
+                check_all
+                update_repo
+                backup_neovim
+                backup_vim
+                install_neovim_nightly
+                install_done
+                exit 0
+                ;;
 			--help|-h)
 				helper
 				exit 0

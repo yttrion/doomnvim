@@ -41,6 +41,19 @@ endfunction
 
 function! doomnvim#functions#quitdoom(write, force) abort
 
+    try
+        call doomnvim#logging#message('*', 'Checking if colorscheme was changed...', 2)
+        let target = g:colors_name
+        if target != g:doomnvim_colorscheme
+            exec ":!sed -i \"s/'".g:doomnvim_colorscheme."'/'".target."'/\" $HOME/.doomrc"
+            call doomnvim#logging#message('*', 'Colorscheme successfully changed', 2)
+        else
+            call doomnvim#logging#message('*', 'No need to write colors (same)', 2)
+        endif
+    catch
+        call doomnvim#logging#message('!', 'Unable to write to the BFC', 1)
+    endtry
+
     exec ':silent !echo "[---] - Dumping :messages" >> $HOME/.doomnvim/logs/doomnvim.log'
     exec 'redir >> $HOME/.doomnvim/logs/doomnvim.log'
     exec ':silent messages'
@@ -64,6 +77,11 @@ endfunction
 
 function! doomnvim#functions#createReport() abort
     " Creates a markdown report to use when bugs occurs
+    exec ':silent !echo "# doomnvim crash report" >> $HOME/.doomnvim/logs/report.md'
+    exec ':silent !echo "## Begin log dump" >> $HOME/.doomnvim/logs/report.md'
+    exec ':silent !echo | cat $HOME/.doomnvim/logs/doomnvim.log >> $HOME/.doomnvim/logs/report.md'
+    exec ':silent !echo "## End log dump" >> $HOME/.doomnvim/logs/report.md'
+    exec ':silent echo "Report created at $HOME/.doomnvim/logs/report.md"'
 
 endfunction
 

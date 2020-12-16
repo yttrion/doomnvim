@@ -8,12 +8,16 @@
 scriptencoding utf-8
 
 " Version
-let g:doomnvim_version = '0.1.5.1'
+let g:doomnvim_version = '0.1.5-2'
 lockvar g:doomnvim_version
 
 " Default indent size
 " @default = 4
 let g:doomnvim_indent = 4
+
+" Show IndentLines
+" @default = 1
+let g:doomnvim_show_indent = 1
 
 " Expand tabs
 " @default = 0
@@ -80,9 +84,11 @@ let g:doomnvim_resize_percent = 0.2
 " @default = 1
 let g:doomnvim_enable_startmenu = 1
 
-" Autocreate session
+
+" Automatically open new files in a vertical split
 " @default = 0
-let g:doomnvim_autocreate_session = 0
+let g:doomnvim_open_in_vsplit = 0
+
 
 " Logging level
 " 0 : No logging
@@ -105,7 +111,8 @@ if has('nvim')
     endif
 else
     let g:doomnvim_neovim = 0
-endif
+endif    
+lockvar g:doomnvim_neovim
 
 function! doomnvim#loadConfig(file) abort
     if filereadable(g:doomnvim_root . 'config/' . a:file)
@@ -149,7 +156,7 @@ function! doomnvim#end() abort
     call doomnvim#system#grepconfig('config/plugins/', 'coc.vim', 1)
     call doomnvim#system#grepconfig('config/plugins/', 'dict.vim', 1)
     call doomnvim#system#grepconfig('config/plugins/', 'keymap.vim', 1)
-    call doomnvim#system#grepconfig('config/plugins/', 'startify.vim', 1)
+    "call doomnvim#system#grepconfig('config/plugins/', 'startify.vim', 1)
 
     call doomnvim#logging#init()
 

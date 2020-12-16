@@ -18,7 +18,6 @@ function! doomnvim#default#options() abort
     set noswapfile
     set showmode
     set hlsearch
-    "set number rnu
 
     set mouse=a
     set laststatus=2
@@ -28,9 +27,42 @@ function! doomnvim#default#options() abort
     set clipboard+=unnamedplus
 
     set shortmess+=at
+    set conceallevel=1
+
+    set smarttab
+    let &expandtab = g:doomnvim_expand_tabs
+    let &tabstop = g:doomnvim_indent
+    let &softtabstop = g:doomnvim_indent
+    let &shiftwidth = g:doomnvim_indent
+    let &colorcolumn = g:doomnvim_max_columns
+    if g:doomnvim_relative_num ==# 1
+        set number relativenumber
+    else
+        set number
+    endif
+    filetype plugin indent on
+    syntax on
+
+    nnoremap Q <Nop>
+    nnoremap ZZ :call doomnvim#functions#quitdoom(1,1)<CR>
+
+endfunction
 
 
-    "coc.nvim settings
+
+function doomnvim#default#loadGlob() 
+
+    "NERDTREE
+    let g:NERDTreeShowHidden = g:doomnvim_show_hidden
+    let g:NERDTreeWinSize = g:doomnvim_sidebar_width
+    if g:doomnvim_open_in_vsplit ==# 1
+        let g:NERDTreeCustomOpenArgs = { 'file': { 'where': 'v' } }
+    endif
+
+    "NERDCommenter
+    let g:NERDCreateDefaultMappings = 0
+
+    "coc
     set updatetime=500
     set nobackup
     set nowritebackup
@@ -43,68 +75,68 @@ function! doomnvim#default#options() abort
     	set signcolumn=number
     else
     	set signcolumn=auto
-    endif
+    endif.nvim
 
-    set smarttab
-    let &expandtab = g:doomnvim_expand_tabs
-    let &tabstop = g:doomnvim_indent
-    let &softtabstop = g:doomnvim_indent
-    let &shiftwidth = g:doomnvim_indent
-    let &colorcolumn = g:doomnvim_max_columns
-    if g:doomnvim_relative_num ==# 1
-        set relativenumber
-    else
-        set number
-    endif
-    filetype plugin indent on
-    syntax on
-
-    nnoremap Q <Nop>
-
-endfunction
-
-
-
-function doomnvim#default#loadGlob() 
-
-    "NERDTREE
-    let g:NERDTreeShowHidden = g:doomnvim_show_hidden
-    let g:NERDTreeWinSize = g:doomnvim_sidebar_width
-    let g:NERDTreeCustomOpenArgs = { 'file': { 'where': 'v' } }
-
-    "NERDCommenter
-    let g:NERDCreateDefaultMappings = 0
-    "coc.nvim
-
-    "Lightline
-    let g:lightline = {
-                \ 'enable' : {
-                \ 'tabline' : 0
-                \ },
-                \ 'colorscheme': 'deus',
-                \ }
+    "spaceline.vim
+    let g:spaceline_seperate_style = 'slant-fade'
+    let g:spaceline_colorscheme = 'space'
 
     "vim-which-key
     let mapleader = ' '
+
 
     "Tagbar
     let g:tagbar_width = g:doomnvim_sidebar_width
     let g:tagbar_left = g:doomnvim_tagbar_left
 
-    "vim-workspace
-    let g:workspace_autocreate = g:doomnvim_autocreate_session
-    let g:workspace_persist_undo_history = 0
-    let g:workspace_session_directory = g:doomnvim_root . 'sessions/'
-    let g:workspace_autosave_always = 1
-    let g:workspace_autosave_ignore = ['gitcommit']
+    "IndentLine
+    let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+    let g:indentLine_conceallevel=1
 
     "vim-floaterm
-    
+    "hi FloatermNC guibg=gray
+
     "vim-gitgutter
     let g:gitgutter_map_keys = 0
+    let g:indentLine_enabled = g:doomnvim_show_indent
+    let g:indentLine_fileTypeExclude = ['dashboard']
 
-    "vim-startify
-    let g:startify_session_autoload = g:doomnvim_enable_startmenu
+    "Dashboard
+    let g:dashboard_session_directory = '~/.doomnvim/sessions'
+    let g:dashboard_custom_shortcut={
+      \ 'last_session'       : 'SPC m s l',
+      \ 'find_history'       : 'SPC s h',
+      \ 'find_file'          : 'SPC s f',
+      \ 'new_file'           : 'SPC f n',
+      \ 'change_colorscheme' : 'SPC m c',
+      \ 'find_word'          : 'SPC s w',
+      \ 'book_marks'         : 'SPC m j',
+      \ }
+    let g:dashboard_custom_header = [
+                \ "=================     ===============     ===============   ========  ========",
+                \ "\\\\ . . . . . . .\\\\   //. . . . . . .\\\\   //. . . . . . .\\\\  \\\\. . .\\\\// . . //",
+                \ "||. . ._____. . .|| ||. . ._____. . .|| ||. . ._____. . .|| || . . .\\/ . . .||",
+                \ "|| . .||   ||. . || || . .||   ||. . || || . .||   ||. . || ||. . . . . . . ||",
+                \ "||. . ||   || . .|| ||. . ||   || . .|| ||. . ||   || . .|| || . | . . . . .||",
+                \ "|| . .||   ||. _-|| ||-_ .||   ||. . || || . .||   ||. _-|| ||-_.|\\ . . . . ||",
+                \ "||. . ||   ||-'  || ||  `-||   || . .|| ||. . ||   ||-'  || ||  `|\\_ . .|. .||",
+                \ "|| . _||   ||    || ||    ||   ||_ . || || . _||   ||    || ||   |\\ `-_/| . ||",
+                \ "||_-' ||  .|/    || ||    \\|.  || `-_|| ||_-' ||  .|/    || ||   | \\  / |-_.||",
+                \ "||    ||_-'      || ||      `-_||    || ||    ||_-'      || ||   | \\  / |  `||",
+                \ "||    `'         || ||         `'    || ||    `'         || ||   | \\  / |   ||",
+                \ "||            .===' `===.         .==='.`===.         .===' /==. |  \\/  |   ||",
+                \ "||         .=='   \\_|-_ `===. .==='   _|_   `===. .===' _-|/   `==  \\/  |   ||",
+                \ "||      .=='    _-'    `-_  `='    _-'   `-_    `='  _-'   `-_  /|  \\/  |   ||",
+                \ "||   .=='    _-'          `-__\\._-'         `-_./__-'         `' |. /|  |   ||",
+                \ "||.=='    _-'                                                     `' |  /==.||",
+                \ "=='    _-'                 _   _ _   _ ________  ___                  \\/   `==",
+                \ "\\   _-'                   | \\ | | | | |_   _|  \\/  |                   `-_   /",
+                \ " `''                      |  \\| | | | | | | | .  . |                      ``' ",
+                \ "                          | . ` | | | | | | | |\\/| |                          ",   
+                \ "                          | |\\  \\ \\_/ /_| |_| |  | |                          ",  
+                \ "                          \\_| \\_/\\___/ \\___/\\_|  |_/                          ",
+                \ ]
+
 
     "Internals
     let g:term_buf = 0
