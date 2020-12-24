@@ -41,6 +41,10 @@ map <silent><space>bc 			:<C-u>up<bar>%bd<bar>e#<CR>
 map <silent><space>bsv 			:vsp<CR>
 map <silent><space>bsh 			:sp<CR>
 map <silent><space>bf 			:call BufSel("")<CR>
+map <silent><space>bmh			<C-w>H
+map <silent><space>bmj			<C-w>J
+map <silent><space>bmk			<C-w>K
+map <silent><space>bml			<C-w>L
 map <silent><space>bR 			<C-w>=<CR>
 map <silent><space>bwi 			:call ResizeWin(1,1)<CR>
 map <silent><space>bwd 			:call ResizeWin(1,0)<CR>
@@ -156,10 +160,18 @@ map <silent><space>mS 			:source %<CR>
 "Dashboard
 map <Leader>mss                 :<C-u>SessionSave<CR>
 map <Leader>msl                 :<C-u>SessionLoad<CR>
-"map <silent><Leader>mc          :call EditColorscheme()<CR>
 map <silent><Leader>mc          :Clap colors<CR>
 map <silent><Leader>mj          :DashboardJumpMark<CR>
 
+
+" }}}
+
+" Space -------------------------------------------------------------{{{
+
+map <silent><space><space>h		<C-w>h
+map <silent><space><space>j		<C-w>j
+map <silent><space><space>k		<C-w>k
+map <silent><space><space>l		<C-w>l
 
 " }}}
 
