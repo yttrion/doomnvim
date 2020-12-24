@@ -48,6 +48,13 @@ let g:which_key_map.b = {
 				\ 'i' : 'Increase height',
 				\ 'd' : 'Decrease height',
 				\ },
+			\ 'm' : {
+				\ 'name' : 'move',
+				\ 'h' : 'Left',
+				\ 'j' : 'Down',
+				\ 'k' : 'Up',
+				\ 'l' : 'Right',
+				\ },
 			\ }
 
 
