@@ -57,7 +57,7 @@ let g:doomnvim_colorscheme_bg = 'dark'
 
 " Checkupdates on start
 " @default = 1
-let g:doomnvim_check_updates = 1
+let g:doomnvim_check_updates = 0
 
 " Disabled plugins
 " @default = []
