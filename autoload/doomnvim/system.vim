@@ -69,3 +69,15 @@ function! doomnvim#system#grepdoc() abort
         call doomnvim#logging#message('!', 'Unable to create helptags', 1)
     endtry
 endfunction
+
+
+function! doomnvim#system#checkupdates()
+    try
+        call doomnvim#logging#message('+', 'Purging outdated plugins', 2)
+        execute ':PlugClean!'
+        execute ':PlugUpdate'
+        call doomnvim#logging#message('+', 'Done', 2)
+    catch
+        call doomnvim#logging#message('!', 'Unable to update plugins', 1)
+    endtry
+endfunction

@@ -8,7 +8,7 @@
 scriptencoding utf-8
 
 " Version
-let g:doomnvim_version = '0.1.5-2'
+let g:doomnvim_version = '0.1.6'
 lockvar g:doomnvim_version
 
 " Default indent size
@@ -21,7 +21,7 @@ let g:doomnvim_show_indent = 1
 
 " Expand tabs
 " @default = 0
-let g:doomnvim_expand_tabs = 0
+let g:doomnvim_expand_tabs = 1
 
 " Numbering
 " @default = relative number

@@ -36,6 +36,8 @@ Plug 'Yggdroot/indentLine'
 
 if g:doomnvim_nightly ==# 1
     Plug 'akinsho/nvim-bufferline.lua'
+elseif g:doomnvim_nightly ==# 0
+    Plug 'itchyny/lightline.vim'
 endif
 
 call plug#end()

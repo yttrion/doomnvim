@@ -6,8 +6,7 @@
 
 ![License](https://img.shields.io/github/license/yttrion/doomnvim?style=flat-square)
 ![Release](https://img.shields.io/github/v/release/yttrion/doomnvim?include_prereleases&style=flat-square)
-![Neovim version](https://img.shields.io/badge/Neovim-0.4.3_--_0.x-57A143?style=flat-square&logo=neovim)
-![Vim version](https://img.shields.io/badge/Vim-8-019733?style=flat-square&logo=vim)
+![Neovim version](https://img.shields.io/badge/Neovim-0.5_--_0.x-57A143?style=flat-square&logo=neovim)
 ![Latest commit](https://img.shields.io/github/last-commit/yttrion/doomnvim/dev?style=flat-square)
 ---
 
@@ -23,7 +22,7 @@
 
 # Introduction
 doomnvim is a vim-version of the [doom-emacs](https://github.com/hlissner/doom-emacs) framework.
-It aims to add useful features to stock neovim
+It aims to add useful features to stock neovim and serves as my daily driver.
 
 
 ## NOTE

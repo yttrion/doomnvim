@@ -35,7 +35,7 @@ BWhite='\033[1;37m'       # White
 # }}}
 
 # version
-Version='0.1.5.2'
+Version='0.1.6'
 #System name
 System="$(uname -s)"
 
@@ -304,12 +304,13 @@ helper(){
 	echo_with_color ${Green} "doomnvim installer"
 	echo_with_color ${Green} "Usage ./install.sh [optn]"
 	echo_with_color ${Green} "Possible values:"
-	echo_with_color ${Yellow} "-u --update 				Update doomnvim"
-	echo_with_color ${Yellow} "-c --check-requirements 	Check doomnvim requirements"
-	echo_with_color ${Yellow} "-i --install 				Install doomnvim"
-	echo_with_color ${Yellow} "-h --help 				Displays this message"
-	echo_with_color ${Yellow} "-v --version 				Echo doomnvim version"
-	echo_with_color ${Yellow} "-x --uninstall 			Uninstall doomnvim"
+	echo_with_color ${Yellow} "-u --update				Update doomnvim"
+	echo_with_color ${Yellow} "-c --check-requirements			Check doomnvim requirements"
+	echo_with_color ${Yellow} "-n --nightly				Install Neovim nightly appimage"
+	echo_with_color ${Yellow} "-i --install				Install doomnvim"
+	echo_with_color ${Yellow} "-h --help				Displays this message"
+	echo_with_color ${Yellow} "-v --version				Echo doomnvim version"
+	echo_with_color ${Yellow} "-x --uninstall				Uninstall doomnvim"
 }
 
 check_all(){
@@ -324,12 +325,12 @@ check_all(){
 
 main(){
 	if [ $# -gt 0 ]
-	then
-		case $1 in
-			--check-requirements|-c)
-				check_requirements
-				exit 0
-				;;
+    then
+        case $1 in
+            --check-requirements|-c)
+                check_requirements
+                exit 0
+                ;;
 			--update|-u)
 				update_repo
 				exit 0
@@ -396,4 +397,4 @@ main(){
 
 main $@
 
-# vim: set fdl=0 fdm=marker:
+# vim:
