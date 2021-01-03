@@ -159,6 +159,9 @@ function! doomnvim#end() abort
     "call doomnvim#system#grepconfig('config/plugins/', 'startify.vim', 1)
 
     call doomnvim#logging#init()
+    if g:doomnvim_check_updates ==# 1
+        call doomnvim#system#checkupdates()
+    endif
 
 endfunction
 
