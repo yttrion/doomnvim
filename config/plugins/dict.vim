@@ -113,9 +113,11 @@ let g:which_key_map.p = {
 
 
 let g:which_key_map.q = {
-            \ 'name' : '+quit',
+            \ 'name' : '+quit/session',
             \ 'q' : 'Quit',
             \ 'Q' : 'Quit all',
+            \ 'l' : 'Load session',
+            \ 's' : 'Save session'
             \ }
 
 

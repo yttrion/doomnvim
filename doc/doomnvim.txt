@@ -115,8 +115,8 @@ Specifies the background
 Allowed values: 'dark', 'light'
 
 `g:doomnvim_check_updates`
-default value = 1
-Check updates on start
+default value = 0
+Check updates of plugins on start
 
 `g:doomnvim_disabled_plugins`
 default value = []
@@ -127,6 +127,7 @@ default value = []
 List of user custom plugins
 
 `g:doomnvim_lint_onsave`
+`unused`
 default value = 1
 Enables linting on save : 1
 Disable linting on save : 0
@@ -231,6 +232,8 @@ by performing the following command: <Space>fe for `FileExplorer`
 To create a new file whithin the file explorer, do <m><a>[nameofnode]
 Append a `/` if you want to create a directory
 
+Check `nerdtree` for more info.
+
 ==============================================================================
 MAIN BUFFER                         *doomnvim-configuration-layout-mainbuffer*
 
@@ -290,13 +293,12 @@ KEYBINDINGS                                    *doomnvim-commands-keybindings*
 | <b>uffer
 |           | <p>revious
 |           | <n>ext
+|           | <q>uit buffer
 |           | <k>ill current
-|           | <l>ast
-|           | <t>oggle terminal
+|           | <t>oggle buffered terminal
 |           | <e>mpty buffer
-|           | <f>ocus specific
-|           | <R>esize equally
-|           | <r>otate
+|           | <f>ocus specific buffer
+|           | <r>esize equally
 |           | <c>lose all except focused
 |           | <s>plit
 |           |           | <v>ertical
@@ -304,17 +306,21 @@ KEYBINDINGS                                    *doomnvim-commands-keybindings*
 |           | <w>idth
 |           |           | <i>ncrease
 |           |           | <d>ecrease
+|           | <h>eight
+|           |           | <i>ncrease 
+|           |           | <d>ecrease
+|           | <m>ove
+|           |           | <h> : Left
+|           |           | <j> : Down
+|           |           | <k> : Up
+|           |           | <l> : Right
 | <c>ode
-|           | <d>efinition
-|           | <i>mplementation
-|           | <t>ype definition
-|           | <r>eference
-|           | <s>election format
-|           | <I>ndent automatically
-|           | <D>ocumentation
+|           | <d>ocumentation
+|           | <i>ndent file
+|           | <f>ormat selected
 |           | <c>omment line
-|           | <C>olumn edition
-|           | <f>ormat document
+|           | <v>ertical edition
+|           | <r>ename symbol
 | <f>ile
 |           | <s>ave file
 |           | <S>ave all
@@ -337,14 +343,12 @@ KEYBINDINGS                                    *doomnvim-commands-keybindings*
 |           | <h>elp of doomnvim
 |           | <i>nstaller usage
 |           | <u>pdate doomnvim
-|           | <X> uninstall doomnvim
+|           | <X> : uninstall doomnvim
 | <m>isc
 |           | <S>ource file
-|           | <s>ession
-|           |           | <s>ave
-|           |           | <l>oad
 |           | <c>olorscheme switch
 |           | <j>ump to bookmarks
+|           | <f>zf
 | <p>lugin
 |           | <u>pdate
 |           | <i>nstall
@@ -355,9 +359,11 @@ KEYBINDINGS                                    *doomnvim-commands-keybindings*
 |           |           | <u>pdate
 |           |           | <s>ync update
 |           |           | <r>estart
-| <q>uit
+| <q>uit/session
 |           | <q>uit
 |           | <Q>uit doomnvim
+|           | <l>oad session 
+|           | <s>ave session 
 | <s>earch
 |           | <h>istory search
 |           | <f>ile search
@@ -370,11 +376,8 @@ KEYBINDINGS                                    *doomnvim-commands-keybindings*
 |           | <t>agbar
 |           | <f>loating terminal
 | <w>indow
-|           | <h> focus left
-|           | <j> focus down
-|           | <k> focus up
-|           | <l> focus right
 |           | <t>oggle layout
+|           | <r>otate
 |           | <N>ew
 |           | <p>revious
 |           | <n>ext
@@ -421,11 +424,11 @@ MOVING AROUND                                          *doomnvim-usage-moving*
 
 doomnvim uses the vim keybindings to move around:  `h` `j` `k` `l`
 
-         ^
-         k
-   < h       l >  
-         j        
-         v
+        ^
+        k
+  < h       l >  
+        j        
+        v
 
 see `vimtutor` to know how to use vim
 
@@ -435,20 +438,18 @@ and then press the key corresponding to the buffer you want to select.
 ==============================================================================
 KNOWN ISSUES                                                  *doomvim-issues*
 
-`E#1`
-When installing doomvim for the first time, event if plugins are configured
+- When installing doomvim for the first time, event if plugins are configured
 there might be some error messages. The most common one is
 	`E117: unknown command whichkey#register()`
 due to vim-which-key loading whithout being installed.
 
-`E#2`
-The |doomvim-configuration-layout-terminal| cannot be closed unless
+- The |doomvim-configuration-layout-terminal| cannot be closed unless
 the `exit` command is performed.
 
-`E#3`
-The `LayoutToggle()`function might move the NERDTree and buffered terminal
+- The `LayoutToggle()`function might move the NERDTree and buffered terminal
 buffers.
 
+- The floating terminal may not close 
 
 ==============================================================================
 FAQ                                                             *doomnvim-faq*
@@ -492,7 +493,6 @@ This is the layout of doomnvim:
 |   |   |_ coc.vim                      # coc.nvim configuration
 |   |   |_ dict.vim                     # Dictionnary for vim-which-key
 |   |   |_ keymap.vim                   # doomnvim keybindings
-|   |   |_ startify.vim                 # vim-startify configuration
 |   |_ functions.vim                    # doomnvim functions
 |   |_ gui.vim                          # doomnvim gui options
 |   |_ main.vim                         # init file, loads vim-plug
@@ -506,7 +506,8 @@ This is the layout of doomnvim:
 |_ install.sh                           # doomnvim managment
 
 
-doomnvim also creates the `BFC` if not present. It allows a fine control
+doomnvim also creates the `BFC`, which serves as the user configuration file
+if it is not present on the system. It allows a fine control
 over the core functions of doomnvim. It is a copy of the doomnvim.vim
 
 
@@ -591,5 +592,13 @@ v0.1.5-2
 - Constant header for doomnvim
 - Updated documentation
 - New colorscheme switcher (colors are saved on quit)
+
+v0.1.6
+- Fixed `<Space>` keybindings not working as intented
+- Fixed session saves and dictionnary
+- Changed keybindings to match some of doom-emacs'
+- Disabled `g:doomnvim_check_updates`by default
+- Force `expandtad`by default
+- Added keybindings to move buffers
 
 " vim:tw=80:ft=help:norl:
