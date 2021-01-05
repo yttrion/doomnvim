@@ -28,6 +28,8 @@ It aims to add useful features to stock neovim and serves as my daily driver.
 ## NOTE
 **doomnvim was made for neovim, it may not work as intended on vim**
 
+**doomnvim works best with [Nerd fonts](https://github.com/ryanoasis/nerd-fonts)**
+
 # Features
 
 - Curated defaults for vim/neovim
