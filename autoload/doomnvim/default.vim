@@ -103,7 +103,7 @@ function doomnvim#default#loadGlob()
     "Dashboard
     let g:dashboard_session_directory = '~/.doomnvim/sessions'
     let g:dashboard_custom_shortcut={
-      \ 'last_session'       : 'SPC m s l',
+      \ 'last_session'       : 'SPC q l',
       \ 'find_history'       : 'SPC s h',
       \ 'find_file'          : 'SPC s f',
       \ 'new_file'           : 'SPC f n',
