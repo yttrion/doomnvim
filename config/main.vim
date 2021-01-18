@@ -25,7 +25,7 @@ Plug 'neoclide/coc.nvim', {'branch':'release'}
 Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdtree'
 Plug 'liuchengxu/vim-which-key'
-Plug 'majutsushi/tagbar'
+Plug 'preservim/tagbar'
 Plug 'voldikss/vim-floaterm'
 Plug 'preservim/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
@@ -33,6 +33,7 @@ Plug 'glepnir/dashboard-nvim'
 Plug 'liuchengxu/vim-clap'
 Plug 'glepnir/spaceline.vim'
 Plug 'Yggdroot/indentLine'
+Plug 'TaDaa/vimade'
 
 if g:doomnvim_nightly ==# 1
     Plug 'akinsho/nvim-bufferline.lua'

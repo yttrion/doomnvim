@@ -61,14 +61,17 @@ let g:doomnvim_check_updates = 0
 
 " Disabled plugins
 " @default = []
+" UNUSED
 let g:doomnvim_disabled_plugins = []
 
 " Custom plugins
-" @deafult = []
+" @default = []
+" UNUSED
 let g:doomnvim_custom_plugins = []
 
 " Lint on save
 " @default = 1
+" UNUSED
 let g:doomnvim_lint_onsave = 1
 
 " Autocomplete paranthesis

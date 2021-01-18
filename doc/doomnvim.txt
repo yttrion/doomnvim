@@ -486,6 +486,7 @@ This is the layout of doomnvim:
 |   |_ molokai.vim                      # `Tomas Restrepo`  theme
 |   |_ nord.vim                         # `Artic Ice Studio`  theme
 |   |_ one.vim                          # `vim-one` colorscheme
+|   |_ spacegray.vim                    # `Akshay Hedge` colorscheme 
 |   |_ space-vim-dark.vim               # `Spacevim`'s dark theme
 |   |_ vim-material.vim                 # `hzchris`' material theme
 |_ config/                              # Configuration files of doomnvim
