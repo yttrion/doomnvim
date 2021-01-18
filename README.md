@@ -58,7 +58,7 @@ After doomnvim is installed, run `vim` and doomnvim will automatically install p
 - On first launch, vim-which-key throws an error `E117: unknown function whichkey#register()`
 
 
-# Acknowledgments
+# Acknowledgements
 - ![doom-emacs](https://github.com/hlissner/doom-emacs)
 - ![SpaceVim](https://github.com/SpaceVim/SpaceVim)
 ## Plugins
