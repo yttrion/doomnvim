@@ -27,7 +27,7 @@ It aims to add useful features to stock neovim and also serves as my daily drive
 ## NOTE
 **doomnvim was made for neovim, it may not work as intended on vim**
 
-**doomnvim works best with ![Nerd fonts](https://github.com/ryanoasis/nerd-fonts)**
+**doomnvim works best with [Nerd fonts](https://github.com/ryanoasis/nerd-fonts)**
 
 # Features
 
@@ -59,34 +59,34 @@ After doomnvim is installed, run `vim` and doomnvim will automatically install p
 
 
 # Acknowledgements
-- ![doom-emacs](https://github.com/hlissner/doom-emacs)
-- ![SpaceVim](https://github.com/SpaceVim/SpaceVim)
+- [doom-emacs](https://github.com/hlissner/doom-emacs)
+- [SpaceVim](https://github.com/SpaceVim/SpaceVim)
 ## Plugins
-- ![coc.nvim](https://github.com/neoclide/coc.nvim)
-- ![vim-devicons](https://github.com/ryanoasis/vim-devicons)
-- ![nerdtreee](https://github.com/preservim/nerdtree)
-- ![vim-which-key](https://github.com/liuchengxu/vim-which-key)
-- ![tagbar](https://github.com/preservim/tagbar)
-- ![vim-floaterm](https://github.com/voldikss/vim-floaterm)
-- ![nerdcommenter](https://github.com/preservim/nerdcommenter)
-- ![vim-gitgutter](https://github.com/airblade/vim-gitgutter)
-- ![dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
-- ![vim-clap](https://github.com/liuchengxu/vim-clap)
-- ![spaceline.vim](https://github.com/glepnir/spaceline.vim)
-- ![indentLine](https://github.com/Yggdroot/indentLine)
-- ![vimade](https://github.com/TaDaa/vimade)
+- [coc.nvim](https://github.com/neoclide/coc.nvim)
+- [vim-devicons](https://github.com/ryanoasis/vim-devicons)
+- [nerdtreee](https://github.com/preservim/nerdtree)
+- [vim-which-key](https://github.com/liuchengxu/vim-which-key)
+- [tagbar](https://github.com/preservim/tagbar)
+- [vim-floaterm](https://github.com/voldikss/vim-floaterm)
+- [nerdcommenter](https://github.com/preservim/nerdcommenter)
+- [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+- [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
+- [vim-clap](https://github.com/liuchengxu/vim-clap)
+- [spaceline.vim](https://github.com/glepnir/spaceline.vim)
+- [indentLine](https://github.com/Yggdroot/indentLine)
+- [vimade](https://github.com/TaDaa/vimade)
 ## Colorschemes
-- ![alduin](https://github.com/AlessandroYorba/Alduin)
-- ![deus](https://github.com/ajmwagar/vim-deus)
-- ![gotham256](https://github.com/whatyouhide/vim-gotham)
-- ![gruvbox](https://github.com/morhetz/gruvbox)
-- ![iceberg](https://github.com/cocopon/iceberg.vim)
-- ![molokai](https://github.com/tomasr/molokai)
-- ![nord](https://github.com/arcticicestudio/nord-vim)
-- ![one](https://github.com/rakr/vim-one)
-- ![spacegray](https://github.com/ackyshake/Spacegray.vim)
-- ![space-vim-dark](https://github.com/liuchengxu/space-vim-dark)
-- ![vim-material](https://github.com/hzchirs/vim-material)
+- [alduin](https://github.com/AlessandroYorba/Alduin)
+- [deus](https://github.com/ajmwagar/vim-deus)
+- [gotham256](https://github.com/whatyouhide/vim-gotham)
+- [gruvbox](https://github.com/morhetz/gruvbox)
+- [iceberg](https://github.com/cocopon/iceberg.vim)
+- [molokai](https://github.com/tomasr/molokai)
+- [nord](https://github.com/arcticicestudio/nord-vim)
+- [one](https://github.com/rakr/vim-one)
+- [spacegray](https://github.com/ackyshake/Spacegray.vim)
+- [space-vim-dark](https://github.com/liuchengxu/space-vim-dark)
+- [vim-material](https://github.com/hzchirs/vim-material)
 
 # Screenshots
 
