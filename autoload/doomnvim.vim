@@ -67,7 +67,8 @@ let g:doomnvim_disabled_plugins = []
 
 " Custom plugins
 " @default = []
-" UNUSED
+" example
+" let g:doomnvim_disabled_plugins = ['nerdtree']
 let g:doomnvim_custom_plugins = []
 
 " Lint on save

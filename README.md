@@ -53,9 +53,6 @@ After doomnvim is installed, run `vim` and doomnvim will automatically install p
 
 # FAQ
 
-# Known issues
-
-- On first launch, vim-which-key throws an error `E117: unknown function whichkey#register()`
 
 
 # Acknowledgements
@@ -75,6 +72,9 @@ After doomnvim is installed, run `vim` and doomnvim will automatically install p
 - [spaceline.vim](https://github.com/glepnir/spaceline.vim)
 - [indentLine](https://github.com/Yggdroot/indentLine)
 - [vimade](https://github.com/TaDaa/vimade)
+- [vim-colorscheme-icons](https://github.com/bryanmylee/vim-colorscheme-icons)
+- [vimtex](https://github.com/lervag/vimtex)
+- [vim-latex-live-preview](https://github.com/xuhdev/vim-latex-live-preview)
 ## Colorschemes
 - [alduin](https://github.com/AlessandroYorba/Alduin)
 - [deus](https://github.com/ajmwagar/vim-deus)

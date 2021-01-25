@@ -85,3 +85,18 @@ function! doomnvim#functions#createReport() abort
 
 endfunction
 
+
+
+function! doomnvim#functions#disable_plug()
+  for name in g:doomnvim_disabled_plugins
+    if has_key(g:plugs, name)
+        call doomnvim#logging#message('+', 'Disabling '.name, 2)
+        call remove(g:plugs, name)
+    endif
+
+    let idx = index(g:plugs_order, name)
+    if idx > -1
+      call remove(g:plugs_order, idx)
+    endif
+  endfor
+endfunction
