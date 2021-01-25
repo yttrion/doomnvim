@@ -46,6 +46,7 @@ elseif g:doomnvim_nightly ==# 0
 endif
 
 call doomnvim#functions#disable_plug()
+"call doomnvim#functions#enable_plug
 
 call plug#end()
 
