@@ -100,3 +100,14 @@ function! doomnvim#functions#disable_plug()
     endif
   endfor
 endfunction
+
+function! doomnvim#functions#enable_plug()
+    for name in g:doomnvim_custom_plugins
+        call doomnvim#logging#message('+', 'Adding '.name.' to plugins', 2)
+        try
+            call add(g:plugs, name)
+        catch
+            call doomnvim#logging#message('!', 'Unable to add '.name, 1)
+        endtry
+    endfor
+endfunction
