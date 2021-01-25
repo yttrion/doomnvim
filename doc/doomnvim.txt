@@ -125,6 +125,7 @@ Dictionnary of user disabled plugins
 `g:doomnvim_custom_plugins`
 default value = []
 List of user custom plugins
+UNUSED
 
 `g:doomnvim_lint_onsave`
 `unused`
