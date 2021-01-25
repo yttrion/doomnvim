@@ -208,3 +208,17 @@ function! SaveFile()
     endtry
     call doomnvim#logging#message('*', 'Saved file', 2)
 endfunction
+
+
+function! Toggleconceal()
+    try
+        if g:doomnvim_conceallevel ==# 0
+            set conceallevel=1
+        elseif g:doomnvim_conceallevel ==# 1
+            set conceallevel=0
+
+        endif
+    catch
+        call doomnvim#logging#message('!', 'Unable to change conceal level', 1)
+    endtry
+endfunction

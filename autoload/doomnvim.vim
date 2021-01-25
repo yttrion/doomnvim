@@ -92,6 +92,11 @@ let g:doomnvim_enable_startmenu = 1
 " @default = 0
 let g:doomnvim_open_in_vsplit = 0
 
+"Conceal level
+" 0: Disabled
+" 1: Enabled
+" @default = 1
+let g:doomnvim_conceallevel = 1
 
 " Logging level
 " 0 : No logging

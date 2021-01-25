@@ -140,9 +140,15 @@ Enable the automatic closing of (, ', ", {, [, <
 default value = 0.2
 Specifies the percentage of the buffer width/size to increase/decrease
 
-g:doomnvim_onen_in_vsplit`
+`g:doomnvim_open_in_vsplit`
 default value = 0
 Automatically open new files in a vertical split
+
+`g:doomnvim_conceallevel`
+default value = 1
+Set neovim conceal level
+1 : Conceal some functions and show indentlines
+0 : Disable indentline and show all
 
 `g:doomnvim_logging`
 default value = 1

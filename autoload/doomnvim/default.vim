@@ -27,7 +27,6 @@ function! doomnvim#default#options() abort
     set clipboard+=unnamedplus
 
     set shortmess+=at
-    set conceallevel=1
 
     set smarttab
     let &expandtab = g:doomnvim_expand_tabs
@@ -35,6 +34,7 @@ function! doomnvim#default#options() abort
     let &softtabstop = g:doomnvim_indent
     let &shiftwidth = g:doomnvim_indent
     let &colorcolumn = g:doomnvim_max_columns
+    let &conceallevel = g:doomnvim_conceallevel
     if g:doomnvim_relative_num ==# 1
         set number relativenumber
     else
