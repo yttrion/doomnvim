@@ -51,8 +51,9 @@ curl -sLf https://raw.githubusercontent.com/yttrion/doomnvim/main/install.sh | b
 
 After doomnvim is installed, run `vim` and doomnvim will automatically install plugins
 
-# FAQ
+# Screenshots
 
+![doomnvim Screenshot](https://github.com/yttrion/doomnvim/blob/dev/doomnvim.png?raw=true)
 
 
 # Acknowledgements
@@ -88,9 +89,6 @@ After doomnvim is installed, run `vim` and doomnvim will automatically install p
 - [space-vim-dark](https://github.com/liuchengxu/space-vim-dark)
 - [vim-material](https://github.com/hzchirs/vim-material)
 
-# Screenshots
-
-![doomnvim Screenshot](https://github.com/yttrion/doomnvim/blob/dev/doomnvim.png?raw=true)
 
 # Contribute
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
