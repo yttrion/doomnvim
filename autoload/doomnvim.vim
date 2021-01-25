@@ -61,7 +61,8 @@ let g:doomnvim_check_updates = 0
 
 " Disabled plugins
 " @default = []
-" UNUSED
+" example:
+" let g:doomnvim_disabled_plugins = ['nerdtree']
 let g:doomnvim_disabled_plugins = []
 
 " Custom plugins

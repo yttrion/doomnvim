@@ -45,6 +45,8 @@ elseif g:doomnvim_nightly ==# 0
     Plug 'itchyny/lightline.vim'
 endif
 
+call doomnvim#functions#disable_plug()
+
 call plug#end()
 
 call doomnvim#end()
