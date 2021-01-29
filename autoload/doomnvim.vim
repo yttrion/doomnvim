@@ -8,7 +8,7 @@
 scriptencoding utf-8
 
 " Version
-let g:doomnvim_version = '0.1.5-2'
+let g:doomnvim_version = '0.1.6'
 lockvar g:doomnvim_version
 
 " Default indent size
@@ -21,7 +21,7 @@ let g:doomnvim_show_indent = 1
 
 " Expand tabs
 " @default = 0
-let g:doomnvim_expand_tabs = 0
+let g:doomnvim_expand_tabs = 1
 
 " Numbering
 " @default = relative number
@@ -57,18 +57,23 @@ let g:doomnvim_colorscheme_bg = 'dark'
 
 " Checkupdates on start
 " @default = 1
-let g:doomnvim_check_updates = 1
+let g:doomnvim_check_updates = 0
 
 " Disabled plugins
 " @default = []
+" example:
+" let g:doomnvim_disabled_plugins = ['nerdtree']
 let g:doomnvim_disabled_plugins = []
 
 " Custom plugins
-" @deafult = []
+" @default = []
+" example
+" let g:doomnvim_disabled_plugins = ['nerdtree']
 let g:doomnvim_custom_plugins = []
 
 " Lint on save
 " @default = 1
+" UNUSED
 let g:doomnvim_lint_onsave = 1
 
 " Autocomplete paranthesis
@@ -89,6 +94,11 @@ let g:doomnvim_enable_startmenu = 1
 " @default = 0
 let g:doomnvim_open_in_vsplit = 0
 
+"Conceal level
+" 0: Disabled
+" 1: Enabled
+" @default = 1
+let g:doomnvim_conceallevel = 1
 
 " Logging level
 " 0 : No logging
@@ -150,7 +160,7 @@ function! doomnvim#end() abort
     "Test source system-based
     call doomnvim#system#grepconfig('config', 'gui.vim', 1)
     call doomnvim#system#grepconfig('config', 'functions.vim', 1)
-    call doomnvim#system#grepconfig('config', 'globals.vim', 1)
+    "call doomnvim#system#grepconfig('config', 'globals.vim', 1)
 
     "Plugins 
     call doomnvim#system#grepconfig('config/plugins/', 'coc.vim', 1)
@@ -159,6 +169,9 @@ function! doomnvim#end() abort
     "call doomnvim#system#grepconfig('config/plugins/', 'startify.vim', 1)
 
     call doomnvim#logging#init()
+    if g:doomnvim_check_updates ==# 1
+        call doomnvim#system#checkupdates()
+    endif
 
 endfunction
 

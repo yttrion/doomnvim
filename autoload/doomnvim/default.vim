@@ -27,7 +27,6 @@ function! doomnvim#default#options() abort
     set clipboard+=unnamedplus
 
     set shortmess+=at
-    set conceallevel=1
 
     set smarttab
     let &expandtab = g:doomnvim_expand_tabs
@@ -35,6 +34,7 @@ function! doomnvim#default#options() abort
     let &softtabstop = g:doomnvim_indent
     let &shiftwidth = g:doomnvim_indent
     let &colorcolumn = g:doomnvim_max_columns
+    let &conceallevel = g:doomnvim_conceallevel
     if g:doomnvim_relative_num ==# 1
         set number relativenumber
     else
@@ -77,14 +77,12 @@ function doomnvim#default#loadGlob()
     	set signcolumn=auto
     endif
 
-
     "spaceline.vim
     let g:spaceline_seperate_style = 'slant-fade'
     let g:spaceline_colorscheme = 'space'
 
     "vim-which-key
     let mapleader = ' '
-
 
     "Tagbar
     let g:tagbar_width = g:doomnvim_sidebar_width
@@ -105,7 +103,7 @@ function doomnvim#default#loadGlob()
     "Dashboard
     let g:dashboard_session_directory = '~/.doomnvim/sessions'
     let g:dashboard_custom_shortcut={
-      \ 'last_session'       : 'SPC m s l',
+      \ 'last_session'       : 'SPC q l',
       \ 'find_history'       : 'SPC s h',
       \ 'find_file'          : 'SPC s f',
       \ 'new_file'           : 'SPC f n',

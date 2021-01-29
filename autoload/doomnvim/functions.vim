@@ -85,3 +85,29 @@ function! doomnvim#functions#createReport() abort
 
 endfunction
 
+
+
+function! doomnvim#functions#disable_plug()
+  for name in g:doomnvim_disabled_plugins
+    if has_key(g:plugs, name)
+        call doomnvim#logging#message('+', 'Disabling '.name, 2)
+        call remove(g:plugs, name)
+    endif
+
+    let idx = index(g:plugs_order, name)
+    if idx > -1
+      call remove(g:plugs_order, idx)
+    endif
+  endfor
+endfunction
+
+function! doomnvim#functions#enable_plug()
+    for name in g:doomnvim_custom_plugins
+        call doomnvim#logging#message('+', 'Adding '.name.' to plugins', 2)
+        try
+            call add(g:plugs, name)
+        catch
+            call doomnvim#logging#message('!', 'Unable to add '.name, 1)
+        endtry
+    endfor
+endfunction
