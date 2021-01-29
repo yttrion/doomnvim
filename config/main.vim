@@ -40,6 +40,7 @@ Plug 'xuhdev/vim-latex-live-preview', { 'for' : 'tex' }
 
 
 if g:doomnvim_nightly ==# 1
+    Plug 'kyazdani42/nvim-web-devicons'
     Plug 'akinsho/nvim-bufferline.lua'
 elseif g:doomnvim_nightly ==# 0
     Plug 'itchyny/lightline.vim'
@@ -52,5 +53,7 @@ call plug#end()
 
 call doomnvim#end()
 
-
-
+if g:doomnvim_nightly ==# 1
+    set termguicolors
+    lua require'bufferline'.setup{}
+endif
