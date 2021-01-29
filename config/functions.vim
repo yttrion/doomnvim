@@ -214,9 +214,10 @@ function! Toggleconceal()
     try
         if g:doomnvim_conceallevel ==# 0
             set conceallevel=1
+            let g:doomnvim_conceallevel=1
         elseif g:doomnvim_conceallevel ==# 1
             set conceallevel=0
-
+            let g:doomnvim_conceallevel=0
         endif
     catch
         call doomnvim#logging#message('!', 'Unable to change conceal level', 1)
