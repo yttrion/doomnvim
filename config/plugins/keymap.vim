@@ -120,6 +120,7 @@ map <silent><space>th 			:noh<CR>
 map <silent><space>te 			:hi Error NONE<CR>
 map <silent><space>tt 			:TagbarToggle<CR>
 map <silent><space>tf 			:FloatermNew<CR>
+map <silent><space>tc 			:call Toggleconceal()<CR>
 "}}}
 
 " Window--------------------------------------------------------------------{{{

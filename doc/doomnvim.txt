@@ -382,6 +382,7 @@ KEYBINDINGS                                    *doomnvim-commands-keybindings*
 |           | <e>rror
 |           | <t>agbar
 |           | <f>loating terminal
+|           | <c>onceal level
 | <w>indow
 |           | <t>oggle layout
 |           | <r>otate
