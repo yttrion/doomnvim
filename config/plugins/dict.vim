@@ -138,6 +138,7 @@ let g:which_key_map.t = {
             \ 'e' : 'Toggle errors',
             \ 't' : 'Toggle tagbar',
             \ 'f' : 'Toggle floating terminal',
+            \ 'c' : 'Toggle conceal',
             \ }
 
 
