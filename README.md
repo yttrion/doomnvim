@@ -89,8 +89,3 @@ After doomnvim is installed, run `vim` and doomnvim will automatically install p
 - [space-vim-dark](https://github.com/liuchengxu/space-vim-dark)
 - [vim-material](https://github.com/hzchirs/vim-material)
 
-
-# Contribute
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Feel free to contact me at pierreyvesdouault@protonmail.com if you have any questions
