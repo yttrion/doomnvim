@@ -2,7 +2,7 @@
 
 # doomnvim
 
-[Install](#install) • [Documentation](#documentation) • [FAQ](#faq) • [Screenshots](#screenshots) • [Contribute](#contribute)
+[Install](#install) • [Documentation](#documentation) • [Screenshots](#screenshots) • [Contribute](#contribute)
 
 ![License](https://img.shields.io/github/license/yttrion/doomnvim?style=flat-square)
 ![Release](https://img.shields.io/github/v/release/yttrion/doomnvim?include_prereleases&style=flat-square)
