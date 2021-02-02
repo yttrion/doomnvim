@@ -53,7 +53,10 @@ After doomnvim is installed, run `vim` and doomnvim will automatically install p
 
 # Screenshots
 
-![doomnvim Screenshot](https://github.com/yttrion/doomnvim/blob/dev/doomnvim.png?raw=true)
+![doomnvim Screenshot](https://github.com/yttrion/doomnvim/blob/screens/doomnvim.png?raw=true)
+![doomnvim dashboard](https://github.com/yttrion/doomnvim/blob/screens/doomnvim_dashboard.png?raw=true)
+![doomnvim float](https://github.com/yttrion/doomnvim/blob/screens/doomnvim_floaterm.png?raw=true)
+![doomnvim multi](https://github.com/yttrion/doomnvim/blob/screens/doomnvim_multi.png?raw=true)
 
 
 # Acknowledgements
