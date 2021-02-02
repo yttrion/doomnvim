@@ -101,7 +101,7 @@ function doomnvim#default#loadGlob()
     let g:indentLine_fileTypeExclude = ['dashboard']
 
     "Dashboard
-    let g:dashboard_session_directory = '~/.doomnvim/sessions'
+    let g:dashboard_session_directory = g:doomnvim_root . 'sessions/'
     let g:dashboard_custom_shortcut={
       \ 'last_session'       : 'SPC q l',
       \ 'find_history'       : 'SPC s h',
