@@ -37,8 +37,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'TaDaa/vimade'
 Plug 'lervag/vimtex'
 Plug 'xuhdev/vim-latex-live-preview', { 'for' : 'tex' }
-Plug 'glepnir/oceanic-material'
-
+Plug 'romgrk/doom-one.vim'
 
 if g:doomnvim_nightly ==# 1
     Plug 'kyazdani42/nvim-web-devicons'
