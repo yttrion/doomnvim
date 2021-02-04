@@ -146,6 +146,7 @@ function! doomnvim#begin() abort
     endif
     call doomnvim#autocmds#init()
     call doomnvim#system#whichos()
+    call doomnvim#functions#deininit()
     call doomnvim#default#options()
     call doomnvim#autocmds#helptags()
     call doomnvim#commands#init()

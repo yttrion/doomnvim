@@ -109,6 +109,7 @@ function! doomnvim#functions#deininit()
         call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
         for name in g:doomnvim_custom_plugins
             try
+                call doomnvim#logging#message('*', 'Dein loading '.name, 2)
                 call dein#add(name)
             catch
                 call doomnvim#logging#message('!', 'Unable to add '.name, 1)
@@ -116,6 +117,11 @@ function! doomnvim#functions#deininit()
         endfor
         call dein#end()
         call dein#save_state()
+    endif
+    " Install when new plugin
+    let state = execute(':silent call dein#check_install('.string(g:doomnvim_custom_plugins).')')
+    if  state != 0 && state != -1
+        call dein#install(name)
     endif
 endfunction
 
