@@ -160,6 +160,13 @@ Select the logging level of doomnvim
 3: Logs all errors and messages in the `doomnvim.log` file and echoes 
 them
 
+`g:doomnvim_beta`
+default value = 0
+Enable beta features
+Enabling this might break your current install of `doomnvim`. Use with
+precaution. Check `Testing`in the <Projects> tab on the project page
+to check which features are in beta
+
 
 DO NOT EDIT THE VALUE OF `g:doomnvim_root` !
 

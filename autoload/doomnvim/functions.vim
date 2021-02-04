@@ -104,9 +104,9 @@ endfunction
 
 function! doomnvim#functions#deininit()
     set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
-    if dein#load_state('~/.cache/dein')
-        call dein#begin('~/.cache/dein')
-        call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+    if dein#load_state('~/.doomnvim/dein')
+        call dein#begin('~/.doomnvim/dein')
+        call dein#add('~/.doomnvim/dein/repos/github.com/Shougo/dein.vim')
         for name in g:doomnvim_custom_plugins
             try
                 call doomnvim#logging#message('*', 'Dein loading '.name, 2)

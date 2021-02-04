@@ -108,6 +108,9 @@ let g:doomnvim_conceallevel = 1
 " @default = 1
 let g:doomnvim_logging = 1
 
+" Beta features
+" @default = 0
+let g:doomnvim_beta = 0
 
 " Vim type
 " 0 : vim
@@ -146,7 +149,9 @@ function! doomnvim#begin() abort
     endif
     call doomnvim#autocmds#init()
     call doomnvim#system#whichos()
-    call doomnvim#functions#deininit()
+    if g:doomnvim_beta ==# 1
+        call doomnvim#functions#deininit()
+    endif
     call doomnvim#default#options()
     call doomnvim#autocmds#helptags()
     call doomnvim#commands#init()
@@ -158,13 +163,11 @@ function! doomnvim#end() abort
     "Test source system-based
     call doomnvim#system#grepconfig('config', 'gui.vim', 1)
     call doomnvim#system#grepconfig('config', 'functions.vim', 1)
-    "call doomnvim#system#grepconfig('config', 'globals.vim', 1)
 
     "Plugins 
     call doomnvim#system#grepconfig('config/plugins/', 'coc.vim', 1)
     call doomnvim#system#grepconfig('config/plugins/', 'dict.vim', 1)
     call doomnvim#system#grepconfig('config/plugins/', 'keymap.vim', 1)
-    "call doomnvim#system#grepconfig('config/plugins/', 'startify.vim', 1)
 
     call doomnvim#logging#init()
     if g:doomnvim_check_updates ==# 1
