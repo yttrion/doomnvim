@@ -101,6 +101,38 @@ function! doomnvim#functions#disable_plug()
   endfor
 endfunction
 
+
+function! doomnvim#functions#deininit()
+    set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+    if dein#load_state('~/.cache/dein')
+        call dein#begin('~/.cache/dein')
+        call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+        for name in g:doomnvim_custom_plugins
+            try
+                call dein#add(name)
+            catch
+                call doomnvim#logging#message('!', 'Unable to add '.name, 1)
+            endtry
+        endfor
+        call dein#end()
+        call dein#save_state()
+    endif
+endfunction
+
+function! doomnvim#functions#deinloadcustom()
+endfunction
+
+" plugs syntax:
+" {
+"   'plugin name':{
+"       uri: '',
+"       dir: '',
+"       frozen: 0,
+"       branch: ''
+"   },
+" }
+
+
 function! doomnvim#functions#enable_plug()
     for name in g:doomnvim_custom_plugins
         call doomnvim#logging#message('+', 'Adding '.name.' to plugins', 2)

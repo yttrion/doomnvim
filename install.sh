@@ -190,6 +190,17 @@ install_vimplug(){
 	fi
 }
 
+install_dein(){
+
+    if [[ ! -d "" ]]; then
+        echo "Installing dein"
+        curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+        # For example, we just use `~/.cache/dein` as installation directory
+        sh ./installer.sh ~/.cache/dein
+        echo "Done."
+    fi
+}
+
 install_fonts(){
     if [[ ! -d "$HOME/.local/share/fonts" ]]; then
         mkdir -p $HOME/.local/share/fonts
