@@ -78,7 +78,7 @@ function doomnvim#default#loadGlob()
     endif
 
     "spaceline.vim
-    let g:spaceline_seperate_style = 'slant-fade'
+    let g:spaceline_seperate_style = 'slant-cons'
     let g:spaceline_colorscheme = 'space'
 
     "vim-which-key
