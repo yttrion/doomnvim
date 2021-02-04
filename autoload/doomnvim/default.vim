@@ -13,8 +13,8 @@ function! doomnvim#default#options() abort
     set smarttab
     set autoindent
     set autoread
-    set splitright
     set splitbelow
+    set splitright
     set noswapfile
     set showmode
     set hlsearch
@@ -83,6 +83,8 @@ function doomnvim#default#loadGlob()
 
     "vim-which-key
     let mapleader = ' '
+    let g:which_key_hspace = 30
+    let g:which_key_use_floating_win = 1
 
     "Tagbar
     let g:tagbar_width = g:doomnvim_sidebar_width
