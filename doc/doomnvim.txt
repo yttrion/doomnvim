@@ -501,10 +501,11 @@ This is the layout of doomnvim:
 |   |_ iceberg.vim                      # `cocopon` theme
 |   |_ molokai.vim                      # `Tomas Restrepo`  theme
 |   |_ nord.vim                         # `Artic Ice Studio`  theme
+|   |_ oceanic_material.vim             # `glepnir` colorscheme
 |   |_ one.vim                          # `vim-one` colorscheme
 |   |_ spacegray.vim                    # `Akshay Hedge` colorscheme 
-|   |_ space-vim-dark.vim               # `Spacevim`'s dark theme
-|   |_ vim-material.vim                 # `hzchris`' material theme
+|   |_ space-vim-dark.vim               # `Spacevim` dark theme
+|   |_ vim-material.vim                 # `hzchris` material theme
 |_ config/                              # Configuration files of doomnvim
 |   |_ plugins/                         # Plugin config
 |   |   |_ coc.vim                      # coc.nvim configuration
