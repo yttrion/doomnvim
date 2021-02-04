@@ -137,6 +137,7 @@ map <silent><space>wr           :call SwitchBuf()<CR>
 map <silent><space>mS 			:source %<CR>
 map <silent><Leader>mc          :Clap colors<CR>
 map <silent><Leader>mj          :DashboardJumpMark<CR>
+map <silent><Leader>mh          :checkhealth<CR>
 "}}}
 
 " Space---------------------------------------------------------------------{{{

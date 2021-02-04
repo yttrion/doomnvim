@@ -363,6 +363,7 @@ KEYBINDINGS                                    *doomnvim-commands-keybindings*
 |           | <c>olorscheme switch
 |           | <j>ump to bookmarks
 |           | <f>zf
+|           | <h>ealth check
 | <p>lugin
 |           | <u>pdate
 |           | <i>nstall

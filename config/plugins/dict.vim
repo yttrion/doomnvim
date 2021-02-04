@@ -159,4 +159,5 @@ let g:which_key_map.m = {
             \ 'c' : 'Change colorscheme',
             \ 'j' : 'JumpMark',
             \ 'f' : 'Open FZF',
+            \ 'h' : 'Check doomnvim health',
             \ }

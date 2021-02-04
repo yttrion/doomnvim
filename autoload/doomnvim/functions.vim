@@ -77,10 +77,10 @@ endfunction
 
 function! doomnvim#functions#createReport() abort
     " Creates a markdown report to use when bugs occurs
-    exec ':silent !echo "# doomnvim crash report" >> $HOME/.doomnvim/logs/report.md'
-    exec ':silent !echo "## Begin log dump" >> $HOME/.doomnvim/logs/report.md'
-    exec ':silent !echo | cat $HOME/.doomnvim/logs/doomnvim.log >> $HOME/.doomnvim/logs/report.md'
-    exec ':silent !echo "## End log dump" >> $HOME/.doomnvim/logs/report.md'
+    exec ':silent !echo "\# doomnvim crash report" >> $HOME/.doomnvim/logs/report.md'
+    exec ':silent !echo "\#\# Begin log dump" >> $HOME/.doomnvim/logs/report.md'
+    exec ':silent !cat $HOME/.doomnvim/logs/doomnvim.log >> $HOME/.doomnvim/logs/report.md'
+    exec ':silent !echo "\#\# End log dump" >> $HOME/.doomnvim/logs/report.md'
     exec ':silent echo "Report created at $HOME/.doomnvim/logs/report.md"'
 
 endfunction
@@ -125,27 +125,15 @@ function! doomnvim#functions#deininit()
     endif
 endfunction
 
-function! doomnvim#functions#deinloadcustom()
+
+function! doomnvim#functions#deinclean()
+    call doomnvim#logging#message('+', 'Cleaning unused dein plugins', 2)
+    let tmpdir = execute(':call dein#check_clean()')
 endfunction
 
-" plugs syntax:
-" {
-"   'plugin name':{
-"       uri: '',
-"       dir: '',
-"       frozen: 0,
-"       branch: ''
-"   },
-" }
 
-
-function! doomnvim#functions#enable_plug()
-    for name in g:doomnvim_custom_plugins
-        call doomnvim#logging#message('+', 'Adding '.name.' to plugins', 2)
-        try
-            call add(g:plugs, name)
-        catch
-            call doomnvim#logging#message('!', 'Unable to add '.name, 1)
-        endtry
-    endfor
+function! doomnvim#functions#deinupdate()
+    call doomnvim#logging#message('+', 'Updating dein plugins', 2)
+    call dein#check_update()
 endfunction
+
