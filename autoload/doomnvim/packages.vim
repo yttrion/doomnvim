@@ -6,8 +6,8 @@
 
 function! doomnvim#packages#checkinstall(name)
     " sed 's/:.*//'
-    let author = execute("sed 's//.*//g' " . name)
-    let pkg = execute("sed 's//.*//g' " . name)
+    let author = execute("sed 's//.*//g' " . a:name)
+    let pkg = execute("sed 's//.*//g' " . a:name)
     echo 'A: '.author.' pkg:'.pkg
 
 endfunction
