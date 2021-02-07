@@ -22,12 +22,13 @@ endfunction
 
 function! doomnvim#packages#install(author,pkg)
     try
-       call system('git clone -q https://www.github.com/'
+        call doomnvim#logging#message('+','Cloning repo for '.a:name.'...',2)
+        call system('git clone -q https://www.github.com/'
                     \ .a:author
                     \ .'/'
                     \ .a:pkg.' '
                     \ .g:doomnvim_root
-                    \ .'/plugged/') 
+                    \ .'/plugged/'.a:pkg) 
     catch
         call doomnvim#logging#message('!','Unable to clone '.a:name,1)
     endtry
@@ -35,7 +36,36 @@ function! doomnvim#packages#install(author,pkg)
 endfunction
 
 function! doomnvim#packages#loadpackages()
+    if filereadable(g:doomnvim_root.'/autoload/doomnvim/plugins.vim')
+        for name in g:doomnvim_custom_plugins
+            "call system("echo ".string(name)." >> "
+            "            \. g:doomnvim_root."/autoload/plugins.vim")
+            " New method ==> sed in line 42 for plugins
+            " sed -i '8i8 This is Line 8' FILE
+            "call system("sed -i '".)
+            "function! AddLine()
+            "let l:foundline = search("bbb") " Can return 0 on no match
+            "call append(l:foundline, "ccc")
+            "wq!
+            let l:foundline = search("\"Custom plugins")
+            call append(l:foundline, "Plug '".string(name)."'")
+endfunction
+        endfor
+    else
+        call doomnvim#logging#message('!','Unable to find plugins.vim file',1)
+    endif
     
+endfunction
+
+function! doomnvim#packages#createconfig()
+        call system("echo call plug#begin('~/.doomnvim/plugged')>> " 
+            \.g:doomnvim_root
+            \."/autoload/doomnvim/plugins.vim")
+        
+        
+        call system("echo call plug#end('~/.doomnvim/plugged')>> " 
+            \.g:doomnvim_root
+            \."/autoload/doomnvim/plugins.vim")
 endfunction
 
 function! doomnvim#packages#cleanpackages()
