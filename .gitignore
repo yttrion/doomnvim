@@ -1,4 +1,3 @@
-logs/doomnvim.log
-autoload/colorscheme
+logs/
 plugged/
-doc/tags
+doc/
