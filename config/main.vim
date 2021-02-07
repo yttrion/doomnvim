@@ -17,7 +17,7 @@ if has('vim_starting')
 	exe 'set encoding=utf-8'
 endif
 
-call doomnvim#functions#custplug()
+"call doomnvim#functions#custplug()
 call doomnvim#begin()
 
 call plug#begin('~/.doomnvim/plugged')
