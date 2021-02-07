@@ -22,7 +22,7 @@ endfunction
 
 function! doomnvim#packages#install(author,pkg)
     try
-        call doomnvim#logging#message('+','Cloning repo for '.a:name.'...',2)
+        call doomnvim#logging#message('+','Cloning repo for '.a:pkg.'...',2)
         call system('git clone -q https://www.github.com/'
                     \ .a:author
                     \ .'/'
@@ -30,7 +30,7 @@ function! doomnvim#packages#install(author,pkg)
                     \ .g:doomnvim_root
                     \ .'/plugged/'.a:pkg) 
     catch
-        call doomnvim#logging#message('!','Unable to clone '.a:name,1)
+        call doomnvim#logging#message('!','Unable to clone '.a:pkg,1)
     endtry
 
 endfunction
