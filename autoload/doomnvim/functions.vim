@@ -145,7 +145,8 @@ endfunction
 
 function! doomnvim#functions#custplug() abort
     call doomnvim#logging#message('+', 'Looking for custom plugins...', 2)
-    if len(g:doomnvim_custom_plugins) ==# 0
+    let l:size=g:doomnvim_custom_plugins
+    if len(l:size) == 0
         call doomnvim#logging#message('+', 'No custom plugins found', 2)
     else
         for name in g:doomnvim_custom_plugins

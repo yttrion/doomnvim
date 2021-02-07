@@ -49,7 +49,6 @@ function! doomnvim#packages#loadpackages()
             "wq!
             let l:foundline = search("\"Custom plugins")
             call append(l:foundline, "Plug '".string(name)."'")
-endfunction
         endfor
     else
         call doomnvim#logging#message('!','Unable to find plugins.vim file',1)
