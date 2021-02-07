@@ -42,16 +42,13 @@ endfunction
 function! doomnvim#functions#quitdoom(write, force) abort
 
     try
-        call doomnvim#logging#message('*', 
-                    \ 'Checking if colorscheme was changed...', 2)
+        call doomnvim#logging#message('*', 'Checking if colorscheme was changed...', 2)
         let target = g:colors_name
         if target != g:doomnvim_colorscheme
             exec ":!sed -i \"s/'".g:doomnvim_colorscheme."'/'".target."'/\" $HOME/.doomrc"
-            call doomnvim#logging#message('*', 
-                        \ 'Colorscheme successfully changed', 2)
+            call doomnvim#logging#message('*', 'Colorscheme successfully changed', 2)
         else
-            call doomnvim#logging#message('*', 
-                        \ 'No need to write colors (same)', 2)
+            call doomnvim#logging#message('*', 'No need to write colors (same)', 2)
         endif
     catch
         call doomnvim#logging#message('!', 'Unable to write to the BFC', 1)
@@ -122,8 +119,7 @@ function! doomnvim#functions#deininit()
         call dein#save_state()
     endif
     " Install when new plugin
-    let state = execute(':silent call dein#check_install('
-                \ .string(g:doomnvim_custom_plugins).')')
+    let state = execute(':silent call dein#check_install('.string(g:doomnvim_custom_plugins).')')
     if  state != 0 && state != -1
         call dein#install(name)
     endif
@@ -145,8 +141,7 @@ endfunction
 
 function! doomnvim#functions#custplug() abort
     call doomnvim#logging#message('+', 'Looking for custom plugins...', 2)
-    let l:size=g:doomnvim_custom_plugins
-    if len(l:size) == 0
+    if len(g:doomnvim_custom_plugins) == 0
         call doomnvim#logging#message('+', 'No custom plugins found', 2)
     else
         for name in g:doomnvim_custom_plugins
