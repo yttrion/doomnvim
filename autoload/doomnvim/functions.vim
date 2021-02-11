@@ -101,8 +101,8 @@ function! doomnvim#functions#disable_plug()
   endfor
 endfunction
 
-function! doomnvim#functions#checkinstall(name)
-    if isdirectory(g:doomnvim_root.'/plugged/'.pkg)
+function! doomnvim#functions#checkinstall(pkg)
+    if isdirectory(g:doomnvim_root.'/plugged/'.a:pkg)
         return 1
     else
         return 0
@@ -119,8 +119,8 @@ function! doomnvim#functions#install(name,author,pkg)
     catch
         call doomnvim#logging#message('!','Unable to clone repo',1)
     endtry
-    let cmd = "42iPlug '".a:name."'"
-    call system("sed -i ".cmd." $HOME/.doomnvim/config/main.vim")
+    let cmd = "42iPlug '\'".a:name."'\'"
+    call system("sed -i '".cmd."' $HOME/.doomnvim/config/main.vim")
 
 endfunction
 

@@ -125,7 +125,8 @@ Dictionnary of user disabled plugins
 `g:doomnvim_custom_plugins`
 default value = []
 List of user custom plugins
-UNUSED
+It currently only supports github repos.
+Post-update hooks are not yet supported
 
 `g:doomnvim_lint_onsave`
 `unused`
@@ -159,13 +160,6 @@ Select the logging level of doomnvim
 2: Logs all errors and messages in the `doomnvim.log` file
 3: Logs all errors and messages in the `doomnvim.log` file and echoes 
 them
-
-`g:doomnvim_beta`
-default value = 0
-Enable beta features
-Enabling this might break your current install of `doomnvim`. Use with
-precaution. Check `Testing`in the <Projects> tab on the project page
-to check which features are in beta
 
 
 DO NOT EDIT THE VALUE OF `g:doomnvim_root` !
@@ -303,7 +297,11 @@ split. If we want a horizontal split the whole command is
 KEYBINDINGS                                    *doomnvim-commands-keybindings*
 
 <Space>
-
+|
+| <h> Focus left
+| <j> Focus below
+| <k> Focus top
+| <l> Focus right
 | <b>uffer
 |           | <p>revious
 |           | <n>ext
@@ -423,6 +421,13 @@ buffers.
 
 `SaveFile`: Saves the current file. If the file was created, prompts for a name
 
+`EditColorscheme`: Adds an entry to the BFC file to match the selected
+colorscheme
+
+`ToggleConceal`: On certain filetypes (e.g:`*.tex`) the conceallevel might
+disturb, therefore this function sets the conceallevel to 0 or switchs it back
+to 1.
+
 ==============================================================================
 USAGE                                                         *doomnvim-usage*
 
@@ -455,17 +460,23 @@ and then press the key corresponding to the buffer you want to select.
 KNOWN ISSUES                                                  *doomvim-issues*
 
 - When installing doomvim for the first time, event if plugins are configured
-there might be some error messages. The most common one is
+  there might be some error messages. The most common one is
 	`E117: unknown command whichkey#register()`
-due to vim-which-key loading whithout being installed.
+  due to vim-which-key loading whithout being installed.
 
 - The |doomvim-configuration-layout-terminal| cannot be closed unless
-the `exit` command is performed.
+  the `exit` command is performed.
 
 - The `LayoutToggle()`function might move the NERDTree and buffered terminal
-buffers.
+  buffers.
 
-- The floating terminal may not close 
+- The floating terminal may not close and might leave a artifact: Use <Space>bk
+  to close it.
+
+- To remove a custom plugin (specified in `g:doomnvim_custom_plugins` and
+  already installed), one must remove manually the corresponding line in
+  `$HOME/.doomnvim/config/main`and the directory in `$HOME/.doomnvim/plugged/`
+  It will be fixed in the next updates.
 
 ==============================================================================
 FAQ                                                             *doomnvim-faq*
@@ -488,7 +499,6 @@ This is the layout of doomnvim:
 |   |  |_ functions.vim                 # core functions of doomnvim
 |   |  |_ health.vim                    # doomnvim health
 |   |  |_ logging.vim                   # The logging manager of doomnvim
-|   |  |_ options.vim                   # doomnvim options
 |   |  |_ system.vim                    # doomnvim system detection
 |   |_ doomnvim.vim                     # Config file for various globals
 |   |_ plug.vim                         # Plug-Vim configuration file
@@ -501,7 +511,6 @@ This is the layout of doomnvim:
 |   |_ iceberg.vim                      # `cocopon` theme
 |   |_ molokai.vim                      # `Tomas Restrepo`  theme
 |   |_ nord.vim                         # `Artic Ice Studio`  theme
-|   |_ oceanic_material.vim             # `glepnir` colorscheme
 |   |_ one.vim                          # `vim-one` colorscheme
 |   |_ spacegray.vim                    # `Akshay Hedge` colorscheme 
 |   |_ space-vim-dark.vim               # `Spacevim` dark theme
@@ -526,7 +535,10 @@ This is the layout of doomnvim:
 
 doomnvim also creates the `BFC`, which serves as the user configuration file
 if it is not present on the system. It allows a fine control
-over the core functions of doomnvim. It is a copy of the doomnvim.vim
+over the core functions of doomnvim. It is a copy of the `autoload/doomnvim.vim`
+file.
+
+The `BFC`is located at `$HOME/.doomrc`
 
 
 ==============================================================================
@@ -543,10 +555,10 @@ The files inside the `doomnvim/` folder have core functions for doomnvim.
     * autocmds.vim : Autocommands needed.
     * commands.vim : Custom commands
     * config.vim   : Manages the BFC
+    * default      : Default configuration for nvim and for plugins
     * function.vim : Util functions
     * health.vim   : Used to check the health of install (WIP)
     * logging.vim  : Logging handler
-    * options.vim  : Sets the common options for doomnvim
     * system.vim   : Multi-os support (WIP)
 
 
@@ -614,9 +626,17 @@ v0.1.5-2
 v0.1.6
 - Fixed `<Space>` keybindings not working as intented
 - Fixed session saves and dictionnary
-- Changed keybindings to match some of doom-emacs'
+- Changed keybindings to match some of doom-emacs's
 - Disabled `g:doomnvim_check_updates`by default
 - Force `expandtad`by default
 - Added keybindings to move buffers
+
+v0.1.7
+- Added `g:doomnvim_disabled_plugins`that prevents certains plugins to load
+- Added `g:doomnvim_custom_plugins`that allow the user to add plugins.
+- Fixed session loading not using the correct path
+- Added the `ToggleConceal()`function
+- Fixed installer update error
+- Added acknowledgment in README.md
 
 " vim:tw=80:ft=help:norl:

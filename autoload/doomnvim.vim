@@ -106,7 +106,7 @@ let g:doomnvim_conceallevel = 1
 " 2 : All errors and messages, no echo
 " 3 : All errors and messages, echo
 " @default = 1
-let g:doomnvim_logging = 2
+let g:doomnvim_logging = 1
 
 
 " Vim type
