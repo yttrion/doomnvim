@@ -120,7 +120,7 @@ function! doomnvim#functions#install(name,author,pkg)
         call doomnvim#logging#message('!','Unable to clone repo',1)
     endtry
     let cmd = "27iPlug '".a:name."'"
-    system("sed -i ".cmd." $HOME/.doomnvim/config/plugs.vim")
+    call system("sed -i ".cmd." $HOME/.doomnvim/config/plugs.vim")
 
 endfunction
 
