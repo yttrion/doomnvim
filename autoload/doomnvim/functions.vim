@@ -119,8 +119,8 @@ function! doomnvim#functions#install(name,author,pkg)
     catch
         call doomnvim#logging#message('!','Unable to clone repo',1)
     endtry
-    let cmd = "27iPlug '".a:name."'"
-    call system("sed -i ".cmd." $HOME/.doomnvim/config/plugs.vim")
+    let cmd = "42iPlug '".a:name."'"
+    call system("sed -i ".cmd." $HOME/.doomnvim/config/main.vim")
 
 endfunction
 
@@ -133,7 +133,7 @@ function! doomnvim#functions#custplug()
             let author = system('echo '.name." | sed 's/\\/.*//'") 
             let pkg = system('echo '.name." | sed 's/.*\\///'") 
             call doomnvim#logging#message('+','Loading '.string(name),2)
-            let tmp=execute(':call doomnvim#functions#checkinstall('.pkg.')')
+            let tmp=execute(':call doomnvim#functions#checkinstall('.string(pkg).')')
             if tmp ==# 0
                 call doomnvim#functions#install(name,author,pkg)
             endif
