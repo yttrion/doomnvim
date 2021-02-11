@@ -110,23 +110,16 @@ function! doomnvim#functions#checkinstall(name)
 
 endfunction
 
-function! doomnvim#functions#install(name)
-    let author = system('echo '.a:name." | sed 's/\\/.*//'") 
-    let pkg = system('echo '.a:name." | sed 's/.*\\///'") 
+function! doomnvim#functions#install(name,author,pkg)
     call doomnvim#logging#message('+','Cloning repo for '.a:name,2)
     try
         call system('git clone -q https://github.com/'
-                    \ .a:author
-                    \ .'/'
-                    \ .a:pkg
-                    \ .g:doomnvim_root
-                    \ .'/plugged/'.a:pkg)
+                    \ .a:name
+                    \ .' $HOME/.doomnvim/plugged'.a:pkg)
     catch
         call doomnvim#logging#message('!','Unable to clone repo',1)
     endtry
-    " sed '3iline 3' input.txt > output.txt
-    let l:pkgfile = "$HOME/.doomnvim/autoload/doomnvim/packages.vim"
-    execute("sed '21 Plug \'".a:name."\'21' ".l:pkgfile.' > '.l:pkgfile)
+    execute("sed -i '21iPlug \'".a:name."\'' $HOME/.doomnvim/autoload/doomnvim/plugins.vim")
 
 endfunction
 
@@ -136,10 +129,12 @@ function! doomnvim#functions#custplug()
         call doomnvim#logging#message('!', 'No custom plugins found', 1)
     else
         for name in g:doomnvim_custom_plugins
+            let author = system('echo '.name." | sed 's/\\/.*//'") 
+            let pkg = system('echo '.name." | sed 's/.*\\///'") 
             call doomnvim#logging#message('+','Loading '.string(name),2)
-            let tmp=execute(':call doomnvim#functions#checkinstall('.name.')')
-            if call doomnvim#functions#checkinstall(name) ==# 0
-                call doomnvim#functions#install(name)
+            let tmp=execute(':call doomnvim#functions#checkinstall('.pkg.')')
+            if tmp ==# 0
+                call doomnvim#functions#install(name,author,pkg)
             endif
         endfor
     endif
