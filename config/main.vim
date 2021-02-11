@@ -16,9 +16,7 @@ if has('vim_starting')
 	exe 'set encoding=utf-8'
 endif
 
-"call doomnvim#functions#custplug()
 call doomnvim#begin()
-call doomnvim#functions#custplug()
 call plug#begin('~/doomnvim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch':'release'}
