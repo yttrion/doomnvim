@@ -19,6 +19,7 @@ Plug 'xuhdev/vim-latex-live-preview', { 'for' : 'tex' }
 Plug 'romgrk/doom-one.vim'
 "Custom plugins
 
+
 if g:doomnvim_nightly ==# 1
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'akinsho/nvim-bufferline.lua'
