@@ -18,7 +18,6 @@ endif
 
 call doomnvim#begin()
 call plug#begin('~/doomnvim/plugged')
-
 Plug 'neoclide/coc.nvim', {'branch':'release'}
 Plug 'ryanoasis/vim-devicons'
 Plug 'bryanmylee/vim-colorscheme-icons'
@@ -39,6 +38,10 @@ Plug 'romgrk/doom-one.vim'
 "Custom plugins
 
 
+
+
+
+
 if g:doomnvim_nightly ==# 1
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'akinsho/nvim-bufferline.lua'
@@ -48,6 +51,7 @@ elseif g:doomnvim_nightly ==# 0
 endif
 
 call doomnvim#functions#disable_plug()
+
 call plug#end()
 "Temp functions
 call doomnvim#end()
