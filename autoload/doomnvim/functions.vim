@@ -101,52 +101,26 @@ function! doomnvim#functions#disable_plug()
   endfor
 endfunction
 
-
-function! doomnvim#functions#deininit()
-    set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
-    if dein#load_state('~/.doomnvim/dein')
-        call dein#begin('~/.doomnvim/dein')
-        call dein#add('~/.doomnvim/dein/repos/github.com/Shougo/dein.vim')
-        for name in g:doomnvim_custom_plugins
-            try
-                call doomnvim#logging#message('*', 'Dein loading '.name, 2)
-                call dein#add(name)
-            catch
-                call doomnvim#logging#message('!', 'Unable to add '.name, 1)
-            endtry
-        endfor
-        call dein#end()
-        call dein#save_state()
+function! doomnvim#functions#checkinstall(name)
+    if isdirectory(g:doomnvim_root.'/plugged/'.pkg)
+        return 1
+    else
+        return 0
     endif
-    " Install when new plugin
-    let state = execute(':silent call dein#check_install('.string(g:doomnvim_custom_plugins).')')
-    if  state != 0 && state != -1
-        call dein#install(name)
-    endif
+
 endfunction
 
-
-function! doomnvim#functions#deinclean()
-    call doomnvim#logging#message('+', 'Cleaning unused dein plugins', 2)
-    let tmpdir = execute(':call dein#check_clean()')
-endfunction
-
-
-function! doomnvim#functions#deinupdate()
-    call doomnvim#logging#message('+', 'Updating dein plugins', 2)
-    call dein#check_update()
-endfunction
-
-
-
-function! doomnvim#functions#custplug() abort
+function! doomnvim#functions#custplug()
     call doomnvim#logging#message('+', 'Looking for custom plugins', 2)
     if len(g:doomnvim_custom_plugins) == 0
         call doomnvim#logging#message('!', 'No custom plugins found', 1)
     else
         for name in g:doomnvim_custom_plugins
             call doomnvim#logging#message('+','Loading '.string(name),2)
-            call doomnvim#packages#checkinstall(name)
+            let tmp=execute(':call doomnvim#functions#checkinstall('.name.')')
+            if call doomnvim#functions#checkinstall(name) ==# 0
+                call doomnvim#packages#install(name)
+            endif
         endfor
     endif
 endfunction

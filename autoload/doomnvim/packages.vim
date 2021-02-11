@@ -11,10 +11,12 @@ function! doomnvim#packages#checkinstall(name)
     " for syntax check purposes
     "echo 'A: '.author.' pkg:'.pkg
     if isdirectory(g:doomnvim_root.'/plugged/'.pkg)
-        call doomnvim#logging#message('+','Found '.a:name,2)
+        "call doomnvim#logging#message('+','Found '.a:name,2)
+        return 1
     else
-        call doomnvim#logging#message('+','Installing '.a:name.'...',2)
-        call doomnvim#packages#install(author,pkg)
+        "call doomnvim#logging#message('+','Installing '.a:name.'...',2)
+        "call doomnvim#packages#install(author,pkg)
+        return 0
     endif
 
 endfunction
@@ -54,17 +56,6 @@ function! doomnvim#packages#loadpackages()
         call doomnvim#logging#message('!','Unable to find plugins.vim file',1)
     endif
     
-endfunction
-
-function! doomnvim#packages#createconfig()
-        call system("echo call plug#begin('~/.doomnvim/plugged')>> " 
-            \.g:doomnvim_root
-            \."/autoload/doomnvim/plugins.vim")
-        
-        
-        call system("echo call plug#end('~/.doomnvim/plugged')>> " 
-            \.g:doomnvim_root
-            \."/autoload/doomnvim/plugins.vim")
 endfunction
 
 function! doomnvim#packages#cleanpackages()

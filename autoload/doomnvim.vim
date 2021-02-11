@@ -108,9 +108,6 @@ let g:doomnvim_conceallevel = 1
 " @default = 1
 let g:doomnvim_logging = 2
 
-" Beta features
-" @default = 0
-let g:doomnvim_beta = 0
 
 " Vim type
 " 0 : vim
@@ -149,9 +146,6 @@ function! doomnvim#begin() abort
     endif
     call doomnvim#autocmds#init()
     call doomnvim#system#whichos()
-    if g:doomnvim_beta ==# 1
-        call doomnvim#functions#deininit()
-    endif
     call doomnvim#default#options()
     call doomnvim#autocmds#helptags()
     call doomnvim#commands#init()
