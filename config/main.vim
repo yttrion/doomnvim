@@ -17,7 +17,7 @@ if has('vim_starting')
 endif
 
 call doomnvim#begin()
-call plug#begin('~/doomnvim/plugged')
+call plug#begin('~/.doomnvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch':'release'}
 Plug 'ryanoasis/vim-devicons'
 Plug 'bryanmylee/vim-colorscheme-icons'
