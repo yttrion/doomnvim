@@ -125,7 +125,8 @@ function! doomnvim#functions#install(name)
         call doomnvim#logging#message('!','Unable to clone repo',1)
     endtry
     " sed '3iline 3' input.txt > output.txt
-    execute("sed '21 Plug \'".a:name."\'21' $HOME/.doomnvim/autoload/doomnvim/packages.vim > $HOME/.doomnvim/autoload/doomnvim/packages.vim")
+    let l:pkgfile = "$HOME/.doomnvim/autoload/doomnvim/packages.vim"
+    execute("sed '21 Plug \'".a:name."\'21' ".l:pkgfile.' > '.l:pkgfile)
 
 endfunction
 
