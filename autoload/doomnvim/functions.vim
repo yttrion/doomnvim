@@ -115,7 +115,7 @@ function! doomnvim#functions#install(name,author,pkg)
     try
         call system('git clone -q https://github.com/'
                     \ .a:name
-                    \ .' $HOME/.doomnvim/plugged'.a:pkg)
+                    \ .' $HOME/.doomnvim/plugged/'.a:pkg)
     catch
         call doomnvim#logging#message('!','Unable to clone repo',1)
     endtry
