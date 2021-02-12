@@ -92,7 +92,7 @@ function doomnvim#default#loadGlob()
 
     "IndentLine
     let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-    let g:indentLine_conceallevel=1
+    let g:indentLine_conceallevel=g:doomnvim_conceallevel
 
     "vim-floaterm
     "hi FloatermNC guibg=gray
