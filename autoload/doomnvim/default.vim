@@ -86,9 +86,11 @@ function doomnvim#default#loadGlob()
     let g:which_key_hspace = 30
     let g:which_key_use_floating_win = 1
 
-    "Tagbar
-    let g:tagbar_width = g:doomnvim_sidebar_width
-    let g:tagbar_left = g:doomnvim_tagbar_left
+    " Vista.vim
+    let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+    let g:vista_default_executive = 'ctags'
+    let g:vista_fzf_preview = ['right:50%']
+    let g:vista#renderer#enable_icon = 1
 
     "IndentLine
     let g:indentLine_char_list = ['|', '¦', '┆', '┊']
