@@ -136,7 +136,7 @@ let g:which_key_map.t = {
             \ 'w' : 'Word wrap',
             \ 'h' : 'Toggle highlights',
             \ 'e' : 'Toggle errors',
-            \ 't' : 'Toggle tagbar',
+            \ 't' : 'Toggle tag bar',
             \ 'f' : 'Toggle floating terminal',
             \ 'c' : 'Toggle conceal',
             \ }

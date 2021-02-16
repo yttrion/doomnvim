@@ -386,7 +386,7 @@ KEYBINDINGS                                    *doomnvim-commands-keybindings*
 |           | <w>ord wrap
 |           | <h>ighlight
 |           | <e>rror
-|           | <t>agbar
+|           | <t>ag bar
 |           | <f>loating terminal
 |           | <c>onceal level
 | <w>indow
@@ -405,6 +405,9 @@ FUNCTIONS                                                 *doomnvim-functions*
 
 `LayoutToggle`: Toggles the layout between Vertical Layout and Horizontal
 Layout.
+
+`NearestFunctionOrMethod`: Default function of `Vista.vim`, showing the nearest
+tag on the status line
 
 `RenameFile`: Creates a prompt to rename a file 
 

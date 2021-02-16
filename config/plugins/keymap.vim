@@ -118,7 +118,7 @@ map <silent><space>tl 			:set invnumber<bar>set invrelativenumber<CR>
 map <silent><space>tw 			:set wrap!<CR>
 map <silent><space>th 			:noh<CR>
 map <silent><space>te 			:hi Error NONE<CR>
-map <silent><space>tt 			:TagbarToggle<CR>
+map <silent><space>tt 			:Vista<CR>
 map <silent><space>tf 			:FloatermNew<CR>
 map <silent><space>tc 			:call Toggleconceal()<CR>
 "}}}
