@@ -597,7 +597,6 @@ v0.1.4-1
 - functions.vim, gui.vim and globals.vim are now loaded by the doomnvim
   plugin instead of the init.vim file
 
-
 v0.1.5
 - Implemented autoclose parenthesis, brackets, quotes
 - Updated the documentation

@@ -85,7 +85,10 @@ function! doomnvim#functions#createReport() abort
 
 endfunction
 
-
+function! doomnvim#functions#installPlugs()
+    call doomnvim#functions#custplug()
+    execute(':PlugInstall') 
+endfunction
 
 function! doomnvim#functions#disable_plug()
   for name in g:doomnvim_disabled_plugins
@@ -107,7 +110,6 @@ function! doomnvim#functions#checkinstall(pkg)
     else
         return 0
     endif
-
 endfunction
 
 function! doomnvim#functions#install(name,author,pkg)
@@ -141,3 +143,6 @@ function! doomnvim#functions#custplug()
     endif
 endfunction
 
+function! doomnvim#functions#clean_plugins() abort
+    call doomnvim#logging#message('*','Cleaning old plugins',2)
+endfunction

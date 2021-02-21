@@ -91,7 +91,7 @@ map <silent><space>hX 			:call OpenInFloat("$HOME/.doomnvim/install.sh --uninsta
 
 " Plugins-------------------------------------------------------------------{{{
 map <silent><space>pu 			:PlugUpdate<CR>
-map <silent><space>pi 			:PlugInstall<CR>
+map <silent><space>pi 			:call doomnvim#functions#installPlugs()<CR>
 map <silent><space>pc 			:PlugClean<CR>
 map <silent><space>pm 			:PlugUpgrade<CR>
 map <silent><space>pr 			:UpdateRemotePlugins<CR>
