@@ -128,11 +128,10 @@ List of user custom plugins
 It currently only supports github repos.
 Post-update hooks are not yet supported
 
-`g:doomnvim_lint_onsave`
-`unused`
-default value = 1
-Enables linting on save : 1
-Disable linting on save : 0
+`g:doomnvim_sessionsave_onquit`
+default value = 0
+Enables session save on quit : 1
+Disable session save on quit : 0
 
 `g:doomnvim_autocomplete_par`
 default value = 1
@@ -640,5 +639,6 @@ v0.1.7
 - Added the `ToggleConceal()`function
 - Fixed installer update error
 - Added acknowledgment in README.md
+- Added autosave option when quit
 
 " vim:tw=80:ft=help:norl:
