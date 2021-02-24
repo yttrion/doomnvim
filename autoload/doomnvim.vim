@@ -96,6 +96,16 @@ let g:doomnvim_open_in_vsplit = 0
 " @default = 1
 let g:doomnvim_conceallevel = 1
 
+" Show spell
+" 0 : disable spell check on start
+" 1 : enable spell check on start
+" @default = 0
+let g:doomnvim_spell = 0
+
+" Spell lang
+" @default = en
+let g:doomnvim_lang = en
+
 " Logging level
 " 0 : No logging
 " 1 : All errors, no echo (default)

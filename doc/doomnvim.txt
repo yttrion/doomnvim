@@ -388,6 +388,7 @@ KEYBINDINGS                                    *doomnvim-commands-keybindings*
 |           | <t>ag bar
 |           | <f>loating terminal
 |           | <c>onceal level
+|           | <s>pell
 | <w>indow
 |           | <t>oggle layout
 |           | <r>otate
@@ -640,5 +641,6 @@ v0.1.7
 - Fixed installer update error
 - Added acknowledgment in README.md
 - Added autosave option when quit
+- Added spell commands and variables
 
 " vim:tw=80:ft=help:norl:

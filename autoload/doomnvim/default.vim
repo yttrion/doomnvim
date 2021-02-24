@@ -29,6 +29,7 @@ function! doomnvim#default#options() abort
     set shortmess+=at
 
     set smarttab
+    let &spelllang = g:doomnvim_lang
     let &expandtab = g:doomnvim_expand_tabs
     let &tabstop = g:doomnvim_indent
     let &softtabstop = g:doomnvim_indent
@@ -39,6 +40,9 @@ function! doomnvim#default#options() abort
         set number relativenumber
     else
         set number
+    endif
+    if g:doomnvim_spell ==# 1
+        set spell
     endif
     filetype plugin indent on
     syntax on

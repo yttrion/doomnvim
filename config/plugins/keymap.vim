@@ -121,6 +121,7 @@ map <silent><space>te 			:hi Error NONE<CR>
 map <silent><space>tt 			:Vista<CR>
 map <silent><space>tf 			:FloatermNew<CR>
 map <silent><space>tc 			:call Toggleconceal()<CR>
+map <silent><space>ts           :set spell!<CR>
 "}}}
 
 " Window--------------------------------------------------------------------{{{

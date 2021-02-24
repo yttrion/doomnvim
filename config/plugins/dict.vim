@@ -139,6 +139,7 @@ let g:which_key_map.t = {
             \ 't' : 'Toggle tag bar',
             \ 'f' : 'Toggle floating terminal',
             \ 'c' : 'Toggle conceal',
+            \ 's' : 'Toggle spellcheck',
             \ }
 
 
