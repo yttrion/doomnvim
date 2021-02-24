@@ -39,10 +39,6 @@ let g:doomnvim_enable_guicolors = 1
 " @default = 25
 let g:doomnvim_sidebar_width = 25
 
-" Tagbar left 
-" @default 0
-let g:doomnvim_tagbar_left = 0
-
 " Show hidden files
 " @default = 1
 let g:doomnvim_show_hidden = 1
@@ -71,10 +67,10 @@ let g:doomnvim_disabled_plugins = []
 " let g:doomnvim_disabled_plugins = ['nerdtree']
 let g:doomnvim_custom_plugins = []
 
-" Lint on save
+" Save session on quit
 " @default = 1
 " UNUSED
-let g:doomnvim_lint_onsave = 1
+let g:doomnvim_sessionsave_onquit = 0
 
 " Autocomplete paranthesis
 " @default = 1
