@@ -29,7 +29,6 @@ function! doomnvim#default#options() abort
     set shortmess+=at
 
     set smarttab
-    let &spelllang = g:doomnvim_lang
     let &expandtab = g:doomnvim_expand_tabs
     let &tabstop = g:doomnvim_indent
     let &softtabstop = g:doomnvim_indent

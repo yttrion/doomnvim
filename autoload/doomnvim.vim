@@ -102,9 +102,6 @@ let g:doomnvim_conceallevel = 1
 " @default = 0
 let g:doomnvim_spell = 0
 
-" Spell lang
-" @default = en
-let g:doomnvim_lang = en
 
 " Logging level
 " 0 : No logging
