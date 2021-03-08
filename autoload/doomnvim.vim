@@ -64,7 +64,8 @@ let g:doomnvim_disabled_plugins = []
 " Custom plugins
 " @default = []
 " example
-" let g:doomnvim_disabled_plugins = ['nerdtree']
+" let g:doomnvim_custom_plugins = ['author/name']
+" Note that it will only work with github plugins
 let g:doomnvim_custom_plugins = []
 
 " Save session on quit
@@ -85,7 +86,6 @@ let g:doomnvim_resize_percent = 0.2
 " @default = 1
 let g:doomnvim_enable_startmenu = 1
 
-
 " Automatically open new files in a vertical split
 " @default = 0
 let g:doomnvim_open_in_vsplit = 0
@@ -101,7 +101,6 @@ let g:doomnvim_conceallevel = 1
 " 1 : enable spell check on start
 " @default = 0
 let g:doomnvim_spell = 0
-
 
 " Logging level
 " 0 : No logging

@@ -489,9 +489,9 @@ Lorem
 ==============================================================================
 HACKING DOOMNVIM                                            *doomnvim-hacking*
 
-doomnvim aims to be hackable to suit everyone's needs. Therefore
-
-This is the layout of doomnvim:
+doomnvim aims to be hackable to suit everyone's needs. Therefore multiple
+options can be changed (see |doomnvim-options|). If that is not enough, here
+is the layout of the doomnvim project:
 
 |_ autoload/                            # Files loaded at launch
 |   |_ doomnvim/                        # doomnvim core
@@ -515,8 +515,8 @@ This is the layout of doomnvim:
 |   |_ molokai.vim                      # `Tomas Restrepo`  theme
 |   |_ nord.vim                         # `Artic Ice Studio`  theme
 |   |_ one.vim                          # `vim-one` colorscheme
-|   |_ spacegray.vim                    # `Akshay Hedge` colorscheme 
 |   |_ space-vim-dark.vim               # `Spacevim` dark theme
+|   |_ spacegray.vim                    # `Akshay Hedge` colorscheme 
 |   |_ vim-material.vim                 # `hzchris` material theme
 |_ config/                              # Configuration files of doomnvim
 |   |_ plugins/                         # Plugin config
@@ -533,7 +533,7 @@ This is the layout of doomnvim:
 |_ undodirs/                            # .undodirs/ folders location
 |_ logs/                                # Location of the doomnvim log file
 |_ init.vim                             # init.vim file
-|_ install.sh                           # doomnvim managment
+|_ install.sh                           # doomnvim installer script
 
 
 doomnvim also creates the `BFC`, which serves as the user configuration file
