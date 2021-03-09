@@ -18,7 +18,7 @@ let g:coc_global_extensions = [
 			\ 'coc-sh',
 			\ 'coc-snippets',
 			\ 'coc-tsserver',
-			\ 'coc-xml'
+			\ 'coc-xml',
             \ 'coc-texlab',
             \ 'coc-vimlsp',
 			\ ]
