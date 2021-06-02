@@ -117,8 +117,7 @@ update_repo(){
 	if [[ -d "$HOME/.doomnvim" ]]; then
 		info "Updating doomnvim..."
 		cd "$HOME/.doomnvim"
-        git reset --hard HEAD
-        git pull
+        git pull --no-edit
 		cd - > /dev/null 2>&1
 		success "Successfully updated doomnvim"
 	else
