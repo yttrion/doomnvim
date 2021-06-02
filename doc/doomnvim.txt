@@ -643,5 +643,6 @@ v0.1.7
 - Added autosave option when quit
 - Added spell commands and variables
 - Changed `vim-clap`to`telescope.nvim`
+- 
 
 " vim:tw=80:ft=help:norl:
