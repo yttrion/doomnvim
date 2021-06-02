@@ -90,6 +90,7 @@ endfunction
 
 function! doomnvim#functions#installPlugs()
     call doomnvim#functions#custplug()
+    source g:doomnvim_root.'/init.vim' 
     execute(':PlugInstall') 
 endfunction
 
@@ -134,6 +135,8 @@ function! doomnvim#functions#custplug()
     if len(g:doomnvim_custom_plugins) == 0
         call doomnvim#logging#message('!', 'No custom plugins found', 1)
     else
+        call doomnvim#logging#message('+', 'Creating snapshot...', 2)
+        execute(':PlugSnapshot '.g:doomnvim_root.'/logs/snapshot')
         for name in g:doomnvim_custom_plugins
             let author = system('echo '.name." | sed 's/\\/.*//'") 
             let pkg = system('echo '.name." | sed 's/.*\\///'") 
