@@ -28,6 +28,7 @@ let g:which_key_map.b = {
             \ 'f' : 'Focus buffer',
             \ 'r' : 'Resize equaly',
             \ 't' : 'Buffered terminal',
+            \ 'l' : 'Buffer list',
             \ 's' : {
                 \ 'name' : '+split',
                 \ 'v' : 'vertical',
@@ -60,6 +61,7 @@ let g:which_key_map.c = {
             \ 'v' : 'Vertical edit',
             \ 'f' : 'Format selected',
             \ 'r' : 'Rename symbol',
+            \ 't' : 'Help tags',
             \ }
 
 let g:which_key_map.f = {
@@ -69,6 +71,7 @@ let g:which_key_map.f = {
             \ 'e' : 'File explorer',
             \ 'o' : 'Open file',
             \ 'r' : 'Rename file',
+            \ 'f' : 'Find file',
             \ 'n' : 'New file',
             \ }
 

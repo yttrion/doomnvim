@@ -50,6 +50,7 @@ map <silent><space>bwi 			:call ResizeWin(1,1)<CR>
 map <silent><space>bwd 			:call ResizeWin(1,0)<CR>
 map <silent><space>bhi 			:call ResizeWin(0,1)<CR>
 map <silent><space>bhd 			:call ResizeWin(0,0)<CR>
+map <silent><space>bl           :Telescope buffers<CR>
 "}}}
 
 " Code operation------------------------------------------------------------{{{
@@ -59,10 +60,12 @@ map <silent><space>cc 			<Plug>NERDCommenterToggle
 map <silent><space>cv           <C-v>
 map <silent><space>cf           <Plug>(coc-format-selected)
 map <silent><space>cr           <Plug>(coc-rename)
+map <silent><space>fh           :Telescope help_tags<CR>
 "}}}
 
 " File operation------------------------------------------------------------{{{
 map <silent><space>fs 			:call SaveFile()<CR>
+map <silent><space>ff          :Telescope find_files<CR>
 map <silent><space>fS 			:wa<CR>
 map <silent><space>fe 			:NERDTreeToggle<CR>
 map <silent><space>fo 			:sp <bar>buffer<bar>call bufnr("")<bar>Ex<CR>
@@ -151,16 +154,8 @@ map <silent><space><space>l		<C-w>l
 
 " Telescope-----------------------------------------------------------------{{{
 " Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-" Using lua functions
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 "}}}
 
 " Misc functions------------------------------------------------------------{{{

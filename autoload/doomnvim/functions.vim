@@ -130,7 +130,7 @@ function! doomnvim#functions#install(name,author,pkg)
 
 endfunction
 
-function! doomnvim#functions#custplug()
+function! doomnvim#functions#custplug() abort
     call doomnvim#logging#message('+', 'Looking for custom plugins', 2)
     if len(g:doomnvim_custom_plugins) == 0
         call doomnvim#logging#message('!', 'No custom plugins found', 1)
