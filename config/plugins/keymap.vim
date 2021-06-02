@@ -37,7 +37,7 @@ map <silent><space>bq           :bunload<CR>
 map <silent><space>bk 			:q!<CR>
 map <silent><space>be 			:enew<CR>
 map <silent><space>bc 			:<C-u>up<bar>%bd<bar>e#<CR>
-map <silent><space>bf 			:call BufSel("")<CR>
+map <silent><space>bf 			:Telescope buffers<CR>
 map <silent><space>br 			<C-w>=<CR>
 map <silent><space>bt 			:call TermToggle(7)<CR>
 map <silent><space>bsv 			:vsp<CR>
@@ -151,12 +151,6 @@ map <silent><space><space>k		<C-w>k
 map <silent><space><space>l		<C-w>l
 "}}}
 
-
-" Telescope-----------------------------------------------------------------{{{
-" Find files using Telescope command-line sugar.
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-
-"}}}
 
 " Misc functions------------------------------------------------------------{{{
 function! s:show_documentation()

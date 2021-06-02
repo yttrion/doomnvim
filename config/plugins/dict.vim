@@ -28,7 +28,6 @@ let g:which_key_map.b = {
             \ 'f' : 'Focus buffer',
             \ 'r' : 'Resize equaly',
             \ 't' : 'Buffered terminal',
-            \ 'l' : 'Buffer list',
             \ 's' : {
                 \ 'name' : '+split',
                 \ 'v' : 'vertical',

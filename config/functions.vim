@@ -87,36 +87,6 @@ function! RenameFile()
 endfunction
 
 
-function! BufSel(pattern)
-    call doomnvim#logging#message("*", "Called BufSel", 2)
-  	let bufcount = bufnr("$")
-  	let currbufnr = 1
-  	let nummatches = 0
-  	let firstmatchingbufnr = 0
-  	while currbufnr <= bufcount
-  	  	if(bufexists(currbufnr))
-  	  	  	let currbufname = bufname(currbufnr)
-  	  	  	if(match(currbufname, a:pattern) > -1)
-  	  	  	  	echo currbufnr . ": ". bufname(currbufnr)
-  	  	  	  	let nummatches += 1
-  	  	  	  	let firstmatchingbufnr = currbufnr
-  	  	  	endif
-  	  	endif
-  	  	let currbufnr = currbufnr + 1
-  	endwhile
-  	if(nummatches == 1)
-  	  	execute ":buffer ". firstmatchingbufnr
-  	elseif(nummatches > 1)
-  	  	let desiredbufnr = input("Enter buffer number: ")
-  	  	if(strlen(desiredbufnr) != 0)
-  	    	execute ":buffer ". desiredbufnr
-  	  	endif
-  	else
-	    call doomnvim#logging#message("!", "No matching buffers", 1)
-  	endif
-endfunction
-
-
 function! CreateCommit()
 	call doomnvim#logging#message("*", "Created commit", 2)
 	let commit_msg = input('Commit message: ')
