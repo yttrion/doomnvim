@@ -50,7 +50,6 @@ map <silent><space>bwi 			:call ResizeWin(1,1)<CR>
 map <silent><space>bwd 			:call ResizeWin(1,0)<CR>
 map <silent><space>bhi 			:call ResizeWin(0,1)<CR>
 map <silent><space>bhd 			:call ResizeWin(0,0)<CR>
-map <silent><space>bl           :Telescope buffers<CR>
 "}}}
 
 " Code operation------------------------------------------------------------{{{

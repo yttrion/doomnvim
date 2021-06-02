@@ -76,7 +76,7 @@ After doomnvim is installed, run `vim` and doomnvim will automatically install p
 - [nerdcommenter](https://github.com/preservim/nerdcommenter)
 - [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 - [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
-- [vim-clap](https://github.com/liuchengxu/vim-clap)
+- [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - [spaceline.vim](https://github.com/glepnir/spaceline.vim)
 - [indentLine](https://github.com/Yggdroot/indentLine)
 - [vimade](https://github.com/TaDaa/vimade)
