@@ -143,8 +143,7 @@ function! doomnvim#functions#custplug() abort
         execute(':PlugSnapshot '.g:doomnvim_root.'/logs/snapshot-EMPTY')
     else
         call doomnvim#logging#message('+', 'Creating snapshot...', 2)
-        let date=execute(":strftime('%d-%m-%y')")
-        execute(':PlugSnapshot '.g:doomnvim_root.'/logs/snapshot'.date)
+        execute(':PlugSnapshot '.g:doomnvim_root.'/logs/snapshot-custom')
         for name in g:doomnvim_custom_plugins
             let author = system('echo '.name." | sed 's/\\/.*//'") 
             let pkg = system('echo '.name." | sed 's/.*\\///'") 
