@@ -112,14 +112,14 @@ function! doomnvim#functions#checkinstall(pkg)
 endfunction
 
 
-function! doomnvim#functions#installPlugs()
+function doomnvim#functions#installPlugs()
     call doomnvim#functions#checkUserPlugins()
-    execute 'source' fnamemodify(expand('<sfile>'), ':h') '../../init.vim'
+    execute 'source' g:doomnvim_root.'init.vim'
     execute(':PlugInstall') 
 endfunction
 
 
-function! doomnvim#functions#checkUserPlugins() abort
+function doomnvim#functions#checkUserPlugins() abort
     if filereadable(g:doomnvim_root.'logs/upkg')
         call doomnvim#logging#message('+', 'Found backup of user pkg', 2)
     else
@@ -134,9 +134,9 @@ function! doomnvim#functions#checkUserPlugins() abort
         for name in g:doomnvim_custom_plugins
             let author = system('echo '.name." | sed 's/\\/.*//'") 
             let pkg = system('echo '.name." | sed 's/.*\\///'") 
-            let found = system(':!grep -R "'.name.'" $HOME/.doomnvim/logs/upkg') 
-            if len(found) != 0
-                exec ":silent !echo '".author.'/'.pkg."' >> $HOME/.doomnvim/logs/upkg"
+            let found = system(':!grep -Rc "'.name.'" $HOME/.doomnvim/logs/upkg') 
+            if found == 0
+                exec ':silent !echo '.name.' >> $HOME/.doomnvim/logs/upkg'
                 call doomnvim#functions#addPlugin(name, author, pkg)
             else
                 call doomnvim#logging#message('+', 'Pkg already backed up', 2)
@@ -147,7 +147,7 @@ function! doomnvim#functions#checkUserPlugins() abort
 endfunction
 
 
-function! doomnvim#functions#addPlugin(name, author, pkg)
+function doomnvim#functions#addPlugin(name, author, pkg)
     call doomnvim#logging#message('+','Cloning repo for '.a:name,2)
     try
         call system('git clone -q https://github.com/'
@@ -156,9 +156,9 @@ function! doomnvim#functions#addPlugin(name, author, pkg)
     catch
         call doomnvim#logging#message('!','Unable to clone repo',1)
     endtry
-    let found = system(':!grep -Rc "'.a:pkg.'" '.g:doomnvim_root.'config/main.vim')
+    let found = system(':!grep -Rc "'.a:pkg.'" $HOME/.doomnvim/config/main.vim')
     call doomnvim#logging#message('+','Checking if plugins is already flagged',2)
-    if found ==# 0
+    if found == 0
         call doomnvim#logging#message('+','Adding plugin to main.vim',2)
         let cmd = "42iPlug ".string(a:name)
         call system('sed -i "'.cmd.'" $HOME/.doomnvim/config/main.vim')
@@ -169,15 +169,16 @@ endfunction
 
 
 
-function! doomnvim#functions#cleanPlugin()
-    let userpkg = readfile('$HOME/.doomnvim/logs/')
+function doomnvim#functions#cleanPlugin()
+    let userpkg = readfile(g:doomnvim.'logs/upkg')
     for value in userpkg
         let author = system('echo '.value." | sed 's/\\/.*//'") 
         let pkg = system('echo '.value." | sed 's/.*\\///'") 
         if index(g:doomnvim_custom_plugins, value) == -1
             call doomnvim#logging#message('+', 'Found obsolete plugin', 2)
             execute(':!rm -rf $HOME/.doomnvim/plugged/'.pkg)
-            call system('sed -i "/'.value.'/d" $HOME/.doomnvim/config/main.vim')
+            call system(':!sed -i "/'.value.'/d" $HOME/.doomnvim/config/main.vim')
+            call system(':!sed -i "/'.value.'/d" $HOME/.doomnvim/logs/upkg')
         endif
     endfor
     
