@@ -91,6 +91,7 @@ endfunction
 function! doomnvim#functions#installPlugs()
     call doomnvim#functions#custplug()
     source g:doomnvim_root.'/init.vim' 
+    source g:doomnvim_root.'/config/main.vim' 
     execute(':PlugInstall') 
 endfunction
 
@@ -116,34 +117,10 @@ function! doomnvim#functions#checkinstall(pkg)
     endif
 endfunction
 
-function! doomnvim#functions#install(name,author,pkg)
-    call doomnvim#logging#message('+','Cloning repo for '.a:name,2)
-    try
-        call system('git clone -q https://github.com/'
-                    \ .a:name
-                    \ .' $HOME/.doomnvim/plugged/'.a:pkg)
-    catch
-        call doomnvim#logging#message('!','Unable to clone repo',1)
-    endtry
-    let found = system(':!grep -Fxq "'.pkg.'" '.g:doomnvim_root.'/config/main.vim')
-    call doomnvim#logging#message('+','Checking if plugins is already installed',2)
-    if found ==# 1
-        call doomnvim#logging#message('+','New plugin found',2)
-        let cmd = "42iPlug ".string(a:name)
-        call system('sed -i "'.cmd.'" $HOME/.doomnvim/config/main.vim')
-    else
-        call doomnvim#logging#message('+','Plugin already installed',2)
-    endif
-endfunction
-
 function! doomnvim#functions#custplug() abort
     call doomnvim#logging#message('+', 'Looking for custom plugins', 2)
-    if len(g:doomnvim_custom_plugins) == 0
-        call doomnvim#logging#message('+', 'Generating empty snapshot', 2)
-        execute(':PlugSnapshot '.g:doomnvim_root.'/logs/snapshot-EMPTY')
-    else
-        call doomnvim#logging#message('+', 'Creating snapshot...', 2)
-        execute(':PlugSnapshot '.g:doomnvim_root.'/logs/snapshot-custom')
+    if len(g:doomnvim_custom_plugins) != 0
+        call doomnvim#logging#message('+', 'Found user plugins', 2)
         for name in g:doomnvim_custom_plugins
             let author = system('echo '.name." | sed 's/\\/.*//'") 
             let pkg = system('echo '.name." | sed 's/.*\\///'") 
@@ -156,8 +133,29 @@ function! doomnvim#functions#custplug() abort
     endif
 endfunction
 
+function! doomnvim#functions#install(name,author,pkg)
+    call doomnvim#logging#message('+','Cloning repo for '.a:name,2)
+    try
+        call system('git clone -q https://github.com/'
+                    \ .a:name
+                    \ .' $HOME/.doomnvim/plugged/'.a:pkg)
+    catch
+        call doomnvim#logging#message('!','Unable to clone repo',1)
+    endtry
+    let found = system(':!grep -Fxq "'.a:pkg.'" '.g:doomnvim_root.'/config/main.vim')
+    call doomnvim#logging#message('+','Checking if plugins is already installed',2)
+    if found ==# 1
+        call doomnvim#logging#message('+','New plugin found',2)
+        let cmd = "42iPlug ".string(a:name)
+        call system('sed -i "'.cmd.'" $HOME/.doomnvim/config/main.vim')
+    else
+        call doomnvim#logging#message('+','Plugin already installed',2)
+    endif
+endfunction
+
 function! doomnvim#functions#clean_plugins() abort
     call doomnvim#logging#message('*','Cleaning old plugins',2)
+    execute(':!')
     "Format of g:plugs
     " {
     "   'name.vim': {
