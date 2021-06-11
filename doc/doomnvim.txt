@@ -504,11 +504,12 @@ is the layout of the doomnvim project:
 |   |_ alduin.vim                       # `Alessandro Yorba` theme
 |   |_ deus.vim                         # `ajmwagar` theme
 |   |_ doom.vim                         # doom colorscheme (`default`)
+|   |_ doom-one.vim                     # `romgrk` theme
 |   |_ gruvbox.vim                      # `morhetz` theme
 |   |_ iceberg.vim                      # `cocopon` theme
 |   |_ molokai.vim                      # `Tomas Restrepo`  theme
 |   |_ nord.vim                         # `Artic Ice Studio`  theme
-|   |_ one.vim                          # `vim-one` colorscheme
+|   |_ one.vim                          # `vim-one` theme
 |   |_ space-vim-dark.vim               # `Spacevim` dark theme
 |   |_ vim-material.vim                 # `hzchris` material theme
 |_ config/                              # Configuration files of doomnvim
@@ -619,7 +620,7 @@ v0.1.5-2
 - New colorscheme switcher (colors are saved on quit)
 
 v0.1.6
-- Fixed `<Space>` keybindings not working as intented
+- Fixed `<Space>`keybindings not working as intented
 - Fixed session saves and dictionnary
 - Changed keybindings to match some of doom-emacs's
 - Disabled `g:doomnvim_check_updates`by default
