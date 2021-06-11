@@ -134,9 +134,9 @@ function! doomnvim#functions#checkUserPlugins() abort
         for name in g:doomnvim_custom_plugins
             let author = system('echo '.name." | sed 's/\\/.*//'") 
             let pkg = system('echo '.name." | sed 's/.*\\///'") 
-            let found = system(':!grep -R "'.name.'" $HOME/.doomnvim/logs/userpackages') 
+            let found = system(':!grep -R "'.name.'" $HOME/.doomnvim/logs/upkg') 
             if len(found) != 0
-                exec ":silent !echo '".author.'/'.pkg."' >> $HOME/.doomnvim/logs/userpackages"
+                exec ":silent !echo '".author.'/'.pkg."' >> $HOME/.doomnvim/logs/upkg"
                 call doomnvim#functions#addPlugin(name, author, pkg)
             else
                 call doomnvim#logging#message('+', 'Pkg already backed up', 2)
