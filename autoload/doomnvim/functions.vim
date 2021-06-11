@@ -90,9 +90,8 @@ endfunction
 
 function! doomnvim#functions#installPlugs()
     call doomnvim#functions#custplug()
-    call doomnvim#logging#message('!', g:doomnvim_root.'/init.vim', 1)
-    source g:doomnvim_root.'/init.vim' 
-    source g:doomnvim_root.'/config/main.vim' 
+    source g:doomnvim_root.'init.vim' 
+    source g:doomnvim_root.'config/main.vim' 
     execute(':PlugInstall') 
 endfunction
 
