@@ -70,7 +70,7 @@ map <silent><space>fe 			:NERDTreeToggle<CR>
 map <silent><space>fo 			:sp <bar>buffer<bar>call bufnr("")<bar>Ex<CR>
 map <silent><space>fr 			:call RenameFile()<CR>
 map <silent><space>fn           :DashboardNewFile<CR>
-map <silent><space>fh           :Telescope help_tags<CR>
+map <silent><space>fh           :Telescope search_history<CR>
 "}}}
 
 " Git operation-------------------------------------------------------------{{{

@@ -112,12 +112,11 @@ function doomnvim#default#loadGlob()
     let g:dashboard_session_directory = g:doomnvim_root . 'sessions'
     let g:dashboard_custom_shortcut={
       \ 'last_session'       : 'SPC q l',
-      \ 'find_history'       : 'SPC s h',
-      \ 'find_file'          : 'SPC s f',
+      \ 'find_history'       : 'SPC f h',
+      \ 'find_file'          : 'SPC f f',
       \ 'new_file'           : 'SPC f n',
       \ 'change_colorscheme' : 'SPC m c',
       \ 'find_word'          : 'SPC s w',
-      \ 'book_marks'         : 'SPC m j',
       \ }
     let g:dashboard_custom_header = [
                 \ "=================     ===============     ===============   ========  ========",
