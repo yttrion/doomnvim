@@ -59,17 +59,18 @@ map <silent><space>cc 			<Plug>NERDCommenterToggle
 map <silent><space>cv           <C-v>
 map <silent><space>cf           <Plug>(coc-format-selected)
 map <silent><space>cr           <Plug>(coc-rename)
-map <silent><space>fh           :Telescope help_tags<CR>
+map <silent><space>cs           :Telescope spell_suggest<CR>
 "}}}
 
 " File operation------------------------------------------------------------{{{
 map <silent><space>fs 			:call SaveFile()<CR>
-map <silent><space>ff          :Telescope find_files<CR>
+map <silent><space>ff           :Telescope find_files<CR>
 map <silent><space>fS 			:wa<CR>
 map <silent><space>fe 			:NERDTreeToggle<CR>
 map <silent><space>fo 			:sp <bar>buffer<bar>call bufnr("")<bar>Ex<CR>
 map <silent><space>fr 			:call RenameFile()<CR>
 map <silent><space>fn           :DashboardNewFile<CR>
+map <silent><space>fh           :Telescope help_tags<CR>
 "}}}
 
 " Git operation-------------------------------------------------------------{{{
@@ -79,13 +80,14 @@ nmap <silent><space>ghn 		<Plug>(GitGutterNextHunk)
 nmap <silent><space>ghs 		<Plug>(GitGutterStageHunk)
 nmap <silent><space>ghu 		<Plug>(GitGutterUndoHunk)
 nmap <silent><space>ghP  		<Plug>(GitGutterPreviewHunk)
-map <silent><space>gs 			:call OpenInFloat("git status")<CR>
-map <silent><space>gC           :git checkout 
-map <silent><space>gc 			:call CreateCommit()<CR>
+map <silent><space>gs 			:Telescope git_status<CR>
+map <silent><space>gb           :Telescope git_branches<CR> 
+map <silent><space>gc 			:Telescope git_commits<CR>
 "}}}
 
 " Help----------------------------------------------------------------------{{{
 map <silent><space>hh 			:helpgrep .<CR>
+map <silent><space>ht 			:Telescope help_tags<CR>
 map <silent><space>hi 			:call OpenInFloat("$HOME/.doomnvim/install.sh --help")<CR>
 map <silent><space>hu 			:call OpenInFloat("$HOME/.doomnvim/install.sh --update")<CR>
 map <silent><space>hX 			:call OpenInFloat("$HOME/.doomnvim/install.sh --uninstall")<CR>
@@ -94,7 +96,7 @@ map <silent><space>hX 			:call OpenInFloat("$HOME/.doomnvim/install.sh --uninsta
 " Plugins-------------------------------------------------------------------{{{
 map <silent><space>pu 			:PlugUpdate<CR>
 map <silent><space>pi 			:call doomnvim#functions#installPlugs()<CR>
-map <silent><space>pc 			:PlugClean<CR>
+map <silent><space>pc 			:call doomnvim#functions#cleanPlugin()<CR>
 map <silent><space>pm 			:PlugUpgrade<CR>
 map <silent><space>pr 			:UpdateRemotePlugins<CR>
 map <silent><space>pau 			:CocUpdate<CR>
@@ -138,7 +140,7 @@ map <silent><space>wr           :call SwitchBuf()<CR>
 
 " Misc----------------------------------------------------------------------{{{
 map <silent><space>mS 			:source %<CR>
-map <silent><Leader>mc          :Clap colors<CR>
+map <silent><Leader>mc          :Telescope colorscheme<CR>
 map <silent><Leader>mj          :DashboardJumpMark<CR>
 map <silent><Leader>mh          :checkhealth<CR>
 "}}}
