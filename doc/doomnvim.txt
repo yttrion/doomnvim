@@ -183,7 +183,7 @@ The colorscheme of doomnvim. Default is 'doom'. There are pre-configured
 colorschemes installed in `$HOME/.doomnvim/colors/`:
     - `alduin`
     - `deus`
-    - `doom` (default)
+    - `doom-one` (default)
     - `gotham256`
     - `gruvbox`
     - `iceberg`
@@ -308,7 +308,7 @@ KEYBINDINGS                                    *doomnvim-commands-keybindings*
 |           | <k>ill current
 |           | <t>oggle buffered terminal
 |           | <e>mpty buffer
-|           | <f>ocus specific buffer
+|           | <l>ist buffers
 |           | <r>esize equally
 |           | <c>lose all except focused
 |           | <s>plit
@@ -332,9 +332,12 @@ KEYBINDINGS                                    *doomnvim-commands-keybindings*
 |           | <c>omment line
 |           | <v>ertical edition
 |           | <r>ename symbol
+|           | <s>pell suggest
 | <f>ile
 |           | <s>ave file
 |           | <S>ave all
+|           | <f>ind file
+|           | <h>istory
 |           | <e>xplorer
 |           | <o>pen
 |           | <r>ename file
@@ -348,13 +351,14 @@ KEYBINDINGS                                    *doomnvim-commands-keybindings*
 |           |           | <u>ndo
 |           |           | <P>review
 |           | <s>tatus
-|           | <C>heckout
-|           | <c>reate commit
+|           | <b>ranches
+|           | <c>ommits
 | <h>elp
 |           | <h>elp of doomnvim
+|           | <t>ags
 |           | <i>nstaller usage
 |           | <u>pdate doomnvim
-|           | <X> : uninstall doomnvim
+|           | <X> UNINSTALL DOOMNVIM
 | <m>isc
 |           | <S>ource file
 |           | <c>olorscheme switch
@@ -410,11 +414,6 @@ Layout.
 tag on the status line
 
 `RenameFile`: Creates a prompt to rename a file 
-
-`BufSel`: Show a list of open buffers in doomnvim. Blank buffers are internal
-buffers.
-
-`CreateCommit`: Create a commit message in a floating terminal
 
 `SwitchBuf`: Switches buffer positions
 
@@ -476,10 +475,6 @@ KNOWN ISSUES                                                  *doomvim-issues*
 - The floating terminal may not close and might leave a artifact: Use <Space>bk
   to close it.
 
-- To remove a custom plugin (specified in `g:doomnvim_custom_plugins` and
-  already installed), one must remove manually the corresponding line in
-  `$HOME/.doomnvim/config/main`and the directory in `$HOME/.doomnvim/plugged/`
-  It will be fixed in the next updates.
 
 ==============================================================================
 FAQ                                                             *doomnvim-faq*
@@ -509,14 +504,12 @@ is the layout of the doomnvim project:
 |   |_ alduin.vim                       # `Alessandro Yorba` theme
 |   |_ deus.vim                         # `ajmwagar` theme
 |   |_ doom.vim                         # doom colorscheme (`default`)
-|   |_ gotham256.vim                    # `Andrea Leopardi` theme
 |   |_ gruvbox.vim                      # `morhetz` theme
 |   |_ iceberg.vim                      # `cocopon` theme
 |   |_ molokai.vim                      # `Tomas Restrepo`  theme
 |   |_ nord.vim                         # `Artic Ice Studio`  theme
 |   |_ one.vim                          # `vim-one` colorscheme
 |   |_ space-vim-dark.vim               # `Spacevim` dark theme
-|   |_ spacegray.vim                    # `Akshay Hedge` colorscheme 
 |   |_ vim-material.vim                 # `hzchris` material theme
 |_ config/                              # Configuration files of doomnvim
 |   |_ plugins/                         # Plugin config
@@ -531,7 +524,7 @@ is the layout of the doomnvim project:
 |_ plugged/                             # Location of pluggins
 |_ sessions/                            # Location vim workspaces
 |_ undodirs/                            # .undodirs/ folders location
-|_ logs/                                # Location of the doomnvim log file
+|_ logs/                                # Location of logs files
 |_ init.vim                             # init.vim file
 |_ install.sh                           # doomnvim installer script
 
@@ -642,7 +635,12 @@ v0.1.7
 - Added acknowledgment in README.md
 - Added autosave option when quit
 - Added spell commands and variables
+
+v0.1.7.1
 - Changed `vim-clap`to`telescope.nvim`
 - Fixed updater asking for merge message
+- Fixed installer for user plugins
+- Fixed uninstaller for user plugins
+- Fixed `telescope.nvim`keymap
 
 " vim:tw=80:ft=help:norl:

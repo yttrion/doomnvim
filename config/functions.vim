@@ -87,13 +87,6 @@ function! RenameFile()
 endfunction
 
 
-function! CreateCommit()
-	call doomnvim#logging#message("*", "Created commit", 2)
-	let commit_msg = input('Commit message: ')
-	if commit_msg != ''
-		exec ':!git commit -m ' . commit_msg
-	endif
-endfunction
 
 function! EditColorscheme()
     if g:doomnvim_bfc ==# 0
