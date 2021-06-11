@@ -17,7 +17,7 @@
 - [Install](#install)
 - [FAQ](#faq)
 - [Screenshots](#screenshots)
-- [Contribute](#contribute)
+- [Acknowledgements](#acknowledgements)
 
 # Introduction
 doomnvim is a vim-version of the [doom-emacs](https://github.com/hlissner/doom-emacs) framework.
@@ -25,7 +25,7 @@ It aims to add useful features to stock neovim and also serves as my daily drive
 
 
 ## NOTE
-**doomnvim was made for neovim, it may not work as intended on vim**
+**doomnvim was made for neovim 5, it may not work as intended on vim**
 
 **doomnvim works best with [Nerd fonts](https://github.com/ryanoasis/nerd-fonts)**
 
@@ -34,6 +34,8 @@ It aims to add useful features to stock neovim and also serves as my daily drive
 - Curated defaults for vim/neovim
 - Support for *many* languages with [coc.nvim](https://github.com/neoclide/coc.nvim)
 - Mnemonic key binding
+- Integration with `Telescope.nvim` 
+- Most features of a text editor
 
 # Install
 ## Prerequisites
@@ -68,4 +70,10 @@ After doomnvim is installed, run `vim` and doomnvim will automatically install p
 - [SpaceVim](https://github.com/SpaceVim/SpaceVim)
 ## Plugins and colorschemes
 Check doomnvim.txt
+
+
+
+
+# Contribute
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) 
 
