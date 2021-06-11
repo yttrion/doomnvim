@@ -170,7 +170,7 @@ endfunction
 
 
 function doomnvim#functions#cleanPlugin()
-    let userpkg = readfile(g:doomnvim.'logs/upkg')
+    let userpkg = readfile(g:doomnvim_root.'logs/upkg')
     for value in userpkg
         let author = system('echo '.value." | sed 's/\\/.*//'") 
         let pkg = system('echo '.value." | sed 's/.*\\///'") 
