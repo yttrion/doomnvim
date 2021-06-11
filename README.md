@@ -2,7 +2,7 @@
 
 # doomnvim
 
-[Install](#install) • [Documentation](#documentation) • [Screenshots](#screenshots) • [Contribute](#contribute)
+[Install](#install) • [Documentation](#documentation) • [Screenshots](#screenshots)
 
 ![License](https://img.shields.io/github/license/yttrion/doomnvim?style=flat-square)
 ![Release](https://img.shields.io/github/v/release/yttrion/doomnvim?include_prereleases&style=flat-square)
@@ -71,7 +71,4 @@ After doomnvim is installed, run `vim` and doomnvim will automatically install p
 ## Plugins and colorschemes
 Check doomnvim.txt
 
-
-# Contribute
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) 
 
