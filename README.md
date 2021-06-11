@@ -66,34 +66,6 @@ After doomnvim is installed, run `vim` and doomnvim will automatically install p
 # Acknowledgements
 - [doom-emacs](https://github.com/hlissner/doom-emacs)
 - [SpaceVim](https://github.com/SpaceVim/SpaceVim)
-## Plugins
-- [coc.nvim](https://github.com/neoclide/coc.nvim)
-- [vim-devicons](https://github.com/ryanoasis/vim-devicons)
-- [nerdtreee](https://github.com/preservim/nerdtree)
-- [vim-which-key](https://github.com/liuchengxu/vim-which-key)
-- [tagbar](https://github.com/preservim/tagbar)
-- [vim-floaterm](https://github.com/voldikss/vim-floaterm)
-- [nerdcommenter](https://github.com/preservim/nerdcommenter)
-- [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
-- [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
-- [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-- [spaceline.vim](https://github.com/glepnir/spaceline.vim)
-- [indentLine](https://github.com/Yggdroot/indentLine)
-- [vimade](https://github.com/TaDaa/vimade)
-- [vim-colorscheme-icons](https://github.com/bryanmylee/vim-colorscheme-icons)
-- [vimtex](https://github.com/lervag/vimtex)
-- [vim-latex-live-preview](https://github.com/xuhdev/vim-latex-live-preview)
-## Colorschemes
-- [alduin](https://github.com/AlessandroYorba/Alduin)
-- [deus](https://github.com/ajmwagar/vim-deus)
-- [gotham256](https://github.com/whatyouhide/vim-gotham)
-- [gruvbox](https://github.com/morhetz/gruvbox)
-- [iceberg](https://github.com/cocopon/iceberg.vim)
-- [molokai](https://github.com/tomasr/molokai)
-- [nord](https://github.com/arcticicestudio/nord-vim)
-- [one](https://github.com/rakr/vim-one)
-- [spacegray](https://github.com/ackyshake/Spacegray.vim)
-- [space-vim-dark](https://github.com/liuchengxu/space-vim-dark)
-- [vim-material](https://github.com/hzchirs/vim-material)
-- [oceanic_material](https://github.com/glepnir/oceanic-material)
+## Plugins and colorschemes
+Check doomnvim.txt
 
