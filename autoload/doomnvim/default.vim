@@ -117,6 +117,7 @@ function doomnvim#default#loadGlob()
       \ 'new_file'           : 'SPC f n',
       \ 'change_colorscheme' : 'SPC m c',
       \ 'find_word'          : 'SPC s w',
+      \ 'book_marks'         : 'SPC f h',
       \ }
     let g:dashboard_custom_header = [
                 \ "=================     ===============     ===============   ========  ========",
