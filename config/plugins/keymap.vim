@@ -37,7 +37,7 @@ map <silent><space>bq           :bunload<CR>
 map <silent><space>bk 			:q!<CR>
 map <silent><space>be 			:enew<CR>
 map <silent><space>bc 			:<C-u>up<bar>%bd<bar>e#<CR>
-map <silent><space>bf 			:Telescope buffers<CR>
+map <silent><space>bl 			:Telescope buffers<CR>
 map <silent><space>br 			<C-w>=<CR>
 map <silent><space>bt 			:call TermToggle(7)<CR>
 map <silent><space>bsv 			:vsp<CR>
@@ -112,7 +112,6 @@ map <silent><space>qs           :<C-u>SessionSave<CR>
 "}}}
 
 " Search--------------------------------------------------------------------{{{
-map <silent><space>sh           :DashboardFindHistory<CR>
 map <silent><space>sf           :DashboardFindFile<CR>
 map <silent><space>sw           :DashboardFindWord<CR>
 "}}}

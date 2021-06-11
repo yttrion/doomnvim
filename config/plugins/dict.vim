@@ -25,7 +25,7 @@ let g:which_key_map.b = {
             \ 'k' : 'Kill buffer',
             \ 'e' : 'Empty buffer',
             \ 'c' : 'Close all buried',
-            \ 'f' : 'Focus buffer',
+            \ 'l' : 'Buffer list',
             \ 'r' : 'Resize equaly',
             \ 't' : 'Buffered terminal',
             \ 's' : {
@@ -60,7 +60,7 @@ let g:which_key_map.c = {
             \ 'v' : 'Vertical edit',
             \ 'f' : 'Format selected',
             \ 'r' : 'Rename symbol',
-            \ 't' : 'Help tags',
+            \ 's' : 'Spell suggest',
             \ }
 
 let g:which_key_map.f = {
@@ -72,14 +72,15 @@ let g:which_key_map.f = {
             \ 'r' : 'Rename file',
             \ 'f' : 'Find file',
             \ 'n' : 'New file',
+            \ 'h' : 'History',
             \ }
 
 let g:which_key_map.g = {
             \ 'name' : '+git',
             \ 'g' : 'Enable git symbols',
             \ 's' : 'Git status',
-            \ 'C' : 'Checkout',
-            \ 'c' : 'Create commit',
+            \ 'b' : 'Branches',
+            \ 'c' : 'Commits',
             \ 'h' : {
                 \ 'name' : '+hunk',
                 \ 'p' : 'Previous hunk',
@@ -94,6 +95,7 @@ let g:which_key_map.h = {
             \ 'name' : '+help',
             \ 'i' : 'Installer help',
             \ 'h' : 'Show help',
+            \ 't' : 'Help tags',
             \ 'u' : 'Update',
             \ 'X' : 'Uninstall',
             \ }
@@ -126,7 +128,6 @@ let g:which_key_map.q = {
 
 let g:which_key_map.s = {
             \ 'name' : '+search',
-            \ 'h' : 'Search History',
             \ 'f' : 'Search File',
             \ 'w' : 'Search word',
             \ }
