@@ -39,6 +39,7 @@ Plug 'xuhdev/vim-latex-live-preview', { 'for' : 'tex' }
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'neoclide/coc.nvim', {'branch':'release'}
+Plug 'onsails/lspkind-nvim'
 
 
 
