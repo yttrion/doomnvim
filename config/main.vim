@@ -34,7 +34,6 @@ Plug 'TaDaa/vimade'
 Plug 'lervag/vimtex'
 Plug 'xuhdev/vim-latex-live-preview', { 'for' : 'tex' }
 Plug 'romgrk/doom-one.vim'
-Plug 'onsails/lspkind-nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/nvim-bufferline.lua'
 Plug 'kevinhwang91/nvim-hlslens'
@@ -54,11 +53,8 @@ call plug#end()
 "Temp functions
 call doomnvim#end()
 
-set termguicolors
-
 " Source lua configurations
-execute 'source' g:doomnvim_root.'config/lua.vim'
-"if g:doomnvim_nightly ==# 1
-"    set termguicolors
-"    lua require'bufferline'.setup{}
-"endif
+if g:doomnvim_nightly ==# 1
+    set termguicolors
+    lua require'bufferline'.setup{}
+endif
