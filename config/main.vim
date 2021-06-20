@@ -4,7 +4,6 @@
 " License: MIT
 "============================================
 
-
 if empty(glob('~/.doomnvim/autoload/plug.vim'))
   	silent !curl -fLo ~/.doomnvim/autoload/plug.vim --create-dirs
     	\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -48,8 +47,10 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'kaicataldo/material.vim'
 Plug 'rakr/vim-one'
 Plug 'Avimitin/nerd-galaxyline'
+
 "==============================================================================
 " CUSTOM PLUGINS
+
 
 
 
