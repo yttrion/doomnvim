@@ -183,7 +183,6 @@ function doomnvim#functions#cleanPlugin()
         let pkg = system('echo '.value." | sed 's/.*\\///'") 
         if index(g:doomnvim_custom_plugins, value) == -1
             call doomnvim#logging#message('+', 'Found obsolete plugin', 2)
-            "execute(':!rm -rf $HOME/.doomnvim/plugged/'.pkg)
             call system(':!sed -i "/'.value.'/d" $HOME/.doomnvim/config/main.vim')
             call system(':!sed -i "/'.value.'/d" $HOME/.doomnvim/logs/upkg')
         endif
