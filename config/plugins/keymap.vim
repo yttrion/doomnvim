@@ -143,6 +143,7 @@ map <silent><space>mS 			:source %<CR>
 map <silent><Leader>mc          :Telescope colorscheme<CR>
 map <silent><Leader>mj          :DashboardJumpMark<CR>
 map <silent><Leader>mh          :checkhealth<CR>
+nnoremap <silent><space>mr      :NvimTreeRefresh<CR>
 "}}}
 
 " Space---------------------------------------------------------------------{{{
