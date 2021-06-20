@@ -42,7 +42,6 @@ Plug 'lervag/vimtex'
 Plug 'xuhdev/vim-latex-live-preview', { 'for' : 'tex' }
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 "LSP
 Plug 'neoclide/coc.nvim', {'branch':'release'}
 "Custom plugins
@@ -61,5 +60,9 @@ call doomnvim#end()
 " Source lua configurations
 if g:doomnvim_nightly ==# 1
     set termguicolors
-    lua require'bufferline'.setup{}
+lua << EOF
+    lua require'bufferline'.setup{
+        separator_style="padded_slant"
+    }
+EOF
 endif
