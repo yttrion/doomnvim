@@ -8,6 +8,7 @@ require('bufferline').setup{
     }
 }
 
-
+-- GALAXYLINE
+require('galaxyline').setup{}
 
 EOF
