@@ -73,9 +73,7 @@ function doomnvim#default#loadGlob()
     	set signcolumn=auto
     endif
 
-    "spaceline.vim
-    let g:spaceline_seperate_style = 'slant-cons'
-    let g:spaceline_colorscheme = 'space'
+    " Feline
 
     "vim-which-key
     let mapleader = ' '
@@ -150,14 +148,11 @@ function doomnvim#default#loadGlob()
     let g:nvim_tree_indent_markers = g:doomnvim_explorer_indentlines
     let g:nvim_tree_hide_dotfiles = g:doomnvim_show_hidden 
     let g:nvim_tree_git_hl = 1 
-    let g:nvim_tree_highlight_opened_files = 1 
     let g:nvim_tree_root_folder_modifier = ':~' 
     let g:nvim_tree_tab_open = 1 
     let g:nvim_tree_width_allow_resize  = 0 
     let g:nvim_tree_disable_netrw = 0
-    let g:nvim_tree_hijack_netrw = 0 
     let g:nvim_tree_add_trailing = 1
-    let g:nvim_tree_group_empty = 1 
     let g:nvim_tree_lsp_diagnostics = 1 
     let g:nvim_tree_disable_window_picker = 1 
     let g:nvim_tree_hijack_cursor = 0 
