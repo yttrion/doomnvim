@@ -19,7 +19,7 @@ endif
 call doomnvim#begin()
 call plug#begin('~/.doomnvim/plugged')
 "GUI
-Plug 'ryanoasis/vim-devicons'
+"Plug 'ryanoasis/vim-devicons'
 Plug 'glepnir/spaceline.vim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/doom-one.vim'
@@ -42,6 +42,7 @@ Plug 'lervag/vimtex'
 Plug 'xuhdev/vim-latex-live-preview', { 'for' : 'tex' }
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 "LSP
 Plug 'neoclide/coc.nvim', {'branch':'release'}
 "Custom plugins
