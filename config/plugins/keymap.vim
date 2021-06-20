@@ -67,7 +67,6 @@ map <silent><space>fs 			:call SaveFile()<CR>
 map <silent><space>ff           :Telescope find_files<CR>
 map <silent><space>fS 			:wa<CR>
 map <silent><space>fe 			:NvimTreeToggle<CR>
-nnoremap <leader>r              :NvimTreeRefresh<CR>
 map <silent><space>fo 			:sp <bar>buffer<bar>call bufnr("")<bar>Ex<CR>
 map <silent><space>fr 			:call RenameFile()<CR>
 map <silent><space>fn           :DashboardNewFile<CR>
@@ -144,6 +143,7 @@ map <silent><Leader>mc          :Telescope colorscheme<CR>
 map <silent><Leader>mj          :DashboardJumpMark<CR>
 map <silent><Leader>mh          :checkhealth<CR>
 nnoremap <silent><space>mr      :NvimTreeRefresh<CR>
+nnoremap <silent><space>r       nop
 "}}}
 
 " Space---------------------------------------------------------------------{{{
