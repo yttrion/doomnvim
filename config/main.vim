@@ -60,11 +60,5 @@ call doomnvim#end()
 " Source lua configurations
 if g:doomnvim_nightly ==# 1
     set termguicolors
-lua << EOF
-    lua require('bufferline').setup{
-        options = {
-            separator_style = "padded_slant",
-        }
-    }
-EOF
+    execute 'source' g:doomnvim_root.'config/luaConfig.vim'
 endif
