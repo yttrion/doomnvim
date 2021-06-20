@@ -20,7 +20,6 @@ call doomnvim#begin()
 call plug#begin('~/.doomnvim/plugged')
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'romgrk/doom-one.vim'
 Plug 'bryanmylee/vim-colorscheme-icons'
 Plug 'glepnir/dashboard-nvim'
 Plug 'Yggdroot/indentLine'
@@ -42,6 +41,7 @@ Plug 'neoclide/coc.nvim', {'branch':'release'}
 
 "==============================================================================
 " CUSTOM PLUGINS
+
 
 
 "==============================================================================
