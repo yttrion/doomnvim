@@ -4,7 +4,10 @@
 " License: MIT
 "==============================================
 
+function! doomnvim#functions#update()
+    call system("cd $HOME/.doomnvim && git pull --no-edit")
 
+endfunction
 
 function! doomnvim#functions#checkbin(bin)  abort
     if executable(a:bin)
