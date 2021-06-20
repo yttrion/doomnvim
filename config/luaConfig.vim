@@ -109,21 +109,6 @@ gls.left[11] = {
     highlight = {colors.blue,colors.bg},
   }
 }
-
-gls.mid[1] = {
-  ShowLspClient = {
-    provider = 'GetLspClient',
-    condition = function ()
-      local tbl = {['dashboard'] = true,['']=true}
-      if tbl[vim.bo.filetype] then
-        return false
-      end
-      return true
-    end,
-    icon = ' LSP:',
-    highlight = {colors.cyan,colors.bg,'bold'}
-  }
-}
 gls.right[1] = {
   FileEncode = {
     provider = 'FileEncode',
