@@ -1,7 +1,7 @@
 " Lua configuration file
 
 lua require'bufferline'.setup{}
-require('lspkind').init({
+lua require'lspkind'.init({
     with_text = true,
     preset = 'codicons',
     symbol_map = {
