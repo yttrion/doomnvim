@@ -47,6 +47,7 @@ Plug 'dracula/vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'kaicataldo/material.vim'
 Plug 'rakr/vim-one'
+Plug 'Avimitin/nerd-galaxyline'
 "==============================================================================
 " CUSTOM PLUGINS
 
