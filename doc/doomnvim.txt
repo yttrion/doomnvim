@@ -640,5 +640,7 @@ v0.1.8
 - Changed `spaceline.vim`to`galaxyline.vim`
 - Changed `NERDTree`to`nvim-tree`
 - Added config file for `lua` plugins
+- Removed`vimade`because of loading time
+- Hot reload when doing an update
 
 " vim:tw=80:ft=help:norl:
