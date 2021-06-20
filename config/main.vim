@@ -61,8 +61,10 @@ call doomnvim#end()
 if g:doomnvim_nightly ==# 1
     set termguicolors
 lua << EOF
-    lua require'bufferline'.setup{
-        separator_style="padded_slant"
+    lua require('bufferline').setup{
+        options = {
+            separator_style = "padded_slant",
+        }
     }
 EOF
 endif
