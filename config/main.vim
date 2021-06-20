@@ -18,9 +18,7 @@ endif
 
 call doomnvim#begin()
 call plug#begin('~/.doomnvim/plugged')
-"GUI
-"Plug 'ryanoasis/vim-devicons'
-Plug 'glepnir/spaceline.vim'
+Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/doom-one.vim'
 Plug 'bryanmylee/vim-colorscheme-icons'
@@ -31,9 +29,7 @@ Plug 'kevinhwang91/nvim-hlslens'
 Plug 'akinsho/nvim-bufferline.lua'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
-" Keybindings
 Plug 'liuchengxu/vim-which-key'
-"Utils
 Plug 'liuchengxu/vista.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'preservim/nerdcommenter'
@@ -42,13 +38,7 @@ Plug 'lervag/vimtex'
 Plug 'xuhdev/vim-latex-live-preview', { 'for' : 'tex' }
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'nvim-telescope/telescope.nvim'
-"LSP
 Plug 'neoclide/coc.nvim', {'branch':'release'}
-"Custom plugins
-
-
-
-
 
 
 
