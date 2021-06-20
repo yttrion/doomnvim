@@ -181,18 +181,10 @@ COLORSCHEME                                     *doomnvim-options-colorscheme*
 
 The colorscheme of doomnvim. Default is 'doom'. There are pre-configured
 colorschemes installed in `$HOME/.doomnvim/colors/`:
-    - `alduin`
-    - `deus`
     - `doom-one` (default)
-    - `gotham256`
-    - `gruvbox`
-    - `iceberg`
-    - `molokai`
-    - `nord`
-    - `one`
-    - `space-vim-dark`
-    - `vim-material`
 
+Other colorschemes are installed by default with `doomnvim`. They are 
+configured in the `main.vim`file.
 You can switch between colorschemes by doing <Space>mc and then type the name 
 of the colorscheme you want to use. You can also edit the `BFC` file located 
 at: `$HOME/.doomrc` (see |doomnvim-hacking|)
