@@ -74,6 +74,7 @@ function doomnvim#default#loadGlob()
     endif
 
     " Feline
+    
 
     "vim-which-key
     let mapleader = ' '
@@ -146,7 +147,7 @@ function doomnvim#default#loadGlob()
     let g:nvim_tree_quit_on_open = 0
     let g:nvim_tree_follow = 1 
     let g:nvim_tree_indent_markers = g:doomnvim_explorer_indentlines
-    let g:nvim_tree_hide_dotfiles = g:doomnvim_show_hidden 
+    let g:nvim_tree_hide_dotfiles = !g:doomnvim_show_hidden 
     let g:nvim_tree_git_hl = 1 
     let g:nvim_tree_root_folder_modifier = ':~' 
     let g:nvim_tree_tab_open = 1 
