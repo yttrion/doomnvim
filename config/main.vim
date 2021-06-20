@@ -20,7 +20,7 @@ call doomnvim#begin()
 call plug#begin('~/.doomnvim/plugged')
 "GUI
 Plug 'ryanoasis/vim-devicons'
-Plug 'famiu/feline.nvim'
+Plug 'glepnir/spaceline.vim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/doom-one.vim'
 Plug 'bryanmylee/vim-colorscheme-icons'
@@ -61,5 +61,4 @@ call doomnvim#end()
 if g:doomnvim_nightly ==# 1
     set termguicolors
     lua require'bufferline'.setup{}
-    lua require('feline').setup()
 endif

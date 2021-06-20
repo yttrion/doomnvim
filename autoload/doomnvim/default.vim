@@ -73,8 +73,9 @@ function doomnvim#default#loadGlob()
     	set signcolumn=auto
     endif
 
-    " Feline
-    
+    " Spaceline
+    let g:spaceline_seperate_style = 'slant-cons'
+    let g:spaceline_colorscheme = 'space' 
 
     "vim-which-key
     let mapleader = ' '
