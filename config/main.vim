@@ -40,7 +40,11 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'neoclide/coc.nvim', {'branch':'release'}
 
+"==============================================================================
+" CUSTOM PLUGINS
 
+
+"==============================================================================
 
 call doomnvim#functions#disable_plug()
 call plug#end()
