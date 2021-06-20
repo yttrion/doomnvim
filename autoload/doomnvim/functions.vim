@@ -10,6 +10,7 @@ function! doomnvim#functions#update()
         exec ":FloatermNew cd $HOME/.doomnvim && git pull --no-edit"
     endtry
     execute 'source' g:doomnvim_root.'init.vim'
+    
 
 endfunction
 
@@ -123,6 +124,7 @@ function doomnvim#functions#installPlugs()
     call doomnvim#functions#checkUserPlugins()
     execute 'source' g:doomnvim_root.'init.vim'
     execute(':PlugInstall') 
+    execute 'source' g:doomnvim_root.'init.vim'
 endfunction
 
 
