@@ -38,7 +38,15 @@ Plug 'xuhdev/vim-latex-live-preview', { 'for' : 'tex' }
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'neoclide/coc.nvim', {'branch':'release'}
-
+Plug 'AlessandroYorba/Alduin'
+Plug 'ajmwagar/vim-deus'
+Plug 'npxbr/gruvbox.nvim'
+Plug 'cocopon/iceberg.vim'
+Plug 'tomasr/molokai'
+Plug 'dracula/vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'kaicataldo/material.vim'
+Plug 'rakr/vim-one'
 "==============================================================================
 " CUSTOM PLUGINS
 
