@@ -22,7 +22,6 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'bryanmylee/vim-colorscheme-icons'
 Plug 'glepnir/dashboard-nvim'
 Plug 'Yggdroot/indentLine'
-Plug 'TaDaa/vimade'
 Plug 'kevinhwang91/nvim-hlslens'
 Plug 'akinsho/nvim-bufferline.lua'
 Plug 'nvim-lua/popup.nvim'
@@ -50,6 +49,8 @@ Plug 'Avimitin/nerd-galaxyline'
 
 "==============================================================================
 " CUSTOM PLUGINS
+
+
 
 
 

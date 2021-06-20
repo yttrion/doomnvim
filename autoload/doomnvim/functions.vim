@@ -150,7 +150,6 @@ function doomnvim#functions#checkUserPlugins() abort
                 call doomnvim#logging#message('+', 'Pkg already backed up', 2)
             endif
         endfor
-        call doomnvim#functions#cleanPlugin()
     endif
 endfunction
 
