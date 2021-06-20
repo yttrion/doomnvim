@@ -40,7 +40,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'neoclide/coc.nvim', {'branch':'release'}
 Plug 'AlessandroYorba/Alduin'
 Plug 'ajmwagar/vim-deus'
-Plug 'npxbr/gruvbox.nvim'
+Plug 'morhetz/gruvbox'
 Plug 'cocopon/iceberg.vim'
 Plug 'tomasr/molokai'
 Plug 'dracula/vim'
