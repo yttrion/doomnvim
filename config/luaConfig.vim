@@ -16,10 +16,7 @@ require('bufferline').setup{
         enforce_regular_tabs = false,
         view = "multiwindow",
         show_buffer_close_icons = true,
-
     }
 }
-
-
 
 EOF
