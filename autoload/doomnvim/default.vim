@@ -141,7 +141,6 @@ function doomnvim#default#loadGlob()
     
 
     " Nvim-tree.lua
-    let g:nvim_tree_side = 'right' "left by default
     let g:nvim_tree_width = g:doomnvim_sidebar_width
     let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache' ] "empty by default
     let g:nvim_tree_gitignore = g:doomnvim_show_hidden
@@ -178,9 +177,9 @@ function doomnvim#default#loadGlob()
     let g:nvim_tree_special_files = [ 'README.md', 'Makefile', 'MAKEFILE', '.gitignore' ]
     let g:nvim_tree_show_icons = {
         \ 'git': 1,
-        \ 'folders': 0,
-        \ 'files': 0,
-        \ 'folder_arrows': 0,
+        \ 'folders': 1,
+        \ 'files': 1,
+        \ 'folder_arrows': 1,
         \ }
     let g:nvim_tree_icons = {
         \ 'default': '',
