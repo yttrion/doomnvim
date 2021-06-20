@@ -176,9 +176,9 @@ function doomnvim#default#loadGlob()
         \ }
     let g:nvim_tree_special_files = [ 'README.md', 'Makefile', 'MAKEFILE', '.gitignore' ]
     let g:nvim_tree_show_icons = {
-        \ 'git': 1,
-        \ 'folders': 1,
-        \ 'files': 1,
+        \ 'git': g:doomnvim_show_icons,
+        \ 'folders': g:doomnvim_show_icons,
+        \ 'files': g:doomnvim_show_icons,
         \ 'folder_arrows': 1,
         \ }
     let g:nvim_tree_icons = {
@@ -210,7 +210,6 @@ function doomnvim#default#loadGlob()
         \     'error': "",
         \   }
         \ }
-
     highlight NvimTreeFolderIcon guibg=blueo
 
 

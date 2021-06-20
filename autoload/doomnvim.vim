@@ -36,8 +36,12 @@ let g:doomnvim_max_columns = 100
 let g:doomnvim_enable_guicolors = 1
 
 " Sidebar size
-" @default = 25
-let g:doomnvim_sidebar_width = 25
+" @default = 30
+let g:doomnvim_sidebar_width = 30
+
+" Show icons in file explorer
+" @default = 1
+let g:doomnvim_show_icons = 1
 
 " Show hidden files
 " @default = 1
