@@ -43,6 +43,10 @@ let g:doomnvim_sidebar_width = 30
 " @default = 1
 let g:doomnvim_show_icons = 1
 
+" Show identlines for explorer
+" @default = 0
+let g:doomnvim_explorer_indentlines = 0
+
 " Show hidden files
 " @default = 1
 let g:doomnvim_show_hidden = 1
