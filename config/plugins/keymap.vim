@@ -50,7 +50,6 @@ map <silent><space>bwi 			:call ResizeWin(1,1)<CR>
 map <silent><space>bwd 			:call ResizeWin(1,0)<CR>
 map <silent><space>bhi 			:call ResizeWin(0,1)<CR>
 map <silent><space>bhd 			:call ResizeWin(0,0)<CR>
-nnoremap <silent><space>bg :lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<CR>
 "}}}
 
 " Code operation------------------------------------------------------------{{{
