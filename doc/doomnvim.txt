@@ -94,16 +94,16 @@ default value = 1
 Enables gui colors on GUI versions of vim/nvim
 
 `g:doomnvim_sidebar_width`
-default value = 25
-Specifies the default width of nerdtree and tagbar
+default value = 30
+Specifies the default width of the file explorer
 
-`g:doomnvim_tagbar_left`
-default value = 0
-Sets tagbar buffer to the left when enabled
+`g:doomnvim_show_icons`
+default value = 1
+Show icons in the file explorer
 
 `g:doomnvim_show_hidden`
 default value = 1
-Show hidden files with nerdtree
+Show hidden files in the file explorer
 
 `g:doomnvim_colorscheme`
 default value = 'doom'
@@ -222,7 +222,7 @@ Excluding the statusline, doomnvim will mostly have the following layout:
 |--------------------------------------|~
 
 
-'A' : The file explorer (Plugin: NERDTree)
+'A' : The file explorer (Plugin: nvim-tree)
 'B' : The main buffer
 'C' : The tagbar (Plugin: Tagbar)
 'D' : The buffered terminal
@@ -233,13 +233,13 @@ See |doomnvim-commands| for more informations
 ==============================================================================
 FILE EXPLORER                         *doomnvim-configuration-layout-explorer*
 
-doomnvim uses NERDTree plugin as a file explorer. It can be toggled
+doomnvim uses nvim-tree plugin as a file explorer. It can be toggled
 by performing the following command: <Space>fe for `FileExplorer`
 
 To create a new file whithin the file explorer, do <m><a>[nameofnode]
 Append a `/` if you want to create a directory
 
-Check `nerdtree` for more info.
+Check `nvim-tree` for more info.
 
 ==============================================================================
 MAIN BUFFER                         *doomnvim-configuration-layout-mainbuffer*
@@ -643,5 +643,10 @@ v0.1.7.1
 - Fixed installer for user plugins
 - Fixed uninstaller for user plugins
 - Fixed `telescope.nvim`keymap
+
+v0.1.8
+- Changed `spaceline.vim`to`galaxyline.vim`
+- Changed `NERDTree`to`nvim-tree`
+- Added config file for `lua` plugins
 
 " vim:tw=80:ft=help:norl:
