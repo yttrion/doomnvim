@@ -5,7 +5,10 @@
 "==============================================
 
 function! doomnvim#functions#update()
-    call system("cd $HOME/.doomnvim && git pull --no-edit")
+    try
+        exec ':FloatermKill'
+        exec ":FloatermNew cd $HOME/.doomnvim && git pull --no-edit"
+    endtry
     execute 'source' g:doomnvim_root.'init.vim'
 
 endfunction
