@@ -124,7 +124,6 @@ function doomnvim#functions#installPlugs()
     call doomnvim#functions#checkUserPlugins()
     execute 'source' g:doomnvim_root.'init.vim'
     execute(':PlugInstall') 
-    execute 'source' g:doomnvim_root.'init.vim'
 endfunction
 
 
