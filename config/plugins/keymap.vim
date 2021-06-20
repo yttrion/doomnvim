@@ -89,7 +89,7 @@ map <silent><space>gc 			:Telescope git_commits<CR>
 map <silent><space>hh 			:helpgrep .<CR>
 map <silent><space>ht 			:Telescope help_tags<CR>
 map <silent><space>hi 			:call OpenInFloat("$HOME/.doomnvim/install.sh --help")<CR>
-map <silent><space>hu 			:call OpenInFloat("$HOME/.doomnvim/install.sh --update")<CR>
+map <silent><space>hu 			:call doomnvim#functions#update()<CR>
 map <silent><space>hX 			:call OpenInFloat("$HOME/.doomnvim/install.sh --uninstall")<CR>
 "}}}
 
