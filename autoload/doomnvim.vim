@@ -8,7 +8,7 @@
 scriptencoding utf-8
 
 " Version
-let g:doomnvim_version = '0.1.6'
+let g:doomnvim_version = '0.1.7.1'
 lockvar g:doomnvim_version
 
 " Default indent size
@@ -39,10 +39,6 @@ let g:doomnvim_enable_guicolors = 1
 " @default = 25
 let g:doomnvim_sidebar_width = 25
 
-" Tagbar left 
-" @default 0
-let g:doomnvim_tagbar_left = 0
-
 " Show hidden files
 " @default = 1
 let g:doomnvim_show_hidden = 1
@@ -68,13 +64,14 @@ let g:doomnvim_disabled_plugins = []
 " Custom plugins
 " @default = []
 " example
-" let g:doomnvim_disabled_plugins = ['nerdtree']
+" let g:doomnvim_custom_plugins = ['author/name']
+" Note that it will only work with github plugins
 let g:doomnvim_custom_plugins = []
 
-" Lint on save
+" Save session on quit
 " @default = 1
 " UNUSED
-let g:doomnvim_lint_onsave = 1
+let g:doomnvim_sessionsave_onquit = 0
 
 " Autocomplete paranthesis
 " @default = 1
@@ -89,7 +86,6 @@ let g:doomnvim_resize_percent = 0.2
 " @default = 1
 let g:doomnvim_enable_startmenu = 1
 
-
 " Automatically open new files in a vertical split
 " @default = 0
 let g:doomnvim_open_in_vsplit = 0
@@ -99,6 +95,12 @@ let g:doomnvim_open_in_vsplit = 0
 " 1: Enabled
 " @default = 1
 let g:doomnvim_conceallevel = 1
+
+" Show spell
+" 0 : disable spell check on start
+" 1 : enable spell check on start
+" @default = 0
+let g:doomnvim_spell = 0
 
 " Logging level
 " 0 : No logging
@@ -157,13 +159,11 @@ function! doomnvim#end() abort
     "Test source system-based
     call doomnvim#system#grepconfig('config', 'gui.vim', 1)
     call doomnvim#system#grepconfig('config', 'functions.vim', 1)
-    "call doomnvim#system#grepconfig('config', 'globals.vim', 1)
 
     "Plugins 
     call doomnvim#system#grepconfig('config/plugins/', 'coc.vim', 1)
     call doomnvim#system#grepconfig('config/plugins/', 'dict.vim', 1)
     call doomnvim#system#grepconfig('config/plugins/', 'keymap.vim', 1)
-    "call doomnvim#system#grepconfig('config/plugins/', 'startify.vim', 1)
 
     call doomnvim#logging#init()
     if g:doomnvim_check_updates ==# 1

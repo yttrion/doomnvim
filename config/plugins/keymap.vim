@@ -37,7 +37,7 @@ map <silent><space>bq           :bunload<CR>
 map <silent><space>bk 			:q!<CR>
 map <silent><space>be 			:enew<CR>
 map <silent><space>bc 			:<C-u>up<bar>%bd<bar>e#<CR>
-map <silent><space>bf 			:call BufSel("")<CR>
+map <silent><space>bl 			:Telescope buffers<CR>
 map <silent><space>br 			<C-w>=<CR>
 map <silent><space>bt 			:call TermToggle(7)<CR>
 map <silent><space>bsv 			:vsp<CR>
@@ -59,15 +59,18 @@ map <silent><space>cc 			<Plug>NERDCommenterToggle
 map <silent><space>cv           <C-v>
 map <silent><space>cf           <Plug>(coc-format-selected)
 map <silent><space>cr           <Plug>(coc-rename)
+map <silent><space>cs           :Telescope spell_suggest<CR>
 "}}}
 
 " File operation------------------------------------------------------------{{{
 map <silent><space>fs 			:call SaveFile()<CR>
+map <silent><space>ff           :Telescope find_files<CR>
 map <silent><space>fS 			:wa<CR>
 map <silent><space>fe 			:NERDTreeToggle<CR>
 map <silent><space>fo 			:sp <bar>buffer<bar>call bufnr("")<bar>Ex<CR>
 map <silent><space>fr 			:call RenameFile()<CR>
 map <silent><space>fn           :DashboardNewFile<CR>
+map <silent><space>fh           :Telescope search_history<CR>
 "}}}
 
 " Git operation-------------------------------------------------------------{{{
@@ -77,13 +80,14 @@ nmap <silent><space>ghn 		<Plug>(GitGutterNextHunk)
 nmap <silent><space>ghs 		<Plug>(GitGutterStageHunk)
 nmap <silent><space>ghu 		<Plug>(GitGutterUndoHunk)
 nmap <silent><space>ghP  		<Plug>(GitGutterPreviewHunk)
-map <silent><space>gs 			:call OpenInFloat("git status")<CR>
-map <silent><space>gC           :git checkout 
-map <silent><space>gc 			:call CreateCommit()<CR>
+map <silent><space>gs 			:Telescope git_status<CR>
+map <silent><space>gb           :Telescope git_branches<CR> 
+map <silent><space>gc 			:Telescope git_commits<CR>
 "}}}
 
 " Help----------------------------------------------------------------------{{{
 map <silent><space>hh 			:helpgrep .<CR>
+map <silent><space>ht 			:Telescope help_tags<CR>
 map <silent><space>hi 			:call OpenInFloat("$HOME/.doomnvim/install.sh --help")<CR>
 map <silent><space>hu 			:call OpenInFloat("$HOME/.doomnvim/install.sh --update")<CR>
 map <silent><space>hX 			:call OpenInFloat("$HOME/.doomnvim/install.sh --uninstall")<CR>
@@ -91,8 +95,8 @@ map <silent><space>hX 			:call OpenInFloat("$HOME/.doomnvim/install.sh --uninsta
 
 " Plugins-------------------------------------------------------------------{{{
 map <silent><space>pu 			:PlugUpdate<CR>
-map <silent><space>pi 			:PlugInstall<CR>
-map <silent><space>pc 			:PlugClean<CR>
+map <silent><space>pi 			:call doomnvim#functions#installPlugs()<CR>
+map <silent><space>pc 			:call doomnvim#functions#cleanPlugin()<CR>
 map <silent><space>pm 			:PlugUpgrade<CR>
 map <silent><space>pr 			:UpdateRemotePlugins<CR>
 map <silent><space>pau 			:CocUpdate<CR>
@@ -108,7 +112,6 @@ map <silent><space>qs           :<C-u>SessionSave<CR>
 "}}}
 
 " Search--------------------------------------------------------------------{{{
-map <silent><space>sh           :DashboardFindHistory<CR>
 map <silent><space>sf           :DashboardFindFile<CR>
 map <silent><space>sw           :DashboardFindWord<CR>
 "}}}
@@ -118,9 +121,10 @@ map <silent><space>tl 			:set invnumber<bar>set invrelativenumber<CR>
 map <silent><space>tw 			:set wrap!<CR>
 map <silent><space>th 			:noh<CR>
 map <silent><space>te 			:hi Error NONE<CR>
-map <silent><space>tt 			:TagbarToggle<CR>
+map <silent><space>tt 			:Vista<CR>
 map <silent><space>tf 			:FloatermNew<CR>
 map <silent><space>tc 			:call Toggleconceal()<CR>
+map <silent><space>ts           :set spell!<CR>
 "}}}
 
 " Window--------------------------------------------------------------------{{{
@@ -135,8 +139,9 @@ map <silent><space>wr           :call SwitchBuf()<CR>
 
 " Misc----------------------------------------------------------------------{{{
 map <silent><space>mS 			:source %<CR>
-map <silent><Leader>mc          :Clap colors<CR>
+map <silent><Leader>mc          :Telescope colorscheme<CR>
 map <silent><Leader>mj          :DashboardJumpMark<CR>
+map <silent><Leader>mh          :checkhealth<CR>
 "}}}
 
 " Space---------------------------------------------------------------------{{{
@@ -145,6 +150,7 @@ map <silent><space><space>j		<C-w>j
 map <silent><space><space>k		<C-w>k
 map <silent><space><space>l		<C-w>l
 "}}}
+
 
 " Misc functions------------------------------------------------------------{{{
 function! s:show_documentation()

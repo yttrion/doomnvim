@@ -35,7 +35,7 @@ BWhite='\033[1;37m'       # White
 # }}}
 
 # version
-Version='0.1.6'
+Version='0.1.7.1'
 #System name
 System="$(uname -s)"
 
@@ -117,7 +117,7 @@ update_repo(){
 	if [[ -d "$HOME/.doomnvim" ]]; then
 		info "Updating doomnvim..."
 		cd "$HOME/.doomnvim"
-		git pull origin main
+        git pull --no-edit
 		cd - > /dev/null 2>&1
 		success "Successfully updated doomnvim"
 	else
@@ -189,6 +189,7 @@ install_vimplug(){
 		success "Successfully installed vim-plug"
 	fi
 }
+
 
 install_fonts(){
     if [[ ! -d "$HOME/.local/share/fonts" ]]; then

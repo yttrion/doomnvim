@@ -76,6 +76,10 @@ function! doomnvim#system#checkupdates()
         call doomnvim#logging#message('+', 'Purging outdated plugins', 2)
         execute ':PlugClean!'
         execute ':PlugUpdate'
+        if g:doomnvim_beta ==# 1
+            call doomnvim#functions#deinclean()
+            call doomnvim#functions#deinupdate()
+        endif
         call doomnvim#logging#message('+', 'Done', 2)
     catch
         call doomnvim#logging#message('!', 'Unable to update plugins', 1)

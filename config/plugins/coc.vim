@@ -7,12 +7,9 @@
 
 let g:coc_global_extensions = [
 			\ 'coc-actions',
-			\ 'coc-angular',
-			\ 'coc-clangd',
 			\ 'coc-css',
 			\ 'coc-cssmodules',
 			\ 'coc-eslint',
-			\ 'coc-go',
 			\ 'coc-html',
 			\ 'coc-java',
 			\ 'coc-json',
@@ -20,8 +17,8 @@ let g:coc_global_extensions = [
 			\ 'coc-python',
 			\ 'coc-sh',
 			\ 'coc-snippets',
-			\ 'coc-sql',
-			\ 'coc-svg',
 			\ 'coc-tsserver',
-			\ 'coc-xml'
+			\ 'coc-xml',
+            \ 'coc-texlab',
+            \ 'coc-vimlsp',
 			\ ]

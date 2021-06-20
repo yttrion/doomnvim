@@ -13,8 +13,8 @@ function! doomnvim#default#options() abort
     set smarttab
     set autoindent
     set autoread
-    set splitright
     set splitbelow
+    set splitright
     set noswapfile
     set showmode
     set hlsearch
@@ -39,6 +39,9 @@ function! doomnvim#default#options() abort
         set number relativenumber
     else
         set number
+    endif
+    if g:doomnvim_spell ==# 1
+        set spell
     endif
     filetype plugin indent on
     syntax on
@@ -78,19 +81,23 @@ function doomnvim#default#loadGlob()
     endif
 
     "spaceline.vim
-    let g:spaceline_seperate_style = 'slant-fade'
+    let g:spaceline_seperate_style = 'slant-cons'
     let g:spaceline_colorscheme = 'space'
 
     "vim-which-key
     let mapleader = ' '
+    let g:which_key_hspace = 30
+    let g:which_key_use_floating_win = 1
 
-    "Tagbar
-    let g:tagbar_width = g:doomnvim_sidebar_width
-    let g:tagbar_left = g:doomnvim_tagbar_left
+    " Vista.vim
+    let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+    let g:vista_default_executive = 'ctags'
+    let g:vista_fzf_preview = ['right:50%']
+    let g:vista#renderer#enable_icon = 1
 
     "IndentLine
     let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-    let g:indentLine_conceallevel=1
+    let g:indentLine_conceallevel=g:doomnvim_conceallevel
 
     "vim-floaterm
     "hi FloatermNC guibg=gray
@@ -101,15 +108,16 @@ function doomnvim#default#loadGlob()
     let g:indentLine_fileTypeExclude = ['dashboard']
 
     "Dashboard
-    let g:dashboard_session_directory = g:doomnvim_root . 'sessions/'
+    let g:dashboard_default_executive ='telescope'
+    let g:dashboard_session_directory = g:doomnvim_root . 'sessions'
     let g:dashboard_custom_shortcut={
       \ 'last_session'       : 'SPC q l',
-      \ 'find_history'       : 'SPC s h',
-      \ 'find_file'          : 'SPC s f',
+      \ 'find_history'       : 'SPC f h',
+      \ 'find_file'          : 'SPC f f',
       \ 'new_file'           : 'SPC f n',
       \ 'change_colorscheme' : 'SPC m c',
       \ 'find_word'          : 'SPC s w',
-      \ 'book_marks'         : 'SPC m j',
+      \ 'book_marks'         : 'SPC f h',
       \ }
     let g:dashboard_custom_header = [
                 \ "=================     ===============     ===============   ========  ========",
