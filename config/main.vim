@@ -34,6 +34,13 @@ Plug 'TaDaa/vimade'
 Plug 'lervag/vimtex'
 Plug 'xuhdev/vim-latex-live-preview', { 'for' : 'tex' }
 Plug 'romgrk/doom-one.vim'
+Plug 'onsails/lspkind-nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'akinsho/nvim-bufferline.lua'
+Plug 'kevinhwang91/nvim-hlslens'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 "Custom plugins
 
 
@@ -41,25 +48,17 @@ Plug 'romgrk/doom-one.vim'
 
 
 
-if g:doomnvim_nightly ==# 1
-    Plug 'kyazdani42/nvim-web-devicons'
-    Plug 'akinsho/nvim-bufferline.lua'
-    Plug 'kevinhwang91/nvim-hlslens'
-    Plug 'nvim-lua/popup.nvim'
-    Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope.nvim'
-    " Next lines for neovim-only plugins
-elseif g:doomnvim_nightly ==# 0
-    Plug 'itchyny/lightline.vim'
-endif
 
 call doomnvim#functions#disable_plug()
-
 call plug#end()
 "Temp functions
 call doomnvim#end()
-if g:doomnvim_nightly ==# 1
-    set termguicolors
-    lua require'bufferline'.setup{}
- 
-endif
+
+set termguicolors
+
+" Source lua configurations
+execute 'source' g:doomnvim_root.'config/lua.vim'
+"if g:doomnvim_nightly ==# 1
+"    set termguicolors
+"    lua require'bufferline'.setup{}
+"endif
