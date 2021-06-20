@@ -55,13 +55,6 @@ endfunction
 
 function doomnvim#default#loadGlob() 
 
-    "NERDTREE
-    let g:NERDTreeShowHidden = g:doomnvim_show_hidden
-    let g:NERDTreeWinSize = g:doomnvim_sidebar_width
-    if g:doomnvim_open_in_vsplit ==# 1
-        let g:NERDTreeCustomOpenArgs = { 'file': { 'where': 'v' } }
-    endif
-
     "NERDCommenter
     let g:NERDCreateDefaultMappings = 0
 
@@ -145,11 +138,89 @@ function doomnvim#default#loadGlob()
                 \ ]
 
 
+    
+
+    " Nvim-tree.lua
+    let g:nvim_tree_side = 'right' "left by default
+    let g:nvim_tree_width = g:doomnvim_sidebar_width
+    let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache' ] "empty by default
+    let g:nvim_tree_gitignore = g:doomnvim_show_hidden
+    let g:nvim_tree_auto_open = 1 
+    let g:nvim_tree_auto_close = 1 
+    let g:nvim_tree_auto_ignore_ft = [ 'startify', 'dashboard' ]
+    let g:nvim_tree_quit_on_open = 0
+    let g:nvim_tree_follow = 1 
+    let g:nvim_tree_indent_markers = 1
+    let g:nvim_tree_hide_dotfiles = g:doomnvim_show_hidden 
+    let g:nvim_tree_git_hl = 1 
+    let g:nvim_tree_highlight_opened_files = 1 
+    let g:nvim_tree_root_folder_modifier = ':~' 
+    let g:nvim_tree_tab_open = 1 
+    let g:nvim_tree_width_allow_resize  = 0 
+    let g:nvim_tree_disable_netrw = 0
+    let g:nvim_tree_hijack_netrw = 0 
+    let g:nvim_tree_add_trailing = 1
+    let g:nvim_tree_group_empty = 1 
+    let g:nvim_tree_lsp_diagnostics = 1 
+    let g:nvim_tree_disable_window_picker = 1 
+    let g:nvim_tree_hijack_cursor = 0 
+    let g:nvim_tree_icon_padding = ' ' 
+    let g:nvim_tree_update_cwd = 1 
+    let g:nvim_tree_window_picker_exclude = {
+        \   'filetype': [
+        \     'packer',
+        \     'qf'
+        \   ],
+        \   'buftype': [
+        \     'terminal'
+        \   ]
+        \ }
+    let g:nvim_tree_special_files = [ 'README.md', 'Makefile', 'MAKEFILE', '.gitignore' ]
+    let g:nvim_tree_show_icons = {
+        \ 'git': 1,
+        \ 'folders': 0,
+        \ 'files': 0,
+        \ 'folder_arrows': 0,
+        \ }
+    let g:nvim_tree_icons = {
+        \ 'default': '',
+        \ 'symlink': '',
+        \ 'git': {
+        \   'unstaged': "✗",
+        \   'staged': "✓",
+        \   'unmerged': "",
+        \   'renamed': "➜",
+        \   'untracked': "★",
+        \   'deleted': "",
+        \   'ignored': "◌"
+        \   },
+        \ 'folder': {
+        \   'arrow_open': "",
+        \   'arrw_closed': "",
+        \   'default': "",
+        \   'open': "",
+        \   'empty': "",
+        \   'empty_open': "",
+        \   'symlink': "",
+        \   'symlink_open': "",
+        \   },
+        \   'lsp': {
+        \     'hint': "",
+        \     'info': "",
+        \     'warning': "",
+        \     'error': "",
+        \   }
+        \ }
+
+    highlight NvimTreeFolderIcon guibg=blueo
+
+
+
+
     "Internals
     let g:term_buf = 0
     let g:term_win = 0
     let g:vert_layout = 1
     let g:buf_left = 0
-
 
 endfunction

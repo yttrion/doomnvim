@@ -66,7 +66,8 @@ map <silent><space>cs           :Telescope spell_suggest<CR>
 map <silent><space>fs 			:call SaveFile()<CR>
 map <silent><space>ff           :Telescope find_files<CR>
 map <silent><space>fS 			:wa<CR>
-map <silent><space>fe 			:NERDTreeToggle<CR>
+map <silent><space>fe 			:NvimTreeToggle<CR>
+nnoremap <leader>r              :NvimTreeRefresh<CR>
 map <silent><space>fo 			:sp <bar>buffer<bar>call bufnr("")<bar>Ex<CR>
 map <silent><space>fr 			:call RenameFile()<CR>
 map <silent><space>fn           :DashboardNewFile<CR>

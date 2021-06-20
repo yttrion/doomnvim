@@ -21,7 +21,6 @@ call plug#begin('~/.doomnvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch':'release'}
 Plug 'ryanoasis/vim-devicons'
 Plug 'bryanmylee/vim-colorscheme-icons'
-Plug 'preservim/nerdtree'
 Plug 'liuchengxu/vim-which-key'
 Plug 'liuchengxu/vista.vim'
 Plug 'voldikss/vim-floaterm'
@@ -35,6 +34,7 @@ Plug 'lervag/vimtex'
 Plug 'xuhdev/vim-latex-live-preview', { 'for' : 'tex' }
 Plug 'romgrk/doom-one.vim'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
 Plug 'akinsho/nvim-bufferline.lua'
 Plug 'kevinhwang91/nvim-hlslens'
 Plug 'nvim-lua/popup.nvim'
