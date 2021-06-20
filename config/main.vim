@@ -46,7 +46,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'kaicataldo/material.vim'
 Plug 'rakr/vim-one'
 Plug 'Avimitin/nerd-galaxyline'
-
+Plug 'rafamadriz/neon'
 "==============================================================================
 " CUSTOM PLUGINS
 
