@@ -11,7 +11,9 @@ function! s:check_backspace() abort
 	return !col || getline('.')[col - 1] =~ '\s'
 endfunction
 
-autocmd CursorHold * silent call CocActionAsync('highlight')
+if has_key(plugs, 'coc.nvim')
+    autocmd CursorHold * silent call CocActionAsync('highlight')
+endif
 inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_backspace() ? "\<Tab>" :
