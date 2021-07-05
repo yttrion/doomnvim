@@ -37,7 +37,6 @@ function! doomnvim#logging#message(type, msg, level)
             let err_msg = '[!] - Cannot save: ' . a:msg . ''
             exec ':silent !echo '.err_msg.' >> $HOME/.doomnvim/logs/doomnvim.log'
         endtry
-
     endif
 
 endfunction

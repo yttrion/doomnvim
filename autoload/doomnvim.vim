@@ -63,6 +63,12 @@ let g:doomnvim_colorscheme_bg = 'dark'
 " @default = 1
 let g:doomnvim_check_updates = 0
 
+" coc.nvim extensions
+" @default = []
+" Check 
+" for a list of supported languages
+let g:doomnvim_lsp = []
+
 " Disabled plugins
 " @default = []
 " example:
