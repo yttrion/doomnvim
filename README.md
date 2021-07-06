@@ -36,6 +36,7 @@ It aims to add useful features to stock neovim and also serves as my daily drive
 - Mnemonic key binding
 - Integration with `Telescope.nvim` 
 - Most features of a text editor
+- Lua support with Neovim 0.5 release
 
 # Install
 ## Prerequisites
@@ -68,6 +69,7 @@ After doomnvim is installed, run `vim` and doomnvim will automatically install p
 # Acknowledgements
 - [doom-emacs](https://github.com/hlissner/doom-emacs)
 - [SpaceVim](https://github.com/SpaceVim/SpaceVim)
+
 ## Plugins and colorschemes
 Check doomnvim.txt
 

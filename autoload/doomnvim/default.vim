@@ -48,7 +48,6 @@ function! doomnvim#default#options() abort
 
     nnoremap Q <Nop>
     nnoremap ZZ :call doomnvim#functions#quitdoom(1,1)<CR>
-
 endfunction
 
 
@@ -73,10 +72,6 @@ function doomnvim#default#loadGlob()
     	set signcolumn=auto
     endif
 
-    " Spaceline
-    let g:spaceline_seperate_style = 'slant-cons'
-    let g:spaceline_colorscheme = 'space' 
-
     "vim-which-key
     let mapleader = ' '
     let g:which_key_hspace = 30
@@ -87,13 +82,6 @@ function doomnvim#default#loadGlob()
     let g:vista_default_executive = 'ctags'
     let g:vista_fzf_preview = ['right:50%']
     let g:vista#renderer#enable_icon = 1
-
-    "IndentLine
-    let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-    let g:indentLine_conceallevel=g:doomnvim_conceallevel
-
-    "vim-floaterm
-    "hi FloatermNC guibg=gray
 
     "vim-gitgutter
     let g:gitgutter_map_keys = 0
@@ -142,7 +130,7 @@ function doomnvim#default#loadGlob()
 
     " Nvim-tree.lua
     let g:nvim_tree_width = g:doomnvim_sidebar_width
-    let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache' ] "empty by default
+    let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache', '.github' ] "empty by default
     let g:nvim_tree_gitignore = g:doomnvim_show_hidden
     let g:nvim_tree_auto_ignore_ft = [ 'startify', 'dashboard' ]
     let g:nvim_tree_quit_on_open = 0
@@ -207,8 +195,6 @@ function doomnvim#default#loadGlob()
         \   }
         \ }
     highlight NvimTreeFolderIcon guibg=blueo
-
-
 
 
     "Internals

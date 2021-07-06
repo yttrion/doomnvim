@@ -7,11 +7,9 @@
 function! doomnvim#functions#update()
     try
         exec ':FloatermKill'
-        exec ":FloatermNew cd $HOME/.doomnvim && git pull --no-edit"
+        exec ':FloatermNew cd $HOME/.doomnvim && git pull --no-edit'
     endtry
     execute 'source' g:doomnvim_root.'init.vim'
-    
-
 endfunction
 
 function! doomnvim#functions#checkbin(bin)  abort
@@ -36,11 +34,10 @@ endfunction
 
 
 function! doomnvim#functions#getroot() abort
-
     call doomnvim#logging#message('+', 'doomnvim.functions.getroot called', 2)
     let full_root =  expand('<sfile>:p')
-    let root = full_root[:-22]
-    return root
+    "let root = full_root[:-22]
+    return full_root[:-22]
     " Returns
     " /home/username/.doomnvim/autoload/functions.vim
     " Trim for 18 char from the end
@@ -48,7 +45,6 @@ endfunction
 
 
 function! doomnvim#functions#quitdoom(write, force) abort
-
     try
         call doomnvim#logging#message('*', 'Checking if colorscheme was changed...', 2)
         let target = g:colors_name
@@ -61,14 +57,12 @@ function! doomnvim#functions#quitdoom(write, force) abort
     catch
         call doomnvim#logging#message('!', 'Unable to write to the BFC', 1)
     endtry
-
     exec ':silent !echo "[---] - Dumping :messages" >> $HOME/.doomnvim/logs/doomnvim.log'
     exec 'redir >> $HOME/.doomnvim/logs/doomnvim.log'
     exec ':silent messages'
     exec ':redir END'
     exec ':silent !echo " " >> $HOME/.doomnvim/logs/doomnvim.log'
     exec ':silent !echo "[---] - End of dump" >> $HOME/.doomnvim/logs/doomnvim.log'
-
     let quit_cmd = ''
     " Autosave session if enabled
     if g:doomnvim_sessionsave_onquit ==# 1
@@ -82,7 +76,6 @@ function! doomnvim#functions#quitdoom(write, force) abort
     elseif a:force == 1
         exec quit_cmd.'qa!'
     endif
-
 endfunction
 
 " Create a MD report
@@ -102,7 +95,6 @@ function! doomnvim#functions#disable_plug()
         call doomnvim#logging#message('+', 'Disabling '.name, 2)
         call remove(g:plugs, name)
     endif
-
     let idx = index(g:plugs_order, name)
     if idx > -1
       call remove(g:plugs_order, idx)
@@ -112,11 +104,12 @@ endfunction
 
 
 function! doomnvim#functions#checkinstall(pkg)
-    if isdirectory(g:doomnvim_root.'/plugged/'.a:pkg)
-        return 1
-    else
-        return 0
-    endif
+    return isdirectory(g:doomnvim_root.'/plugged/'.a:pkg)
+    "if isdirectory(g:doomnvim_root.'/plugged/'.a:pkg)
+    "    return 1
+    "else
+    "    return 0
+    "endif
 endfunction
 
 
