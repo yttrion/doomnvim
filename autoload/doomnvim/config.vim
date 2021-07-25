@@ -9,11 +9,6 @@
 function! doomnvim#config#checkBFC()
     " /home/username/.doomnvim/
     let g:doomnvim_bfc = filereadable(g:doomnvim_root . '../.doomrc')
-    "if filereadable(g:doomnvim_root . '../.doomrc')
-    "    let g:doomnvim_bfc = 1
-    "else
-    "    let g:doomnvim_bfc = 0
-    "endif
 endfunction
 
 

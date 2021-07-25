@@ -184,7 +184,7 @@ colorschemes installed in `$HOME/.doomnvim/colors/`:
     - `doom-one` (default)
 
 Other colorschemes are installed by default with `doomnvim`. They are 
-configured in the `main.vim`file.
+configured in the `main.vim` file.
 You can switch between colorschemes by doing <Space>mc and then type the name 
 of the colorscheme you want to use. You can also edit the `BFC` file located 
 at: `$HOME/.doomrc` (see |doomnvim-hacking|)
@@ -418,7 +418,7 @@ tag on the status line
 `EditColorscheme`: Adds an entry to the BFC file to match the selected
 colorscheme
 
-`ToggleConceal`: On certain filetypes (e.g:`*.tex`) the conceallevel might
+`ToggleConceal`: On certain filetypes (e.g: `*.tex`) the conceallevel might
 disturb, therefore this function sets the conceallevel to 0 or switchs it back
 to 1.
 
@@ -615,32 +615,33 @@ v0.1.6
 - Fixed `<Space>`keybindings not working as intented
 - Fixed session saves and dictionnary
 - Changed keybindings to match some of doom-emacs's
-- Disabled `g:doomnvim_check_updates`by default
-- Force `expandtad`by default
+- Disabled `g:doomnvim_check_updates` by default
+- Force `expandtad` by default
 - Added keybindings to move buffers
 
 v0.1.7
-- Added `g:doomnvim_disabled_plugins`that prevents certains plugins to load
-- Added `g:doomnvim_custom_plugins`that allow the user to add plugins.
+- Added `g:doomnvim_disabled_plugins` that prevents certains plugins to load
+- Added `g:doomnvim_custom_plugins` that allow the user to add plugins.
 - Fixed session loading not using the correct path
-- Added the `ToggleConceal()`function
+- Added the `ToggleConceal()` function
 - Fixed installer update error
 - Added acknowledgment in README.md
 - Added autosave option when quit
 - Added spell commands and variables
 
 v0.1.7.1
-- Changed `vim-clap`to`telescope.nvim`
+- Changed `vim-clap` to `telescope.nvim`
 - Fixed updater asking for merge message
 - Fixed installer for user plugins
 - Fixed uninstaller for user plugins
-- Fixed `telescope.nvim`keymap
+- Fixed `telescope.nvim` keymap
 
 v0.1.8
-- Changed `spaceline.vim`to`galaxyline.vim`
-- Changed `NERDTree`to`nvim-tree`
+- Changed `spaceline.vim` to `galaxyline.vim`
+- Changed `NERDTree` to `nvim-tree`
 - Added config file for `lua` plugins
-- Removed`vimade`because of loading time
+- Removed `vimade` because of loading time
 - Hot reload when doing an update
+- Cleanup of code
 
 " vim:tw=80:ft=help:norl:

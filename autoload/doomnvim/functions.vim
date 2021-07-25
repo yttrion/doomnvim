@@ -36,7 +36,6 @@ endfunction
 function! doomnvim#functions#getroot() abort
     call doomnvim#logging#message('+', 'doomnvim.functions.getroot called', 2)
     let full_root =  expand('<sfile>:p')
-    "let root = full_root[:-22]
     return full_root[:-22]
     " Returns
     " /home/username/.doomnvim/autoload/functions.vim
@@ -105,11 +104,6 @@ endfunction
 
 function! doomnvim#functions#checkinstall(pkg)
     return isdirectory(g:doomnvim_root.'/plugged/'.a:pkg)
-    "if isdirectory(g:doomnvim_root.'/plugged/'.a:pkg)
-    "    return 1
-    "else
-    "    return 0
-    "endif
 endfunction
 
 
