@@ -47,6 +47,8 @@ Plug 'kaicataldo/material.vim'
 Plug 'rakr/vim-one'
 Plug 'Avimitin/nerd-galaxyline'
 Plug 'rafamadriz/neon'
+Plug 'onsails/lspkind-nvim'
+Plug 'lukas-reineke/indent-blankline.nvim'
 "==============================================================================
 " CUSTOM PLUGINS
 
