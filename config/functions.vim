@@ -62,12 +62,6 @@ function! LayoutToggle()
 	call doomnvim#logging#message("*", "Switched layout", 2)
 endfunction
 
-function! NearestMethodOrFunction() abort
-  return get(b:, 'vista_nearest_method_or_function', '')
-endfunction
-set statusline+=%{NearestMethodOrFunction()}
-autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
-
 function! s:show_documentation()
 	if (index(['vim','help'] &filetype) >= 0)
 		execute 'h ' . expand('<cword>')
