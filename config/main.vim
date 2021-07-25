@@ -25,7 +25,7 @@ Plug 'akinsho/nvim-bufferline.lua'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'liuchengxu/vim-which-key'
-Plug 'simrat39/symbols-outline.nvim'
+Plugs 'preservim/tagbar' 
 Plug 'voldikss/vim-floaterm'
 Plug 'preservim/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
@@ -48,6 +48,8 @@ Plug 'onsails/lspkind-nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 "==============================================================================
 " CUSTOM PLUGINS
+
+
 
 
 
