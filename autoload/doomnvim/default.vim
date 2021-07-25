@@ -88,6 +88,10 @@ function doomnvim#default#loadGlob()
     let g:indentLine_enabled = g:doomnvim_show_indent
     let g:indentLine_fileTypeExclude = ['dashboard']
 
+    "indent-blankline
+    let g:indent_blankline_char = "|"
+    let g:indent_blankline_char_list = ['|', '|', '|', '|']
+
     "Dashboard
     let g:dashboard_default_executive ='telescope'
     let g:dashboard_session_directory = g:doomnvim_root . 'sessions'
