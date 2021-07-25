@@ -21,7 +21,6 @@ Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'bryanmylee/vim-colorscheme-icons'
 Plug 'glepnir/dashboard-nvim'
-Plug 'Yggdroot/indentLine'
 Plug 'kevinhwang91/nvim-hlslens'
 Plug 'akinsho/nvim-bufferline.lua'
 Plug 'nvim-lua/popup.nvim'
