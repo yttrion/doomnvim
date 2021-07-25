@@ -14,6 +14,7 @@ endfunction
 if has_key(plugs, 'coc.nvim')
     autocmd CursorHold * silent call CocActionAsync('highlight')
 endif
+
 inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_backspace() ? "\<Tab>" :

@@ -11,7 +11,6 @@ if empty(glob('~/.doomnvim/autoload/plug.vim'))
 endif
 " On load
 if has('vim_starting')
-	" Force utf-8
 	exe 'set encoding=utf-8'
 endif
 
@@ -44,7 +43,6 @@ Plug 'dracula/vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'kaicataldo/material.vim'
 Plug 'rakr/vim-one'
-Plug 'Avimitin/nerd-galaxyline'
 Plug 'rafamadriz/neon'
 Plug 'onsails/lspkind-nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'

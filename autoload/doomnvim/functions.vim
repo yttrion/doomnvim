@@ -37,9 +37,6 @@ function! doomnvim#functions#getroot() abort
     call doomnvim#logging#message('+', 'doomnvim.functions.getroot called', 2)
     let full_root =  expand('<sfile>:p')
     return full_root[:-22]
-    " Returns
-    " /home/username/.doomnvim/autoload/functions.vim
-    " Trim for 18 char from the end
 endfunction
 
 
@@ -154,13 +151,12 @@ function doomnvim#functions#addPlugin(name, author, pkg)
     let found = system('grep -Rc "'.a:name.'" $HOME/.doomnvim/config/main.vim')
     if found == 0
         call doomnvim#logging#message('+','Adding plugin to main.vim',2)
-        let cmd = "53iPlug ".string(a:name)
+        let cmd = "55iPlug ".string(a:name)
         call system('sed -i "'.cmd.'" $HOME/.doomnvim/config/main.vim')
     else
         call doomnvim#logging#message('+','Plugin already installed',2)
     endif
 endfunction
-
 
 
 function doomnvim#functions#cleanPlugin()
