@@ -224,7 +224,9 @@ install_fonts(){
 download_font(){
 	# TODO
 	# 	- Must use own font manager
-    url="https://raw.githubusercontent.com/wsdjeg/DotFiles/7a75a186c6db9ad6f02cafba8d4c7bc78f47304c/local/share/fonts/${1// /%20}"
+    #url="https://raw.githubusercontent.com/wsdjeg/DotFiles/7a75a186c6db9ad6f02cafba8d4c7bc78f47304c/local/share/fonts/${1// /%20}"
+    #https://raw.githubusercontent.com/yttrion/doomnvim/blob/fonts/symbol.ttf
+    url="https://raw.githubusercontent.com/yttrion/doomnvim/fonts/${1// /%20}"
     path="$HOME/.local/share/fonts/$1"
     # Clean up after https://github.com/SpaceVim/SpaceVim/issues/2532
     if [[ -f "$path" && ! -s "$path" ]]
