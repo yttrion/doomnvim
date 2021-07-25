@@ -19,6 +19,19 @@ require('bufferline').setup{
     }
 }
 
+require().setup{
+    vim.g.symbols_outline = {
+        keymaps = {
+            close = "<Esc>",
+            goto_location = "<Cr>",
+            focus_location = "o",
+            hover_symbol = "<C-space>",
+            rename_symbol = "r",
+            code_actions = "a",
+        },
+    }
+}
+
 require('lspkind').init({
     with_text = true,
     preset = 'default',

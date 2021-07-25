@@ -77,12 +77,6 @@ function doomnvim#default#loadGlob()
     let g:which_key_hspace = 30
     let g:which_key_use_floating_win = 1
 
-    " Vista.vim
-    let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
-    let g:vista_default_executive = 'coc'
-    let g:vista_fzf_preview = ['right:50%']
-    let g:vista#renderer#enable_icon = 1
-
     "vim-gitgutter
     let g:gitgutter_map_keys = 0
     let g:indentLine_enabled = g:doomnvim_show_indent
