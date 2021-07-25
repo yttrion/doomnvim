@@ -79,7 +79,7 @@ function doomnvim#default#loadGlob()
 
     " Vista.vim
     let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
-    let g:vista_default_executive = 'ctags'
+    let g:vista_default_executive = 'coc'
     let g:vista_fzf_preview = ['right:50%']
     let g:vista#renderer#enable_icon = 1
 
@@ -206,5 +206,6 @@ function doomnvim#default#loadGlob()
     let g:term_win = 0
     let g:vert_layout = 1
     let g:buf_left = 0
+    let g:vista = 0
 
 endfunction
