@@ -637,7 +637,7 @@ v0.1.7.1
 - Fixed `telescope.nvim` keymap
 
 v0.1.8
-- Changed `spaceline.vim` to `galaxyline.vim`
+- Changed `spaceline.vim` to `staline.vim`
 - Changed `NERDTree` to `nvim-tree`
 - Added config file for `lua` plugins
 - Removed `vimade` because of loading time
@@ -645,6 +645,6 @@ v0.1.8
 - Cleanup of code
 - Trying to make the interface consistent
 - Removed `Vista.nvim` and switched back to `Tagbar`
-- Removed `indentLines.vim`*
+- Removed `indentLines.vim`
 
 " vim:tw=80:ft=help:norl:

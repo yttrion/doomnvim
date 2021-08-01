@@ -62,7 +62,7 @@ function! doomnvim#functions#quitdoom(write, force) abort
     let quit_cmd = ''
     " Autosave session if enabled
     if g:doomnvim_sessionsave_onquit ==# 1
-        execute(':SessionSave')
+        execute(':silent :SessionSave')
     endif
     if a:write == 1
         let quit_cmd .= 'wa | '
