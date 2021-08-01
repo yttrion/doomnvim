@@ -124,6 +124,9 @@ let g:doomnvim_spell = 0
 " @default = 1
 let g:doomnvim_logging = 1
 
+" Spell lang
+" @default = en
+let g:doomnvim_spelllang=en
 
 " Vim type
 " 0 : vim

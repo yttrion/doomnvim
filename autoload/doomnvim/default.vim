@@ -35,6 +35,7 @@ function! doomnvim#default#options() abort
     let &shiftwidth = g:doomnvim_indent
     let &colorcolumn = g:doomnvim_max_columns
     let &conceallevel = g:doomnvim_conceallevel
+    let &spelllang = g:doomnvim_spelllang
     if g:doomnvim_relative_num ==# 1
         set number relativenumber
     else

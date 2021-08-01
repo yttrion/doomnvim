@@ -61,7 +61,7 @@ doomnvim configuration files are located in the `$HOME/.doomnvim/config`
 directory. Global variables for doomnvim are located in
 `$HOME/.doomnvim/autoload/doomnvim.vim`
 
-All the options available in the `doomnvim.vim` file are global varibles.
+All the options available in the `doomnvim.vim` file are global variables.
 They all start with `g:doomnvim_` followed by a description of their
 nature: `g:doomnvim_save_workspace` followed by their values.
 
@@ -120,7 +120,7 @@ Check updates of plugins on start
 
 `g:doomnvim_disabled_plugins`
 default value = []
-Dictionnary of user disabled plugins
+Dictionary of user disabled plugins
 
 `g:doomnvim_custom_plugins`
 default value = []
@@ -216,8 +216,8 @@ Excluding the statusline, doomnvim will mostly have the following layout:
 
 'A' : The file explorer (Plugin: nvim-tree)
 'B' : The main buffer
-'C' : The tagbar (Plugin: Tagbar)
-'D' : The buffered terminal
+'C' : The buffered terminal 
+'D' : The tags buffer (Plugin: Tagbar)
 
 Sections with `*` are not opened by default but can be toggled.
 See |doomnvim-commands| for more informations
@@ -228,7 +228,7 @@ FILE EXPLORER                         *doomnvim-configuration-layout-explorer*
 doomnvim uses nvim-tree plugin as a file explorer. It can be toggled
 by performing the following command: <Space>fe for `FileExplorer`
 
-To create a new file whithin the file explorer, do <m><a>[nameofnode]
+To create a new file within the file explorer, do <m><a>[nameofnode]
 Append a `/` if you want to create a directory
 
 Check `nvim-tree` for more info.
@@ -261,7 +261,7 @@ it is to enter `exit` to close the shell session.
 COMMANDS                                                   *doomnvim-commands*
 
 doomnvim uses vim-which-key as a command manager. To open whichkey press
-<Space> and wait for the popup to show. Each function has a label and is
+<Space> and wait for the pop-up to show. Each function has a label and is
 mnemonic
 e.g:
 	`Save File` > <Space>sf
@@ -274,7 +274,7 @@ need to perform the following keystrokes:
 
 <Space>b
 
-in order to open the `buffer` menu. There we want to `s`plit the current
+In order to open the `buffer` menu. There we want to `s`plit the current
 buffer to we append `s` to the command.
 
 <Space>bs
@@ -418,8 +418,8 @@ tag on the status line
 `EditColorscheme`: Adds an entry to the BFC file to match the selected
 colorscheme
 
-`ToggleConceal`: On certain filetypes (e.g: `*.tex`) the conceallevel might
-disturb, therefore this function sets the conceallevel to 0 or switchs it back
+`ToggleConceal`: On certain file types (e.g: `*.tex`) the conceallevel might
+disturb, therefore this function sets the conceallevel to 0 or switches it back
 to 1.
 
 ==============================================================================
@@ -456,7 +456,7 @@ KNOWN ISSUES                                                  *doomvim-issues*
 - When installing doomvim for the first time, event if plugins are configured
   there might be some error messages. The most common one is
 	`E117: unknown command whichkey#register()`
-  due to vim-which-key loading whithout being installed.
+  due to vim-which-key loading without being installed.
 
 - The |doomvim-configuration-layout-terminal| cannot be closed unless
   the `exit` command is performed.
@@ -507,14 +507,14 @@ is the layout of the doomnvim project:
 |_ config/                              # Configuration files of doomnvim
 |   |_ plugins/                         # Plugin config
 |   |   |_ coc.vim                      # coc.nvim configuration
-|   |   |_ dict.vim                     # Dictionnary for vim-which-key
+|   |   |_ dict.vim                     # Dictionary for vim-which-key
 |   |   |_ keymap.vim                   # doomnvim keybindings
 |   |_ functions.vim                    # doomnvim functions
 |   |_ gui.vim                          # doomnvim gui options
 |   |_ main.vim                         # init file, loads vim-plug
 |_ doc/                                 # documentation of doomnvim
 |   |_ doomnvim.txt                     # doomnvim help file
-|_ plugged/                             # Location of pluggins
+|_ plugged/                             # Location of plugins
 |_ sessions/                            # Location vim workspaces
 |_ undodirs/                            # .undodirs/ folders location
 |_ logs/                                # Location of logs files
@@ -534,14 +534,14 @@ The `BFC`is located at `$HOME/.doomrc`
 AUTOLOAD                                           *doomnvim-hacking-autoload*
 
 The autoload folder content is loaded by vim on_start. It is the location
-of the doomnvim plugin which is loaded everytime.
+of the doomnvim plugin which is loaded every time.
 
 The `doomnvim.vim` file is contain most of the global variables used by 
 doomnvim and executes the init functions of doomnvim.
 
 The files inside the `doomnvim/` folder have core functions for doomnvim.
 
-    * autocmds.vim : Autocommands needed.
+    * autocmds.vim : Auto commands needed by doomnvim.
     * commands.vim : Custom commands
     * config.vim   : Manages the BFC
     * default      : Default configuration for nvim and for plugins
@@ -575,7 +575,7 @@ v0.1.4
 v0.1.4-1
 - Added complete log
 - Dump vim internal error messages to logfile
-- Fixed vimscript linting errors and dagerous operators
+- Fixed vimscript linting errors and dangerous operators
 - Added netrwc as file explorer in a new buffer
 - Fixed colors in install.sh
 - Buffer resize in width/height are now done by 20% of width/height of
@@ -598,7 +598,7 @@ v0.1.5-1
 - Improved the documentation
 - Added keybindings
 - Added nvim-bufferline.lua for neovim>=0.5 users
-- All files opened with NERDTree now open in a new vertial split
+- All files opened with NERDTree now open in a new vertical split
 - Fixed toggle line number
 - Cleaned the config/plugin/ directory
 - Most configuration files are now loaded by autoload
@@ -612,7 +612,7 @@ v0.1.5-2
 - New colorscheme switcher (colors are saved on quit)
 
 v0.1.6
-- Fixed `<Space>`keybindings not working as intented
+- Fixed `<Space>`keybindings not working as intended
 - Fixed session saves and dictionnary
 - Changed keybindings to match some of doom-emacs's
 - Disabled `g:doomnvim_check_updates` by default
@@ -620,7 +620,7 @@ v0.1.6
 - Added keybindings to move buffers
 
 v0.1.7
-- Added `g:doomnvim_disabled_plugins` that prevents certains plugins to load
+- Added `g:doomnvim_disabled_plugins` that prevents some plugins to load
 - Added `g:doomnvim_custom_plugins` that allow the user to add plugins.
 - Fixed session loading not using the correct path
 - Added the `ToggleConceal()` function
