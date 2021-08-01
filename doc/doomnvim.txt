@@ -51,7 +51,7 @@ CONTENTS                                                   *doomnvim-contents*
 INTRODUCTION                                                  *doomnvim-intro*
 
 doomnvim is a neovim framework that includes custom settings and
-plugins. It is inspired by doom-emacs
+plugins. It is inspired by doom-emacs and Spacevim
 
 
 ==============================================================================
@@ -643,5 +643,8 @@ v0.1.8
 - Removed `vimade` because of loading time
 - Hot reload when doing an update
 - Cleanup of code
+- Trying to make the interface consistent
+- Removed `Vista.nvim` and switched back to `Tagbar`
+- Removed `indentLines.vim`*
 
 " vim:tw=80:ft=help:norl:

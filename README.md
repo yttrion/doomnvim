@@ -51,7 +51,8 @@ Simply run the following command:
 curl -sLf https://raw.githubusercontent.com/yttrion/doomnvim/main/install.sh | bash
 ```
 
-After doomnvim is installed, run `vim` and doomnvim will automatically install plugins
+After doomnvim is installed, run neovim and doomnvim will automatically install plugins
+*doomnvim* might show some errors during the first launch, just restart it.
 
 # Screenshots
 <div align="center">
@@ -70,6 +71,6 @@ After doomnvim is installed, run `vim` and doomnvim will automatically install p
 - [SpaceVim](https://github.com/SpaceVim/SpaceVim)
 
 ## Plugins and colorschemes
-Check doomnvim.txt
+Check `doomnvim.txt`
 
 

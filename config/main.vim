@@ -16,7 +16,7 @@ endif
 
 call doomnvim#begin()
 call plug#begin('~/.doomnvim/plugged')
-Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+Plug 'tamton-aquib/staline.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'bryanmylee/vim-colorscheme-icons'
 Plug 'glepnir/dashboard-nvim'
@@ -66,5 +66,6 @@ call doomnvim#end()
 " Source lua configurations
 if g:doomnvim_nightly ==# 1
     set termguicolors
-    execute 'source' g:doomnvim_root.'config/luaConfig.vim'
+    execute 'source' g:doomnvim_root.'config/lua/bufferline.vim'
+    execute 'source' g:doomnvim_root.'config/lua/statusline.vim'
 endif
