@@ -125,8 +125,9 @@ let g:doomnvim_spell = 0
 let g:doomnvim_logging = 1
 
 " Spell lang
+" Check http://vimdoc.sourceforge.net/htmldoc/spell.html for more details
 " @default = en
-let g:doomnvim_spelllang=en
+let g:doomnvim_spelllang='en'
 
 " Vim type
 " 0 : vim
