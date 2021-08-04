@@ -7,8 +7,8 @@
 
 " Checks backspace
 function! s:check_backspace() abort
-	let col = col('.') - 1
-	return !col || getline('.')[col - 1] =~ '\s'
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1] =~ '\s'
 endfunction
 
 if has_key(plugs, 'coc.nvim')
@@ -16,71 +16,71 @@ if has_key(plugs, 'coc.nvim')
 endif
 
 inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_backspace() ? "\<Tab>" :
-      \ coc#refresh()
+            \ pumvisible() ? "\<C-n>" :
+            \ <SID>check_backspace() ? "\<Tab>" :
+            \ coc#refresh()
 
 "No NERDTree alone except when startify
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Toggle a terminal in a new buffer
 function! TermToggle(height)
-	if win_gotoid(g:term_win)
-		hide
-	else
-		botright new
-		exec 'resize ' . a:height
-		try
-			exec 'buffer ' . g:term_buf
-		catch
-			call termopen($SHELL, {"detach":0})
-			let g:term_buf = bufnr("")
-			set nonumber
-			set norelativenumber
-			set signcolumn=no
-		endtry
-		"startinsert!
-		let g:term_win = win_getid()
-	endif
+    if win_gotoid(g:term_win)
+        hide
+    else
+        botright new
+        exec 'resize ' . a:height
+        try
+            exec 'buffer ' . g:term_buf
+        catch
+            call termopen($SHELL, {"detach":0})
+            let g:term_buf = bufnr("")
+            set nonumber
+            set norelativenumber
+            set signcolumn=no
+        endtry
+        "startinsert!
+        let g:term_win = win_getid()
+    endif
     call doomnvim#logging#message("*", "Toggled terminal", 2)
 endfunction
 
 "Toggle layout
 function! LayoutToggle()
     try
-        exec ':NERDTreeClose'
+        exec ':NvimTreeClose'
     catch
-        call doomnvim#logging#message('!', 'No NERDTree buffer to close', 1)
+        call doomnvim#logging#message('!', 'No NvimTree buffer to close', 1)
     endtry
-	if g:vert_layout ==1
-		exe "normal \<C-w>K<CR>"
-		let g:vert_layout = 0
-	else
-		exe "normal \<C-w>H<CR>"
-		let g:vert_layout = 1
-	endif
-	call doomnvim#logging#message("*", "Switched layout", 2)
+    if g:vert_layout ==1
+        exe "normal \<C-w>K<CR>"
+        let g:vert_layout = 0
+    else
+        exe "normal \<C-w>H<CR>"
+        let g:vert_layout = 1
+    endif
+    call doomnvim#logging#message("*", "Switched layout", 2)
 endfunction
 
 function! s:show_documentation()
-	if (index(['vim','help'] &filetype) >= 0)
-		execute 'h ' . expand('<cword>')
-	else
-		call CocActionAsync('doHover')
-	endif
+    if (index(['vim','help'] &filetype) >= 0)
+        execute 'h ' . expand('<cword>')
+    else
+        call CocActionAsync('doHover')
+    endif
 endfunction
 
 
 function! RenameFile()
-	let old = expand('%')
-	let new = input('Save as: ', expand('%'), 'file')
-	if new != '' && new != old
-		exec ':saveas ' . new
-		exec ':silent !rm ' . old
-		exec 'bd ' . old
-		redraw!
-	endif
-	call doomnvim#logging#message("*", "Renamed file", 2)
+    let old = expand('%')
+    let new = input('Save as: ', expand('%'), 'file')
+    if new != '' && new != old
+        exec ':saveas ' . new
+        exec ':silent !rm ' . old
+        exec 'bd ' . old
+        redraw!
+    endif
+    call doomnvim#logging#message("*", "Renamed file", 2)
 endfunction
 
 
