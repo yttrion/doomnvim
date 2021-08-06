@@ -57,8 +57,7 @@ After doomnvim is installed, run neovim and doomnvim will automatically install 
 # Screenshots
 <div align="center">
   <div>
-    <img src="https://github.com/yttrion/doomnvim/blob/screens/doomnvim.png?raw=true" width=49%>
-    <img src="https://github.com/yttrion/doomnvim/blob/screens/doomnvim_dashboard.png?raw=true" width=49%>
+    <img src="https://github.com/yttrion/doomnvim/blob/screens/doomnvim_dashboard.png?raw=true" width=100%>
   </div>
   <div>
     <img src="https://github.com/yttrion/doomnvim/blob/screens/doomnvim_floaterm.png?raw=true" width=49%>
