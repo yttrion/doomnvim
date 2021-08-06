@@ -172,3 +172,10 @@ function doomnvim#functions#cleanPlugin()
     endfor
     execute(':PlugClean') 
 endfunction
+
+
+function! doomnvim#functions#sourceDirectory(file) abort
+  for s:fpath in split(globpath(a:file, '*.vim'), '\n')
+    exe 'source' s:fpath
+  endfor
+endfunction
