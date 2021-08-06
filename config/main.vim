@@ -66,7 +66,7 @@ call doomnvim#end()
 " Source lua configurations
 if g:doomnvim_nightly ==# 1
     set termguicolors
-    #execute 'source' g:doomnvim_root.'config/lua/bufferline.vim'
-    #execute 'source' g:doomnvim_root.'config/lua/statusline.vim'
+    "execute 'source' g:doomnvim_root.'config/lua/bufferline.vim'
+    "execute 'source' g:doomnvim_root.'config/lua/statusline.vim'
     call doomnvim#functions#sourceDirectory(g:doomnvim_root.'config/lua')
 endif
