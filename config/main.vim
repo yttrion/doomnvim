@@ -31,6 +31,8 @@ Plug 'lervag/vimtex'
 Plug 'xuhdev/vim-latex-live-preview', { 'for' : 'tex' }
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-lua/popup.nvim'
 Plug 'neoclide/coc.nvim', {'branch':'release'}
 Plug 'AlessandroYorba/Alduin'
 Plug 'ajmwagar/vim-deus'
