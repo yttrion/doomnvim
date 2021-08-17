@@ -127,11 +127,17 @@ function doomnvim#functions#checkUserPlugins() abort
             let author = system('echo '.name." | sed 's/\\/.*//'") 
             let pkg = system('echo '.name." | sed 's/.*\\///'") 
             let found = system('grep -Rc "'.name.'" $HOME/.doomnvim/logs/upkg') 
+            let enabled = system('grep -Rc "'.name.'" $HOME/.doomnvim/config/main.vim') 
             if found == 0
                 exec ':silent !echo '.name.' >> $HOME/.doomnvim/logs/upkg'
                 call doomnvim#functions#addPlugin(name, author, pkg)
             else
                 call doomnvim#logging#message('+', 'Pkg already backed up', 2)
+            endif
+            if enabled == 0
+                call doomnvim#functions#addPlugin(name, author, pkg)
+            else
+                call doomnvim#logging#message('+', "Plugin already enabled", 2)
             endif
         endfor
     endif
