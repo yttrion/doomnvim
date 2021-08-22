@@ -11,8 +11,6 @@ function! doomnvim#config#checkBFC()
     let g:doomnvim_bfc = filereadable(g:doomnvim_root . '../.doomrc')
 endfunction
 
-
-
 function! doomnvim#config#loadBFC()
     if filereadable(g:doomnvim_root . '../.doomrc')
         try
@@ -25,3 +23,13 @@ function! doomnvim#config#loadBFC()
         call doomnvim#logging#message('+', 'No BFC file', 2)
     endif
 endfunction
+
+if empty(glob('~/.doomnvim/autoload/plug.vim'))
+  	silent !curl -fLo ~/.doomnvim/autoload/plug.vim --create-dirs
+    	\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+" On load
+if has('vim_starting')
+	exe 'set encoding=utf-8'
+endif
