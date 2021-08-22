@@ -26,7 +26,7 @@ syntax reset
 if exists('g:colors_name')
   unlet g:colors_name
 endif
-let g:colors_name = 'doom'
+let g:colors_name = 'doomnvim'
 
 if !exists('g:doom_allow_italics')
   let g:doom_allow_italics = 0
