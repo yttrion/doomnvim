@@ -18,15 +18,13 @@ function! doomnvim#default#options() abort
     set noswapfile
     set showmode
     set hlsearch
-
     set mouse=a
     set laststatus=2
     set encoding=utf-8
     set backspace=indent,eol,start
     set timeoutlen=200
     set clipboard+=unnamedplus
-
-    set shortmess+=at
+    set shortmess+=atc
 
     let &expandtab = g:doomnvim_expand_tabs
     let &tabstop = g:doomnvim_indent
@@ -57,7 +55,7 @@ function doomnvim#default#loadGlob()
     "NERDCommenter
     let g:NERDCreateDefaultMappings = 0
 
-    "coc
+    "coc.vim
     set updatetime=500
     set nobackup
     set nowritebackup
@@ -65,7 +63,6 @@ function doomnvim#default#loadGlob()
     if has('patch-7.4.314')
         set shortmess+=s
     endif
-    set shortmess+=c
     if has('patch-8.1.1564')
     	set signcolumn=number
     else

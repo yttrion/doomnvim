@@ -647,4 +647,10 @@ v0.1.8
 - Removed `Vista.nvim` and switched back to `Tagbar`
 - Removed `indentLines.vim`
 
+v0.1.81
+- Cleaned `config.vim`
+- Colorschemes are local instead of relying on vim-plug
+- Removed some colorschemes from default
+-
+
 " vim:tw=80:ft=help:norl:
