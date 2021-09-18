@@ -157,7 +157,7 @@ function doomnvim#functions#addPlugin(name, author, pkg)
     let found = system('grep -Rc "'.a:name.'" $HOME/.doomnvim/config/main.vim')
     if found == 0
         call doomnvim#logging#message('+','Adding plugin to main.vim',2)
-        let cmd = "55iPlug ".string(a:name)
+        let cmd = "34iPlug ".string(a:name)
         call system('sed -i "'.cmd.'" $HOME/.doomnvim/config/main.vim')
     else
         call doomnvim#logging#message('+','Plugin already installed',2)
