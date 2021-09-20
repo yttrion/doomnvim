@@ -480,6 +480,7 @@ doomnvim aims to be hackable to suit everyone's needs. Therefore multiple
 options can be changed (see |doomnvim-options|). If that is not enough, here
 is the layout of the doomnvim project:
 
+DOMNVIM/
 |_ autoload/                            # Files loaded at launch
 |   |_ doomnvim/                        # doomnvim core
 |   |  |_ autocmds.vim                  # doomnvim autocmds
@@ -527,7 +528,7 @@ if it is not present on the system. It allows a fine control
 over the core functions of doomnvim. It is a copy of the `autoload/doomnvim.vim`
 file.
 
-The `BFC`is located at `$HOME/.doomrc`
+The `BFC` is located at `$HOME/.doomrc`
 
 
 ==============================================================================
@@ -541,14 +542,14 @@ doomnvim and executes the init functions of doomnvim.
 
 The files inside the `doomnvim/` folder have core functions for doomnvim.
 
-    * autocmds.vim : Auto commands needed by doomnvim.
-    * commands.vim : Custom commands
-    * config.vim   : Manages the BFC
-    * default      : Default configuration for nvim and for plugins
-    * function.vim : Util functions
-    * health.vim   : Used to check the health of install (WIP)
-    * logging.vim  : Logging handler
-    * system.vim   : Multi-os support (WIP)
+    * autocmds.vim  : Auto commands needed by doomnvim.
+    * commands.vim  : Custom commands
+    * config.vim    : Manages the BFC
+    * default       : Default configuration for nvim and for plugins
+    * functions.vim : Util functions
+    * health.vim    : Used to check the health of install (WIP)
+    * logging.vim   : Logging handler
+    * system.vim    : Multi-os support (WIP)
 
 
 ==============================================================================
