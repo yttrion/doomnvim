@@ -651,6 +651,6 @@ v0.1.81
 - Cleaned `config.vim`
 - Colorschemes are local instead of relying on vim-plug
 - Removed some colorschemes from default
--
+- Fixed bug where custom plugins are cloned but not written in `main.vim`
 
 " vim:tw=80:ft=help:norl:

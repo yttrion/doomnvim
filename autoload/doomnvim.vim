@@ -144,6 +144,10 @@ else
 endif    
 lockvar g:doomnvim_neovim
 
+" Custom lines
+" DO NOT EDIT
+let g:doomnvim_custom_line = 34
+
 function! doomnvim#loadConfig(file) abort
     if filereadable(g:doomnvim_root . 'config/' . a:file)
         execute 'source ' . g:doomnvim_root . 'config/' . a:file
