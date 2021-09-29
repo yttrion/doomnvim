@@ -20,8 +20,7 @@ require'nvim-tree'.setup {
   },
 
   view = {
-    -- TODO: Find a way to import g:doomnvim_sidebar_width 
-    --width = 30,
+    width = vim.api.nvim_get_var('doomnvim_sidebar_width'),
     side = 'left',
     auto_resize = false,
     mappings = {
