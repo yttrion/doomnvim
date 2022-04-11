@@ -22,7 +22,7 @@ function! doomnvim#config#loadBFC()
     else
         call doomnvim#logging#message('+', 'No BFC file', 2)
         " If file not found create the BFC
-        call exec 'touch $HOME/.doomrc'  
+        exec 'touch $HOME/.doomrc'  
     endif
 endfunction
 

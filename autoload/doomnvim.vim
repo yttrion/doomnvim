@@ -165,9 +165,7 @@ lockvar g:doomnvim_root
 function! doomnvim#begin() abort
 
     call doomnvim#config#checkBFC()
-    if g:doomnvim_bfc ==# 1
-        call doomnvim#config#loadBFC()
-    endif
+    call doomnvim#config#loadBFC()
     call doomnvim#autocmds#init()
     call doomnvim#system#whichos()
     call doomnvim#default#options()
