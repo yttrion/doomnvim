@@ -53,7 +53,7 @@ let g:doomnvim_show_hidden = 1
 
 " Default colorscheme
 " @default = doom
-let g:doomnvim_colorscheme = 'doom'
+let g:doomnvim_colorscheme = 'doomnvim'
 
 " Background color
 " @default = dark
