@@ -21,6 +21,8 @@ function! doomnvim#config#loadBFC()
         endtry
     else
         call doomnvim#logging#message('+', 'No BFC file', 2)
+        " If file not found create the BFC
+        call system('touch $HOME/.doomrc')  
     endif
 endfunction
 
