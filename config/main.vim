@@ -25,7 +25,6 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'neoclide/coc.nvim', {'branch':'release'}
-Plug 'onsails/lspkind-nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 "==============================================================================
 " CUSTOM PLUGINS

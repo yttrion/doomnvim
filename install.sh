@@ -190,59 +190,6 @@ install_vimplug(){
 	fi
 }
 
-
-install_fonts(){
-    if [[ ! -d "$HOME/.local/share/fonts" ]]; then
-        mkdir -p $HOME/.local/share/fonts
-    fi
-    download_font "DejaVu Sans Mono Bold Oblique for Powerline.ttf"
-    download_font "DejaVu Sans Mono Bold for Powerline.ttf"
-    download_font "DejaVu Sans Mono Oblique for Powerline.ttf"
-    download_font "DejaVu Sans Mono for Powerline.ttf"
-    download_font "DroidSansMonoForPowerlinePlusNerdFileTypesMono.otf"
-    download_font "Ubuntu Mono derivative Powerline Nerd Font Complete.ttf"
-    download_font "WEBDINGS.TTF"
-    download_font "WINGDNG2.ttf"
-    download_font "WINGDNG3.ttf"
-    download_font "devicons.ttf"
-    download_font "mtextra.ttf"
-    download_font "symbol.ttf"
-    download_font "wingding.ttf"
-    info "Updating font cache, please wait ..."
-    if [ $System == "Darwin" ];then
-        if [ ! -e "$HOME/Library/Fonts" ];then
-            mkdir "$HOME/Library/Fonts"
-        fi
-        cp $HOME/.local/share/fonts/* $HOME/Library/Fonts/
-    else
-        fc-cache -fv > /dev/null
-        mkfontdir "$HOME/.local/share/fonts" > /dev/null
-        mkfontscale "$HOME/.local/share/fonts" > /dev/null
-    fi
-    success "font cache done!"
-}
-download_font(){
-	# TODO
-	# 	- Must use own font manager
-    #url="https://raw.githubusercontent.com/wsdjeg/DotFiles/7a75a186c6db9ad6f02cafba8d4c7bc78f47304c/local/share/fonts/${1// /%20}"
-    #https://raw.githubusercontent.com/yttrion/doomnvim/blob/fonts/symbol.ttf
-    url="https://raw.githubusercontent.com/yttrion/doomnvim/fonts/${1// /%20}"
-    path="$HOME/.local/share/fonts/$1"
-    # Clean up after https://github.com/SpaceVim/SpaceVim/issues/2532
-    if [[ -f "$path" && ! -s "$path" ]]
-    then
-        rm "$path"
-    fi
-    if [[ -f "$path" ]]
-    then
-        success "Downloaded $1"
-    else
-        info "Downloading $1"
-        curl -s -o "$path" "$url"
-        success "Downloaded $1"
-    fi
-}
-
 uninstall(){
 	
 	#VIM
@@ -392,7 +339,6 @@ main(){
 		update_repo
 		backup_neovim
 		install_vimplug
-		install_fonts
 		check_requirements
 		install_done
 	fi
