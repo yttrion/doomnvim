@@ -87,7 +87,7 @@ endfunction
 
 function! EditColorscheme()
     if g:doomnvim_bfc ==# 0
-        exec ":!echo let g:doomnvim_colorscheme = 'doom' >> $HOME/.doomrc"
+        exec ":!echo let g:doomnvim_colorscheme = 'doomnvim' >> $HOME/.doomrc"
         call doomnvim#logging#message('*', 'Created the BFC', 2)
     else
         call doomnvim#logging#message('*', 'BFC already in directory', 2)

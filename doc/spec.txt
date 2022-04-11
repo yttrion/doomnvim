@@ -4,6 +4,7 @@ yttrion                                                                 *spec*
 CONTENTS                                                       *spec-contents*
   1. Introduction.................................................|spec-intro|
   2. Starting..................................................|spec-starting|
+  3. Closing....................................................|spec-closing|
 
 ==============================================================================
 INTRODUCTION                                                      *spec-intro*
@@ -18,35 +19,67 @@ The following diagram shows which functions are run when `doomnvim` starts.
 
 <init.vim>
 |   <main.vim>
-|  `doomnvim#begin()`                       
+|   `doomnvim#begin()`                       
 |   |   <doomnvim.vim>
-|   |  `doomnvim#config#checkBFC()`         # Checks if the BFC exists
-|   |  `doomnvim#config#loadBFC()`          # Loads the BFC or creates it
-|   |  `doomnvim#autocmds#init()`           # Loads buffer configuration
-|   |  `doomnvim#system#whichos()`          # Get the current OS
-|   |  `doomnvim#default#options()`         # Defines default nvim options
-|   |  `doomnvim#autocmds#helptags()`       # Generates doomnvim helptags
-|   |  `doomnvim#commands#init()`           # Autocomplete symbols
-|  `plug#begin()`                           # Loads default plugins
-|  `doomnvim#functions#disable_plug()`      # Disable blacklisted plugins
-|  `plug#end()`                             # End config for plug
-|  `doomnvim#end()`                         
+|   |   `doomnvim#config#checkBFC()`
+|   |       -> Checks if *$HOME/.doomrc* file exists 
+|   |   `doomnvim#config#loadBFC()`     
+|   |       -> Source the BFC
+|   |       -> If the BFC does not exists it will force create it
+|   |       -> Sets documents in `utf-8` by default
+|   |   `doomnvim#autocmds#init()`           
+|   |       -> Configure default buffer behaviour
+|   |       -> Configure dashboard behaviour
+|   |       -> Configure terminal behaviour
+|   |   `doomnvim#system#whichos()`          
+|   |       -> Get the current operating system
+|   |   `doomnvim#default#options()`         
+|   |       -> Sets default options for doomnvim
+|   |       -> Maps <Space>ZZ to *doomnvim#functions#quitdoom()*
+|   |   `doomnvim#autocmds#helptags()`       
+|   |       -> Create tags file for doomnvim documentation
+|   |   `doomnvim#commands#init()`           
+|   |       -> Loads autoclose characters 
+|   `plug#begin()`                           
+|   `doomnvim#functions#disable_plug()`      
+|       -> Check for blacklisted plugins and disables them
+|   `plug#end()`                             
+|   `doomnvim#end()`                         
 |   |   <doomnvim.vim>
-|   |  `doomnvim#default#loadGlob()`        # Loads global plugin config
-|   |  `doomnvim#system#grepconfig()`       # Sources .vim files
+|   |   `doomnvim#default#loadGlob()`        
+|   |       -> Loads default configuration for plugins
+|   |       -> Sets specific neovim options
+|   |   `doomnvim#system#grepconfig()`       
 |   |   |   <gui.vim>
+|   |   |       -> Checks the current colorscheme
+|   |   |       -> If the colorscheme is not null, set it
+|   |   |       -> If no colorscheme set, use default
 |   |   |   <functions.vim>
+|   |   |       -> Loads functions
 |   |   |   <config/coc.vim>
+|   |   |       -> coc.nvim config
 |   |   |   <config/dict.vim>
+|   |   |       -> vim-which-keys dictionnary
 |   |   |   <config/keymap.vim>
-|   |  `doomnvim#logging#init()`            # Enables logging
-|   |  `doomnvim#system#checkupdates()`     # Auto-updates plugins
-|  `doomnvim#functions#sourceDirectory()`   # Loads LUA config
-
+|   |   |       -> vim-which-keys keymap
+|   |   `doomnvim#logging#init()`            
+|   |       -> Creates the default start messages in log files
+|   |   `doomnvim#system#checkupdates()`     
+|   |       -> Clean unused plugins and updates installed plugins
+|   `doomnvim#functions#sourceDirectory()`   
+|       -> Source files from a directory, here `$DOOM/config/lua/`
 
 ==============================================================================
 CLOSING                                                         *spec-closing*
+When closing `doomnvim` with <ZZ>, <Space>qq or <Space>qQ:
+
+<keymap.vim>
+|   |   `doomnvim#functions#quitdoom()`      # Call doomnvim close function
+|   |       -> Checks if colorscheme was changed and writes in BFC
+|   |       -> End doomnvim.log stream
+|   |       -> Save session
+|   |       -> Closes `doomnvim`
 
 
-
+==============================================================================
 " vim:tw=80:ft=help:norl:
