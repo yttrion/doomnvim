@@ -38,8 +38,6 @@ The following diagram shows which functions are run when `doomnvim` starts.
 |   |       -> Maps <Space>ZZ to *doomnvim#functions#quitdoom()*
 |   |   `doomnvim#autocmds#helptags()`       
 |   |       -> Create tags file for doomnvim documentation
-|   |   `doomnvim#commands#init()`           
-|   |       -> Loads autoclose characters 
 |   `plug#begin()`                           
 |   `doomnvim#functions#disable_plug()`      
 |       -> Check for blacklisted plugins and disables them

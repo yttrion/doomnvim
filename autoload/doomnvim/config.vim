@@ -14,7 +14,7 @@ function! doomnvim#config#loadBFC()
         endtry
     else
         call doomnvim#logging#message('+', 'No BFC file', 2)
-        execute 'touch $HOME/.doomrc'  
+        execute ':!touch $HOME/.doomrc'  
     endif
 endfunction
 
