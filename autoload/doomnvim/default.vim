@@ -126,23 +126,11 @@ function doomnvim#default#loadGlob()
     " Nvim-tree.lua
     let g:nvim_tree_width = g:doomnvim_sidebar_width
     let g:nvim_tree_auto_ignore_ft = [ 'startify', 'dashboard' ]
-    let g:nvim_tree_quit_on_open = 0
-    let g:nvim_tree_indent_markers = g:doomnvim_explorer_indentlines
     let g:nvim_tree_git_hl = 1 
     let g:nvim_tree_root_folder_modifier = ':~' 
     let g:nvim_tree_width_allow_resize  = 0 
     let g:nvim_tree_add_trailing = 1
-    let g:nvim_tree_disable_window_picker = 1 
     let g:nvim_tree_icon_padding = ' ' 
-    let g:nvim_tree_window_picker_exclude = {
-        \   'filetype': [
-        \     'packer',
-        \     'qf'
-        \   ],
-        \   'buftype': [
-        \     'terminal'
-        \   ]
-        \ }
     let g:nvim_tree_special_files = [ 'README.md', 'Makefile', 'MAKEFILE', '.gitignore' ]
     let g:nvim_tree_show_icons = {
         \ 'git': g:doomnvim_show_icons,
