@@ -8,7 +8,7 @@
 scriptencoding utf-8
 
 " Version
-let g:doomnvim_version = '0.1.81'
+let g:doomnvim_version = '0.1.9'
 lockvar g:doomnvim_version
 
 " Default indent size
@@ -164,13 +164,11 @@ lockvar g:doomnvim_root
 " Functions
 function! doomnvim#begin() abort
 
-    call doomnvim#config#checkBFC()
     call doomnvim#config#loadBFC()
     call doomnvim#autocmds#init()
     call doomnvim#system#whichos()
     call doomnvim#default#options()
     call doomnvim#autocmds#helptags()
-    call doomnvim#commands#init()
 endfunction
 
 

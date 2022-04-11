@@ -43,6 +43,18 @@ function! doomnvim#default#options() abort
     endif
     filetype plugin indent on
     syntax on
+    
+    if g:doomnvim_autocomplete_par ==# 1
+        inoremap " ""<left>
+        inoremap ' ''<left>
+        inoremap ( ()<left>
+        inoremap [ []<left>
+        inoremap { {}<left>
+        inoremap ` ``<left>
+        inoremap < <><left>
+        inoremap {<CR> {<CR>}<ESC>O
+    endif
+
 
     nnoremap Q <Nop>
     nnoremap ZZ :call doomnvim#functions#quitdoom(1,1)<CR>

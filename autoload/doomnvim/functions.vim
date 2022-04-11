@@ -40,7 +40,7 @@ function! doomnvim#functions#getroot() abort
 endfunction
 
 
-function! doomnvim#functions#quitdoom(write, force) abort
+function! doomnvim#functions#quitdoom(write, force)
     try
         call doomnvim#logging#message('*', 'Checking if colorscheme was changed...', 2)
         let target = g:colors_name

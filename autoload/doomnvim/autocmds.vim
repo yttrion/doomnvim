@@ -4,7 +4,6 @@
 " License: MIT
 "====================================================================
 
-
 function! doomnvim#autocmds#init() abort
     augroup doomnvim_core
         " Load config
