@@ -1,1 +1,52 @@
-Doomnvim spec file
+*spec.txt*
+yttrion                                                                 *spec*
+==============================================================================
+CONTENTS                                                       *spec-contents*
+  1. Introduction.................................................|spec-intro|
+  2. Starting..................................................|spec-starting|
+
+==============================================================================
+INTRODUCTION                                                      *spec-intro*
+
+This file is a specification file, created in order to further explain how
+doomnvim works. It is mainly intended for developers and contributors of
+`doomnvim`. 
+
+==============================================================================
+STARTING                                                       *spec-starting*
+The following diagram shows which functions are run when `doomnvim` starts.
+
+<init.vim>
+|   <main.vim>
+|  `doomnvim#begin()`                       
+|   |   <doomnvim.vim>
+|   |  `doomnvim#config#checkBFC()`         # Checks if the BFC exists
+|   |  `doomnvim#config#loadBFC()`          # Loads the BFC or creates it
+|   |  `doomnvim#autocmds#init()`           # Loads buffer configuration
+|   |  `doomnvim#system#whichos()`          # Get the current OS
+|   |  `doomnvim#default#options()`         # Defines default nvim options
+|   |  `doomnvim#autocmds#helptags()`       # Generates doomnvim helptags
+|   |  `doomnvim#commands#init()`           # Autocomplete symbols
+|  `plug#begin()`                           # Loads default plugins
+|  `doomnvim#functions#disable_plug()`      # Disable blacklisted plugins
+|  `plug#end()`                             # End config for plug
+|  `doomnvim#end()`                         
+|   |   <doomnvim.vim>
+|   |  `doomnvim#default#loadGlob()`        # Loads global plugin config
+|   |  `doomnvim#system#grepconfig()`       # Sources .vim files
+|   |   |   <gui.vim>
+|   |   |   <functions.vim>
+|   |   |   <config/coc.vim>
+|   |   |   <config/dict.vim>
+|   |   |   <config/keymap.vim>
+|   |  `doomnvim#logging#init()`            # Enables logging
+|   |  `doomnvim#system#checkupdates()`     # Auto-updates plugins
+|  `doomnvim#functions#sourceDirectory()`   # Loads LUA config
+
+
+==============================================================================
+CLOSING                                                         *spec-closing*
+
+
+
+" vim:tw=80:ft=help:norl:
