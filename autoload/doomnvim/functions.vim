@@ -41,27 +41,25 @@ endfunction
 
 
 function! doomnvim#functions#quitdoom(write, force)
-    try
-        let target = g:colors_name
+
+    let checker = system('grep doomnvim_colorscheme "'.g:doomnvim_root.'../.doomrc"')
+    if checker == '' " No configuration for colorscheme 
+        call doomnvim#logging#message('*', 'No config found. Creating entry', 2)
+        exec ":silent !echo 'let g:doomnvim_colorscheme=\""
+            \ .g:colors_name."\"' >> $HOME/.doomrc"
+    else " Configuration found
         call doomnvim#logging#message('*', 'Checking if colorscheme was changed...', 2)
-        if target !=# g:doomnvim_colorscheme
-            let run = system(":silent !sed -i \"s/'"
-                \ .g:doomnvim_colorscheme."'/'".target."'/\" $HOME/.doomrc || echo 1")
-            if run == 1
-                call doomnvim#logging#message('*', 'Colorscheme successfully changed', 2)
-            else
-                call doomnvim#logging#message('!', 'GNU sed error. Using fallback function', 1)
-                exec ":silent !echo 'let g:doomnvim_colorscheme=\""
-                    \ .g:colors_name."\"' >> $HOME/.doomrc"
-            endif
+        if g:colors_name != g:doomnvim_colorscheme
+            let payload = "sed -i 's|\""
+                \ .g:doomnvim_colorscheme."\"|\""
+                \ .g:colors_name."\"|' "
+                \ .g:doomnvim_root."../.doomrc"
+            call system(payload)
+            call doomnvim#logging#message('*', 'Colorscheme successfully changed', 2)
         else
-            call doomnvim#logging#message('!', 'GNU sed error. Using fallback function', 1)
-            exec ":silent !echo 'let g:doomnvim_colorscheme=\""
-                \ .g:colors_name."\"' >> $HOME/.doomrc"
+            call doomnvim#logging#message('*', 'Same colorscheme. Nothing to change', 2)
         endif
-    catch
-        call doomnvim#logging#message('!', 'Unable to write the BFC.', 1)
-    endtry
+    endif
     exec ':silent !echo "[---] - Dumping :messages" >> $HOME/.doomnvim/logs/doomnvim.log'
     exec 'redir >> $HOME/.doomnvim/logs/doomnvim.log'
     exec ':silent messages'
