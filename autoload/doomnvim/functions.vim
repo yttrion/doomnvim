@@ -42,6 +42,7 @@ endfunction
 
 function! doomnvim#functions#quitdoom(write, force)
     try
+        let target = g:colors_name
         call doomnvim#logging#message('*', 'Checking if colorscheme was changed...', 2)
         exec ":silent !sed -i \"s/'".g:doomnvim_colorscheme."'/'".target."'/\" $HOME/.doomrc"
         call doomnvim#logging#message('*', 'Colorscheme successfully changed', 2)
