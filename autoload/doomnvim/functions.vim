@@ -43,15 +43,11 @@ endfunction
 function! doomnvim#functions#quitdoom(write, force)
     try
         call doomnvim#logging#message('*', 'Checking if colorscheme was changed...', 2)
-        let target = g:colors_name
-        if target != g:doomnvim_colorscheme
-            exec ":silent !sed -i \"s/'".g:doomnvim_colorscheme."'/'".target."'/\" $HOME/.doomrc"
-            call doomnvim#logging#message('*', 'Colorscheme successfully changed', 2)
-        else
-            call doomnvim#logging#message('*', 'No need to write colors (same)', 2)
-        endif
+        exec ":silent !sed -i \"s/'".g:doomnvim_colorscheme."'/'".target."'/\" $HOME/.doomrc"
+        call doomnvim#logging#message('*', 'Colorscheme successfully changed', 2)
     catch
-        call doomnvim#logging#message('!', 'Unable to write to the BFC', 1)
+        call doomnvim#logging#message('!', 'Unable to write the BFC. Using fallback function', 1)
+        exec ":silent !echo let g:doomnvim_colorscheme=\"".g:colors_name."\""
     endtry
     exec ':silent !echo "[---] - Dumping :messages" >> $HOME/.doomnvim/logs/doomnvim.log'
     exec 'redir >> $HOME/.doomnvim/logs/doomnvim.log'
