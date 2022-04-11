@@ -50,7 +50,8 @@ function! doomnvim#functions#quitdoom(write, force)
             call doomnvim#logging#message('*', 'Colorscheme successfully changed', 2)
         else
             call doomnvim#logging#message('!', 'GNU sed error. Using fallback function', 1)
-            exec ":silent !echo let g:doomnvim_colorscheme=\"".g:colors_name."\""
+            exec ":silent !echo 'let g:doomnvim_colorscheme=\""
+                \ .g:colors_name."\"' >> $HOME/.doomrc"
         endif
     catch
         call doomnvim#logging#message('!', 'Unable to write the BFC.', 1)
