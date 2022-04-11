@@ -44,10 +44,16 @@ function! doomnvim#functions#quitdoom(write, force)
     try
         let target = g:colors_name
         call doomnvim#logging#message('*', 'Checking if colorscheme was changed...', 2)
-        let run = system(":silent !sed -i \"s/'"
-            \ .g:doomnvim_colorscheme."'/'".target."'/\" $HOME/.doomrc || echo 1")
-        if run == 1
-            call doomnvim#logging#message('*', 'Colorscheme successfully changed', 2)
+        if target !=# g:doomnvim_colorscheme
+            let run = system(":silent !sed -i \"s/'"
+                \ .g:doomnvim_colorscheme."'/'".target."'/\" $HOME/.doomrc || echo 1")
+            if run == 1
+                call doomnvim#logging#message('*', 'Colorscheme successfully changed', 2)
+            else
+                call doomnvim#logging#message('!', 'GNU sed error. Using fallback function', 1)
+                exec ":silent !echo 'let g:doomnvim_colorscheme=\""
+                    \ .g:colors_name."\"' >> $HOME/.doomrc"
+            endif
         else
             call doomnvim#logging#message('!', 'GNU sed error. Using fallback function', 1)
             exec ":silent !echo 'let g:doomnvim_colorscheme=\""
