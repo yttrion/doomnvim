@@ -179,20 +179,23 @@ endfunction
 function! doomnvim#end() abort
     call doomnvim#default#loadGlob()
     "Test source system-based
-    "call doomnvim#system#grepconfig('config', 'gui.vim', 1)
-    "call doomnvim#system#grepconfig('config', 'functions.vim', 1)
+    call doomnvim#system#grepconfig('config', 'gui.vim', 1)
+    call doomnvim#system#grepconfig('config', 'functions.vim', 1)
 
     "Plugins 
-    "call doomnvim#system#grepconfig('config/plugins/', 'coc.vim', 1)
-    "call doomnvim#system#grepconfig('config/plugins/', 'dict.vim', 1)
-    "call doomnvim#system#grepconfig('config/plugins/', 'keymap.vim', 1)
+    call doomnvim#system#grepconfig('config/plugins/', 'coc.vim', 1)
+    call doomnvim#system#grepconfig('config/plugins/', 'dict.vim', 1)
+    call doomnvim#system#grepconfig('config/plugins/', 'keymap.vim', 1)
 
     call doomnvim#logging#init()
     if g:doomnvim_check_updates ==# 1
         call doomnvim#system#checkupdates()
     endif
     call doomnvim#autocmds#plugload()
-    call doomnvim#functions#sourceDirectory(g:doomnvim_root.'config/plugins')
+    call doomnvim#system#grepconfig('config/plugins/', 'bufferline.vim', 1)
+    call doomnvim#system#grepconfig('config/plugins/', 'nvimtree.vim', 1)
+    call doomnvim#system#grepconfig('config/plugins/', 'statusline.vim', 1)
+    "call doomnvim#functions#sourceDirectory(g:doomnvim_root.'config/plugins')
 endfunction
 
 " vim: cc=100:
