@@ -23,28 +23,6 @@ inoremap <silent><expr> <Tab>
 "No NERDTree alone except when startify
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Toggle a terminal in a new buffer
-function! TermToggle(height)
-    if win_gotoid(g:term_win)
-        hide
-    else
-        botright new
-        exec 'resize ' . a:height
-        try
-            exec 'buffer ' . g:term_buf
-        catch
-            call termopen($SHELL, {"detach":0})
-            let g:term_buf = bufnr("")
-            set nonumber
-            set norelativenumber
-            set signcolumn=no
-        endtry
-        "startinsert!
-        let g:term_win = win_getid()
-    endif
-    call doomnvim#logging#message("*", "Toggled terminal", 2)
-endfunction
-
 "Toggle layout
 function! LayoutToggle()
     try
