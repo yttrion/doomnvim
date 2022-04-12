@@ -31,8 +31,6 @@ The following diagram shows which functions are run when `doomnvim` starts.
 |   |       -> Configure default buffer behaviour
 |   |       -> Configure dashboard behaviour
 |   |       -> Configure terminal behaviour
-|   |   `doomnvim#system#whichos()`          
-|   |       -> Get the current operating system
 |   |   `doomnvim#default#options()`         
 |   |       -> Sets default options for doomnvim
 |   |       -> Maps <Space>ZZ to *doomnvim#functions#quitdoom()*
