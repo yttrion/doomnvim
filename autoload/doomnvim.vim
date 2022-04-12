@@ -166,9 +166,9 @@ function! doomnvim#begin() abort
 
     call doomnvim#config#loadBFC()
     call doomnvim#autocmds#init()
-    call doomnvim#system#whichos()
     call doomnvim#default#options()
     call doomnvim#autocmds#helptags()
+    call doomnvim#autocmds#plugload()
 endfunction
 
 
