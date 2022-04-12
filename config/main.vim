@@ -42,7 +42,7 @@ call doomnvim#functions#disable_plug()
 call plug#end()
 "Temp functions
 call doomnvim#end()
-
+set termguicolors
 " Source lua configurations
 if g:doomnvim_nightly ==# 1
     set termguicolors

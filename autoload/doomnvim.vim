@@ -187,7 +187,7 @@ function! doomnvim#end() abort
     if g:doomnvim_check_updates ==# 1
         call doomnvim#system#checkupdates()
     endif
-
+    call doomnvim#functions#sourceDirectory(g:doomnvim_root.'config/lua')
 endfunction
 
 " vim: cc=100:
