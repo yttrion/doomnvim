@@ -6,9 +6,9 @@
 
 function! doomnvim#autocmds#plugload() abort
     if empty(glob(g:doomnvim_root . '/autoload/plug.vim'))
+        let g:doomnvim_fresh = 1
         silent execute '!curl -fLo '.g:doomnvim_root.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-        autocmd VimEnter * PlugInstall --sync
-        execute ':PlugInstall'
+        "autocmd VimEnter * PlugInstall --sync
     endif
 endfunction
 

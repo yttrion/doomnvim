@@ -134,6 +134,11 @@ let g:doomnvim_spelllang='en'
 " @default = '/'
 let g:doomnvim_separator = '/'
 
+" New install of doomnvim
+" 0,1
+" @default = 0
+let g:doomnvim_fresh = 0
+
 " Vim type
 " 0 : vim
 " 1 : neovim
@@ -173,6 +178,7 @@ function! doomnvim#begin() abort
     call doomnvim#autocmds#init()
     call doomnvim#default#options()
     call doomnvim#autocmds#helptags()
+    call doomnvim#autocmds#plugload()
 endfunction
 
 
@@ -191,7 +197,9 @@ function! doomnvim#end() abort
     if g:doomnvim_check_updates ==# 1
         call doomnvim#system#checkupdates()
     endif
-    call doomnvim#autocmds#plugload()
+    if g:doomnvim_fresh
+        execute ':PlugInstall'
+    endif
     call doomnvim#system#grepconfig('config/plugins/', 'bufferline.vim', 1)
     call doomnvim#system#grepconfig('config/plugins/', 'nvimtree.vim', 1)
     call doomnvim#system#grepconfig('config/plugins/', 'statusline.vim', 1)
