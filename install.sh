@@ -257,7 +257,7 @@ main(){
 		check_all
 		update_repo
 		backup_neovim
-		install_vimplug
+		#install_vimplug
 		install_done
 	fi
 }

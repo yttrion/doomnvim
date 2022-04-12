@@ -18,12 +18,6 @@ function! doomnvim#config#loadBFC()
     endif
 endfunction
 
-if empty(glob('~/.doomnvim/autoload/plug.vim'))
-  	silent !curl -fLo ~/.doomnvim/autoload/plug.vim --create-dirs
-    	\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
 " On file load
 if has('vim_starting')
 	exe 'set encoding=utf-8'
