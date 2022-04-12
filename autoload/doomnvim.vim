@@ -173,7 +173,7 @@ function! doomnvim#begin() abort
     call doomnvim#autocmds#init()
     call doomnvim#default#options()
     call doomnvim#autocmds#helptags()
-    "call doomnvim#autocmds#plugload()
+    call doomnvim#autocmds#plugload()
 endfunction
 
 
