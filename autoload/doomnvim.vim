@@ -129,6 +129,11 @@ let g:doomnvim_logging = 1
 " @default = en
 let g:doomnvim_spelllang='en'
 
+" Default separator
+" '/', '\'
+" @default = '/'
+let g:doomnvim_separator = '/'
+
 " Vim type
 " 0 : vim
 " 1 : neovim
