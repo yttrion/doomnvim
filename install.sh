@@ -55,26 +55,6 @@ check_cmd () {
 	fi
 }
 
-check_requirements(){
-	info "Checking requirements"
-	# Checks if git is installed again
-	if hash "git" &>/dev/null; then
-		git_version=$(git --version)
-		success "Check requirements: ${git_version}"
-	else
-		warn "Check requirements : git"
-	fi
-	# Checks if neovim is installed
-	if hash "nvim" &>/dev/null; then
-		success "Check requirements nvim"
-	else
-		warn "Check requirements nvim"
-	fi
-	info "Checking true colors"
-	bash -c "$(curl -fsSL https://raw.githubusercontent.com/JohnMorales/dotfiles/master/colors/24-bit-color.sh)"
-
-}
-
 
 msg() {
     printf '%b\n' "$1" >&2
@@ -121,13 +101,13 @@ update_repo(){
 		cd - > /dev/null 2>&1
 		success "Successfully updated doomnvim"
 	else
-		info "Trying to clone doomnvim"
+		info "Cloning doomnvim"
 		git clone -q https://github.com/yttrion/doomnvim "$HOME/.doomnvim"
 		if [ $? -eq 0 ]; then
 			success "Successfully cloned doomnvim"
 		else
 			error "Failed to clone doomnvim"
-			exit 0
+			exit 1
 		fi
 	fi
 }
@@ -150,37 +130,6 @@ backup_neovim(){
 	fi
 
 }
-
-backup_vim(){
-	if [[ -f "$HOME/.vimrc" ]]; then
-		mv "$HOME/.vimrc" "$HOME/.vimrc_bak"
-		success "Vim backup is in $HOME/.vimrc_bak"
-	fi
-	if [[ -d "$HOME/.vim" ]]; then
-		if [[ "$(readlink $HOME/.vim)" =~ \.doomnvim$ ]]; then
-			success "Installed doomnvim for vim"
-		else
-			mv "$HOME/.vim" "$HOME/.vim_bak"
-			success ".vim/ backup is in $HOME/.vim_bak"
-			ln -s "$HOME/.doomnvim" "$HOME/.vim"
-			success "Installed doomnvim for vim"
-		fi
-	else
-		ln -s "$HOME/.doomnvim" "$HOME/.vim"
-		success "Installed doomnvim for vim"
-	fi
-
-}
-
-install_neovim_nightly(){
-    curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
-    chmod u+x nvim.appimage
-    mv nvim.appimage $HOME/.config/
-    echo "alias 'nvim'=$HOME/.config/nvim.appimage" >> $HOME/.bashrc
-    echo "alias 'nvim'=$HOME/.config/nvim.appimage" >> $HOME/.zshrc
-    success "Successfully installed neovim nightly"
-}
-
 
 install_vimplug(){
 	if [[ ! -d "$HOME/.cache/vimfiles/repos/github.com/junegunn/plug.vim" ]]; then
@@ -242,26 +191,13 @@ welcome(){
 
 install_done(){
 	echo ""
-	echo_with_color ${Green} 	"================================================="
+	echo_with_color ${Green} 	"================================================================"
 	echo_with_color ${Green} 	"You are almost done. Start vim or neovim to install the plugins"
 	echo_with_color ${Green}	"That's all folks. Thanks for installing doomnvim"
 	echo_with_color ${Green} 	"Enjoy."
-	echo_with_color ${Green} 	"================================================="
+	echo_with_color ${Green} 	"================================================================"
 }
 
-helper(){
-	info "doomnvim ${version} help"
-	echo_with_color ${Green} "doomnvim installer"
-	echo_with_color ${Green} "Usage ./install.sh [optn]"
-	echo_with_color ${Green} "Possible values:"
-	echo_with_color ${Yellow} "-u --update				Update doomnvim"
-	echo_with_color ${Yellow} "-c --check-requirements			Check doomnvim requirements"
-	echo_with_color ${Yellow} "-n --nightly				Install Neovim nightly appimage"
-	echo_with_color ${Yellow} "-i --install				Install doomnvim"
-	echo_with_color ${Yellow} "-h --help				Displays this message"
-	echo_with_color ${Yellow} "-v --version				Echo doomnvim version"
-	echo_with_color ${Yellow} "-x --uninstall				Uninstall doomnvim"
-}
 
 check_all(){
 	check_cmd 'git'
@@ -271,6 +207,7 @@ check_all(){
 	check_cmd 'curl'
 	check_cmd 'curl'
 	check_cmd 'npm'
+    check_cmd 'nvim'
 }
 
 main(){
@@ -307,24 +244,6 @@ main(){
 				backup_neovim
 				exit 0
 				;;
-            --nightly|-n)
-                welcome
-                check_all
-                update_repo
-                backup_neovim
-                backup_vim
-                install_neovim_nightly
-                install_done
-                exit 0
-                ;;
-			--help|-h)
-				helper
-				exit 0
-				;;
-			--version|-v)
-				msg "${version}"
-				exit 0
-				;;
 			--uninstall|-x)
 				info "Uninstalling doomnvim"
 				uninstall
@@ -339,7 +258,6 @@ main(){
 		update_repo
 		backup_neovim
 		install_vimplug
-		check_requirements
 		install_done
 	fi
 }
