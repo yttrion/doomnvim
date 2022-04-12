@@ -173,7 +173,6 @@ function! doomnvim#begin() abort
     call doomnvim#autocmds#init()
     call doomnvim#default#options()
     call doomnvim#autocmds#helptags()
-    call doomnvim#autocmds#plugload()
 endfunction
 
 
@@ -192,6 +191,7 @@ function! doomnvim#end() abort
     if g:doomnvim_check_updates ==# 1
         call doomnvim#system#checkupdates()
     endif
+    call doomnvim#autocmds#plugload()
     call doomnvim#functions#sourceDirectory(g:doomnvim_root.'config/lua')
 endfunction
 

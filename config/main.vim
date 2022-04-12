@@ -5,11 +5,6 @@
 "============================================
 
 call doomnvim#begin()
-
-"if empty(glob(g:doomnvim_root . '/autoload/plug.vim'))
-"    silent execute '!curl -fLo '.g:doomnvim_root.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-"    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-"endif
 call plug#begin('~/.doomnvim/plugged')
 
 Plug 'tamton-aquib/staline.nvim'
