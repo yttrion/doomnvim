@@ -51,7 +51,7 @@ autocmd TermLeave * silent! call ToggleHiddenAll()<CR>
 
 function! doomnvim#autocmds#plugload() abort
     if empty(glob(g:doomnvim_root . '/autoload/plug.vim'))
-        silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+        silent execute '!curl -fLo '.g:doomnvim_root.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
         autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
