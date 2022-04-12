@@ -7,7 +7,9 @@
 function! doomnvim#functions#update()
     try
         exec ':FloatermKill'
-        exec ':FloatermNew cd $HOME/.doomnvim && git pull --no-edit'
+        exec ':FloatermNew cd $HOME/.doomnvim && git pull || '
+            \ .'.cd $HOME/.doomnvim && '
+            \ .'git checkout . && git pull'
     endtry
     execute 'source' g:doomnvim_root.'init.vim'
 endfunction
