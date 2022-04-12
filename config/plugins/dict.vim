@@ -27,7 +27,6 @@ let g:which_key_map.b = {
             \ 'c' : 'Close all buried',
             \ 'l' : 'Buffer list',
             \ 'r' : 'Resize equaly',
-            \ 't' : 'Buffered terminal',
             \ 's' : {
                 \ 'name' : '+split',
                 \ 'v' : 'vertical',

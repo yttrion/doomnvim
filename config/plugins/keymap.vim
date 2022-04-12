@@ -39,7 +39,8 @@ map <silent><space>be 			:enew<CR>
 map <silent><space>bc 			:<C-u>up<bar>%bd<bar>e#<CR>
 map <silent><space>bl 			:Telescope buffers<CR>
 map <silent><space>br 			<C-w>=<CR>
-map <silent><space>bt 			:call TermToggle(7)<CR>
+" Disabled for maintenance
+"map <silent><space>bt 			:call TermToggle(7)<CR>
 map <silent><space>bsv 			:vsp<CR>
 map <silent><space>bsh 			:sp<CR>
 map <silent><space>bmh			<C-w>H
