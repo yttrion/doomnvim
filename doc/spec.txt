@@ -21,8 +21,6 @@ The following diagram shows which functions are run when `doomnvim` starts.
 |   <main.vim>
 |   `doomnvim#begin()`                       
 |   |   <doomnvim.vim>
-|   |   `doomnvim#config#checkBFC()`
-|   |       -> Checks if *$HOME/.doomrc* file exists 
 |   |   `doomnvim#config#loadBFC()`     
 |   |       -> Source the BFC
 |   |       -> If the BFC does not exists it will force create it
@@ -36,6 +34,8 @@ The following diagram shows which functions are run when `doomnvim` starts.
 |   |       -> Maps <Space>ZZ to *doomnvim#functions#quitdoom()*
 |   |   `doomnvim#autocmds#helptags()`       
 |   |       -> Create tags file for doomnvim documentation
+|   |   `doomnvim#autocmds#plugload()`
+|   |       -> Checks if fresh install and downloads vim-plug
 |   `plug#begin()`                           
 |   `doomnvim#functions#disable_plug()`      
 |       -> Check for blacklisted plugins and disables them
@@ -62,8 +62,13 @@ The following diagram shows which functions are run when `doomnvim` starts.
 |   |       -> Creates the default start messages in log files
 |   |   `doomnvim#system#checkupdates()`     
 |   |       -> Clean unused plugins and updates installed plugins
-|   `doomnvim#functions#sourceDirectory()`   
-|       -> Source files from a directory, here `$DOOM/config/lua/`
+|   |   `doomnvim#functions#grepconfig()` # Current workaround   
+|   |   |   <config/plugins/bufferline.vim>
+|   |   |       -> Lua configuration file for bufferline
+|   |   |   <config/plugins/nvimtree.vim>
+|   |   |       -> Lua configuration file for nvimtree
+|   |   |   <config/plugins/statusline.vim>
+|   |   |       -> Lua configuration file for staline
 
 ==============================================================================
 CLOSING                                                         *spec-closing*

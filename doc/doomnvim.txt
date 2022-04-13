@@ -34,7 +34,6 @@ CONTENTS                                                   *doomnvim-contents*
     2. File Explorer..................|doomnvim-configuration-layout-explorer|
     3. Main Buffer..................|doomnvim-configuration-layout-mainbuffer|
     4. Tagbar...........................|doomnvim-configuration-layout-tagbar|
-    5. Buffered Terminal..............|doomnvim-configuration-layout-terminal|
   4. Commands..............................................|doomnvim-commands|
     1. Keybindings.............................|doomnvim-commands-keybindings|
   5. Functions............................................|doomnvim-functions|
@@ -106,7 +105,7 @@ default value = 1
 Show hidden files in the file explorer
 
 `g:doomnvim_colorscheme`
-default value = 'doom'
+default value = 'doomnvim'
 Specifies the colorscheme to use
 
 `g:doomnvim_colorscheme_bg`
@@ -160,6 +159,17 @@ Select the logging level of doomnvim
 3: Logs all errors and messages in the `doomnvim.log` file and echoes 
 them
 
+`g:doomnvim_spelllang`
+default value = 'en'
+Defines spell lang for doomnvim
+
+`g:doomnvim_separator`
+default value = '/'
+Defines default separator, os dependent
+
+`g:doomnvim_fresh`
+default value = 0
+Checks if it is the first launch of doomnvim
 
 DO NOT EDIT THE VALUE OF `g:doomnvim_root` !
 
@@ -205,19 +215,18 @@ Excluding the statusline, doomnvim will mostly have the following layout:
 |     |                         |      |
 |     |                         |      |
 |     |                         |      |
-|     |            B            |  D*  |
+|     |            B            |  C*  |
 |  A* |                         |      |
 |     |                         |      |
 |     |                         |      |
-|     |-------------------------|      |~
-|     |            C*           |      |
+|     |                         |      |~
+|     |                         |      |
 |--------------------------------------|~
 
 
 'A' : The file explorer (Plugin: nvim-tree)
 'B' : The main buffer
-'C' : The buffered terminal 
-'D' : The tags buffer (Plugin: Tagbar)
+'C' : The tags buffer (Plugin: Tagbar)
 
 Sections with `*` are not opened by default but can be toggled.
 See |doomnvim-commands| for more informations
@@ -249,13 +258,6 @@ Tagbar is a plugin that can show the tags and structure of the opened
 file, ordered by scope.
 
 See https://github.com/preservim/tagbar for more informations.
-
-==============================================================================
-BUFFERED TERMINAL                     *doomnvim-configuration-layout-terminal*
-
-The buffered terminal is placed like in visual studio code. The buffer 
-is automatically set to `NORMAL` mode. At the moment, the only way to close
-it is to enter `exit` to close the shell session.
 
 ==============================================================================
 COMMANDS                                                   *doomnvim-commands*
@@ -298,7 +300,6 @@ KEYBINDINGS                                    *doomnvim-commands-keybindings*
 |           | <n>ext
 |           | <q>uit buffer
 |           | <k>ill current
-|           | <t>oggle buffered terminal
 |           | <e>mpty buffer
 |           | <l>ist buffers
 |           | <r>esize equally
@@ -453,16 +454,7 @@ and then press the key corresponding to the buffer you want to select.
 ==============================================================================
 KNOWN ISSUES                                                  *doomvim-issues*
 
-- When installing doomvim for the first time, event if plugins are configured
-  there might be some error messages. The most common one is
-	`E117: unknown command whichkey#register()`
-  due to vim-which-key loading without being installed.
-
-- The |doomvim-configuration-layout-terminal| cannot be closed unless
-  the `exit` command is performed.
-
-- The `LayoutToggle()`function might move the NERDTree and buffered terminal
-  buffers.
+- The tagbar is not working at the moment 
 
 - The floating terminal may not close and might leave a artifact: Use <Space>bk
   to close it.
@@ -484,7 +476,6 @@ DOMNVIM/
 |_ autoload/                            # Files loaded at launch
 |   |_ doomnvim/                        # doomnvim core
 |   |  |_ autocmds.vim                  # doomnvim autocmds
-|   |  |_ commands.vim                  # doomnvim internal commands
 |   |  |_ config.vim                    # doomnvim custom config file loader
 |   |  |_ default.vim                   # doomnvim default
 |   |  |_ functions.vim                 # core functions of doomnvim
@@ -510,6 +501,9 @@ DOMNVIM/
 |   |   |_ coc.vim                      # coc.nvim configuration
 |   |   |_ dict.vim                     # Dictionary for vim-which-key
 |   |   |_ keymap.vim                   # doomnvim keybindings
+|   |   |_ bufferline.vim               # bufferline config
+|   |   |_ nvimtree.vim                 # nvimtree config
+|   |   |_ statusline.vim               # staline config
 |   |_ functions.vim                    # doomnvim functions
 |   |_ gui.vim                          # doomnvim gui options
 |   |_ main.vim                         # init file, loads vim-plug
@@ -543,7 +537,6 @@ doomnvim and executes the init functions of doomnvim.
 The files inside the `doomnvim/` folder have core functions for doomnvim.
 
     * autocmds.vim  : Auto commands needed by doomnvim.
-    * commands.vim  : Custom commands
     * config.vim    : Manages the BFC
     * default       : Default configuration for nvim and for plugins
     * functions.vim : Util functions
@@ -648,12 +641,15 @@ v0.1.8
 - Removed `Vista.nvim` and switched back to `Tagbar`
 - Removed `indentLines.vim`
 
-v0.1.81
+v0.1.8.1
 - Cleaned `config.vim`
 - Colorschemes are local instead of relying on vim-plug
 - Removed some colorschemes from default
 - Fixed bug where custom plugins are cloned but not written in `main.vim`
 - Added configuration for `NvimTree.lua`
 
+v.0.1.8.2
+- Disabled buffered terminal
+- Various bug fixes
 
 " vim:tw=80:ft=help:norl:
