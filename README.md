@@ -19,12 +19,13 @@
 - [Acknowledgements](#acknowledgements)
 
 # Introduction
-doomnvim is a vim-version of the [doom-emacs](https://github.com/hlissner/doom-emacs) framework.
-It aims to add useful features to stock neovim and also serves as my daily driver.
+doomnvim is a neovim port of the [doom-emacs](https://github.com/hlissner/doom-emacs) framework,
+adapted to neovim. It aims to add useful features to stock neovim, specify a configuration that can
+easily be customized, and also serves as my daily driver.
 
 
 ## NOTE
-**doomnvim was made for neovim 5, it may not work as intended on vim**
+**doomnvim was made for neovim>=5**
 
 **doomnvim works best with [Nerd fonts](https://github.com/ryanoasis/nerd-fonts)**
 
@@ -39,10 +40,14 @@ It aims to add useful features to stock neovim and also serves as my daily drive
 
 # Install
 ## Prerequisites
-
-doomnvim requires `nodejs`>=10.12 and `npm` in order to work properly
-
-`curl`, `ctags`, `pynvim`, `lua` and `git` are also needed
+- `Neovim`>=0.5
+- `nodejs`>=10.12
+- `npm`
+- `curl`
+- `ctags` or equivalent
+- `pynvim`
+- `lua`
+- `git`
 
 ## Install doomnvim
 Simply run the following command:
@@ -66,7 +71,7 @@ After doomnvim is installed, run neovim and doomnvim will automatically install 
 </div>
 
 # Acknowledgements
-- [doom-emacs](https://github.com/hlissner/doom-emacs)
+- [doom-emacs](https://github.com/hlissner/doom-emacs) for doing doom-emacs
 - [SpaceVim](https://github.com/SpaceVim/SpaceVim)
 
 ## Plugins and colorschemes
