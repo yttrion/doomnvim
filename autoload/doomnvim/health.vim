@@ -16,21 +16,4 @@ function! doomnvim#findBinary(name) abort
     return 0
 endfunction
 
-
-function! doomnvim#checkPluginDeps() abort
-
-endfunction
-
-function! doomnvim#checkDependencies() abort
-    
-endfunction
-
-function! doomnvim#checkProvider() abort
-    
-endfunction
-
-function! doomnvim#generateHealthReport() abort
-    
-endfunction
-
 " vim:cc=80:

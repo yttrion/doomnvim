@@ -4,14 +4,14 @@
 " License: MIT
 "==============================================
 
-function! doomnvim#functions#update()
+function! doomnvim#functions#update() abort
     try
         exec ':FloatermKill'
         exec ':FloatermNew cd $HOME/.doomnvim && git pull || '
-            \ .'.cd $HOME/.doomnvim && '
+            \ .'cd $HOME/.doomnvim && '
             \ .'git checkout . && git pull'
+        execute 'source' g:doomnvim_root.'init.vim'
     endtry
-    execute 'source' g:doomnvim_root.'init.vim'
 endfunction
 
 function! doomnvim#functions#checkbin(bin)  abort
