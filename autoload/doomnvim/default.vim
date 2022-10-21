@@ -81,11 +81,6 @@ function doomnvim#default#loadGlob()
     	set signcolumn=auto
     endif
 
-    "vim-which-key
-    let mapleader = ' '
-    let g:which_key_hspace = 30
-    let g:which_key_use_floating_win = 1
-
     "vim-gitgutter
     let g:gitgutter_map_keys = 0
     let g:indentLine_enabled = g:doomnvim_show_indent
@@ -94,91 +89,12 @@ function doomnvim#default#loadGlob()
     "indent-blankline
     let g:indent_blankline_char = "|"
     let g:indent_blankline_char_list = ['|', '|', '|', '|']
-
-    "Dashboard
-    let g:dashboard_default_executive ='telescope'
-    let g:dashboard_session_directory = g:doomnvim_root . 'sessions'
-    let g:dashboard_custom_shortcut={
-      \ 'last_session'       : 'SPC q l',
-      \ 'find_history'       : 'SPC f h',
-      \ 'find_file'          : 'SPC f f',
-      \ 'new_file'           : 'SPC f n',
-      \ 'change_colorscheme' : 'SPC m c',
-      \ 'find_word'          : 'SPC s w',
-      \ 'book_marks'         : 'SPC f h',
-      \ }
-    let g:dashboard_custom_header = [
-                \ "=================     ===============     ===============   ========  ========",
-                \ "\\\\ . . . . . . .\\\\   //. . . . . . .\\\\   //. . . . . . .\\\\  \\\\. . .\\\\// . . //",
-                \ "||. . ._____. . .|| ||. . ._____. . .|| ||. . ._____. . .|| || . . .\\/ . . .||",
-                \ "|| . .||   ||. . || || . .||   ||. . || || . .||   ||. . || ||. . . . . . . ||",
-                \ "||. . ||   || . .|| ||. . ||   || . .|| ||. . ||   || . .|| || . | . . . . .||",
-                \ "|| . .||   ||. _-|| ||-_ .||   ||. . || || . .||   ||. _-|| ||-_.|\\ . . . . ||",
-                \ "||. . ||   ||-'  || ||  `-||   || . .|| ||. . ||   ||-'  || ||  `|\\_ . .|. .||",
-                \ "|| . _||   ||    || ||    ||   ||_ . || || . _||   ||    || ||   |\\ `-_/| . ||",
-                \ "||_-' ||  .|/    || ||    \\|.  || `-_|| ||_-' ||  .|/    || ||   | \\  / |-_.||",
-                \ "||    ||_-'      || ||      `-_||    || ||    ||_-'      || ||   | \\  / |  `||",
-                \ "||    `'         || ||         `'    || ||    `'         || ||   | \\  / |   ||",
-                \ "||            .===' `===.         .==='.`===.         .===' /==. |  \\/  |   ||",
-                \ "||         .=='   \\_|-_ `===. .==='   _|_   `===. .===' _-|/   `==  \\/  |   ||",
-                \ "||      .=='    _-'    `-_  `='    _-'   `-_    `='  _-'   `-_  /|  \\/  |   ||",
-                \ "||   .=='    _-'          `-__\\._-'         `-_./__-'         `' |. /|  |   ||",
-                \ "||.=='    _-'                                                     `' |  /==.||",
-                \ "=='    _-'                 _   _ _   _ ________  ___                  \\/   `==",
-                \ "\\   _-'                   | \\ | | | | |_   _|  \\/  |                   `-_   /",
-                \ " `''                      |  \\| | | | | | | | .  . |                      ``' ",
-                \ "                          | . ` | | | | | | | |\\/| |                          ",   
-                \ "                          | |\\  \\ \\_/ /_| |_| |  | |                          ",  
-                \ "                          \\_| \\_/\\___/ \\___/\\_|  |_/                          ",
-                \ ]
-
-
     
 
     " Nvim-tree.lua
     let g:nvim_tree_width = g:doomnvim_sidebar_width
     let g:nvim_tree_auto_ignore_ft = [ 'startify', 'dashboard' ]
-    let g:nvim_tree_git_hl = 1 
-    let g:nvim_tree_root_folder_modifier = ':~' 
     let g:nvim_tree_width_allow_resize  = 0 
-    let g:nvim_tree_add_trailing = 1
-    let g:nvim_tree_icon_padding = ' ' 
-    let g:nvim_tree_special_files = [ 'README.md', 'Makefile', 'MAKEFILE', '.gitignore' ]
-    let g:nvim_tree_show_icons = {
-        \ 'git': g:doomnvim_show_icons,
-        \ 'folders': g:doomnvim_show_icons,
-        \ 'files': g:doomnvim_show_icons,
-        \ 'folder_arrows': 1,
-        \ }
-    let g:nvim_tree_icons = {
-        \ 'default': '',
-        \ 'symlink': '',
-        \ 'git': {
-        \   'unstaged': "✗",
-        \   'staged': "✓",
-        \   'unmerged': "",
-        \   'renamed': "➜",
-        \   'untracked': "★",
-        \   'deleted': "",
-        \   'ignored': "◌"
-        \   },
-        \ 'folder': {
-        \   'arrow_open': "",
-        \   'arrw_closed': "",
-        \   'default': "",
-        \   'open': "",
-        \   'empty': "",
-        \   'empty_open': "",
-        \   'symlink': "",
-        \   'symlink_open': "",
-        \   },
-        \   'lsp': {
-        \     'hint': "",
-        \     'info': "",
-        \     'warning': "",
-        \     'error': "",
-        \   }
-        \ }
     highlight NvimTreeFolderIcon guibg=blueo
 
 
