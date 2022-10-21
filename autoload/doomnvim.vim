@@ -204,7 +204,7 @@ function! doomnvim#end() abort
     call doomnvim#system#grepconfig('config/plugins/', 'nvimtree.vim', 1)
     call doomnvim#system#grepconfig('config/plugins/', 'statusline.vim', 1)
     call doomnvim#system#grepconfig('config/plugins/', 'hslens.vim', 1)
-    all doomnvim#system#grepconfig('config/plugins/', 'dashboard.vim', 1)
+    call doomnvim#system#grepconfig('config/plugins/', 'dashboard.vim', 1)
     "call doomnvim#functions#sourceDirectory(g:doomnvim_root.'config/plugins')
 endfunction
 
