@@ -23,11 +23,6 @@ if has_key(plugs, 'coc.nvim')
     autocmd CursorHold * silent call CocActionAsync('highlight')
 endif
 
-inoremap <silent><expr> <Tab>
-            \ pumvisible() ? "\<C-n>" :
-            \ <SID>check_backspace() ? "\<Tab>" :
-            \ coc#refresh()
-
 "No NERDTree alone except when startify
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
