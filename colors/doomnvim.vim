@@ -463,6 +463,13 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
   call <sid>X('DiffRemoved', s:hue_5, s:visual_grey, '')
   " }}}
 
+  " Dashboard highlighting --------------------------------------------------{{{
+  hi DashboardHeader   guifg=#DA9D58 gui=bold 
+  hi DashboardCenter   guifg=#599EEE  
+  hi DashboardShortCut guifg=#82C559 gui=bold 
+  hi DashboardFooter   guifg=#4b5263  
+  "}}}
+  
   " Asciidoc highlighting ---------------------------------------------------{{{
   call <sid>X('asciidocListingBlock',   s:mono_2,  '', '')
   " }}}
