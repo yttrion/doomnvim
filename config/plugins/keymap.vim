@@ -8,7 +8,7 @@ let mapleader   = ' '
 let g:mapleader = ' '
 "let leader      = ' '
 "let g:leader    = ' '
-call which_key#register('<leader>','g:which_key_map','n')
+call which_key#register('<Space>','g:which_key_map','n')
 " Do not use try/catch as it keeps vim-which-key
 " from starting correctly
 
