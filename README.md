@@ -6,9 +6,8 @@
 
 ![License](https://img.shields.io/github/license/yttrion/doomnvim?style=flat-square)
 ![Release](https://img.shields.io/github/v/release/yttrion/doomnvim?include_prereleases&style=flat-square)
-![Neovim version](https://img.shields.io/badge/Neovim-0.5_--_0.x-57A143?style=flat-square&logo=neovim)
+![Neovim version](https://img.shields.io/badge/Neovim-0.5+-57A143?style=flat-square&logo=neovim)
 ![Latest commit](https://img.shields.io/github/last-commit/yttrion/doomnvim/dev?style=flat-square)
-
 </div>
 
 ### Table of Contents
@@ -40,6 +39,7 @@ Please checkout NTBBloodbath's [doom-nvim](https://github.com/NTBBloodbath/doom-
 - Mnemonic key binding
 - Integration with `Telescope.nvim` 
 - Most features of a text editor
+- Lua support with Neovim 0.5 release
 
 # Install
 ## Prerequisites
@@ -55,7 +55,8 @@ Simply run the following command:
 curl -sLf https://raw.githubusercontent.com/yttrion/doomnvim/main/install.sh | bash
 ```
 
-After doomnvim is installed, run `vim` and doomnvim will automatically install plugins
+After doomnvim is installed, run neovim and doomnvim will automatically install plugins
+*doomnvim* might show some errors during the first launch, just restart it.
 
 # Screenshots
 <div align="center">
@@ -71,7 +72,8 @@ After doomnvim is installed, run `vim` and doomnvim will automatically install p
 # Acknowledgements
 - [doom-emacs](https://github.com/hlissner/doom-emacs)
 - [SpaceVim](https://github.com/SpaceVim/SpaceVim)
+
 ## Plugins and colorschemes
-Check doomnvim.txt
+Check `doomnvim.txt`
 
 

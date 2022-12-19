@@ -26,7 +26,7 @@ syntax reset
 if exists('g:colors_name')
   unlet g:colors_name
 endif
-let g:colors_name = 'doom'
+let g:colors_name = 'doomnvim'
 
 if !exists('g:doom_allow_italics')
   let g:doom_allow_italics = 0
@@ -40,6 +40,7 @@ endif
 if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
   " functions
   " returns an approximate grey index for the given grey level
+
 
   " Utility functions -------------------------------------------------------{{{
   fun <SID>grey_number(x)
@@ -291,7 +292,8 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
   " }}}
 
 
-  " Color definition --------------------------------------------------------{{{
+  " Color 
+  " definition --------------------------------------------------------{{{
   let s:dark = 0
   if &background ==# 'dark'
     let s:dark = 1
@@ -461,6 +463,13 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
   call <sid>X('DiffRemoved', s:hue_5, s:visual_grey, '')
   " }}}
 
+  " Dashboard highlighting --------------------------------------------------{{{
+  hi DashboardHeader   guifg=#DA9D58 gui=bold 
+  hi DashboardCenter   guifg=#599EEE  
+  hi DashboardShortCut guifg=#82C559 gui=bold 
+  hi DashboardFooter   guifg=#4b5263  
+  "}}}
+  
   " Asciidoc highlighting ---------------------------------------------------{{{
   call <sid>X('asciidocListingBlock',   s:mono_2,  '', '')
   " }}}
@@ -490,21 +499,6 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
   call <sid>X('cppStatement',       s:hue_3,  '', '')
   call <sid>X('cppConstant',        s:hue_5,  '', '')
   call <sid>X('cCppString',         s:hue_4,  '', '')
-  " }}}
-
-  " Cucumber highlighting ---------------------------------------------------{{{
-  call <sid>X('cucumberGiven',           s:hue_2,  '', '')
-  call <sid>X('cucumberWhen',            s:hue_2,  '', '')
-  call <sid>X('cucumberWhenAnd',         s:hue_2,  '', '')
-  call <sid>X('cucumberThen',            s:hue_2,  '', '')
-  call <sid>X('cucumberThenAnd',         s:hue_2,  '', '')
-  call <sid>X('cucumberUnparsed',        s:hue_6,  '', '')
-  call <sid>X('cucumberFeature',         s:hue_5,  '', 'bold')
-  call <sid>X('cucumberBackground',      s:hue_3,  '', 'bold')
-  call <sid>X('cucumberScenario',        s:hue_3,  '', 'bold')
-  call <sid>X('cucumberScenarioOutline', s:hue_3,  '', 'bold')
-  call <sid>X('cucumberTags',            s:mono_3, '', 'bold')
-  call <sid>X('cucumberDelimiter',       s:mono_3, '', 'bold')
   " }}}
 
   " CSS/Sass highlighting ---------------------------------------------------{{{
@@ -547,16 +541,6 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
   call <sid>X('sassMixing',         s:hue_3,   '', '')
 
   call <sid>X('scssSelectorName',   s:hue_6_2, '', '')
-  " }}}
-
-  " Elixir highlighting------------------------------------------------------{{{
-  hi link elixirModuleDefine Define
-  call <sid>X('elixirAlias',             s:hue_6_2, '', '')
-  call <sid>X('elixirAtom',              s:hue_1,   '', '')
-  call <sid>X('elixirBlockDefinition',   s:hue_3,   '', '')
-  call <sid>X('elixirModuleDeclaration', s:hue_6,   '', '')
-  call <sid>X('elixirInclude',           s:hue_5,   '', '')
-  call <sid>X('elixirOperator',          s:hue_6,   '', '')
   " }}}
 
   " Git and git related plugins highlighting --------------------------------{{{
@@ -723,23 +707,6 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
   call <sid>X('phpSuperGlobals', s:hue_5,   '', '')
   " }}}
 
-  " Pug (Formerly Jade) highlighting ----------------------------------------{{{
-  call <sid>X('pugAttributesDelimiter',   s:hue_6,    '', '')
-  call <sid>X('pugClass',                 s:hue_6,    '', '')
-  call <sid>X('pugDocType',               s:mono_3,   '', s:italic)
-  call <sid>X('pugTag',                   s:hue_5,    '', '')
-  " }}}
-
-  " PureScript highlighting -------------------------------------------------{{{
-  call <sid>X('purescriptKeyword',          s:hue_3,     '', '')
-  call <sid>X('purescriptModuleName',       s:syntax_fg, '', '')
-  call <sid>X('purescriptIdentifier',       s:syntax_fg, '', '')
-  call <sid>X('purescriptType',             s:hue_6_2,   '', '')
-  call <sid>X('purescriptTypeVar',          s:hue_5,     '', '')
-  call <sid>X('purescriptConstructor',      s:hue_5,     '', '')
-  call <sid>X('purescriptOperator',         s:syntax_fg, '', '')
-  " }}}
-
   " Python highlighting -----------------------------------------------------{{{
   call <sid>X('pythonImport',               s:hue_3,     '', '')
   call <sid>X('pythonBuiltin',              s:hue_1,     '', '')
@@ -822,19 +789,6 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
   call <sid>X('zshVariableDef',  s:hue_6,     '', '')
   " }}}
 
-  " Rust highlighting -------------------------------------------------------{{{
-  call <sid>X('rustExternCrate',          s:hue_5,    '', 'bold')
-  call <sid>X('rustIdentifier',           s:hue_2,    '', '')
-  call <sid>X('rustDeriveTrait',          s:hue_4,    '', '')
-  call <sid>X('SpecialComment',           s:mono_3,    '', '')
-  call <sid>X('rustCommentLine',          s:mono_3,    '', '')
-  call <sid>X('rustCommentLineDoc',       s:mono_3,    '', '')
-  call <sid>X('rustCommentLineDocError',  s:mono_3,    '', '')
-  call <sid>X('rustCommentBlock',         s:mono_3,    '', '')
-  call <sid>X('rustCommentBlockDoc',      s:mono_3,    '', '')
-  call <sid>X('rustCommentBlockDocError', s:mono_3,    '', '')
-  " }}}
-
   " man highlighting --------------------------------------------------------{{{
   hi link manTitle String
   call <sid>X('manFooter', s:mono_3, '', '')
@@ -886,7 +840,7 @@ endif
 "}}}
 
 " Public API --------------------------------------------------------------{{{
-function! doom#highlight(group, fg, bg, attr)
+function! doomnvim#highlight(group, fg, bg, attr)
   call <sid>XAPI(a:group, a:fg, a:bg, a:attr)
 endfunction
 "}}}
@@ -895,5 +849,5 @@ if exists('s:dark') && s:dark
   set background=dark
 endif
 
-" vim: set fdl=0 fdm=marker:
+
 

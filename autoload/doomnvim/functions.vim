@@ -4,7 +4,15 @@
 " License: MIT
 "==============================================
 
-
+function! doomnvim#functions#update() abort
+    try
+        exec ':FloatermKill'
+        exec ':FloatermNew cd $HOME/.doomnvim && git pull || '
+            \ .'cd $HOME/.doomnvim && '
+            \ .'git checkout . && git pull'
+        execute 'source' g:doomnvim_root.'init.vim'
+    endtry
+endfunction
 
 function! doomnvim#functions#checkbin(bin)  abort
     if executable(a:bin)
@@ -28,43 +36,42 @@ endfunction
 
 
 function! doomnvim#functions#getroot() abort
-
     call doomnvim#logging#message('+', 'doomnvim.functions.getroot called', 2)
     let full_root =  expand('<sfile>:p')
-    let root = full_root[:-22]
-    return root
-    " Returns
-    " /home/username/.doomnvim/autoload/functions.vim
-    " Trim for 18 char from the end
+    return full_root[:-22]
 endfunction
 
 
-function! doomnvim#functions#quitdoom(write, force) abort
+function! doomnvim#functions#quitdoom(write, force)
 
-    try
+    let checker = system('grep doomnvim_colorscheme "'.g:doomnvim_root.'../.doomrc"')
+    if checker == '' " No configuration for colorscheme 
+        call doomnvim#logging#message('*', 'No config found. Creating entry', 2)
+        exec ":silent !echo 'let g:doomnvim_colorscheme=\""
+            \ .g:colors_name."\"' >> $HOME/.doomrc"
+    else " Configuration found
         call doomnvim#logging#message('*', 'Checking if colorscheme was changed...', 2)
-        let target = g:colors_name
-        if target != g:doomnvim_colorscheme
-            exec ":!sed -i \"s/'".g:doomnvim_colorscheme."'/'".target."'/\" $HOME/.doomrc"
+        if g:colors_name != g:doomnvim_colorscheme
+            let payload = "sed -i 's|\""
+                \ .g:doomnvim_colorscheme."\"|\""
+                \ .g:colors_name."\"|' "
+                \ .g:doomnvim_root."../.doomrc"
+            call system(payload)
             call doomnvim#logging#message('*', 'Colorscheme successfully changed', 2)
         else
-            call doomnvim#logging#message('*', 'No need to write colors (same)', 2)
+            call doomnvim#logging#message('*', 'Same colorscheme. Nothing to change', 2)
         endif
-    catch
-        call doomnvim#logging#message('!', 'Unable to write to the BFC', 1)
-    endtry
-
+    endif
     exec ':silent !echo "[---] - Dumping :messages" >> $HOME/.doomnvim/logs/doomnvim.log'
     exec 'redir >> $HOME/.doomnvim/logs/doomnvim.log'
     exec ':silent messages'
     exec ':redir END'
     exec ':silent !echo " " >> $HOME/.doomnvim/logs/doomnvim.log'
     exec ':silent !echo "[---] - End of dump" >> $HOME/.doomnvim/logs/doomnvim.log'
-
     let quit_cmd = ''
     " Autosave session if enabled
     if g:doomnvim_sessionsave_onquit ==# 1
-        execute(':SessionSave')
+        execute(':silent :SessionSave')
     endif
     if a:write == 1
         let quit_cmd .= 'wa | '
@@ -74,7 +81,6 @@ function! doomnvim#functions#quitdoom(write, force) abort
     elseif a:force == 1
         exec quit_cmd.'qa!'
     endif
-
 endfunction
 
 " Create a MD report
@@ -94,7 +100,6 @@ function! doomnvim#functions#disable_plug()
         call doomnvim#logging#message('+', 'Disabling '.name, 2)
         call remove(g:plugs, name)
     endif
-
     let idx = index(g:plugs_order, name)
     if idx > -1
       call remove(g:plugs_order, idx)
@@ -104,11 +109,7 @@ endfunction
 
 
 function! doomnvim#functions#checkinstall(pkg)
-    if isdirectory(g:doomnvim_root.'/plugged/'.a:pkg)
-        return 1
-    else
-        return 0
-    endif
+    return isdirectory(g:doomnvim_root.'/plugged/'.a:pkg)
 endfunction
 
 
@@ -135,14 +136,19 @@ function doomnvim#functions#checkUserPlugins() abort
             let author = system('echo '.name." | sed 's/\\/.*//'") 
             let pkg = system('echo '.name." | sed 's/.*\\///'") 
             let found = system('grep -Rc "'.name.'" $HOME/.doomnvim/logs/upkg') 
+            let enabled = system('grep -Rc "'.name.'" $HOME/.doomnvim/config/main.vim') 
             if found == 0
                 exec ':silent !echo '.name.' >> $HOME/.doomnvim/logs/upkg'
                 call doomnvim#functions#addPlugin(name, author, pkg)
             else
                 call doomnvim#logging#message('+', 'Pkg already backed up', 2)
             endif
+            if enabled == 0
+                call doomnvim#functions#addPlugin(name, author, pkg)
+            else
+                call doomnvim#logging#message('+', "Plugin already enabled", 2)
+            endif
         endfor
-        call doomnvim#functions#cleanPlugin()
     endif
 endfunction
 
@@ -160,13 +166,12 @@ function doomnvim#functions#addPlugin(name, author, pkg)
     let found = system('grep -Rc "'.a:name.'" $HOME/.doomnvim/config/main.vim')
     if found == 0
         call doomnvim#logging#message('+','Adding plugin to main.vim',2)
-        let cmd = "42iPlug ".string(a:name)
+        let cmd = g:doomnvim_custom_line."iPlug ".string(a:name)
         call system('sed -i "'.cmd.'" $HOME/.doomnvim/config/main.vim')
     else
         call doomnvim#logging#message('+','Plugin already installed',2)
     endif
 endfunction
-
 
 
 function doomnvim#functions#cleanPlugin()
@@ -176,10 +181,16 @@ function doomnvim#functions#cleanPlugin()
         let pkg = system('echo '.value." | sed 's/.*\\///'") 
         if index(g:doomnvim_custom_plugins, value) == -1
             call doomnvim#logging#message('+', 'Found obsolete plugin', 2)
-            "execute(':!rm -rf $HOME/.doomnvim/plugged/'.pkg)
             call system(':!sed -i "/'.value.'/d" $HOME/.doomnvim/config/main.vim')
             call system(':!sed -i "/'.value.'/d" $HOME/.doomnvim/logs/upkg')
         endif
     endfor
     execute(':PlugClean') 
+endfunction
+
+
+function! doomnvim#functions#sourceDirectory(file) abort
+  for s:fpath in split(globpath(a:file, '*.vim'), '\n')
+    exe 'source' s:fpath
+  endfor
 endfunction

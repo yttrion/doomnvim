@@ -8,7 +8,7 @@
 scriptencoding utf-8
 
 " Version
-let g:doomnvim_version = '0.1.7.1'
+let g:doomnvim_version = '0.1.9'
 lockvar g:doomnvim_version
 
 " Default indent size
@@ -36,8 +36,16 @@ let g:doomnvim_max_columns = 100
 let g:doomnvim_enable_guicolors = 1
 
 " Sidebar size
-" @default = 25
-let g:doomnvim_sidebar_width = 25
+" @default = 30
+let g:doomnvim_sidebar_width = 30
+
+" Show icons in file explorer
+" @default = 1
+let g:doomnvim_show_icons = 1
+
+" Show identlines for explorer
+" @default = 0
+let g:doomnvim_explorer_indentlines = 0
 
 " Show hidden files
 " @default = 1
@@ -45,7 +53,7 @@ let g:doomnvim_show_hidden = 1
 
 " Default colorscheme
 " @default = doom
-let g:doomnvim_colorscheme = 'doom'
+let g:doomnvim_colorscheme = 'doomnvim'
 
 " Background color
 " @default = dark
@@ -54,6 +62,12 @@ let g:doomnvim_colorscheme_bg = 'dark'
 " Checkupdates on start
 " @default = 1
 let g:doomnvim_check_updates = 0
+
+" coc.nvim extensions
+" @default = []
+" Check 
+" for a list of supported languages
+let g:doomnvim_lsp = []
 
 " Disabled plugins
 " @default = []
@@ -110,6 +124,20 @@ let g:doomnvim_spell = 0
 " @default = 1
 let g:doomnvim_logging = 1
 
+" Spell lang
+" Check http://vimdoc.sourceforge.net/htmldoc/spell.html for more details
+" @default = en
+let g:doomnvim_spelllang='en'
+
+" Default separator
+" '/', '\'
+" @default = '/'
+let g:doomnvim_separator = '/'
+
+" New install of doomnvim
+" 0,1
+" @default = 0
+let g:doomnvim_fresh = 0
 
 " Vim type
 " 0 : vim
@@ -125,6 +153,10 @@ else
     let g:doomnvim_neovim = 0
 endif    
 lockvar g:doomnvim_neovim
+
+" Custom lines
+" DO NOT EDIT
+let g:doomnvim_custom_line = 34
 
 function! doomnvim#loadConfig(file) abort
     if filereadable(g:doomnvim_root . 'config/' . a:file)
@@ -142,15 +174,11 @@ lockvar g:doomnvim_root
 " Functions
 function! doomnvim#begin() abort
 
-    call doomnvim#config#checkBFC()
-    if g:doomnvim_bfc ==# 1
-        call doomnvim#config#loadBFC()
-    endif
+    call doomnvim#config#loadBFC()
     call doomnvim#autocmds#init()
-    call doomnvim#system#whichos()
     call doomnvim#default#options()
     call doomnvim#autocmds#helptags()
-    call doomnvim#commands#init()
+    call doomnvim#autocmds#plugload()
 endfunction
 
 
@@ -169,7 +197,15 @@ function! doomnvim#end() abort
     if g:doomnvim_check_updates ==# 1
         call doomnvim#system#checkupdates()
     endif
-
+    if g:doomnvim_fresh
+        execute ':PlugInstall'
+    endif
+    call doomnvim#system#grepconfig('config/plugins/', 'bufferline.vim', 1)
+    call doomnvim#system#grepconfig('config/plugins/', 'nvimtree.vim', 1)
+    call doomnvim#system#grepconfig('config/plugins/', 'statusline.vim', 1)
+    call doomnvim#system#grepconfig('config/plugins/', 'hslens.vim', 1)
+    call doomnvim#system#grepconfig('config/plugins/', 'dashboard.vim', 1)
+    "call doomnvim#functions#sourceDirectory(g:doomnvim_root.'config/plugins')
 endfunction
 
 " vim: cc=100:

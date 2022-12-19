@@ -4,6 +4,14 @@
 " License: MIT
 "====================================================================
 
+function! doomnvim#autocmds#plugload() abort
+    if empty(glob(g:doomnvim_root . '/autoload/plug.vim'))
+        let g:doomnvim_fresh = 1
+        silent execute '!curl -fLo '.g:doomnvim_root.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+        "autocmd VimEnter * PlugInstall --sync
+    endif
+endfunction
+
 
 function! doomnvim#autocmds#init() abort
     augroup doomnvim_core
@@ -25,3 +33,26 @@ endfunction
 function! doomnvim#autocmds#helptags() abort
     call doomnvim#system#grepdoc()
 endfunction
+
+
+
+let s:hidden_all = 0
+function! ToggleHiddenAll()
+    if s:hidden_all  == 0
+        let s:hidden_all = 1
+        set noshowmode
+        set noruler
+        set laststatus=0
+        set noshowcmd
+    else
+        let s:hidden_all = 0
+        set showmode
+        set ruler
+        set laststatus=2
+        set showcmd
+    endif
+endfunction
+
+autocmd TermOpen * silent! call ToggleHiddenAll()<CR>
+autocmd TermLeave * silent! call ToggleHiddenAll()<CR>
+

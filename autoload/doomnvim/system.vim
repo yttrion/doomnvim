@@ -7,32 +7,6 @@
 
 scriptencoding utf-8
 
-function! doomnvim#system#whichos()
-
-    call doomnvim#logging#message('+', 'Checking OS', 2)
-    let g:doomnvim_os = ''
-    let g:doomnvim_separator = ''
-    if has('win32') || has('win64')
-        let g:doomnvim_os = 'windows'
-        let g:doomnvim_separator = '\\'
-    elseif has('unix') && !has('macunix') && !has('win32unix')
-        let g:doomnvim_os = 'linux'
-        let g:doomnvim_separator = '/'
-    elseif has('macunix')
-        let g:doomnvim_os = 'mac'
-        let g:doomnvim_separator = '/'
-    elseif has('win32unix')
-        let g:doomnvim_os = 'cygwin'
-        let g:doomnvim_separator = '\\'
-    else
-        echo 'OS not recognized'
-    endif
-
-    call doomnvim#logging#message('+', 'Current OS: '.g:doomnvim_os, 2)
-
-endfunction
-
-
 function! doomnvim#system#grepconfig(folder, filename, source) abort
     " Source file or returns the full path
     let fullpath = g:doomnvim_root . a:folder . g:doomnvim_separator . a:filename
@@ -76,10 +50,6 @@ function! doomnvim#system#checkupdates()
         call doomnvim#logging#message('+', 'Purging outdated plugins', 2)
         execute ':PlugClean!'
         execute ':PlugUpdate'
-        if g:doomnvim_beta ==# 1
-            call doomnvim#functions#deinclean()
-            call doomnvim#functions#deinupdate()
-        endif
         call doomnvim#logging#message('+', 'Done', 2)
     catch
         call doomnvim#logging#message('!', 'Unable to update plugins', 1)

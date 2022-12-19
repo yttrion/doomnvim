@@ -126,7 +126,7 @@ let s:gb.neutral_orange = ['#d65d0e', 166]     " 214-93-14
 let s:gb.faded_red      = ['#9d0006', 88]      " 157-0-6
 let s:gb.faded_green    = ['#79740e', 100]     " 121-116-14
 let s:gb.faded_yellow   = ['#b57614', 136]     " 181-118-20
-let s:gb.faded_blue     = ['#076678', 24]      " 7-102-120
+let s:gb.faed_blue     = ['#076678', 24]      " 7-102-120
 let s:gb.faded_purple   = ['#8f3f71', 96]      " 143-63-113
 let s:gb.faded_aqua     = ['#427b58', 66]      " 66-123-88
 let s:gb.faded_orange   = ['#af3a03', 130]     " 175-58-3
@@ -1415,4 +1415,4 @@ endfunction
 
 " }}}
 
-" vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
+" vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:d
