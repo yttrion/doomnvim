@@ -42,5 +42,5 @@ set termguicolors
 " Source lua configurations
 if g:doomnvim_nightly ==# 1
     set termguicolors
-    call doomnvim#functions#sourceDirectory(g:doomnvim_root.'config/lua')
+    call doomnvim#functions#sourceDirectory(g:doomnvim_root.'config/plugins')
 endif

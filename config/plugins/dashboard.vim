@@ -75,4 +75,4 @@ db.setup({
     footer = {"Version: "..vim.api.nvim_get_var('doomnvim_version')}  --your footer
   }
 })
-E
+EOF
