@@ -319,12 +319,9 @@ KEYBINDINGS                                    *doomnvim-commands-keybindings*
 |           |           | <k> : Up
 |           |           | <l> : Right
 | <c>ode
-|           | <d>ocumentation
 |           | <i>ndent file
-|           | <f>ormat selected
 |           | <c>omment line
 |           | <v>ertical edition
-|           | <r>ename symbol
 |           | <s>pell suggest
 | <f>ile
 |           | <s>ave file
@@ -355,8 +352,6 @@ KEYBINDINGS                                    *doomnvim-commands-keybindings*
 | <m>isc
 |           | <S>ource file
 |           | <c>olorscheme switch
-|           | <j>ump to bookmarks
-|           | <f>zf
 |           | <h>ealth check
 | <p>lugin
 |           | <u>pdate
@@ -364,15 +359,9 @@ KEYBINDINGS                                    *doomnvim-commands-keybindings*
 |           | <c>lean
 |           | <m>anager update
 |           | <r>emote plugin update
-|           | <a>utocompleter
-|           |           | <u>pdate
-|           |           | <s>ync update
-|           |           | <r>estart
 | <q>uit/session
 |           | <q>uit
 |           | <Q>uit doomnvim
-|           | <l>oad session 
-|           | <s>ave session 
 | <s>earch
 |           | <h>istory search
 |           | <f>ile search
@@ -396,9 +385,6 @@ KEYBINDINGS                                    *doomnvim-commands-keybindings*
 
 ==============================================================================
 FUNCTIONS                                                 *doomnvim-functions*
-
-`TermToggle`: Toggles a buffered terminal on the bottom part of the windows
-(see |doomnvim-configuration-layout-terminal|)
 
 `LayoutToggle`: Toggles the layout between Vertical Layout and Horizontal
 Layout.
@@ -651,5 +637,10 @@ v0.1.8.1
 v.0.1.8.2
 - Disabled buffered terminal
 - Various bug fixes
+
+v.0.1.9
+- Updated configuration for standard plugins
+- Removed obsolete vim-which-key data
+- Cleaned documentation
 
 " vim:tw=80:ft=help:norl:

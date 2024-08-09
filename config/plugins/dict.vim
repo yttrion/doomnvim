@@ -26,7 +26,7 @@ let g:which_key_map.b = {
             \ 'e' : 'Empty buffer',
             \ 'c' : 'Close all buried',
             \ 'l' : 'Buffer list',
-            \ 'r' : 'Resize equaly',
+            \ 'r' : 'Resize equally',
             \ 's' : {
                 \ 'name' : '+split',
                 \ 'v' : 'vertical',
@@ -53,12 +53,9 @@ let g:which_key_map.b = {
 
 let g:which_key_map.c = {
             \ 'name' : '+code',
-            \ 'd' : 'Show documentation',
             \ 'i' : 'Indent file',
             \ 'c' : 'Comment line',
             \ 'v' : 'Vertical edit',
-            \ 'f' : 'Format selected',
-            \ 'r' : 'Rename symbol',
             \ 's' : 'Spell suggest',
             \ }
 
@@ -67,7 +64,6 @@ let g:which_key_map.f = {
             \ 's' : 'Save file',
             \ 'S' : 'Save all',
             \ 'e' : 'File explorer',
-            \ 'o' : 'Open file',
             \ 'r' : 'Rename file',
             \ 'f' : 'Find file',
             \ 'n' : 'New file',
@@ -106,12 +102,6 @@ let g:which_key_map.p = {
             \ 'c' : 'Clean plugins',
             \ 'm' : 'Upgrade plugin manager',
             \ 'r' : 'Update Remote Plugins',
-            \ 'a' : {
-                \ 'name' : '+autocompleter',
-                \ 'u' : 'Update',
-                \ 's' : 'Sync Update',
-                \ 'r' : 'Restart',
-                \ },
             \ }
 
 
@@ -119,18 +109,13 @@ let g:which_key_map.q = {
             \ 'name' : '+quit/session',
             \ 'q' : 'Quit',
             \ 'Q' : 'Quit all',
-            \ 'l' : 'Load session',
-            \ 's' : 'Save session'
             \ }
-
-
 
 let g:which_key_map.s = {
             \ 'name' : '+search',
             \ 'f' : 'Search File',
             \ 'w' : 'Search word',
             \ }
-
 
 let g:which_key_map.t = {
             \ 'name' : '+toggle',
@@ -160,7 +145,5 @@ let g:which_key_map.m = {
             \ 'name' : '+misc',
             \ 'S' : 'Source file',
             \ 'c' : 'Change colorscheme',
-            \ 'j' : 'JumpMark',
-            \ 'f' : 'Open FZF',
             \ 'h' : 'Check doomnvim health',
             \ }

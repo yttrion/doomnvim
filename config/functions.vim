@@ -10,19 +10,6 @@ function! CheckBackspace() abort
     return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#next(1) :
-      \ CheckBackspace() ? "\<Tab>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-if has_key(plugs, 'coc.nvim')
-    autocmd CursorHold * silent call CocActionAsync('highlight')
-endif
-
 "No NERDTree alone except when startify
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
@@ -42,15 +29,6 @@ function! LayoutToggle()
     endif
     call doomnvim#logging#message("*", "Switched layout", 2)
 endfunction
-
-function! s:show_documentation()
-    if (index(['vim','help'] &filetype) >= 0)
-        execute 'h ' . expand('<cword>')
-    else
-        call CocActionAsync('doHover')
-    endif
-endfunction
-
 
 function! RenameFile()
     let old = expand('%')

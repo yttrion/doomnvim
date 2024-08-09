@@ -189,7 +189,6 @@ function! doomnvim#end() abort
     call doomnvim#system#grepconfig('config', 'functions.vim', 1)
 
     "Plugins 
-    call doomnvim#system#grepconfig('config/plugins/', 'coc.vim', 1)
     call doomnvim#system#grepconfig('config/plugins/', 'dict.vim', 1)
     call doomnvim#system#grepconfig('config/plugins/', 'keymap.vim', 1)
 
