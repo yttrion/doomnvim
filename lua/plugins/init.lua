@@ -1,0 +1,17 @@
+return {
+    "tamton-aquib/staline.nvim",
+    "kyazdani42/nvim-web-devicons",
+    "bryanmylee/vim-colorscheme-icons",
+    "glepnir/dashboard-nvim",
+    "kevinhwang91/nvim-hlslens",
+    "akinsho/nvim-bufferline.lua",
+    "liuchengxu/vim-which-key",
+    "voldikss/vim-floaterm",
+    "preservim/nerdcommenter",
+    "airblade/vim-gitgutter",
+    "kyazdani42/nvim-tree.lua",
+    "nvim-telescope/telescope.nvim",
+    "nvim-lua/plenary.nvim",
+    "nvim-lua/popup.nvim",
+    "lukas-reineke/indent-blankline.nvim",
+}

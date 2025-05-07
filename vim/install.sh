@@ -131,11 +131,11 @@ backup_neovim(){
 
 }
 
-install_vimplug(){
-	if [[ ! -d "$HOME/.cache/vimfiles/repos/github.com/junegunn/plug.vim" ]]; then
-		info "Installing vim-plug"
-		git clone -q https://github.com/junegunn/vim-plug $HOME/.cache/vimfiles/repos/github.com/junegunn/vim-plug
-		success "Successfully installed vim-plug"
+install_packagemanager(){
+	if [[ ! -d "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim" ]]; then
+		info "Installing package manager"
+        git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+		success "Successfully installed package manager"
 	fi
 }
 
@@ -257,7 +257,7 @@ main(){
 		check_all
 		update_repo
 		backup_neovim
-		#install_vimplug
+		#install_packagemanager
 		install_done
 	fi
 }

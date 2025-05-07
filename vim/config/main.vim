@@ -5,6 +5,7 @@
 "============================================
 
 call doomnvim#begin()
+
 call plug#begin('~/.doomnvim/plugged')
 
 Plug 'tamton-aquib/staline.nvim'
