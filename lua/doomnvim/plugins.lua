@@ -7,13 +7,12 @@
 require("lazy").setup({
     spec = {
         -- GUI
-        { "nvim-tree/nvim-web-devicons", lazy = true },
-        { "folke/noice.nvim", event="VeryLazy", dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" } },
+        { "nvim-lualine/lualine.nvim", lazy=true, dependencies = { 'nvim-tree/nvim-web-devicons' }},
+        { "folke/noice.nvim", event="VeryLazy", dependencies={ "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" } },
         
         -- Tools
-        { "folke/which-key.nvim", lazy=true },
+        { "folke/which-key.nvim", lazy=true, dependencies = { 'nvim-tree/nvim-web-devicons' } },
         { "dstein64/vim-startuptime", cmd="StartupTime" },
-        { "hrsh7th/nvim-cmp", event = "InsertEnter", dependencies = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer" } }
 
     },
     install = { colorscheme = { "habamax" } },
