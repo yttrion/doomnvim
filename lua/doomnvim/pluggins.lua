@@ -1,21 +1,16 @@
+------------------------------------------------------
+-- Default doomnvim plugin configuration 
+-- Author: Pierre-Yves Douault
+-- License: MIT
+------------------------------------------------------
 -- Setup lazy.nvim
 require("lazy").setup({
     spec = {
-        {
-            "folke/which-key.nvim",
-            event = "VeryLazy",
-            keys = {
-              {
-                "<leader>?",
-                function()
-                  require("which-key").show({ global = true })
-                end,
-                desc = "Buffer Local Keymaps (which-key)",
-              },
-            },
-        },
+        -- GUI
+        { "nvim-tree/nvim-web-devicons", lazy = true }
 
-        { "nvim-tree/nvim-web-devicons", opts = {} }
+        -- Tools
+        { "folke/which-key.nvim", lazy=true },
     },
     install = { colorscheme = { "habamax" } },
     -- automatically check for plugin updates

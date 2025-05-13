@@ -69,7 +69,7 @@ map("", "<leader>pmh", ":Lazy health<CR>", { silent = true, desc = "Plugins Mana
 
 -- Quit --------------------------------------------------------------------{{{
 wk.add({ { "<leader>q", group = "quit" } })
-map("", "<leader>qq", ":qa!<CR>", { silent = true, desc = "Quit Doomnvim" }
+map("", "<leader>qq", ":qa!<CR>", { silent = true, desc = "Quit Doomnvim" })
 -- this function is a remnant. It uses old viml function definition
 -- need to know how to implement same behaviour with lua
 -- not even sure why I put two versions to quit doomnvim
