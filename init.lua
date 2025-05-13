@@ -27,13 +27,27 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("doomnvim.mappings")
+
 -- Setup lazy.nvim
 require("lazy").setup({
     spec = {
-    -- add your plugins here
+        {
+            "folke/which-key.nvim",
+            event = "VeryLazy",
+            keys = {
+              {
+                "<leader>?",
+                function()
+                  require("which-key").show({ global = false })
+                end,
+                desc = "Buffer Local Keymaps (which-key)",
+              },
+            },
+        }
     },
     install = { colorscheme = { "habamax" } },
     -- automatically check for plugin updates
     checker = { enabled = true },
 })
+
+require("doomnvim.mappings")

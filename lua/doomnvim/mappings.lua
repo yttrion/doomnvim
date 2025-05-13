@@ -15,9 +15,10 @@
 --
 
 local map = vim.keymap.set
--- map( mode, input, command, { desc = "description" } )
+local wk = require("which-key")
 
 -- Buffer operation --------------------------------------------------------{{{
+wk.add({ { "<leader>b", group = "buffer" } })
 map("", "<leader>bp", ":bp<CR>", { desc = "Buffer Previous" })
 map("", "<leader>bn", ":bn<CR>", { desc = "Buffer Next" })
 map("", "<leader>bu", ":bunload<CR>", { desc = "Buffer Unload" })
@@ -38,16 +39,19 @@ map("", "<leader>bml", "<C-w>L", { desc = "Buffer Move to right" })
 --}}}
 
 -- Code operation ----------------------------------------------------------{{{
+wk.add({ { "<leader>b", group = "buffer" } })
 map("", "<leader>ci", "gg=G", { desc = "Code Indent" })
 map("", "<leader>cv", "<C-v>", { desc = "Code Vertical edit" })
 --}}}
 
 -- File operation ----------------------------------------------------------{{{
+wk.add({ { "<leader>f", group = "file" } })
 map("", "<leader>fs", ":w!<CR>", { desc = "File Save" })
 map("", "<leader>fS", ":wa!<CR>", { desc = "FileS Save" })
 --}}}
 
 -- Help --------------------------------------------------------------------{{{
+wk.add({ { "<leader>h", group = "help" } })
 map("", "<leader>hh", ":helpgrep .<CR>", { desc = "Help" })
 -- this function is a remnant. It uses old viml function definition
 -- need to know how to implement same behaviour with lua
@@ -56,6 +60,7 @@ map("", "<leader>hh", ":helpgrep .<CR>", { desc = "Help" })
 --}}}
 
 -- Plugin ------------------------------------------------------------------{{{
+wk.add({ { "<leader>p", group = "plugin" } })
 map("", "<leader>pu", ":Lazy update<CR>", { desc = "Plugins Update" })
 map("", "<leader>pc", ":Lazy clean<CR>", { desc = "Plugins Clean unused" })
 map("", "<leader>ph", ":Lazy help<CR>", { desc = "Plugins Help" })
@@ -63,6 +68,7 @@ map("", "<leader>pmh", ":Lazy health<CR>", { desc = "Plugins Manager Health stat
 --}}}
 
 -- Quit --------------------------------------------------------------------{{{
+wk.add({ { "<leader>q", group = "quit" } })
 -- this function is a remnant. It uses old viml function definition
 -- need to know how to implement same behaviour with lua
 -- not even sure why I put two versions to quit doomnvim
@@ -71,9 +77,11 @@ map("", "<leader>pmh", ":Lazy health<CR>", { desc = "Plugins Manager Health stat
 --}}}
 
 -- Search ------------------------------------------------------------------{{{
+wk.add({ { "<leader>s", group = "search" } })
 --}}}
 
 -- Toggle ------------------------------------------------------------------{{{
+wk.add({ { "<leader>t", group = "toggle" } })
 map("", "<leader>tn", ":set invnumber<bar>set invrelativenumber<CR>", { desc = "Toggle line Numbers display" }) 
 map("", "<leader>tw", ":set wrap!<CR>", { desc = "Toggle Wrap" }) 
 map("", "<leader>th", ":noh<CR>", { desc = "Toggle Highlights display" }) 
@@ -83,6 +91,7 @@ map("", "<leader>ts", ":set spell!<CR>", { desc = "Toggle Spelling display" })
 --}}}
 
 -- Window ------------------------------------------------------------------{{{
+wk.add({ { "<leader>w", group = "window" } })
 --map("", "<leader>wt", ":call doomnvim#functions#toggleLayout()", { desc = "Window Toggle layout" }) 
 map("", "<leader>wn", ":tabnew<CR>", { desc = "Window open New" }) 
 map("", "<leader>wl", ":tabnext<CR>", { desc = "Window next" }) 
@@ -91,6 +100,7 @@ map("", "<leader>wc", ":tabclose", { desc = "Window Close" })
 --}}}
 
 -- Misc --------------------------------------------------------------------{{{
+wk.add({ { "<leader>m", group = "misc" } })
 map("", "<leader>ms", ":source %<CR>", { desc = "Misc - Source file" }) 
 map("", "<leader>mh", ":checkhealth<CR>", { desc = "Misc - Health status" }) 
 map("", "<leader><leader>h", "<C-w>h", { desc = "Move left" }) 
