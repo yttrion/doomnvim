@@ -102,6 +102,7 @@ map("", "<leader>wc", ":tabclose", { silent = true, desc = "Window Close" })
 
 -- Misc --------------------------------------------------------------------{{{
 wk.add({ { "<leader>m", group = "misc" } })
+wk.add({ { "<leader><leader>", group = "focus" } })
 map("", "<leader>ms", ":source %<CR>", { silent = true, desc = "Misc - Source file" }) 
 map("", "<leader>mh", ":checkhealth<CR>", { silent = true, desc = "Misc - Health status" }) 
 map("", "<leader><leader>h", "<C-w>h", { silent = true, desc = "Move left" }) 

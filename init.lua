@@ -30,3 +30,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("plugins")
 require("doomnvim.mappings")
+
+vim.g.settermguicolors = true
+vim.cmd [[ colorscheme doom-one ]]
+
