@@ -28,5 +28,5 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 
-require("doomnvim.pluggins")
+require("doomnvim.plugins")
 require("doomnvim.mappings")

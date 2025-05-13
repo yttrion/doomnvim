@@ -45,7 +45,6 @@ opt.expandtab = true
 opt.tabstop = 4
 opt.softtabstop = 4
 opt.shiftwidth = 4
-opt.colorcolumn = "80"
 opt.conceallevel = 1
 
 opt.number = true
@@ -63,5 +62,6 @@ g.doomnvim_autocomp = 1
 -- not done
 -- filetype plugin indent on
 -- syntax on
+-- set colorcolumn=80
 
 -- }}}
