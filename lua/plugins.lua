@@ -19,3 +19,7 @@ require("lazy").setup({
     -- automatically check for plugin updates
     checker = { enabled = true },
 })
+
+-- Call plugins configuration
+require("plugins.lualine")
+require("plugins.noice")
