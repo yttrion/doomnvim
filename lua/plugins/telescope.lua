@@ -1,6 +1,7 @@
 require('telescope').setup{}
 
 local map = vim.keymap.set
+local wk = require("which-key")
 
 map("", "<leader>bl", ":Telescope buffers<CR>",       { silent=true, desc="Buffer List" })
 map("", "<leader>cs", ":Telescope spell_suggest<CR>", { silent=true, desc="Code Spell suggest" })
