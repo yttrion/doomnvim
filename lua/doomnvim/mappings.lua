@@ -39,7 +39,7 @@ map("", "<leader>bml", "<C-w>L", { desc = "Buffer Move to right" })
 --}}}
 
 -- Code operation ----------------------------------------------------------{{{
-wk.add({ { "<leader>b", group = "buffer" } })
+wk.add({ { "<leader>c", group = "code" } })
 map("", "<leader>ci", "gg=G", { desc = "Code Indent" })
 map("", "<leader>cv", "<C-v>", { desc = "Code Vertical edit" })
 --}}}
