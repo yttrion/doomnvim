@@ -14,6 +14,21 @@ require("lazy").setup({
         { "folke/which-key.nvim", lazy=true, dependencies={ "nvim-tree/nvim-web-devicons" }},
         { "dstein64/vim-startuptime", cmd="StartupTime" },
         { "nvim-tree/nvim-tree.lua", lazy=true, dependencies={ "nvim-tree/nvim-web-devicons" }},
+        { "nvim-telescope/telescope.nvim", lazy=true, dependencies={ "nvim-lua/plenary.nvim" }},
+
+        -- Colors
+        { "sainnhe/everforest", lazy=true },
+        { "catppuccin/nvim", lazy=true },
+        { "folke/tokyonight.nvim", lazy=true },
+        { "everviolet/nvim", lazy=true },
+        { "rebelot/kanagawa.nvim", lazy=true },
+        { "sainnhe/gruvbox-material", lazy=true },
+        { "ahmedabdulrahman/aylin.vim", lazy=true },
+        { "rose-pine/neovim", lazy=true },
+        { "sainnhe/sonokai", lazy=true },
+        { "alexvzyl/nordic.nvim", lazy=true },
+        { "rakr/vim-one", lazy=true },
+        { "ntbbloodbath/doom-one.nvim", lazy=true },
 
     },
     install = { colorscheme = { "habamax" } },
@@ -26,3 +41,4 @@ require("plugins.lualine")
 require("plugins.bufferline")
 
 require("plugins.nvim-tree")
+require("plugins.telescope")
