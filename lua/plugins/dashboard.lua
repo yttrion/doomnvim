@@ -34,15 +34,15 @@ db.setup({
             ""},
         center = {
             {
-                icon = '  ',
+                icon = ' ',
                 desc = 'Command history                         ',
                 desc_hl = 'String',
                 action =  'Telescope command_history',
-                key = 'h',
+                key = 'xh',
                 key_hl = 'Number',
             },
             {
-                icon = '  ',
+                icon = '  ',
                 desc = 'Find  File                              ',
                 desc_hl = 'String',
                 action = 'Telescope find_files',
@@ -58,10 +58,18 @@ db.setup({
                 key_hl = 'Number',
             },
             {
-                icon = '  ',
-                desc = 'Find  word                              ',
+                icon = '  ',
+                desc = 'Show help tags                          ',
                 desc_hl = 'String',
-                action = 'Telescope live_grep',
+                action = 'Telescope help_tags',
+                key = 'w',
+                key_hl = 'Number',
+            },
+            {
+                icon = '  ',
+                desc = 'Show keymaps                            ',
+                desc_hl = 'String',
+                action = 'Telescope keymaps',
                 key = 'w',
                 key_hl = 'Number',
             }
