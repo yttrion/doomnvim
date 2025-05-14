@@ -44,5 +44,4 @@ require("plugins.dashboard")
 
 require("plugins.nvim-tree")
 require("plugins.telescope")
-require("plugins.formatter")
 require("plugins.misc")
