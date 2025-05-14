@@ -44,9 +44,15 @@ Please checkout NTBBloodbath's [doom-nvim](https://github.com/NTBBloodbath/doom-
 # Install
 ## Prerequisites
 
-doomnvim requires `nodejs`>=10.12 and `npm` in order to work properly
+doomnvim requires the following packages starting from version `2.0.0a` 
 
-`curl`, `ctags`, `pynvim`, `lua` and `git` are also needed
+- neovim v>=0.10
+- npm
+- python3
+- unzip
+- fzf
+
+
 
 ## Install doomnvim
 Simply run the following command:
