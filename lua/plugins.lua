@@ -22,7 +22,8 @@ require("lazy").setup({
 
         -- Utils
         { "Zeioth/distroupgrade.nvim", event="VeryLazy", dependencies={ "nvim-lua/plenary.nvim" }, opts={}},
-        { "m4xshen/autoclose.nvim", event="Lazy"},
+        { "m4xshen/autoclose.nvim", event="VeryLazy"},
+        { "lewis6991/gitsigns.nvim", event="VeryLazy"},
 
         -- Colors
         { "sainnhe/everforest", lazy=true },
@@ -44,4 +45,5 @@ require("plugins.dashboard")
 
 require("plugins.nvim-tree")
 require("plugins.telescope")
+require("plugins.gitsigns")
 require("plugins.misc")
