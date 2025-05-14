@@ -8,6 +8,8 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.g.doomnvim_version = "2.0.0a"
+
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
@@ -32,5 +34,5 @@ require("plugins")
 require("doomnvim.mappings")
 
 vim.g.settermguicolors = true
-vim.cmd [[ colorscheme doom-one ]]
+vim.cmd [[ colorscheme nordic ]]
 

@@ -50,7 +50,6 @@ o.noswapfile = true
 
 
 -- vim.g
-g.doomnvim_version = "2.0.0a"
 g.doomnvim_autocomp = 1
 
 -- not done

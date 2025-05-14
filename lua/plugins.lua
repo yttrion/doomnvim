@@ -9,6 +9,7 @@ require("lazy").setup({
         -- GUI
         { "nvim-lualine/lualine.nvim", lazy=true, dependencies={ "nvim-tree/nvim-web-devicons" }},
         { "akinsho/bufferline.nvim", event="VeryLazy" , version = "*", dependencies={ "nvim-tree/nvim-web-devicons" }},
+        { "nvimdev/dashboard-nvim", event="VimEnter", dependencies={ "nvim-tree/nvim-web-devicons" }},
         
         -- Tools
         { "folke/which-key.nvim", lazy=true, dependencies={ "nvim-tree/nvim-web-devicons" }},
@@ -39,7 +40,7 @@ require("lazy").setup({
 
 -- Call plugins configuration
 require("plugins.lualine")
-require("plugins.bufferline")
+require("plugins.dashboard")
 
 require("plugins.nvim-tree")
 require("plugins.telescope")
