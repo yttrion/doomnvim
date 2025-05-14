@@ -34,7 +34,7 @@ db.setup({
             ""},
         center = {
             {
-                icon = ' ',
+                icon = '  ',
                 desc = 'Command history                         ',
                 desc_hl = 'String',
                 action =  'Telescope command_history',
@@ -62,7 +62,7 @@ db.setup({
                 desc = 'Show help tags                          ',
                 desc_hl = 'String',
                 action = 'Telescope help_tags',
-                key = 'w',
+                key = 'ht',
                 key_hl = 'Number',
             },
             {
@@ -70,7 +70,7 @@ db.setup({
                 desc = 'Show keymaps                            ',
                 desc_hl = 'String',
                 action = 'Telescope keymaps',
-                key = 'w',
+                key = 'hk',
                 key_hl = 'Number',
             }
     },

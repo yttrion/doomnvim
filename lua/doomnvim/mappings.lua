@@ -59,8 +59,13 @@ map("", "<leader>hh", ":helpgrep .<CR>",                                        
 --map("", "hX", ":call doomnvim#functions#uninstall()<CR>",                       { silent = true, desc = "Help Uninstall DoomNVIM" })
 --}}}
 
+-- Git ---------------------------------------------------------------------{{{
+wk.add({ { "<leader>g", group = "git" } })
+--}}}
+
 -- Plugin ------------------------------------------------------------------{{{
 wk.add({ { "<leader>p", group = "plugin" } })
+map("", "<leader>pi", ":Lazy install<CR>",                                      { silent = true, desc = "Plugins Install" })
 map("", "<leader>pu", ":Lazy update<CR>",                                       { silent = true, desc = "Plugins Update" })
 map("", "<leader>pc", ":Lazy clean<CR>",                                        { silent = true, desc = "Plugins Clean unused" })
 map("", "<leader>ph", ":Lazy help<CR>",                                         { silent = true, desc = "Plugins Help" })
@@ -98,6 +103,10 @@ map("", "<leader>wn", ":tabnew<CR>",                                            
 map("", "<leader>wl", ":tabnext<CR>",                                           { silent = true, desc = "Window next" }) 
 map("", "<leader>wh", ":tabprevious<CR>",                                       { silent = true, desc = "Window previous" }) 
 map("", "<leader>wc", ":tabclose",                                              { silent = true, desc = "Window Close" }) 
+--}}}
+
+-- Commands ---{{{
+wk.add({ { "<leader>x", group = "command" } })
 --}}}
 
 -- Misc --------------------------------------------------------------------{{{
