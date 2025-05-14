@@ -25,5 +25,5 @@ require("nvim-tree").setup({
 })
 
 local map = vim.keymap.set
-map("", "<leader>fe", ":NvimTreeToggle<CR>", { silent = true, desc = "File Explorer open" })
+map("", "<leader>fe", ":NvimTreeToggle<CR>",                                    { silent = true, desc = "File Explorer open" })
 
