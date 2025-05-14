@@ -8,8 +8,9 @@ require("lazy").setup({
     spec = {
         -- GUI
         { "nvim-lualine/lualine.nvim", lazy=true, dependencies={ "nvim-tree/nvim-web-devicons" }},
-        { "akinsho/bufferline.nvim", event="VeryLazy" , version = "*", dependencies={ "nvim-tree/nvim-web-devicons" }},
+        { "akinsho/bufferline.nvim", event="VeryLazy", version = "*", dependencies={ "nvim-tree/nvim-web-devicons" }},
         { "nvimdev/dashboard-nvim", event="VimEnter", dependencies={ "nvim-tree/nvim-web-devicons" }},
+        { "utilyre/barbecue.nvim", dependencies={ "SmiteshP/nvim-navic", "nvim-tree/nvim-web-devicons" }},
         
         -- Tools
         { "folke/which-key.nvim", lazy=true, dependencies={ "nvim-tree/nvim-web-devicons" }},
@@ -18,9 +19,11 @@ require("lazy").setup({
         { "nvim-telescope/telescope.nvim", lazy=true, dependencies={ "nvim-lua/plenary.nvim" }},
         { "m4xshen/smartcolumn.nvim", lazy=true },
         { "voldikss/vim-floaterm", lazy=false },
+        { "mhartington/formatter.nvim", lazy=true },
 
         -- Utils
         { "Zeioth/distroupgrade.nvim", event="VeryLazy", dependencies={ "nvim-lua/plenary.nvim" }, opts={}},
+        { "lukas-reineke/indent-blankline.nvim", main="ibl", opts={}},
 
         -- Colors
         { "sainnhe/everforest", lazy=true },
@@ -42,4 +45,5 @@ require("plugins.dashboard")
 
 require("plugins.nvim-tree")
 require("plugins.telescope")
+require("plugins.formatter")
 require("plugins.misc")
