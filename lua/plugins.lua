@@ -33,6 +33,11 @@ require("lazy").setup({
         { "alexvzyl/nordic.nvim", lazy=true },
         { "rakr/vim-one", lazy=true },
 
+        -- -- Linting/LSP/Completion
+        -- { "mason-org/mason.nvim" },
+        -- { "mason-org/mason-lspconfig.nvim" },
+        -- { "neovim/nvim-lspconfig" },
+
     },
     install = { colorscheme = { "habamax" } },
     -- automatically check for plugin updates
@@ -46,3 +51,7 @@ require("plugins.dashboard")
 require("plugins.nvim-tree")
 require("plugins.telescope")
 require("plugins.misc")
+
+
+
+--require("plugins.mason")
