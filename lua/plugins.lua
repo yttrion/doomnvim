@@ -23,18 +23,13 @@ require("lazy").setup({
         { "Zeioth/distroupgrade.nvim", event="VeryLazy", dependencies={ "nvim-lua/plenary.nvim" }, opts={}},
 
         -- Colors
+        { "zaldih/themery.nvim", lazy=false },
         { "sainnhe/everforest", lazy=true },
         { "catppuccin/nvim", lazy=true },
-        { "folke/tokyonight.nvim", lazy=true },
-        { "everviolet/nvim", lazy=true },
-        { "rebelot/kanagawa.nvim", lazy=true },
         { "sainnhe/gruvbox-material", lazy=true },
-        { "ahmedabdulrahman/aylin.vim", lazy=true },
-        { "rose-pine/neovim", lazy=true },
         { "sainnhe/sonokai", lazy=true },
         { "alexvzyl/nordic.nvim", lazy=true },
         { "rakr/vim-one", lazy=true },
-        { "ntbbloodbath/doom-one.nvim", lazy=true },
 
     },
     install = { colorscheme = { "habamax" } },
