@@ -18,6 +18,9 @@ require("lazy").setup({
         { "nvim-telescope/telescope.nvim", lazy=true, dependencies={ "nvim-lua/plenary.nvim" }},
         { "m4xshen/smartcolumn.nvim", lazy=true },
 
+        -- Utils
+        { "Zeioth/distroupgrade.nvim", event="VeryLazy", dependencies={ "nvim-lua/plenary.nvim" }, opts={}},
+
         -- Colors
         { "sainnhe/everforest", lazy=true },
         { "catppuccin/nvim", lazy=true },
