@@ -22,6 +22,7 @@ require("lazy").setup({
 
         -- Utils
         { "Zeioth/distroupgrade.nvim", event="VeryLazy", dependencies={ "nvim-lua/plenary.nvim" }, opts={}},
+        { "m4xshen/autoclose.nvim", event="Lazy"},
 
         -- Colors
         { "sainnhe/everforest", lazy=true },

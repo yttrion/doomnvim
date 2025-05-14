@@ -13,6 +13,8 @@ require("smartcolumn").setup({
 })
 
 require("barbecue.ui").toggle(true)
+require("autoclose").setup()
+
 
 -- Util keymaps
 map("", "<leader>hu", ":DistroUpdate<CR>",                                      { silent = true, desc = "Update doomnvim" })
