@@ -15,6 +15,7 @@ require("lazy").setup({
         { "dstein64/vim-startuptime", cmd="StartupTime" },
         { "nvim-tree/nvim-tree.lua", lazy=true, dependencies={ "nvim-tree/nvim-web-devicons" }},
         { "nvim-telescope/telescope.nvim", lazy=true, dependencies={ "nvim-lua/plenary.nvim" }},
+        { "m4xshen/smartcolumn.nvim", lazy=true },
 
         -- Colors
         { "sainnhe/everforest", lazy=true },
@@ -42,3 +43,4 @@ require("plugins.bufferline")
 
 require("plugins.nvim-tree")
 require("plugins.telescope")
+require("plugins.misc")
