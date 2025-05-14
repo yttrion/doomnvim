@@ -22,7 +22,6 @@ require("lazy").setup({
 
         -- Utils
         { "Zeioth/distroupgrade.nvim", event="VeryLazy", dependencies={ "nvim-lua/plenary.nvim" }, opts={}},
-        { "lukas-reineke/indent-blankline.nvim", main="ibl", opts={}},
 
         -- Colors
         { "sainnhe/everforest", lazy=true },

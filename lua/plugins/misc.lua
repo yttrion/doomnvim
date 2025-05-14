@@ -13,7 +13,6 @@ require("smartcolumn").setup({
 })
 
 require("barbecue.ui").toggle(true)
-require("ibl").setup()
 
 -- Util keymaps
 map("", "<leader>hu", ":DistroUpdate<CR>",                                      { silent = true, desc = "Update doomnvim" })
