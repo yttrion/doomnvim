@@ -23,7 +23,6 @@ require("lazy").setup({
         { "Zeioth/distroupgrade.nvim", event="VeryLazy", dependencies={ "nvim-lua/plenary.nvim" }, opts={}},
 
         -- Colors
-        { "zaldih/themery.nvim", lazy=false },
         { "sainnhe/everforest", lazy=true },
         { "catppuccin/nvim", lazy=true },
         { "sainnhe/gruvbox-material", lazy=true },
