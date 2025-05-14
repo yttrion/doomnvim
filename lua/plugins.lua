@@ -10,7 +10,7 @@ require("lazy").setup({
         { "nvim-lualine/lualine.nvim", lazy=true, dependencies={ "nvim-tree/nvim-web-devicons" }},
         { "akinsho/bufferline.nvim", event="VeryLazy", version = "*", dependencies={ "nvim-tree/nvim-web-devicons" }},
         { "nvimdev/dashboard-nvim", event="VimEnter", dependencies={ "nvim-tree/nvim-web-devicons" }},
-        { "utilyre/barbecue.nvim", dependencies={ "SmiteshP/nvim-navic", "nvim-tree/nvim-web-devicons" }},
+        { "utilyre/barbecue.nvim", dependencies={ "SmiteshP/nvim-navic", "nvim-tree/nvim-web-devicons" }, opts={}},
         
         -- Tools
         { "folke/which-key.nvim", lazy=true, dependencies={ "nvim-tree/nvim-web-devicons" }},
@@ -19,7 +19,6 @@ require("lazy").setup({
         { "nvim-telescope/telescope.nvim", lazy=true, dependencies={ "nvim-lua/plenary.nvim" }},
         { "m4xshen/smartcolumn.nvim", lazy=true },
         { "voldikss/vim-floaterm", lazy=false },
-        { "mhartington/formatter.nvim", lazy=true },
 
         -- Utils
         { "Zeioth/distroupgrade.nvim", event="VeryLazy", dependencies={ "nvim-lua/plenary.nvim" }, opts={}},
