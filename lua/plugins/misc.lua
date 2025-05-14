@@ -9,9 +9,7 @@ require("bufferline").setup({
     }
 })
 require("smartcolumn").setup({
-    config = {
-        disabled_filetypes = { "help", "text", "markdown", "Dashboard" }
-    }
+    disabled_filetypes = { "help", "text", "markdown", "dashboard", "NvimTree", "lazy", "checkhealth", "zsh"}
 })
 
 -- Util keymaps
