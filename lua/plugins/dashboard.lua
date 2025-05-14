@@ -5,6 +5,7 @@ db.setup({
     theme = 'doom',
     config = {
         header = {
+            "v"..vim.api.nvim_get_var('doomnvim_version'),
             "",
             "",
             "=================     ===============     ===============   ========  ========",
@@ -44,8 +45,8 @@ db.setup({
                 icon = '  ',
                 desc = 'Find  File                              ',
                 desc_hl = 'String',
-                action = 'Telescope find_files find_command=rg,--hidden,--files',
-                key = 'f',
+                action = 'Telescope find_files',
+                key = 'ff',
                 key_hl = 'Number',
             },
             {
@@ -53,7 +54,7 @@ db.setup({
                 desc ='File Explorer                            ',
                 desc_hl = 'String',
                 action =  'NvimTreeToggle',
-                key = 'e',
+                key = 'fe',
                 key_hl = 'Number',
             },
             {
@@ -65,7 +66,6 @@ db.setup({
                 key_hl = 'Number',
             }
     },
-    footer = {"Version: "..vim.api.nvim_get_var('doomnvim_version')}  --your footer
   }
 })
 
