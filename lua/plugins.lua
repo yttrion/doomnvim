@@ -17,6 +17,7 @@ require("lazy").setup({
         { "nvim-tree/nvim-tree.lua", lazy=true, dependencies={ "nvim-tree/nvim-web-devicons" }},
         { "nvim-telescope/telescope.nvim", lazy=true, dependencies={ "nvim-lua/plenary.nvim" }},
         { "m4xshen/smartcolumn.nvim", lazy=true },
+        {'akinsho/toggleterm.nvim', version = "*", lazy=true },
 
         -- Utils
         { "Zeioth/distroupgrade.nvim", event="VeryLazy", dependencies={ "nvim-lua/plenary.nvim" }, opts={}},
