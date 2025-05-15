@@ -37,6 +37,8 @@ require("lazy").setup({
         { "mason-org/mason.nvim" },
         { "mason-org/mason-lspconfig.nvim" },
         { "neovim/nvim-lspconfig" },
+	{ "saghen/blink.cmp", dependencies={ "rafamadriz/friendly-snippets" }},
+
 
     },
     install = { colorscheme = { "habamax" } },

@@ -1,0 +1,6 @@
+---
+- name: "hello world display"
+  hosts: all
+  tasks:
+    - debug:
+        msg: "hello world"
