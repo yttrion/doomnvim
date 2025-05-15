@@ -12,7 +12,7 @@ local g = vim.g
 -- vim.g
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-vim.g.doomnvim_version = "2.0.0a"
+vim.g.doomnvim_version = "2.0a"
 
 -- vim.opt
 opt.shortmess:append "sI"
@@ -30,7 +30,7 @@ o.splitright = true
 o.undofile = true
 o.autoread = true
 
-o.laststatus = 3
+o.laststatus = 2 -- I find it better to have one line per buffer opened
 o.showmode = true
 o.cursorline = false
 o.hlsearch = true

@@ -26,185 +26,181 @@ yttrion                                                             *doomnvim*
 ==============================================================================
 CONTENTS                                                   *doomnvim-contents*
   1. Introduction.............................................|doomnvim-intro|
-  2. Options................................................|doomnvim-options|
+  2. Notice..................................................|doomnvim-notice|
+  3. Options................................................|doomnvim-options|
     1. Autocomplete............................|doomnvim-options-autocomplete|
-    2. Colorscheme..............................|doomnvim-options-colorscheme|
-  3. Configuration....................................|doomnvim-configuration|
+    2. Linting/LSP......................................|doomnvim-options-lsp|
+    3. Colorscheme..............................|doomnvim-options-colorscheme|
+  4. Configuration....................................|doomnvim-configuration|
     1. Layout..................................|doomnvim-configuration-layout|
     2. File Explorer..................|doomnvim-configuration-layout-explorer|
     3. Main Buffer..................|doomnvim-configuration-layout-mainbuffer|
-    4. Tagbar...........................|doomnvim-configuration-layout-tagbar|
-  4. Commands..............................................|doomnvim-commands|
+  5. Commands..............................................|doomnvim-commands|
     1. Keybindings.............................|doomnvim-commands-keybindings|
-  5. Functions............................................|doomnvim-functions|
   6. Usage....................................................|doomnvim-usage|
     1. Moving around...................................|doomnvim-usage-moving|
   7. Known issues............................................|doomnvim-issues|
   8. FAQ........................................................|doomnvim-faq|
-  9. Hacking doomnvim.......................................|doomnvim-hacking|
-    1. Autoload....................................|doomnvim-hacking-autoload|
-  10. Changelog...........................................|doomnvim-changelog|
+  9. Changelog............................................|doomnvim-changelog|
 
 
 ==============================================================================
 INTRODUCTION                                                  *doomnvim-intro*
 
-doomnvim is a neovim framework that includes custom settings and
-plugins. It is inspired by doom-emacs and Spacevim
+doomnvim is a curated configuration of neovim using its lua capabilities.
+It uses the Lazy.nvim package manager and is inspired by doom-emacs and
+Spacevim.
 
+==============================================================================
+NOTICE                                                       *doomnvim-notice*
+
+With the complete rewriting of doomnvim for versions >= `2.0a`, some
+features of the previous versions are not implemented.
+
+Please be aware that per-user custom configuration is not available at the
+time of writing this documentation. In the future those options might come
+back.
 
 ==============================================================================
 OPTIONS                                                     *doomnvim-options*
 
-doomnvim configuration files are located in the `$HOME/.doomnvim/config`
-directory. Global variables for doomnvim are located in
-`$HOME/.doomnvim/autoload/doomnvim.vim`
+doomnvim configuration files are located in the `$HOME/.config/nvim`
+directory.
 
-All the options available in the `doomnvim.vim` file are global variables.
-They all start with `g:doomnvim_` followed by a description of their
-nature: `g:doomnvim_save_workspace` followed by their values.
+Global variables that were used in previous versions of doomnvim are located
+in the `init.lua` file, but the heading name syntax `g:doomnvim_<var_name>`
+is not used anymore.
 
+Using lua api for neovim these are the following set options:
 
-`g:doomnvim_indent`
-default value = 4
-Specifies the width of tabs and shifttabs
+`vim.g.mapleader = ' ' `
 
-`g:doomnvim_show_indent`
-default value = 1
-Enables the indent display
+`vim.g.maplocalleader = ' '`
 
-`g:doomnvim_expand_tabs`
-default value = 0
-Specifies if spaces or tabs must be used
-0 : spaces
-1 : tabs
+`vim.g.doomnvim_version = "<current_version>"`
 
-`g:doomnvim_relative_num`
-default value = 1
-Shows relative number lines on 1
-Shows absolute number lines on 0
+`vim.opt.shortmess:append "sI"`
 
-`g:doomnvim_max_columns`
-default value = 100
-Defines the column to show a vertical marker
+`vim.o.wildmenu = true`
 
-`g:doomnvim_enable_guicolors`
-default value = 1
-Enables gui colors on GUI versions of vim/nvim
+`vim.o.smartindent = true`
 
-`g:doomnvim_sidebar_width`
-default value = 30
-Specifies the default width of the file explorer
+`vim.o.smarttab = true`
 
-`g:doomnvim_show_icons`
-default value = 1
-Show icons in the file explorer
+`vim.o.autoindent = true`
 
-`g:doomnvim_show_hidden`
-default value = 1
-Show hidden files in the file explorer
+`vim.o.splitbelow = true`
 
-`g:doomnvim_colorscheme`
-default value = 'doomnvim'
-Specifies the colorscheme to use
+`vim.o.splitright = true`
 
-`g:doomnvim_colorscheme_bg`
-default value = 'dark'
-Specifies the background
-Allowed values: 'dark', 'light'
+`vim.o.undofile = true`
 
-`g:doomnvim_check_updates`
-default value = 0
-Check updates of plugins on start
+`vim.o.autoread = true`
 
-`g:doomnvim_disabled_plugins`
-default value = []
-Dictionary of user disabled plugins
+`vim.o.laststatus = 2`
 
-`g:doomnvim_custom_plugins`
-default value = []
-List of user custom plugins
-It currently only supports github repos.
-Post-update hooks are not yet supported
+`vim.o.showmode = true`
 
-`g:doomnvim_sessionsave_onquit`
-default value = 0
-Enables session save on quit : 1
-Disable session save on quit : 0
+`vim.o.cursorline = false`
 
-`g:doomnvim_autocomplete_par`
-default value = 1
-Enable the automatic closing of (, ', ", {, [, <
+`vim.o.hlsearch = true`
 
-`g:doomnvim_resize_percent`
-default value = 0.2
-Specifies the percentage of the buffer width/size to increase/decrease
+`vim.o.cmdheight = 1`
 
-`g:doomnvim_open_in_vsplit`
-default value = 0
-Automatically open new files in a vertical split
+`vim.o.signcolumn = "auto"`
 
-`g:doomnvim_conceallevel`
-default value = 1
-Set neovim conceal level
-1 : Conceal some functions and show indentlines
-0 : Disable indentline and show all
+`vim.o.mouse = "a"`
 
-`g:doomnvim_logging`
-default value = 1
-Select the logging level of doomnvim
-0: Disables the logging
-1: Logs all errors in the `doomnvim.log` file
-2: Logs all errors and messages in the `doomnvim.log` file
-3: Logs all errors and messages in the `doomnvim.log` file and echoes 
-them
+`vim.o.encoding = "utf-8"`
 
-`g:doomnvim_spelllang`
-default value = 'en'
-Defines spell lang for doomnvim
+`vim.o.clipboard = "unnamedplus"`
 
-`g:doomnvim_separator`
-default value = '/'
-Defines default separator, os dependent
+`vim.o.timeoutlen = 400`
 
-`g:doomnvim_fresh`
-default value = 0
-Checks if it is the first launch of doomnvim
+`vim.o.updatetime = 400`
 
-DO NOT EDIT THE VALUE OF `g:doomnvim_root` !
+`vim.o.expandtab = true`
 
-`g:doomnvim_neovim` and `g:doomnvim_nightly` are util variables that enable some
-plugins when using neovim>=0.5
+`vim.o.tabstop = 4`
+
+`vim.o.softtabstop = 4`
+
+`vim.o.shiftwidth = 4`
+
+`vim.o.conceallevel = 1`
+
+`vim.o.swapfile = false`
+
+`vim.o.number = true`
+
+`vim.o.relativenumber = true`
 
 ==============================================================================
 AUTOCOMPLETE                                   *doomnvim-options-autocomplete*
 
-doomnvim uses coc.nvim as completion engine. Use <TAB> or <C-n> to select the
-next suggestion.
+doomnvim uses `saghen/blink.cmp` as completer engine.
+Check `./lua/plugins.lua` to check how this plugin is installed
+Check `./lua/plugins/blink.lua` to check how this plugin is configured
 
-Autocompletion for parenthesis can be disabled by changing the value of
-`g:doomnvim_autocomplete_par` in the doomnvim global configuration
-file
+When writing `blink` might show some snippets.
+To select the next snippet, use <TAB>.
+To select the previous snippet, use <A-TAB>
+
+These are the only blink-cmp keybindings at the moment.
+
+Autocompletion for parethesis and other delimiter characters is provided
+by the `m4xshen/autoclose.nvim` plugin.
+
+==============================================================================
+LINTING/LSP                                             *doomnvim-options-lsp*
+
+In order to provide LSP/Linting capabilities to doomnvim, the following
+plugins are used:
+
+`mason-org/mason`
+`mason-org/mason-lspconfig`
+`neovim/nvim-lspconfig`
+
+By default, during the first start of doomnvim, Lazy.nvim will download all
+the predefined plugins, including the three plugins mentioned above.
+
+To initialize `mason` registry use the command `:Mason`
+
+You can safely quit doomnvim and start it again, `mason` will automatically
+install all preconfigured lsps for doomnvim. This operatio is needed only
+once.
+
+To install new LSP/DAP/Linter/Formatters, please check the documentation of
+
+`mason-org/mason`
+`mason-org/mason-lspconfig`
+`neovim/nvim-lspconfig`
+
+It is not currently possible to have a sidefile with per-user configuration.
 
 ==============================================================================
 COLORSCHEME                                     *doomnvim-options-colorscheme*
 
-The colorscheme of doomnvim. Default is 'doom'. There are pre-configured
-colorschemes installed in `$HOME/.doomnvim/colors/`:
-    - `doom-one` (default)
+The colorscheme of doomnvim. Default is 'nordic'. Yes the 'doom' colorscheme
+is deprecated and not even maintained. You can still use the 
+`NTBBloodbath/doom-one.nvim` repo in order to get useful version.
+
+It is not currently possible to set a specific colorscheme and make it
+persistent for doomnvim `v>=2.0a`.
 
 Other colorschemes are installed by default with `doomnvim`. They are 
-configured in the `main.vim` file.
+configured in the `lua/plugins.lua` file but are not loaded by default.
+
 You can switch between colorschemes by doing <Space>mc and then type the name 
-of the colorscheme you want to use. You can also edit the `BFC` file located 
-at: `$HOME/.doomrc` (see |doomnvim-hacking|)
+of the colorscheme you want to use. 
 
 ==============================================================================
 CONFIGURATION                                         *doomnvim-configuration*
 
-doomnvim configuration files are located in the $HOME/.doomnvim/config/
-directory. You can access the configuration folder of doomnvim by typing
-`doomconfig` at the start menu. See |doomnvim-hacking| for more info.
+doomnvim configuration files are located in the `$HOME/.config/nvim`
+directory.
+
+See |doomnvim-hacking| for more info.
 
 ==============================================================================
 LAYOUT                                         *doomnvim-configuration-layout*
@@ -212,52 +208,55 @@ LAYOUT                                         *doomnvim-configuration-layout*
 Excluding the statusline, doomnvim will mostly have the following layout:
 
 |--------------------------------------|~
-|     |                         |      |
-|     |                         |      |
-|     |                         |      |
-|     |            B            |  C*  |
-|  A* |                         |      |
-|     |                         |      |
-|     |                         |      |
-|     |                         |      |~
-|     |                         |      |
+|     |                                |
+|     |                                |
+|     |                                |
+|     |              B                 |
+|  A* |                                |
+|     |                                |
+|     |                                |
+|     |                                |~
+|     |                                |
 |--------------------------------------|~
 
 
 'A' : The file explorer (Plugin: nvim-tree)
-'B' : The main buffer
-'C' : The tags buffer (Plugin: Tagbar)
+'B' : The main buffer zone. You can split this multiple times
 
 Sections with `*` are not opened by default but can be toggled.
-See |doomnvim-commands| for more informations
+
+See |doomnvim-commands| and |doomnvim-keybinds| for more informations.
 
 ==============================================================================
 FILE EXPLORER                         *doomnvim-configuration-layout-explorer*
 
 doomnvim uses nvim-tree plugin as a file explorer. It can be toggled
-by performing the following command: <Space>fe for `FileExplorer`
+by performing the following command:
 
-To create a new file within the file explorer, do <m><a>[nameofnode]
+<Space>fe
+
+for `File Explorer`
+
+To create a new file within the file explorer, do 
+
+<m><a>[nameofnode]
+
 Append a `/` if you want to create a directory
 
-Check `nvim-tree` for more info.
+Check `h: nvim-tree` for more info.
 
 ==============================================================================
 MAIN BUFFER                         *doomnvim-configuration-layout-mainbuffer*
 
-The main buffer is the buffer where the code is opened. It can be split 
+The main buffer is the buffer where the code is opened. It can be split
 into multiple buffers which can be resized individually.
 
-To split the main buffer, do <Space>bs and then select the split method
-you want to use horizontally, `h`, or vertically, `v`
+To split the main buffer, do 
 
-==============================================================================
-TAGBAR                                  *doomnvim-configuration-layout-tagbar*
+<Space>bs
 
-Tagbar is a plugin that can show the tags and structure of the opened
-file, ordered by scope.
-
-See https://github.com/preservim/tagbar for more informations.
+and then select the split method.
+See |doomnvim-commands| and |doomnvim-keybinds| for more details.
 
 ==============================================================================
 COMMANDS                                                   *doomnvim-commands*
@@ -266,7 +265,7 @@ doomnvim uses vim-which-key as a command manager. To open whichkey press
 <Space> and wait for the pop-up to show. Each function has a label and is
 mnemonic
 e.g:
-	`Save File` > <Space>sf
+    `Save File` > <Space>sf
 
 There are multiple menus for doomnvim commands. Those menus create a path
 in the decision tree that identifies any command.
@@ -289,130 +288,90 @@ split. If we want a horizontal split the whole command is
 ==============================================================================
 KEYBINDINGS                                    *doomnvim-commands-keybindings*
 
+These are the following custom doomnvim keybindings.
+Beside these, all default neovim keybindings are still available.
+
+To use a doomnvim keybind, in 'NORMAL' mode, press <Space> then press the
+following necessary keys to perform the command you want.
+
+doomvim keybinds are as mnemonic as possible, in order to prevent
+commands that could be hard to memorize.
+
+List of keybinds:
+
 <Space>
-|
-| <h> Focus left
-| <j> Focus below
-| <k> Focus top
-| <l> Focus right
-| <b>uffer
-|           | <p>revious
-|           | <n>ext
-|           | <q>uit buffer
-|           | <k>ill current
-|           | <e>mpty buffer
-|           | <l>ist buffers
-|           | <r>esize equally
-|           | <c>lose all except focused
-|           | <s>plit
-|           |           | <v>ertical
-|           |           | <h>orizontal
-|           | <w>idth
-|           |           | <i>ncrease
-|           |           | <d>ecrease
-|           | <h>eight
-|           |           | <i>ncrease 
-|           |           | <d>ecrease
-|           | <m>ove
-|           |           | <h> : Left
-|           |           | <j> : Down
-|           |           | <k> : Up
-|           |           | <l> : Right
-| <c>ode
-|           | <i>ndent file
-|           | <c>omment line
-|           | <v>ertical edition
-|           | <s>pell suggest
-| <f>ile
-|           | <s>ave file
-|           | <S>ave all
-|           | <f>ind file
-|           | <h>istory
-|           | <e>xplorer
-|           | <o>pen
-|           | <r>ename file
-|           | <n>ew file
-| <g>it
-|           | <g>itgutter toggle
-|           | <h>unk
-|           |           | <p>revious
-|           |           | <n>ext
-|           |           | <s>tage
-|           |           | <u>ndo
-|           |           | <P>review
-|           | <s>tatus
-|           | <b>ranches
-|           | <c>ommits
-| <h>elp
-|           | <h>elp of doomnvim
-|           | <t>ags
-|           | <i>nstaller usage
-|           | <u>pdate doomnvim
-|           | <X> UNINSTALL DOOMNVIM
-| <m>isc
-|           | <S>ource file
-|           | <c>olorscheme switch
-|           | <h>ealth check
-| <p>lugin
-|           | <u>pdate
-|           | <i>nstall
-|           | <c>lean
-|           | <m>anager update
-|           | <r>emote plugin update
-| <q>uit/session
-|           | <q>uit
-|           | <Q>uit doomnvim
-| <s>earch
-|           | <h>istory search
-|           | <f>ile search
-|           | <w>ord search
-| <t>oggle
-|           | <l>ine number
-|           | <w>ord wrap
-|           | <h>ighlight
-|           | <e>rror
-|           | <t>ag bar
-|           | <f>loating terminal
-|           | <c>onceal level
-|           | <s>pell
-| <w>indow
-|           | <t>oggle layout
-|           | <r>otate
-|           | <N>ew
-|           | <p>revious
-|           | <n>ext
-|           | <c>lose
-
-==============================================================================
-FUNCTIONS                                                 *doomnvim-functions*
-
-`LayoutToggle`: Toggles the layout between Vertical Layout and Horizontal
-Layout.
-
-`NearestFunctionOrMethod`: Default function of `Vista.vim`, showing the nearest
-tag on the status line
-
-`RenameFile`: Creates a prompt to rename a file 
-
-`SwitchBuf`: Switches buffer positions
-
-`OpenInFloat`: Open a command in a floating terminal
-
-`ResizeWin`: Changes the width or height of the selected buffer
-
-`SaveFile`: Saves the current file. If the file was created, prompts for a name
-
-`EditColorscheme`: Adds an entry to the BFC file to match the selected
-colorscheme
-
-`ToggleConceal`: On certain file types (e.g: `*.tex`) the conceallevel might
-disturb, therefore this function sets the conceallevel to 0 or switches it back
-to 1.
+|   <Space>
+|   |   <h> Focus left
+|   |   <j> Focus below
+|   |   <k> Focus top
+|   |   <l> Focus right
+|   <b>uffer
+|   |   <c>lose all except focused
+|   |   <e>mpty buffer
+|   |   <k>ill current
+|   |   <l>ist buffers
+|   |   <m>ove
+|   |   |   <h> : Left
+|   |   |   <j> : Down
+|   |   |   <k> : Up
+|   |   |   <l> : Right
+|   |   <n>ext
+|   |   <p>revious
+|   |   <r>esize equally
+|   |   <u>nload burried buffers
+|   |   <s>plit
+|   |   |   <v>ertical
+|   |   |   <h>orizontal
+|   <c>ode
+|   |   <i>ndent file
+|   |   <s>pell suggest
+|   |   <v>ertical edition
+|   <f>ile
+|   |   <e>xplorer
+|   |   <f>ind file
+|   |   <s>ave file
+|   |   <S>ave all
+|   <g>it
+|   |   <b>ranches
+|   |   <c>ommits
+|   |   <s>tatus
+|   <h>elp
+|   |   <h>elp of doomnvim
+|   |   <k>eybindings
+|   |   <t>ags
+|   |   <u>pdate doomnvim
+|   <m>isc
+|   |   <c>olorscheme switch
+|   |   <h>ealth check
+|   |   <s>ource file
+|   <p>lugin
+|   |   <c>lean unused
+|   |   <h>elp
+|   |   <i>nstall
+|   |   <s>tatus of manager
+|   |   <u>pdate
+|   <q>uit/session
+|   |   <q>uit
+|   <s>earch
+|   |   <w>ord search
+|   <t>oggle
+|   |   <e>rror
+|   |   <f>loating terminal
+|   |   <h>ighlight
+|   |   <n>umber display
+|   |   <s>pell
+|   |   <t>erminal
+|   |   <w>ord wrap
+|   <w>indow
+|   |   <c>lose
+|   |   <h> previous
+|   |   <l> next
+|   |   <n>ew
 
 ==============================================================================
 USAGE                                                         *doomnvim-usage*
 
-Start doomnvim by typing `vim` or `nvim` in a terminal emulator.
+Start doomnvim by typing `nvim` in a terminal emulator.
 
 By default doomnvim will show the start menu `dashboard-nvim` where you can
 select files to edit.
@@ -428,193 +387,66 @@ doomnvim uses the vim keybindings to move around:  `h` `j` `k` `l`
 
         ^
         k
-  < h       l >  
-        j        
+  < h       l >
+        j
         v
 
 see `vimtutor` to know how to use vim
 
-To move around buffers execute <Space>w to select the `window selection` menu
+To move around buffers execute
+
+<Space>w
+
+to select the `window selection` menu
 and then press the key corresponding to the buffer you want to select.
 
 ==============================================================================
 KNOWN ISSUES                                                  *doomvim-issues*
 
-- The tagbar is not working at the moment 
-
-- The floating terminal may not close and might leave a artifact: Use <Space>bk
-  to close it.
-
+- Mason's registry is not downloaded on fresh install --> must use ':Mason'
 
 ==============================================================================
 FAQ                                                             *doomnvim-faq*
 
-Lorem
+Q: does doomnvim works with vim?
+A: No, doomnvim only supports neovim v>=0.10
 
-==============================================================================
-HACKING DOOMNVIM                                            *doomnvim-hacking*
+Q: does doomnvim works on XXXX linux distribution?
+A: As long as you meet the requirements defined in the README, yes
 
-doomnvim aims to be hackable to suit everyone's needs. Therefore multiple
-options can be changed (see |doomnvim-options|). If that is not enough, here
-is the layout of the doomnvim project:
-
-DOMNVIM/
-|_ autoload/                            # Files loaded at launch
-|   |_ doomnvim/                        # doomnvim core
-|   |  |_ autocmds.vim                  # doomnvim autocmds
-|   |  |_ config.vim                    # doomnvim custom config file loader
-|   |  |_ default.vim                   # doomnvim default
-|   |  |_ functions.vim                 # core functions of doomnvim
-|   |  |_ health.vim                    # doomnvim health
-|   |  |_ logging.vim                   # The logging manager of doomnvim
-|   |  |_ system.vim                    # doomnvim system detection
-|   |_ doomnvim.vim                     # Config file for various globals
-|   |_ plug.vim                         # Plug-Vim configuration file
-|_ colors/                              # doomnvim colorscheme directory
-|   |_ alduin.vim                       # `Alessandro Yorba` theme
-|   |_ deus.vim                         # `ajmwagar` theme
-|   |_ doom.vim                         # doom colorscheme (`default`)
-|   |_ doom-one.vim                     # `romgrk` theme
-|   |_ gruvbox.vim                      # `morhetz` theme
-|   |_ iceberg.vim                      # `cocopon` theme
-|   |_ molokai.vim                      # `Tomas Restrepo`  theme
-|   |_ nord.vim                         # `Artic Ice Studio`  theme
-|   |_ one.vim                          # `vim-one` theme
-|   |_ space-vim-dark.vim               # `Spacevim` dark theme
-|   |_ vim-material.vim                 # `hzchris` material theme
-|_ config/                              # Configuration files of doomnvim
-|   |_ plugins/                         # Plugin config
-|   |   |_ coc.vim                      # coc.nvim configuration
-|   |   |_ dict.vim                     # Dictionary for vim-which-key
-|   |   |_ keymap.vim                   # doomnvim keybindings
-|   |   |_ bufferline.vim               # bufferline config
-|   |   |_ nvimtree.vim                 # nvimtree config
-|   |   |_ statusline.vim               # staline config
-|   |_ functions.vim                    # doomnvim functions
-|   |_ gui.vim                          # doomnvim gui options
-|   |_ main.vim                         # init file, loads vim-plug
-|_ doc/                                 # documentation of doomnvim
-|   |_ doomnvim.txt                     # doomnvim help file
-|_ plugged/                             # Location of plugins
-|_ sessions/                            # Location vim workspaces
-|_ undodirs/                            # .undodirs/ folders location
-|_ logs/                                # Location of logs files
-|_ init.vim                             # init.vim file
-|_ install.sh                           # doomnvim installer script
-
-
-doomnvim also creates the `BFC`, which serves as the user configuration file
-if it is not present on the system. It allows a fine control
-over the core functions of doomnvim. It is a copy of the `autoload/doomnvim.vim`
-file.
-
-The `BFC` is located at `$HOME/.doomrc`
-
-
-==============================================================================
-AUTOLOAD                                           *doomnvim-hacking-autoload*
-
-The autoload folder content is loaded by vim on_start. It is the location
-of the doomnvim plugin which is loaded every time.
-
-The `doomnvim.vim` file is contain most of the global variables used by 
-doomnvim and executes the init functions of doomnvim.
-
-The files inside the `doomnvim/` folder have core functions for doomnvim.
-
-    * autocmds.vim  : Auto commands needed by doomnvim.
-    * config.vim    : Manages the BFC
-    * default       : Default configuration for nvim and for plugins
-    * functions.vim : Util functions
-    * health.vim    : Used to check the health of install (WIP)
-    * logging.vim   : Logging handler
-    * system.vim    : Multi-os support (WIP)
-
+Q: Does doomnvim works on windows?
+A: No, doomnvim was not tested on windows
 
 ==============================================================================
 CHANGELOG                                                 *doomnvim-changelog*
 
-v0.1.2
-First "stable" version of doomnvim
-
-v0.1.3
-- Added persistent colorscheme change command
-- Added colorschemes (see |doomnvim-hacking|)
-- Added log handler on boot and for some commands
-- Fixed colorscheme not loading on boot
-- Fixed some commands not working
-
-v0.1.4
-- Added workspaces
-- Added log levels 
-    0: Nothing
-    1: Errors
-    2: Errors and messages
-    3: Errors and messages with echo
-
-v0.1.4-1
-- Added complete log
-- Dump vim internal error messages to logfile
-- Fixed vimscript linting errors and dangerous operators
-- Added netrwc as file explorer in a new buffer
-- Fixed colors in install.sh
-- Buffer resize in width/height are now done by 20% of width/height of
-  the window instead of an arbitrary value
-- functions.vim, gui.vim and globals.vim are now loaded by the doomnvim
-  plugin instead of the init.vim file
-
-v0.1.5
-- Implemented autoclose parenthesis, brackets, quotes
-- Updated the documentation
-- Disabled the .undodirs of `vim-workspace`
-- Created the BFC
-- Colorscheme now loaded by the BFC
-- Added tabs support
-- Moved globals to a single file
-
-v0.1.5-1
-- Use of indentline instead of vim-airline
-- Added full log support
-- Improved the documentation
-- Added keybindings
-- Added nvim-bufferline.lua for neovim>=0.5 users
-- All files opened with NERDTree now open in a new vertical split
-- Fixed toggle line number
-- Cleaned the config/plugin/ directory
-- Most configuration files are now loaded by autoload
-
-v0.1.5-2
-- Force install neovim>=0.5.X
-- Removed `vim-workspace` and `vim-startify` to use `dashboard-nvim`
-- Disabled vsplit by default
-- Constant header for doomnvim
+v2.0a
+- Rewrote most of the code in lua
+- Removed obsolete plugins that were created for vim
+- Migrated configuration to plugins-equivalent in lua
+- Removed logging
+- Removed the BFC
+- Removed out-of-the-box colorschemes that were not followed by any manager
+- Cleaned unused functions
 - Updated documentation
-- New colorscheme switcher (colors are saved on quit)
 
-v0.1.6
-- Fixed `<Space>`keybindings not working as intended
-- Fixed session saves and dictionnary
-- Changed keybindings to match some of doom-emacs's
-- Disabled `g:doomnvim_check_updates` by default
-- Force `expandtad` by default
-- Added keybindings to move buffers
+                                ----------
 
-v0.1.7
-- Added `g:doomnvim_disabled_plugins` that prevents some plugins to load
-- Added `g:doomnvim_custom_plugins` that allow the user to add plugins.
-- Fixed session loading not using the correct path
-- Added the `ToggleConceal()` function
-- Fixed installer update error
-- Added acknowledgment in README.md
-- Added autosave option when quit
-- Added spell commands and variables
+v.0.1.9 (not tagged)
+- Updated configuration for standard plugins
+- Removed obsolete vim-which-key data
+- Cleaned documentation
 
-v0.1.7.1
-- Changed `vim-clap` to `telescope.nvim`
-- Fixed updater asking for merge message
-- Fixed installer for user plugins
-- Fixed uninstaller for user plugins
-- Fixed `telescope.nvim` keymap
+v.0.1.8.2
+- Disabled buffered terminal
+- Various bug fixes
+
+v0.1.8.1
+- Cleaned `config.vim`
+- Colorschemes are local instead of relying on vim-plug
+- Removed some colorschemes from default
+- Fixed bug where custom plugins are cloned but not written in `main.vim`
+- Added configuration for `NvimTree.lua`
 
 v0.1.8
 - Changed `spaceline.vim` to `staline.vim`
@@ -627,20 +459,86 @@ v0.1.8
 - Removed `Vista.nvim` and switched back to `Tagbar`
 - Removed `indentLines.vim`
 
-v0.1.8.1
-- Cleaned `config.vim`
-- Colorschemes are local instead of relying on vim-plug
-- Removed some colorschemes from default
-- Fixed bug where custom plugins are cloned but not written in `main.vim`
-- Added configuration for `NvimTree.lua`
+v0.1.7.1
+- Changed `vim-clap` to `telescope.nvim`
+- Fixed updater asking for merge message
+- Fixed installer for user plugins
+- Fixed uninstaller for user plugins
+- Fixed `telescope.nvim` keymap
 
-v.0.1.8.2
-- Disabled buffered terminal
-- Various bug fixes
+v0.1.7
+- Added `g:doomnvim_disabled_plugins` that prevents some plugins to load
+- Added `g:doomnvim_custom_plugins` that allow the user to add plugins.
+- Fixed session loading not using the correct path
+- Added the `ToggleConceal()` function
+- Fixed installer update error
+- Added acknowledgment in README.md
+- Added autosave option when quit
+- Added spell commands and variables
 
-v.0.1.9
-- Updated configuration for standard plugins
-- Removed obsolete vim-which-key data
-- Cleaned documentation
+v0.1.6
+- Fixed `<Space>`keybindings not working as intended
+- Fixed session saves and dictionnary
+- Changed keybindings to match some of doom-emacs's
+- Disabled `g:doomnvim_check_updates` by default
+- Force `expandtad` by default
+- Added keybindings to move buffers
+
+v0.1.5-2
+- Force install neovim>=0.5.X
+- Removed `vim-workspace` and `vim-startify` to use `dashboard-nvim`
+- Disabled vsplit by default
+- Constant header for doomnvim
+- Updated documentation
+- New colorscheme switcher (colors are saved on quit)
+
+v0.1.5-1
+- Use of indentline instead of vim-airline
+- Added full log support
+- Improved the documentation
+- Added keybindings
+- Added nvim-bufferline.lua for neovim>=0.5 users
+- All files opened with NERDTree now open in a new vertical split
+- Fixed toggle line number
+- Cleaned the config/plugin/ directory
+- Most configuration files are now loaded by autoload
+
+v0.1.5
+- Implemented autoclose parenthesis, brackets, quotes
+- Updated the documentation
+- Disabled the .undodirs of `vim-workspace`
+- Created the BFC
+- Colorscheme now loaded by the BFC
+- Added tabs support
+- Moved globals to a single file
+
+v0.1.4-1
+- Added complete log
+- Dump vim internal error messages to logfile
+- Fixed vimscript linting errors and dangerous operators
+- Added netrwc as file explorer in a new buffer
+- Fixed colors in install.sh
+- Buffer resize in width/height are now done by 20% of width/height of
+  the window instead of an arbitrary value
+- functions.vim, gui.vim and globals.vim are now loaded by the doomnvim
+  plugin instead of the init.vim file
+
+v0.1.4
+- Added workspaces
+- Added log levels
+    0: Nothing
+    1: Errors
+    2: Errors and messages
+    3: Errors and messages with echo
+
+v0.1.3
+- Added persistent colorscheme change command
+- Added colorschemes (see |doomnvim-hacking|)
+- Added log handler on boot and for some commands
+- Fixed colorscheme not loading on boot
+- Fixed some commands not working
+
+v0.1.2
+First "stable" version of doomnvim
 
 " vim:tw=80:ft=help:norl:

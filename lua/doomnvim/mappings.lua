@@ -19,6 +19,8 @@ local wk = require("which-key")
 
 -- Buffer operation --------------------------------------------------------{{{
 wk.add({ { "<leader>b", group = "buffer" } })
+wk.add({ { "<leader>bs", group = "split" } })
+wk.add({ { "<leader>bm", group = "move" } })
 map("", "<leader>bp", ":bp<CR>",                                                { silent = true, desc = "Buffer Previous" })
 map("", "<leader>bn", ":bn<CR>",                                                { silent = true, desc = "Buffer Next" })
 map("", "<leader>bu", ":bunload<CR>",                                           { silent = true, desc = "Buffer Unload" })
@@ -69,12 +71,12 @@ map("", "<leader>pi", ":Lazy install<CR>",                                      
 map("", "<leader>pu", ":Lazy update<CR>",                                       { silent = true, desc = "Plugins Update" })
 map("", "<leader>pc", ":Lazy clean<CR>",                                        { silent = true, desc = "Plugins Clean unused" })
 map("", "<leader>ph", ":Lazy help<CR>",                                         { silent = true, desc = "Plugins Help" })
-map("", "<leader>pmh", ":Lazy health<CR>",                                      { silent = true, desc = "Plugins Manager Health" })
+map("", "<leader>ps", ":Lazy health<CR>",                                      { silent = true, desc = "Plugin manager Status" })
 --}}}
 
 -- Quit --------------------------------------------------------------------{{{
 wk.add({ { "<leader>q", group = "quit" } })
-map("", "<leader>qq", ":qa!<CR>",                                               { silent = true, desc = "Quit Doomnvim" })
+map("", "<leader>qq", ":qa!<CR>",                                               { silent = true, desc = "Quit doomnvim" })
 -- this function is a remnant. It uses old viml function definition
 -- need to know how to implement same behaviour with lua
 -- not even sure why I put two versions to quit doomnvim
