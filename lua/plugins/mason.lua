@@ -5,7 +5,6 @@ local servers = {
 	"eslint",
 	"lua_ls",
 	"pyright",
-	"ruby_lsp",
 	"bashls",
 	"ltex",
 	"vimls",
@@ -17,23 +16,22 @@ vim.lsp.enable(servers)
 
 
 require("mason-lspconfig").setup {
-	automatic_enable = false,
-	ensure_installed = {
-		-- LSP
-		--"clangd",
-		--"harper_ls",
-		--"eslint",
-		--"lua_ls",
-		--"pyright",
-		--"ruby_lsp",
-		--"bashls",
-		--"ltex",
-		--"vimls",
-		--"yamlls",
-		--"dockerls",
-		--"marksman",
+	automatic_enable = true,
+	--ensure_installed = {
+	--	-- LSP
+	--	--"clangd",
+	--	--"harper_ls",
+	--	--"eslint",
+	--	--"lua_ls",
+	--	--"pyright",
+	--	--"bashls",
+	--	--"ltex",
+	--	--"vimls",
+	--	--"yamlls",
+	--	--"dockerls",
+	--	--"marksman",
 
-	}
+	--}
 }
 
 
