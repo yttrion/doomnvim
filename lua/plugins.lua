@@ -35,8 +35,8 @@ require("lazy").setup({
 
         -- -- Linting/LSP/Completion
         { "mason-org/mason.nvim", lazy=true },
-        { "mason-org/mason-lspconfig.nvim", lazy=true },
-        { "neovim/nvim-lspconfig", lazy=true },
+        { "mason-org/mason-lspconfig.nvim" },
+        { "neovim/nvim-lspconfig" },
 	{ "saghen/blink.cmp", dependencies={ "rafamadriz/friendly-snippets" }},
 
 

@@ -17,21 +17,20 @@ vim.lsp.enable(servers)
 
 require("mason-lspconfig").setup {
 	automatic_enable = true,
-	--ensure_installed = {
-	--	-- LSP
-	--	--"clangd",
-	--	--"harper_ls",
-	--	--"eslint",
-	--	--"lua_ls",
-	--	--"pyright",
-	--	--"bashls",
-	--	--"ltex",
-	--	--"vimls",
-	--	--"yamlls",
-	--	--"dockerls",
-	--	--"marksman",
+	ensure_installed = {
+		"clangd",
+		"harper_ls",
+		"eslint",
+		"lua_ls",
+		"pyright",
+		"bashls",
+		"ltex",
+		"vimls",
+		"yamlls",
+		"dockerls",
+		"marksman",
 
-	--}
+	}
 }
 
 
