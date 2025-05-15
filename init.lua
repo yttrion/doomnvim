@@ -49,8 +49,8 @@ o.softtabstop = 4
 o.shiftwidth = 4
 o.conceallevel = 1
 
-o.numbers = true
-o.relativenumbers = true
+o.number = true
+o.relativenumber = true
 
 
 -- Bootstrap lazy.nvim
