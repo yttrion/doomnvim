@@ -34,9 +34,9 @@ require("lazy").setup({
         { "rakr/vim-one", lazy=true },
 
         -- -- Linting/LSP/Completion
-        { "mason-org/mason.nvim" },
-        { "mason-org/mason-lspconfig.nvim" },
-        { "neovim/nvim-lspconfig" },
+        { "mason-org/mason.nvim", lazy=true },
+        { "mason-org/mason-lspconfig.nvim", lazy=true },
+        { "neovim/nvim-lspconfig", lazy=true },
 	{ "saghen/blink.cmp", dependencies={ "rafamadriz/friendly-snippets" }},
 
 
