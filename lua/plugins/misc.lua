@@ -29,4 +29,4 @@ require('gitsigns').setup()
 -- Util keymaps
 map("", "<leader>hu", ":DistroUpdate<CR>",                                      { silent = true, desc = "Update doomnvim" })
 map("", "<leader>tt", ":FloatermNew --wintype=split<CR>",                       { silent = true, desc = "Toggle Floating term" })
-map("", "<leader>tf", ":FloatermNew<CR>",                                    { silent = true, desc = "Toggle Floating term" })
+map("", "<leader>tf", ":FloatermNew<CR>",                                       { silent = true, desc = "Toggle Floating term" })
