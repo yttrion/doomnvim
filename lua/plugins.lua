@@ -7,7 +7,7 @@
 require("lazy").setup({
     spec = {
         -- GUI
-        { "nvim-lualine/lualine.nvim", lazy=true, dependencies={ "nvim-tree/nvim-web-devicons" }},
+        { "tamton-aquib/staline.nvim", lazy=true, dependencies={ "nvim-tree/nvim-web-devicons" }},
         { "akinsho/bufferline.nvim", event="VeryLazy", version = "*", dependencies={ "nvim-tree/nvim-web-devicons" }},
         { "nvimdev/dashboard-nvim", event="VimEnter", dependencies={ "nvim-tree/nvim-web-devicons" }},
         { "utilyre/barbecue.nvim", dependencies={ "SmiteshP/nvim-navic", "nvim-tree/nvim-web-devicons" }, opts={}},
@@ -45,7 +45,7 @@ require("lazy").setup({
 })
 
 -- Call plugins configuration
-require("plugins.lualine")
+require("plugins.staline")
 require("plugins.dashboard")
 
 require("plugins.nvim-tree")
