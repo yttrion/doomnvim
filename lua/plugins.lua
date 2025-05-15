@@ -55,3 +55,4 @@ require("plugins.telescope")
 require("plugins.misc")
 
 require("plugins.mason")
+require("plugins.blink")
