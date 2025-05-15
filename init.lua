@@ -49,6 +49,7 @@ o.softtabstop = 4
 o.shiftwidth = 4
 o.conceallevel = 1
 
+o.swapfile = false
 o.number = true
 o.relativenumber = true
 
