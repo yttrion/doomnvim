@@ -11,7 +11,7 @@ require("lazy").setup({
         { "akinsho/bufferline.nvim", event="VeryLazy", version = "*", dependencies={ "nvim-tree/nvim-web-devicons" }},
         { "nvimdev/dashboard-nvim", event="VimEnter", dependencies={ "nvim-tree/nvim-web-devicons" }},
         { "utilyre/barbecue.nvim", dependencies={ "SmiteshP/nvim-navic", "nvim-tree/nvim-web-devicons" }, opts={}},
-        
+
         -- Tools
         { "folke/which-key.nvim", lazy=true, dependencies={ "nvim-tree/nvim-web-devicons" }},
         { "dstein64/vim-startuptime", cmd="StartupTime" },
@@ -24,6 +24,7 @@ require("lazy").setup({
         { "Zeioth/distroupgrade.nvim", event="VeryLazy", dependencies={ "nvim-lua/plenary.nvim" }, opts={}},
         { "m4xshen/autoclose.nvim", event="VeryLazy" },
         { "kevinhwang91/nvim-hlslens", event="VeryLazy" },
+        { "lewis6991/gitsigns.nvim", event="VeryLazy" },
 
         -- Colors
         { "sainnhe/everforest", lazy=true },
@@ -37,7 +38,7 @@ require("lazy").setup({
         { "mason-org/mason.nvim", lazy=true },
         { "mason-org/mason-lspconfig.nvim" },
         { "neovim/nvim-lspconfig" },
-	{ "saghen/blink.cmp", dependencies={ "rafamadriz/friendly-snippets", "xzbdmw/colorful-menu.nvim" }},
+        { "saghen/blink.cmp", dependencies={ "rafamadriz/friendly-snippets", "xzbdmw/colorful-menu.nvim" }},
 
 
     },

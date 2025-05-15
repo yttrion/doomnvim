@@ -24,7 +24,7 @@ require("smartcolumn").setup({
 -- misc of misc
 require("barbecue.ui").toggle(true)
 require("autoclose").setup()
-
+require('gitsigns').setup()
 
 -- Util keymaps
 map("", "<leader>hu", ":DistroUpdate<CR>",                                      { silent = true, desc = "Update doomnvim" })
