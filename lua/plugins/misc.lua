@@ -26,7 +26,7 @@ require("barbecue.ui").toggle(true)
 require("autoclose").setup()
 require('gitsigns').setup()
 require("ibl").setup({
-    exclude = { filetypes = { "dasboard", "help", "NvimTree", "lazy", "checkhealth" } },
+    exclude = { filetypes = { "dashboard", "help", "NvimTree", "lazy", "checkhealth" } },
 })
 
 -- Util keymaps
