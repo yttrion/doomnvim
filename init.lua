@@ -42,16 +42,12 @@ o.encoding = "utf-8"
 o.clipboard = "unnamedplus"
 o.timeoutlen = 400
 o.updatetime = 400
-o.shortmess:append("atc")
-o.shortmess:append("s")
 
 o.expandtab = true
 o.tabstop = 4
 o.softtabstop = 4
 o.shiftwidth = 4
 o.conceallevel = 1
-
-o.noswapfile = true
 
 o.numbers = true
 o.relativenumbers = true
