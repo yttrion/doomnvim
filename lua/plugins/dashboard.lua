@@ -1,10 +1,3 @@
-"===========================================================
-" dashboard configuration
-" Author: Pierre-Yves Douault
-" License: MIT
-"===========================================================
-
-lua <<EOF
 local home = os.getenv('HOME')
 local db = require('dashboard')
 local ver = vim.api.nvim_get_var('doomnvim_version')
@@ -12,6 +5,7 @@ db.setup({
     theme = 'doom',
     config = {
         header = {
+            "v"..vim.api.nvim_get_var('doomnvim_version'),
             "",
             "",
             "=================     ===============     ===============   ========  ========",
@@ -44,15 +38,15 @@ db.setup({
                 desc = 'Command history                         ',
                 desc_hl = 'String',
                 action =  'Telescope command_history',
-                key = 'h',
+                key = 'xh',
                 key_hl = 'Number',
             },
             {
-                icon = '  ',
+                icon = '  ',
                 desc = 'Find  File                              ',
                 desc_hl = 'String',
-                action = 'Telescope find_files find_command=rg,--hidden,--files',
-                key = 'f',
+                action = 'Telescope find_files',
+                key = 'ff',
                 key_hl = 'Number',
             },
             {
@@ -60,19 +54,26 @@ db.setup({
                 desc ='File Explorer                            ',
                 desc_hl = 'String',
                 action =  'NvimTreeToggle',
-                key = 'e',
+                key = 'fe',
                 key_hl = 'Number',
             },
             {
-                icon = '  ',
-                desc = 'Find  word                              ',
+                icon = '  ',
+                desc = 'Show help tags                          ',
                 desc_hl = 'String',
-                action = 'Telescope live_grep',
-                key = 'w',
+                action = 'Telescope help_tags',
+                key = 'ht',
+                key_hl = 'Number',
+            },
+            {
+                icon = '  ',
+                desc = 'Show keymaps                            ',
+                desc_hl = 'String',
+                action = 'Telescope keymaps',
+                key = 'hk',
                 key_hl = 'Number',
             }
     },
-    footer = {"Version: "..vim.api.nvim_get_var('doomnvim_version')}  --your footer
   }
 })
-EOF
+
