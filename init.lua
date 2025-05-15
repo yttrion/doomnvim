@@ -1,14 +1,61 @@
 -------------------------------------------------------------
--- init.vim
+-- init.lua
 -- Author: Pierre-Yves Douault
 -- License: MIT
 -------------------------------------------------------------
 
--- Globals
+-- Alias definition
+local opt = vim.opt
+local o = vim.o
+local g = vim.g
+
+-- vim.g
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-
 vim.g.doomnvim_version = "2.0.0a"
+
+-- vim.opt
+opt.shortmess:append "sI"
+
+-- vim.o
+o.wildmenu = true
+
+o.smartindent = true
+o.smarttab = true
+o.autoindent = true
+
+o.splitbelow = true
+o.splitright = true
+
+o.undofile = true
+o.autoread = true
+
+o.laststatus = 3
+o.showmode = true
+o.cursorline = false
+o.hlsearch = true
+o.cmdheight = 1
+o.signcolumn = "auto"
+
+o.mouse = "a"
+o.encoding = "utf-8"
+o.clipboard = "unnamedplus"
+o.timeoutlen = 400
+o.updatetime = 400
+o.shortmess:append("atc")
+o.shortmess:append("s")
+
+o.expandtab = true
+o.tabstop = 4
+o.softtabstop = 4
+o.shiftwidth = 4
+o.conceallevel = 1
+
+o.noswapfile = true
+
+o.numbers = true
+o.relativenumbers = true
+
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
