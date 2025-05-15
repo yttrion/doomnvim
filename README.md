@@ -6,7 +6,7 @@
 
 ![License](https://img.shields.io/github/license/yttrion/doomnvim?style=flat-square)
 ![Release](https://img.shields.io/github/v/release/yttrion/doomnvim?include_prereleases&style=flat-square)
-![Neovim version](https://img.shields.io/badge/Neovim-0.5+-57A143?style=flat-square&logo=neovim)
+![Neovim version](https://img.shields.io/badge/Neovim-0.10+-57A143?style=flat-square&logo=neovim)
 ![Latest commit](https://img.shields.io/github/last-commit/yttrion/doomnvim/dev?style=flat-square)
 </div>
 
@@ -19,10 +19,10 @@
 - [Acknowledgements](#acknowledgements)
 
 # Introduction
-doomnvim is a vim-version of the [doom-emacs](https://github.com/hlissner/doom-emacs) framework.
+doomnvim is a vim-version of the [doom-emacs](https://github.com/hlissner/doom-emacs).
 It aims to add useful features to stock neovim and also serves as my daily driver.
 
-**doomnvim was made for neovim 5, it may not work as intended on vim**
+**doomnvim was made for neovim, it may not work as intended on vim**
 
 **doomnvim works best with [Nerd fonts](https://github.com/ryanoasis/nerd-fonts)**
 
@@ -30,28 +30,27 @@ It aims to add useful features to stock neovim and also serves as my daily drive
 [doomnvim](https://github.com/yttrion/doomnvim) is a project I started in october 2020.
 Please checkout NTBBloodbath's [doom-nvim](https://github.com/NTBBloodbath/doom-nvim) as it has more features and is constantly updated.
 
-
-
 # Features
 
 - Curated defaults for vim/neovim
-- Support for *many* languages with [coc.nvim](https://github.com/neoclide/coc.nvim)
+- Support for *many* languages (LSP/DSP/Linter/Formatter) with [mason.nvim](https://github.com/mason-org/mason.nvim)
 - Mnemonic key binding
 - Integration with `Telescope.nvim` 
 - Most features of a text editor
-- Lua support with Neovim 0.5 release
+- Written in Lua
 
 # Install
 ## Prerequisites
 
 doomnvim requires the following packages starting from version `2.0.0a` 
 
-- neovim v>=0.10
+- neovim `v>=0.10`
+- luarocks
+- node
 - npm
 - python3
 - unzip
 - fzf
-
 
 
 ## Install doomnvim
@@ -62,7 +61,7 @@ curl -sLf https://raw.githubusercontent.com/yttrion/doomnvim/main/install.sh | b
 ```
 
 After doomnvim is installed, run neovim and doomnvim will automatically install plugins
-*doomnvim* might show some errors during the first launch, just restart it.
+*doomnvim* might show some errors during the first launch, use the ':Mason' command and just restart it.
 
 # Screenshots
 <div align="center">
@@ -81,5 +80,3 @@ After doomnvim is installed, run neovim and doomnvim will automatically install 
 
 ## Plugins and colorschemes
 Check `doomnvim.txt`
-
-

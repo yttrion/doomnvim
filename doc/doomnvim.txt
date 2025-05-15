@@ -64,8 +64,9 @@ back.
 ==============================================================================
 OPTIONS                                                     *doomnvim-options*
 
-doomnvim configuration files are located in the `$HOME/.config/nvim`
+doomnvim configuration files are located in the `$HOME/doomnvim`
 directory.
+
 
 Global variables that were used in previous versions of doomnvim are located
 in the `init.lua` file, but the heading name syntax `g:doomnvim_<var_name>`
@@ -197,7 +198,7 @@ of the colorscheme you want to use.
 ==============================================================================
 CONFIGURATION                                         *doomnvim-configuration*
 
-doomnvim configuration files are located in the `$HOME/.config/nvim`
+doomnvim configuration files are located in the `$HOME/nvim`
 directory.
 
 See |doomnvim-hacking| for more info.
@@ -429,6 +430,8 @@ v2.0a
 - Removed out-of-the-box colorschemes that were not followed by any manager
 - Cleaned unused functions
 - Updated documentation
+- Updated README
+- Updated install.sh
 
                                 ----------
 
