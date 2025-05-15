@@ -25,6 +25,9 @@ require("smartcolumn").setup({
 require("barbecue.ui").toggle(true)
 require("autoclose").setup()
 require('gitsigns').setup()
+require("ibl").setup({
+    exclude = { filetypes = { "dasboard", "help", "NvimTree", "lazy", "checkhealth" } },
+})
 
 -- Util keymaps
 map("", "<leader>hu", ":DistroUpdate<CR>",                                      { silent = true, desc = "Update doomnvim" })
