@@ -69,7 +69,7 @@ map("", "<leader>pi", ":Lazy install<CR>",                                      
 map("", "<leader>pu", ":Lazy update<CR>",                                       { silent = true, desc = "Plugins Update" })
 map("", "<leader>pc", ":Lazy clean<CR>",                                        { silent = true, desc = "Plugins Clean unused" })
 map("", "<leader>ph", ":Lazy help<CR>",                                         { silent = true, desc = "Plugins Help" })
-map("", "<leader>pmh", ":Lazy health<CR>",                                      { silent = true, desc = "Plugins Manager Health status" })
+map("", "<leader>pmh", ":Lazy health<CR>",                                      { silent = true, desc = "Plugins Manager Health" })
 --}}}
 
 -- Quit --------------------------------------------------------------------{{{
@@ -102,7 +102,7 @@ wk.add({ { "<leader>w", group = "window" } })
 map("", "<leader>wn", ":tabnew<CR>",                                            { silent = true, desc = "Window open New" }) 
 map("", "<leader>wl", ":tabnext<CR>",                                           { silent = true, desc = "Window next" }) 
 map("", "<leader>wh", ":tabprevious<CR>",                                       { silent = true, desc = "Window previous" }) 
-map("", "<leader>wc", ":tabclose",                                              { silent = true, desc = "Window Close" }) 
+map("", "<leader>wc", ":tabclose<CR>",                                          { silent = true, desc = "Window Close" }) 
 --}}}
 
 -- Commands ---{{{
