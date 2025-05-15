@@ -24,7 +24,6 @@ require("lazy").setup({
         { "Zeioth/distroupgrade.nvim", event="VeryLazy", dependencies={ "nvim-lua/plenary.nvim" }, opts={}},
         { "m4xshen/autoclose.nvim", event="VeryLazy" },
         { "kevinhwang91/nvim-hlslens", event="VeryLazy" },
-	{ "ahmedkhalf/project.nvim",  },
 
         -- Colors
         { "sainnhe/everforest", lazy=true },
