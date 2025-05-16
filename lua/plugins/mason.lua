@@ -14,6 +14,15 @@ local servers = {
 }
 vim.lsp.enable(servers)
 
+require("mason").setup({
+    ui = {
+        icons = {
+            package_installed = "",
+            package_pending = "",
+            package_uninstalled = ""
+        }
+    }
+})
 
 require("mason-lspconfig").setup {
     automatic_enable = true,
@@ -31,18 +40,3 @@ require("mason-lspconfig").setup {
         "marksman",
     }
 }
-
-
-
-require("mason").setup({
-    ui = {
-        icons = {
-            package_installed = "",
-            package_pending = "",
-            package_uninstalled = ""
-        }
-    }
-})
-
-
-
