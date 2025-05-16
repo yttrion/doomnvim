@@ -12,6 +12,7 @@ require("lazy").setup({
         { "nvimdev/dashboard-nvim", event="VimEnter", dependencies={ "nvim-tree/nvim-web-devicons" }},
         { "utilyre/barbecue.nvim", dependencies={ "SmiteshP/nvim-navic", "nvim-tree/nvim-web-devicons" }, opts={}},
         { "lukas-reineke/indent-blankline.nvim", main="ibl" },
+        { "folke/noice.nvim", event="VeryLazy", dependencies={ "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" }},
 
         -- Tools
         { "folke/which-key.nvim", lazy=true, dependencies={ "nvim-tree/nvim-web-devicons" }},

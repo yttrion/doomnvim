@@ -8,7 +8,6 @@ require("blink.cmp").setup({
     appearance = {
         nerd_font_variant = 'normal'
     },
-    completion = { documentation = { auto_show = true } },
 
     sources = {
         default = { 'lsp', 'path', 'snippets', 'buffer' },
@@ -25,6 +24,7 @@ require("blink.cmp").setup({
 
 
     completion = {
+        documentation = { auto_show = true },
         menu = {
             draw = {
                 -- We don't need label_description now because label and label_description are already
