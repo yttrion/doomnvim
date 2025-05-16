@@ -165,17 +165,22 @@ plugins are used:
 By default, during the first start of doomnvim, Lazy.nvim will download all
 the predefined plugins, including the three plugins mentioned above.
 
-To initialize `mason` registry use the command `:Mason`
+`Mason` should work properly at first start, and will download the linters
+that are predefined in `lua/plugins/mason.lua`.
 
-You can safely quit doomnvim and start it again, `mason` will automatically
-install all preconfigured lsps for doomnvim. This operatio is needed only
-once.
+If any error is raised by `Mason`, use the command `:Mason` to fetch
+the latest `Mason` registry.
 
-To install new LSP/DAP/Linter/Formatters, please check the documentation of
+To install new LSP, please check the documentation of
 
 `mason-org/mason`
 `mason-org/mason-lspconfig`
 `neovim/nvim-lspconfig`
+
+To install new Linters/Formatters, use the command `:Mason`, navigate to 
+the Linters/Formatters section and install all linters with
+
+<i>
 
 It is not currently possible to have a sidefile with per-user configuration.
 
@@ -208,7 +213,7 @@ LAYOUT                                         *doomnvim-configuration-layout*
 
 Excluding the statusline, doomnvim will mostly have the following layout:
 
-|--------------------------------------|~
+|--------------------------------------| 
 |     |                                |
 |     |                                |
 |     |                                |
@@ -216,9 +221,9 @@ Excluding the statusline, doomnvim will mostly have the following layout:
 |  A* |                                |
 |     |                                |
 |     |                                |
-|     |                                |~
+|     |                                | 
 |     |                                |
-|--------------------------------------|~
+|--------------------------------------| 
 
 
 'A' : The file explorer (Plugin: nvim-tree)
