@@ -7,7 +7,7 @@
 -- Alias definition
 local opt = vim.opt
 local o = vim.o
-local g = vim.g
+local g = vim.g -- is this really used ?
 
 -- vim.g
 vim.g.mapleader = ' '
@@ -78,5 +78,3 @@ require("plugins")
 require("doomnvim.mappings")
 
 vim.g.settermguicolors = true
-vim.cmd [[ colorscheme nordic ]]
-

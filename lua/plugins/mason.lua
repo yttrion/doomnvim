@@ -1,38 +1,17 @@
 -- lspconfig
 local servers = {
-    --"clangd",
-    --"harper_ls",
-    --"eslint",
-    "lua_ls",
-    --"pyright",
+    "ansiblels",
     "bashls",
-    --"ltex",
-    "vimls",
-    --"yamlls",
-    --"dockerls",
+    "dockerls",
+    "jsonls",
+    "lua_ls",
     "marksman",
+    "pylsp",
+    "terraformls",
+    "vimls",
+    "yamlls"
 }
 vim.lsp.enable(servers)
-
-
-require("mason-lspconfig").setup {
-    automatic_enable = true,
-    ensure_installed = {
-        --"clangd",
-        --"harper_ls",
-        --"eslint",
-        "lua_ls",
-        --"pyright",
-        "bashls",
-        --"ltex",
-        "vimls",
-        --"yamlls",
-        --"dockerls",
-        "marksman",
-    }
-}
-
-
 
 require("mason").setup({
     ui = {
@@ -44,5 +23,19 @@ require("mason").setup({
     }
 })
 
-
+require("mason-lspconfig").setup {
+    automatic_enable = true,
+    ensure_installed = {
+        "ansiblels",
+        "bashls",
+        "dockerls",
+        "jsonls",
+        "lua_ls",
+        "marksman",
+        "pylsp",
+        "terraformls",
+        "vimls",
+        "yamlls"
+    }
+}
 

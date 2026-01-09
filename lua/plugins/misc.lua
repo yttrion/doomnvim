@@ -1,12 +1,11 @@
 local map = vim.keymap.set
-local wk = require("which-key")
-
--- Requires
+-- not sure why this is here
+--local wk = require("which-key")
 
 -- nvim-hslens
 require('hlslens').setup()
+-- same here, not sure what kopts are
 local kopts = {noremap = true, silent = true}
-
 
 -- bufferline
 require("bufferline").setup({

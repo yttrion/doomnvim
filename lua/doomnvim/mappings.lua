@@ -90,21 +90,21 @@ wk.add({ { "<leader>s", group = "search" } })
 
 -- Toggle ------------------------------------------------------------------{{{
 wk.add({ { "<leader>t", group = "toggle" } })
-map("", "<leader>tn", ":set invnumber<bar>set invrelativenumber<CR>",           { silent = true, desc = "Toggle line Numbers display" }) 
-map("", "<leader>tw", ":set wrap!<CR>",                                         { silent = true, desc = "Toggle Wrap" }) 
-map("", "<leader>th", ":noh<CR>",                                               { silent = true, desc = "Toggle Highlights display" }) 
-map("", "<leader>te", ":hi Error NONE<CR>",                                     { silent = true, desc = "Toggle Error display" }) 
+map("", "<leader>tn", ":set invnumber<bar>set invrelativenumber<CR>",           { silent = true, desc = "Toggle line Numbers display" })
+map("", "<leader>tw", ":set wrap!<CR>",                                         { silent = true, desc = "Toggle Wrap" })
+map("", "<leader>th", ":noh<CR>",                                               { silent = true, desc = "Toggle Highlights display" })
+map("", "<leader>te", ":hi Error NONE<CR>",                                     { silent = true, desc = "Toggle Error display" })
 --map("", "<leader>tc", ":call doomnvim#functions#toggleConceal()<CR>",           { silent = true, desc = "Toggle Conceallevel" }) 
-map("", "<leader>ts", ":set spell!<CR>",                                        { silent = true, desc = "Toggle Spelling display" }) 
+map("", "<leader>ts", ":set spell!<CR>",                                        { silent = true, desc = "Toggle Spelling display" })
 --}}}
 
 -- Window ------------------------------------------------------------------{{{
 wk.add({ { "<leader>w", group = "window" } })
 --map("", "<leader>wt", ":call doomnvim#functions#toggleLayout()",                { silent = true, desc = "Window Toggle layout" }) 
-map("", "<leader>wn", ":tabnew<CR>",                                            { silent = true, desc = "Window open New" }) 
-map("", "<leader>wl", ":tabnext<CR>",                                           { silent = true, desc = "Window next" }) 
-map("", "<leader>wh", ":tabprevious<CR>",                                       { silent = true, desc = "Window previous" }) 
-map("", "<leader>wc", ":tabclose<CR>",                                          { silent = true, desc = "Window Close" }) 
+map("", "<leader>wn", ":tabnew<CR>",                                            { silent = true, desc = "Window open New" })
+map("", "<leader>wl", ":tabnext<CR>",                                           { silent = true, desc = "Window next" })
+map("", "<leader>wh", ":tabprevious<CR>",                                       { silent = true, desc = "Window previous" })
+map("", "<leader>wc", ":tabclose<CR>",                                          { silent = true, desc = "Window Close" })
 --}}}
 
 -- Commands ---{{{
@@ -114,12 +114,12 @@ wk.add({ { "<leader>x", group = "command" } })
 -- Misc --------------------------------------------------------------------{{{
 wk.add({ { "<leader>m", group = "misc" } })
 wk.add({ { "<leader><leader>", group = "focus" } })
-map("", "<leader>ms", ":source %<CR>",                                          { silent = true, desc = "Misc - Source file" }) 
-map("", "<leader>mh", ":checkhealth<CR>",                                       { silent = true, desc = "Misc - Health status" }) 
-map("", "<leader><leader>h", "<C-w>h",                                          { silent = true, desc = "Move left" }) 
-map("", "<leader><leader>j", "<C-w>j",                                          { silent = true, desc = "Move down" }) 
-map("", "<leader><leader>k", "<C-w>k",                                          { silent = true, desc = "Move up" }) 
-map("", "<leader><leader>l", "<C-w>l",                                          { silent = true, desc = "Move right" }) 
-
+map("", "<leader><leader>h", "<C-w>h",                                          { silent = true, desc = "Move left" })
+map("", "<leader><leader>j", "<C-w>j",                                          { silent = true, desc = "Move down" })
+map("", "<leader><leader>k", "<C-w>k",                                          { silent = true, desc = "Move up" })
+map("", "<leader><leader>l", "<C-w>l",                                          { silent = true, desc = "Move right" })
+map("", "<leader>mc", ":Themery<CR>",                                           { silent=true, desc="Misc - Colorscheme" })
+map("", "<leader>mh", ":checkhealth<CR>",                                       { silent = true, desc = "Misc - Health status" })
+map("", "<leader>ms", ":source %<CR>",                                          { silent = true, desc = "Misc - Source file" })
 --}}}
 
