@@ -12,5 +12,4 @@ map("", "<leader>gc", ":Telescope git_commit<CR>",                              
 map("", "<leader>ht", ":Telescope help_tags<CR>",                               { silent=true, desc="Help Tags" })
 map("", "<leader>hk", ":Telescope keymaps<CR>",                                 { silent = true, desc = "Help Keymaps" })
 map("", "<leader>sw", ":Telescope live_grep<CR>",                               { silent=true, desc="Search Word" })
-map("", "<leader>mc", ":Telescope colorscheme<CR>",                             { silent=true, desc="Misc - Colorscheme" })
 

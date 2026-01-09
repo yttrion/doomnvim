@@ -146,6 +146,8 @@ Check `./lua/plugins/blink.lua` to check how this plugin is configured
 When writing `blink` might show some snippets.
 To select the next snippet, use <TAB>.
 To select the previous snippet, use <A-TAB>
+To accept the current snippet, use <C-Space>
+
 
 These are the only blink-cmp keybindings at the moment.
 
@@ -216,7 +218,7 @@ Excluding the statusline, doomnvim will mostly have the following layout:
 |  A* |                                |
 |     |                                |
 |     |                                |
-|     |                                |~
+|     |                                |
 |     |                                |
 |--------------------------------------|~
 
@@ -266,7 +268,7 @@ doomnvim uses vim-which-key as a command manager. To open whichkey press
 <Space> and wait for the pop-up to show. Each function has a label and is
 mnemonic
 e.g:
-    `Save File` > <Space>sf
+    `Save File` --> <Space>sf
 
 There are multiple menus for doomnvim commands. Those menus create a path
 in the decision tree that identifies any command.
@@ -368,6 +370,8 @@ List of keybinds:
 |   |   <h> previous
 |   |   <l> next
 |   |   <n>ew
+|   <x> command
+|   |   <h>istory of commands
 
 ==============================================================================
 USAGE                                                         *doomnvim-usage*
@@ -396,10 +400,9 @@ see `vimtutor` to know how to use vim
 
 To move around buffers execute
 
-<Space>w
+<Space><Space>
 
-to select the `window selection` menu
-and then press the key corresponding to the buffer you want to select.
+and then press the key corresponding to the buffer you want to select (H J K L).
 
 ==============================================================================
 KNOWN ISSUES                                                  *doomvim-issues*
