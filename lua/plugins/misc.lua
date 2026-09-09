@@ -22,7 +22,14 @@ require("smartcolumn").setup({
 
 -- misc of misc
 require("barbecue.ui").toggle(true)
-require("autoclose").setup()
+require("autoclose").setup({
+    keys = {
+        ["'"] = { escape = false, close = false, pair = "''", disabled_filetypes = {} }
+    },
+    -- options = {
+    --     disabled_filetypes = { "text", "markdown" },
+    -- },
+})
 require('gitsigns').setup()
 require("ibl").setup({
     exclude = { filetypes = { "dashboard", "NvimTree", "lazy", "checkhealth", "mason" } },
@@ -39,15 +46,43 @@ require("noice").setup({
   },
   -- you can enable a preset for easier configuration
   presets = {
-    bottom_search = true, -- use a classic bottom cmdline for search
+    bottom_search = false, -- use a classic bottom cmdline for search
     command_palette = true, -- position the cmdline and popupmenu together
     long_message_to_split = true, -- long messages will be sent to a split
     inc_rename = false, -- enables an input dialog for inc-rename.nvim
     lsp_doc_border = true, -- add a border to hover docs and signature help
   },
+
+  routes = {
+    {
+      filter = {
+        event = "msg_show",
+        kind = "",
+        find = "written",
+      },
+      opts = { skip = true },
+    },
+  },
 })
 
--- Util keymaps
-map("", "<leader>hu", ":DistroUpdate<CR>",                                      { silent = true, desc = "Update doomnvim" })
-map("", "<leader>tt", ":FloatermNew --wintype=split<CR>",                       { silent = true, desc = "Toggle Terminal" })
-map("", "<leader>tf", ":FloatermNew<CR>",                                       { silent = true, desc = "Toggle Floating term" })
+require("gitgraph").setup({
+    opts = {
+      git_cmd = "git",
+      symbols = {
+        merge_commit = 'M',
+        commit = '*',
+      },
+      format = {
+        timestamp = '%H:%M:%S %d-%m-%Y',
+        fields = { 'hash', 'timestamp', 'author', 'branch_name', 'tag' },
+      },
+      hooks = {
+        on_select_commit = function(commit)
+          print('selected commit:', commit.hash)
+        end,
+        on_select_range_commit = function(from, to)
+          print('selected range:', from.hash, to.hash)
+        end,
+      },
+    },
+})

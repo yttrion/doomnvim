@@ -5,11 +5,11 @@ local servers = {
     "dockerls",
     "jsonls",
     "lua_ls",
-    "marksman",
     "pylsp",
     "terraformls",
     "vimls",
-    "yamlls"
+    "yamlls",
+    "texlab",
 }
 vim.lsp.enable(servers)
 
@@ -24,18 +24,27 @@ require("mason").setup({
 })
 
 require("mason-lspconfig").setup {
-    automatic_enable = true,
+    automatic_enable = {
+        "ansiblels",
+        "bashls",
+        "dockerls",
+        "pylsp",
+        "terraformls",
+        "vimls",
+        "yamlls",
+        "texlab",
+        "texfmt",
+    },
     ensure_installed = {
         "ansiblels",
         "bashls",
         "dockerls",
         "jsonls",
         "lua_ls",
-        "marksman",
         "pylsp",
         "terraformls",
         "vimls",
-        "yamlls"
+        "yamlls",
+        "texlab",
     }
 }
-

@@ -12,7 +12,7 @@ local g = vim.g -- is this really used ?
 -- vim.g
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-vim.g.doomnvim_version = "2.0a"
+vim.g.doomnvim_version = "2.5.2"
 
 -- vim.opt
 opt.shortmess:append "sI"
@@ -47,12 +47,13 @@ o.expandtab = true
 o.tabstop = 4
 o.softtabstop = 4
 o.shiftwidth = 4
-o.conceallevel = 1
+o.conceallevel = 0
 
 o.swapfile = false
 o.number = true
 o.relativenumber = true
 
+o.cursorline = true
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -75,6 +76,7 @@ vim.opt.rtp:prepend(lazypath)
 
 
 require("plugins")
+require("doomnvim.functions")
 require("doomnvim.mappings")
 
 vim.g.settermguicolors = true
