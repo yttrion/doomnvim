@@ -25,5 +25,3 @@ vim.api.nvim_create_autocmd({"QuitPre"}, {
 
 -- Custom mappings
 local map = vim.keymap.set
-map("", "<leader>fe", ":NvimTreeToggle<CR>",                                    { silent = true, desc = "File Explorer open" })
-

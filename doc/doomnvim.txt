@@ -67,7 +67,6 @@ OPTIONS                                                     *doomnvim-options*
 doomnvim configuration files are located in the `$HOME/doomnvim`
 directory.
 
-
 Global variables that were used in previous versions of doomnvim are located
 in the `init.lua` file, but the heading name syntax `g:doomnvim_<var_name>`
 is not used anymore.
@@ -138,6 +137,7 @@ Using lua api for neovim these are the following set options:
 
 ==============================================================================
 AUTOCOMPLETE                                   *doomnvim-options-autocomplete*
+
 
 doomnvim uses `saghen/blink.cmp` as completer engine.
 Check `./lua/plugins.lua` to check how this plugin is installed
@@ -348,6 +348,7 @@ List of keybinds:
 |   |   <h>ealth check
 |   |   <s>ource file
 |   <p>lugin
+
 |   |   <c>lean unused
 |   |   <h>elp
 |   |   <i>nstall
@@ -356,7 +357,7 @@ List of keybinds:
 |   <q>uit/session
 |   |   <q>uit
 |   <s>earch
-|   |   <w>ord search
+|   |   <f> Hop to word*
 |   <t>oggle
 |   |   <e>rror
 |   |   <f>loating terminal
@@ -390,11 +391,11 @@ MOVING AROUND                                          *doomnvim-usage-moving*
 
 doomnvim uses the vim keybindings to move around:  `h` `j` `k` `l`
 
-        ^
-        k
-  < h       l >
-        j
-        v
+         ^
+         k
+  <- h       l ->
+         j
+         v
 
 see `vimtutor` to know how to use vim
 
@@ -423,6 +424,62 @@ A: No, doomnvim was not tested on windows
 
 ==============================================================================
 CHANGELOG                                                 *doomnvim-changelog*
+
+v2.6 "Golden Orchad"
+- Added docker image support for lightweight installs
+
+v2.5.2 "Opal Glacier"
+First complete stable release since complete lua rewrite
+- Fixed LaTeX support
+
+v2.5.1
+- Updated mappings
+- Added diffview.nvim
+- Added gitgraph.nvim
+
+v2.5
+- Preparing code for v2.5
+- Updated from personal config
+- Added support for vimtex
+- Updated versioninfo
+
+v2.4.8
+- Added colorschemes
+
+v2.4.7
+- Added vimade
+
+v2.4.6
+- Removed unused/bugged themes
+
+v2.4.5
+- Added Themery for colorscheme selection
+
+v2.4.3
+- Fixed blink autocomplete
+
+v2.4.2
+- Removed trouble
+
+v2.4.1
+- Updated doc
+- Fixed syntax from linters
+- Removed unused keymaps
+- Removed ltex
+
+v2.4
+- Brought gitsigns back
+- Added dockerfile for testing purposes
+- Forced vim-which-keys
+- Added ghost text when blink select
+- Updated MASON configuration
+
+v2.2
+- Removed options not set/used by doomnvim (legacy and new)
+- Forced Telescope
+- Changed plugin load method
+- Changed formatter
+- Forced autoclose
 
 v2.0a
 - Rewrote most of the code in lua

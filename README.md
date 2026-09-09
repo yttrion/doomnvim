@@ -63,6 +63,16 @@ curl -sLf https://raw.githubusercontent.com/yttrion/doomnvim/main/install.sh | b
 After doomnvim is installed, run neovim and doomnvim will automatically install plugins
 *doomnvim* might show some errors during the first launch, use the ':Mason' command and just restart it.
 
+## Create docker image
+
+Clone the repo and run the following commands:
+
+```bash
+git clone <repo url>
+cd doomnvim
+docker build -t doomnvim-slim .
+```
+
 # Screenshots
 <div align="center">
   <div>
