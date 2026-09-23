@@ -73,6 +73,8 @@ cd doomnvim
 docker build -t doomnvim-slim .
 ```
 
+The copy the `wrapper.sh` file anywhere in your path. Calling this wrapper script will start the doomnvim image
+
 # Screenshots
 <div align="center">
   <div>
